@@ -15,3 +15,11 @@ git commit -m "Updates"
 
 ### Push your changes to the Github website
 git push origin master
+
+
+# Adding Unit Tests
+
+Go to this [page](https://docs.microsoft.com/en-us/visualstudio/test/getting-started-with-unit-testing?view=vs-2019)
+
+Follow the instruction in the Create Unit Tests and Run Unit Tests sections.
+
