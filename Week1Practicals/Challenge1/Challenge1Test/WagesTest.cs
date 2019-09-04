@@ -11,7 +11,7 @@ namespace Challenge1Test
         {
             //assemble
             Wages wages = new Wages();
-            double expected = 0.01;
+            double expected = 0.00;
 
             //act
             double actual = wages.grossWeeklyWage(0);
