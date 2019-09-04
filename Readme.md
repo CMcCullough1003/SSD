@@ -29,11 +29,11 @@ Follow the instruction in the Create Unit Tests and Run Unit Tests sections.
 
 Name test method name so that you can understand what the do without even having to look at the code. Use the following pattern:
 
-'''
+```
 methodName_whatScenarioToTest_expectedResult
 sleepsUntilSanta_christmasEve_1
 primeNumber_6_false
-'''
+```
 
 ### Test layout
 
@@ -54,5 +54,5 @@ Assert is where you compare the expected value to the actual value returned from
 	- One assert per test. Each thing you want to test has a different test method.
 	- Make sure you see the test fail - if you don't see it fail when you expect to then it may not be working the way you think.
 	- Make sure every path through the code in the method is tested.
-	
+
 
