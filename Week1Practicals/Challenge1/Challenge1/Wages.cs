@@ -8,9 +8,7 @@ namespace Challenge1
     {
         public const int HOURS_IN_WORKING_WEEK = 40;
         
-        public Wages()
-        {
-        }
+        public Wages(){}
 
         public double grossWeeklyWage(double hourlyRate)
         {
