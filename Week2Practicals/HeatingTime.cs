@@ -8,7 +8,12 @@ namespace Week2Practicals
 {
     class HeatingTime
     {
-        public static void heatingTimes()
+        public HeatingTime()
+        {
+
+        }
+
+        public void askHeatingTime()
         {
             Console.WriteLine("How many item are you heating?");
             int numOfItems = Convert.ToInt32(Console.ReadLine());
@@ -32,6 +37,7 @@ namespace Week2Practicals
             {
                 Console.WriteLine("Hetaing more than 3 items at once is not reccomended");
             }
+            Console.ReadLine();
         }
     }
 }

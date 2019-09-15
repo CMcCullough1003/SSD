@@ -10,7 +10,11 @@ namespace Week2Practicals
     {
         static void Main(string[] args)
         {
-           
+            WordNumber wordNumber = new WordNumber();
+            wordNumber.readNumber();
+
+            HeatingTime heatingTime = new HeatingTime();
+            heatingTime.askHeatingTime();
         }
     }
 }

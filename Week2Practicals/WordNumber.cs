@@ -8,8 +8,14 @@ namespace Week2Practicals
 {
     class WordNumber
     {
-        public static void wordNumber()
+        public WordNumber()
         {
+            int x = 5;
+        }
+
+        public void readNumber()
+        {
+
             Console.WriteLine("Enter a number between 1 and 9");
             int number = Convert.ToInt32(Console.ReadLine());
 
