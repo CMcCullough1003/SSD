@@ -15,6 +15,15 @@ namespace Year_13_Coursework
         public frmRegister()
         {
             InitializeComponent();
+            addAvatars();
+        }
+
+        private void addAvatars()
+        {
+            pictureBox1.Image = Properties.Resources.cow;
+            pictureBox1.Tag = "cow.png";
+            pictureBox2.Image = Properties.Resources.cow;
+            pictureBox2.Tag = "cow.png";
         }
 
         private const int MINIMUM_PASSWORD_LENGTH = 4;
@@ -100,6 +109,12 @@ namespace Year_13_Coursework
             }
 
             return true;
+        }
+
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {
+            pbxSelected.Image = pictureBox1.Image;
+            pbxSelected.Tag = pictureBox1.Tag;
         }
     }
 }
