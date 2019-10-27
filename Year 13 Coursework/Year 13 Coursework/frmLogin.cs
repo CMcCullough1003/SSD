@@ -42,30 +42,38 @@ namespace Year_13_Coursework
 
             List<string> users = getUsers();
 
-            foreach(string element in users)
+            //Loop through all of the users from the file
+            foreach (string element in users)
             {
-                List<string> userDetails = element.Split('~').ToList();
+                //Split up the user details
+                List<string> userDetails = element.Split(FileConstants.USER_FILE_SEPARATOR).ToList();
 
-                for(int i = 0; i<userDetails.Count; i++)
+                //Get the users details from the split up string
+                string usernameFile = userDetails[FileConstants.USER_FILE_NAME_POSITION];
+                string passwordFile = userDetails[FileConstants.USER_FILE_PASSWORD_POSITION];
+
+                //Check if the details from the file are the same as entered on screen
+                if (usernameFile == usernameInput && passwordFile == passwordInput)
                 {
-                    string usernameFile = userDetails[0];
-                    string passwordFile = userDetails[1];
-                    
-                    if(usernameFile == usernameInput && passwordFile == passwordInput)
-                    {
-                        moveToStartScreen();
-                        break;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Your username or password is incorrect", "failure");
-                        clearUserInputs();
-                        break;
-                    }             
-                }
+                    //We have found a match - Set the global user details
+                    Program.currentUser.currentName = usernameFile;
+                    Program.currentUser.currentPassword = passwordFile;
+                    break;
+                }   
             }
-        }
 
+            //Did we find a match?
+            if (Program.currentUser.currentName != "")
+            {
+                MessageBox.Show("Your username or password is incorrect", "failure");
+                clearUserInputs();
+            }
+            else
+            {
+                moveToStartScreen();
+            }
+
+        }
         private void clearUserInputs()
         {
             tbxPassword.Clear();
@@ -99,6 +107,11 @@ namespace Year_13_Coursework
         private void btnRegister_Click(object sender, EventArgs e)
         {
             moveToRegisterScreen();
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+            Program.currentUser.resetUser();
         }
     }
 }

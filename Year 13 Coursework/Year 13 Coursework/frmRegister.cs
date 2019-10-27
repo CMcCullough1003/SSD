@@ -7,11 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using Year_13_Coursework.Constants;
+using Year_13_Coursework.Tools;
 
 namespace Year_13_Coursework
 {
     public partial class frmRegister : Form
     {
+        private Files files = new Files();
+
         public frmRegister()
         {
             InitializeComponent();
@@ -20,10 +25,24 @@ namespace Year_13_Coursework
 
         private void addAvatars()
         {
-            pictureBox1.Image = Properties.Resources.cow;
-            pictureBox1.Tag = "cow.png";
-            pictureBox2.Image = Properties.Resources.cow;
-            pictureBox2.Tag = "cow.png";
+            pbxAvatar1.Image = Properties.Resources.cow;
+            pbxAvatar1.Tag = "cow.png";
+            pbxAvatar2.Image = Properties.Resources.bee;
+            pbxAvatar2.Tag = "bee.png";
+            pbxAvatar3.Image = Properties.Resources.chicken;
+            pbxAvatar3.Tag = "chicken.png";
+            pbxAvatar4.Image = Properties.Resources.elephant;
+            pbxAvatar4.Tag = "elephant.png";
+            pbxAvatar5.Image = Properties.Resources.pig;
+            pbxAvatar5.Tag = "pig.png";
+            pbxAvatar6.Image = Properties.Resources.triceratops;
+            pbxAvatar6.Tag = "triceratops.png";
+            pbxAvatar7.Image = Properties.Resources.dog;
+            pbxAvatar7.Tag = "dog.png";
+            pbxAvatar8.Image = Properties.Resources.ghost;
+            pbxAvatar8.Tag = "ghost.png";
+            pbxAvatar9.Image = Properties.Resources.sheep;
+            pbxAvatar9.Tag = "sheep.png";
         }
 
         private const int MINIMUM_PASSWORD_LENGTH = 4;
@@ -61,7 +80,19 @@ namespace Year_13_Coursework
                 return;
             }
 
+            if (pbxSelected.Tag == null)
+            {
+                MessageBox.Show("Please select an avatar", "Error");
+                return;
+            }
+
+            if (!File.Exists(FileConstants.USER_FILE_LOCATION))
+            {
+                File.Create(FileConstants.USER_FILE_LOCATION);
+            }
+
             MessageBox.Show("Your registration was successful", "Success");
+            userDetails();
             moveToStartScreen();
                         
         }
@@ -95,26 +126,80 @@ namespace Year_13_Coursework
         {
             if (string.IsNullOrEmpty(username))
             {
-                return false;
+                return true;
             }
 
             if (string.IsNullOrEmpty(password))
             {
-                return false;
+                return true;
             }
 
             if (string.IsNullOrEmpty(confirmPassword))
             {
-                return false;
+                return true;
             }
 
-            return true;
+            return false;
         }
 
+        private void userDetails()
+        {
+            string userDetails = tbxUsername.Text + FileConstants.USER_FILE_SEPARATOR + tbxPassword.Text + FileConstants.USER_FILE_SEPARATOR + pbxSelected.Tag;
+            files.appendToFile(FileConstants.USER_FILE_LOCATION, userDetails);
+        }
         private void PictureBox1_Click(object sender, EventArgs e)
         {
-            pbxSelected.Image = pictureBox1.Image;
-            pbxSelected.Tag = pictureBox1.Tag;
+            pbxSelected.Image = pbxAvatar1.Image;
+            pbxSelected.Tag = pbxAvatar1.Tag;
+        }
+
+        private void PictureBox3_Click(object sender, EventArgs e)
+        {
+            pbxSelected.Image = pbxAvatar2.Image;
+            pbxSelected.Tag = pbxAvatar2.Tag;
+        }
+
+        private void PictureBox4_Click(object sender, EventArgs e)
+        {
+            pbxSelected.Image = pbxAvatar3.Image;
+            pbxSelected.Tag = pbxAvatar3.Tag;
+        }
+
+        private void PbxAvatar4_Click(object sender, EventArgs e)
+        {
+            pbxSelected.Image = pbxAvatar4.Image;
+            pbxSelected.Tag = pbxAvatar4.Tag;
+        }
+
+        private void PbxAvatar5_Click(object sender, EventArgs e)
+        {
+            pbxSelected.Image = pbxAvatar5.Image;
+            pbxSelected.Tag = pbxAvatar5.Tag;
+        }
+
+        private void PbxAvatar6_Click(object sender, EventArgs e)
+        {
+            pbxSelected.Image = pbxAvatar6.Image;
+            pbxSelected.Tag = pbxAvatar6.Tag;
+        }
+
+        private void PbxAvatar7_Click(object sender, EventArgs e)
+        {
+            pbxSelected.Image = pbxAvatar7.Image;
+            pbxSelected.Tag = pbxAvatar7.Tag;
+
+        }
+
+        private void PbxAvatar8_Click(object sender, EventArgs e)
+        {
+            pbxSelected.Image = pbxAvatar8.Image;
+            pbxSelected.Tag = pbxAvatar8.Tag;
+        }
+
+        private void PbxAvatar9_Click(object sender, EventArgs e)
+        {
+            pbxSelected.Image = pbxAvatar9.Image;
+            pbxSelected.Tag = pbxAvatar9.Tag;
         }
     }
 }
