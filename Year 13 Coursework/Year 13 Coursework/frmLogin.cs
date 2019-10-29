@@ -63,7 +63,7 @@ namespace Year_13_Coursework
             }
 
             //Did we find a match?
-            if (Program.currentUser.currentName != "")
+            if (Program.currentUser.currentName == "")
             {
                 MessageBox.Show("Your username or password is incorrect", "failure");
                 clearUserInputs();

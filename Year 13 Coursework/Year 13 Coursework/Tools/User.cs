@@ -11,5 +11,12 @@ namespace Year_13_Coursework.Tools
         public string currentName = "";
         public string currentPassword = "";
         public string currentAvatar = "";
+
+        public void resetUser()
+        {
+            currentName = "";
+            currentPassword = "";
+            currentAvatar = "";
+        }
     }
 }

@@ -10,6 +10,7 @@ namespace Year_13_Coursework
     static class Program
     {
         public static User currentUser = new User();
+        public static int currentGame = 0;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

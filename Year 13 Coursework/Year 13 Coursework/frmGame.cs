@@ -10,18 +10,18 @@ using System.Windows.Forms;
 
 namespace Year_13_Coursework
 {
-    public partial class frmStartScreen : Form
+    public partial class frmGame : Form
     {
-        public frmStartScreen()
+        public frmGame()
         {
             InitializeComponent();
         }
 
-        private void BtnContinue_Click(object sender, EventArgs e)
+        public void moveToNextScreen()
         {
-            this.Hide();
-            Form moveToGameInfo = new frmGameInfo();
-            moveToGameInfo.Show();
+            this.Close();
+            Form moveToNextScreen = new frmGameInfo();
+            moveToNextScreen.Show();
         }
     }
 }

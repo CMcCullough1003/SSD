@@ -16,7 +16,10 @@ namespace Year_13_Coursework
     public partial class frmRegister : Form
     {
         private Files files = new Files();
+        private const int MINIMUM_PASSWORD_LENGTH = 4;
+        private const int MINIMUM_USERNAME_LENGTH = 4;
 
+        //Setting up the screen
         public frmRegister()
         {
             InitializeComponent();
@@ -45,9 +48,7 @@ namespace Year_13_Coursework
             pbxAvatar9.Tag = "sheep.png";
         }
 
-        private const int MINIMUM_PASSWORD_LENGTH = 4;
-        private const int MINIMUM_USERNAME_LENGTH = 4;
-
+        //On click methods
         private void button1_Click(object sender, EventArgs e)
         {
             string username = tbxUsername.Text;
@@ -92,7 +93,8 @@ namespace Year_13_Coursework
             }
 
             MessageBox.Show("Your registration was successful", "Success");
-            userDetails();
+            saveUserDetailsToFile();
+            saveAsCurrentUser();
             moveToStartScreen();
                         
         }
@@ -102,51 +104,6 @@ namespace Year_13_Coursework
             moveToLoginScreen();
         }
 
-        private void moveToStartScreen()
-        {
-            this.Hide();
-            Form MoveToStartScreen = new frmStartScreen();
-            MoveToStartScreen.Show();
-        }
-
-        private void moveToLoginScreen()
-        {
-            this.Hide();
-            Form MoveToLogin = new frmLogin();
-            MoveToLogin.Show();
-        }
-
-        private void clearPasswords()
-        {
-            tbxPassword.Clear();
-            tbxConfirmPassword.Clear();
-        }
-
-        private Boolean checkAllInputsProvided(string username, string password, string confirmPassword)
-        {
-            if (string.IsNullOrEmpty(username))
-            {
-                return true;
-            }
-
-            if (string.IsNullOrEmpty(password))
-            {
-                return true;
-            }
-
-            if (string.IsNullOrEmpty(confirmPassword))
-            {
-                return true;
-            }
-
-            return false;
-        }
-
-        private void userDetails()
-        {
-            string userDetails = tbxUsername.Text + FileConstants.USER_FILE_SEPARATOR + tbxPassword.Text + FileConstants.USER_FILE_SEPARATOR + pbxSelected.Tag;
-            files.appendToFile(FileConstants.USER_FILE_LOCATION, userDetails);
-        }
         private void PictureBox1_Click(object sender, EventArgs e)
         {
             pbxSelected.Image = pbxAvatar1.Image;
@@ -200,6 +157,62 @@ namespace Year_13_Coursework
         {
             pbxSelected.Image = pbxAvatar9.Image;
             pbxSelected.Tag = pbxAvatar9.Tag;
+        }
+
+        //Move to other screens
+        private void moveToStartScreen()
+        {
+            this.Hide();
+            Form MoveToStartScreen = new frmStartScreen();
+            MoveToStartScreen.Show();
+        }
+
+        private void moveToLoginScreen()
+        {
+            this.Hide();
+            Form MoveToLogin = new frmLogin();
+            MoveToLogin.Show();
+        }
+
+        //Input fields
+        private void clearPasswords()
+        {
+            tbxPassword.Clear();
+            tbxConfirmPassword.Clear();
+        }
+
+        private Boolean checkAllInputsProvided(string username, string password, string confirmPassword)
+        {
+            if (string.IsNullOrEmpty(username))
+            {
+                return true;
+            }
+
+            if (string.IsNullOrEmpty(password))
+            {
+                return true;
+            }
+
+            if (string.IsNullOrEmpty(confirmPassword))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        //Saving the user inputs
+        private void saveUserDetailsToFile()
+        {
+            string userDetails = tbxUsername.Text + FileConstants.USER_FILE_SEPARATOR + tbxPassword.Text + FileConstants.USER_FILE_SEPARATOR + pbxSelected.Tag;
+            files.appendToFile(FileConstants.USER_FILE_LOCATION, userDetails);
+        }
+
+        private void saveAsCurrentUser()
+        {
+            Program.currentUser.currentName = tbxUsername.Text;
+            Program.currentUser.currentPassword = tbxPassword.Text;
+            Program.currentUser.currentAvatar = pbxSelected.Tag.ToString();
         }
     }
 }

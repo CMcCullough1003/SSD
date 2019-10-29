@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.lsvLeaderboards = new System.Windows.Forms.ListView();
-            this.btnContinue = new System.Windows.Forms.Button();
-            this.btnBackToLogin = new System.Windows.Forms.Button();
             this.Player = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Score = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnContinue = new System.Windows.Forms.Button();
+            this.btnBackToLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lsvLeaderboards
@@ -47,6 +47,16 @@
             this.lsvLeaderboards.UseCompatibleStateImageBehavior = false;
             this.lsvLeaderboards.View = System.Windows.Forms.View.Details;
             // 
+            // Player
+            // 
+            this.Player.Text = "Player";
+            this.Player.Width = 179;
+            // 
+            // Score
+            // 
+            this.Score.Text = "Score";
+            this.Score.Width = 175;
+            // 
             // btnContinue
             // 
             this.btnContinue.BackColor = System.Drawing.Color.SaddleBrown;
@@ -59,6 +69,7 @@
             this.btnContinue.TabIndex = 5;
             this.btnContinue.Text = "Begin";
             this.btnContinue.UseVisualStyleBackColor = false;
+            this.btnContinue.Click += new System.EventHandler(this.BtnContinue_Click);
             // 
             // btnBackToLogin
             // 
@@ -72,16 +83,6 @@
             this.btnBackToLogin.TabIndex = 7;
             this.btnBackToLogin.Text = "Back";
             this.btnBackToLogin.UseVisualStyleBackColor = false;
-            // 
-            // Player
-            // 
-            this.Player.Text = "Player";
-            this.Player.Width = 179;
-            // 
-            // Score
-            // 
-            this.Score.Text = "Score";
-            this.Score.Width = 175;
             // 
             // frmStartScreen
             // 
