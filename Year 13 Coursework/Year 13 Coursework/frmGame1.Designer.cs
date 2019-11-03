@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnAnswer2 = new System.Windows.Forms.Button();
             this.btnAnswer1 = new System.Windows.Forms.Button();
             this.btnAnswer3 = new System.Windows.Forms.Button();
@@ -35,15 +36,13 @@
             this.lblTimer = new System.Windows.Forms.Label();
             this.lblScore = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.tmr1 = new System.Windows.Forms.Timer(this.components);
+            this.pbxThought = new System.Windows.Forms.PictureBox();
             this.pbxBubble3 = new System.Windows.Forms.PictureBox();
-            this.pbxBubble2 = new System.Windows.Forms.PictureBox();
-            this.pbxBubble1 = new System.Windows.Forms.PictureBox();
             this.pbxAvatar = new System.Windows.Forms.PictureBox();
             this.pbxCountry = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxThought)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBubble3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxBubble2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxBubble1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCountry)).BeginInit();
             this.SuspendLayout();
@@ -114,29 +113,30 @@
             this.lblTitle.TabIndex = 13;
             this.lblTitle.Text = "Title";
             // 
+            // tmr1
+            // 
+            this.tmr1.Interval = 1000;
+            this.tmr1.Tick += new System.EventHandler(this.Tmr1_Tick);
+            // 
+            // pbxThought
+            // 
+            this.pbxThought.Image = global::Year_13_Coursework.Properties.Resources.questionMark1;
+            this.pbxThought.Location = new System.Drawing.Point(74, 184);
+            this.pbxThought.Name = "pbxThought";
+            this.pbxThought.Size = new System.Drawing.Size(99, 83);
+            this.pbxThought.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxThought.TabIndex = 14;
+            this.pbxThought.TabStop = false;
+            // 
             // pbxBubble3
             // 
+            this.pbxBubble3.Image = global::Year_13_Coursework.Properties.Resources.thoughtBubble;
             this.pbxBubble3.Location = new System.Drawing.Point(12, 128);
             this.pbxBubble3.Name = "pbxBubble3";
-            this.pbxBubble3.Size = new System.Drawing.Size(235, 174);
+            this.pbxBubble3.Size = new System.Drawing.Size(235, 247);
+            this.pbxBubble3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxBubble3.TabIndex = 10;
             this.pbxBubble3.TabStop = false;
-            // 
-            // pbxBubble2
-            // 
-            this.pbxBubble2.Location = new System.Drawing.Point(168, 319);
-            this.pbxBubble2.Name = "pbxBubble2";
-            this.pbxBubble2.Size = new System.Drawing.Size(79, 74);
-            this.pbxBubble2.TabIndex = 9;
-            this.pbxBubble2.TabStop = false;
-            // 
-            // pbxBubble1
-            // 
-            this.pbxBubble1.Location = new System.Drawing.Point(132, 409);
-            this.pbxBubble1.Name = "pbxBubble1";
-            this.pbxBubble1.Size = new System.Drawing.Size(79, 74);
-            this.pbxBubble1.TabIndex = 8;
-            this.pbxBubble1.TabStop = false;
             // 
             // pbxAvatar
             // 
@@ -155,28 +155,16 @@
             this.pbxCountry.TabIndex = 0;
             this.pbxCountry.TabStop = false;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(629, 31);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
-            // 
             // frmGame1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 737);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.pbxThought);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.lblScore);
             this.Controls.Add(this.lblTimer);
             this.Controls.Add(this.pbxBubble3);
-            this.Controls.Add(this.pbxBubble2);
-            this.Controls.Add(this.pbxBubble1);
             this.Controls.Add(this.pbxAvatar);
             this.Controls.Add(this.btnAnswer4);
             this.Controls.Add(this.btnAnswer3);
@@ -184,11 +172,11 @@
             this.Controls.Add(this.btnAnswer2);
             this.Controls.Add(this.pbxCountry);
             this.Name = "frmGame1";
-            this.Text = "frmGame1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Game 1";
             this.Load += new System.EventHandler(this.FrmGame1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxThought)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBubble3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxBubble2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxBubble1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAvatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCountry)).EndInit();
             this.ResumeLayout(false);
@@ -204,12 +192,11 @@
         private System.Windows.Forms.Button btnAnswer3;
         private System.Windows.Forms.Button btnAnswer4;
         private System.Windows.Forms.PictureBox pbxAvatar;
-        private System.Windows.Forms.PictureBox pbxBubble1;
-        private System.Windows.Forms.PictureBox pbxBubble2;
         private System.Windows.Forms.PictureBox pbxBubble3;
         private System.Windows.Forms.Label lblTimer;
         private System.Windows.Forms.Label lblScore;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Timer tmr1;
+        private System.Windows.Forms.PictureBox pbxThought;
     }
 }

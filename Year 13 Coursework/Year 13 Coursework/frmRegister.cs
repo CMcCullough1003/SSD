@@ -214,5 +214,10 @@ namespace Year_13_Coursework
             Program.currentUser.currentPassword = tbxPassword.Text;
             Program.currentUser.currentAvatar = pbxSelected.Tag.ToString();
         }
+
+        private void FrmRegister_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

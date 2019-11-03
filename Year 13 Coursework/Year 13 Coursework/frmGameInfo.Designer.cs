@@ -37,9 +37,9 @@
             // btnStartGame
             // 
             this.btnStartGame.BackColor = System.Drawing.Color.SaddleBrown;
-            this.btnStartGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStartGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStartGame.ForeColor = System.Drawing.Color.White;
-            this.btnStartGame.Location = new System.Drawing.Point(219, 445);
+            this.btnStartGame.Location = new System.Drawing.Point(425, 449);
             this.btnStartGame.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnStartGame.Name = "btnStartGame";
             this.btnStartGame.Size = new System.Drawing.Size(174, 59);
@@ -51,7 +51,8 @@
             // lblGameInfo
             // 
             this.lblGameInfo.AutoSize = true;
-            this.lblGameInfo.Location = new System.Drawing.Point(34, 168);
+            this.lblGameInfo.ForeColor = System.Drawing.Color.Gray;
+            this.lblGameInfo.Location = new System.Drawing.Point(16, 168);
             this.lblGameInfo.Name = "lblGameInfo";
             this.lblGameInfo.Size = new System.Drawing.Size(90, 20);
             this.lblGameInfo.TabIndex = 7;
@@ -60,18 +61,21 @@
             // lblGameNumber
             // 
             this.lblGameNumber.AutoSize = true;
-            this.lblGameNumber.Location = new System.Drawing.Point(24, 34);
+            this.lblGameNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGameNumber.ForeColor = System.Drawing.Color.DimGray;
+            this.lblGameNumber.Location = new System.Drawing.Point(18, 97);
             this.lblGameNumber.Name = "lblGameNumber";
-            this.lblGameNumber.Size = new System.Drawing.Size(65, 20);
+            this.lblGameNumber.Size = new System.Drawing.Size(115, 32);
             this.lblGameNumber.TabIndex = 8;
-            this.lblGameNumber.Text = "Number";
+            this.lblGameNumber.Text = "Game 1";
             // 
             // lblGameTitle
             // 
             this.lblGameTitle.AutoSize = true;
-            this.lblGameTitle.Location = new System.Drawing.Point(279, 34);
+            this.lblGameTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGameTitle.Location = new System.Drawing.Point(12, 34);
             this.lblGameTitle.Name = "lblGameTitle";
-            this.lblGameTitle.Size = new System.Drawing.Size(38, 20);
+            this.lblGameTitle.Size = new System.Drawing.Size(100, 46);
             this.lblGameTitle.TabIndex = 9;
             this.lblGameTitle.Text = "Title";
             // 
@@ -79,6 +83,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(612, 522);
             this.Controls.Add(this.lblGameTitle);
             this.Controls.Add(this.lblGameNumber);
@@ -86,7 +91,7 @@
             this.Controls.Add(this.btnStartGame);
             this.Name = "frmGameInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmGame1Info";
+            this.Text = "Game Information";
             this.Load += new System.EventHandler(this.FrmGame1Info_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

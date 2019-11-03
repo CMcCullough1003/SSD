@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Year_13_Coursework.Tools;
 
 namespace Year_13_Coursework
 {
@@ -20,15 +21,7 @@ namespace Year_13_Coursework
         private void FrmGame1Info_Load(object sender, EventArgs e)
         {
             Program.currentGame++;
-            switch (Program.currentGame)
-            {
-                case 1: game1Information(); break;
-                case 2: game2Information(); break;
-                case 3: game3Information(); break;
-                case 4: game4Information(); break;
-                case 5: game5Information(); break;
-                case 6: game6Information(); break;
-            }
+            fillLabels();
         }
 
         private void BtnStartGame_Click(object sender, EventArgs e)
@@ -44,46 +37,13 @@ namespace Year_13_Coursework
             }
         }
 
-        private void game1Information()
+        private void fillLabels()
         {
-            lblGameNumber.Text = "Game 1";
-            lblGameTitle.Text = "Game Title 1";
-            lblGameInfo.Text = "1";
-        }
+            GameInfo gameInfo = new GameInfo();
 
-        private void game2Information()
-        {
-            lblGameNumber.Text = "Game 2";
-            lblGameTitle.Text = "Game Title 2";
-            lblGameInfo.Text = "2";
-        }
-
-        private void game3Information()
-        {
-            lblGameNumber.Text = "Game 3";
-            lblGameTitle.Text = "Game Title 3";
-            lblGameInfo.Text = "3";
-        }
-
-        private void game4Information()
-        {
-            lblGameNumber.Text = "Game 4";
-            lblGameTitle.Text = "Game Title 4";
-            lblGameInfo.Text = "4";
-        }
-
-        private void game5Information()
-        {
-            lblGameNumber.Text = "Game 5";
-            lblGameTitle.Text = "Game Title 5";
-            lblGameInfo.Text = "5";
-        }
-
-        private void game6Information()
-        {
-            lblGameNumber.Text = "Game 6";
-            lblGameTitle.Text = "Game Title 6";
-            lblGameInfo.Text = "6";
+            lblGameNumber.Text = gameInfo.gameNumber();
+            lblGameTitle.Text = gameInfo.gameName();
+            lblGameInfo.Text = gameInfo.gameDescription();
         }
 
         private void moveToGame1()

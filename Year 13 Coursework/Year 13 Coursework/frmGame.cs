@@ -23,5 +23,19 @@ namespace Year_13_Coursework
             Form moveToNextScreen = new frmGameInfo();
             moveToNextScreen.Show();
         }
+
+        public void saveScore(int score)
+        {
+            switch (Program.currentGame)
+            {
+                case 1: Program.currentUser.game1Score = score; break;
+                case 2: Program.currentUser.game2Score = score; break;
+                case 3: Program.currentUser.game3Score = score; break;
+                case 4: Program.currentUser.game4Score = score; break;
+                case 5: Program.currentUser.game5Score = score; break;
+                case 6: Program.currentUser.game6Score = score; break;
+            }
+
+        }
     }
 }

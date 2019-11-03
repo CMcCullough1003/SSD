@@ -305,6 +305,7 @@
             this.Name = "frmRegister";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmRegister";
+            this.Load += new System.EventHandler(this.FrmRegister_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxAvatar7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAvatar8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAvatar9)).EndInit();
