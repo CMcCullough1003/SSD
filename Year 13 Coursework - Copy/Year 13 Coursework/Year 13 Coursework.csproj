@@ -182,6 +182,7 @@
     <None Include="Resources\questionMark1.png" />
     <None Include="Resources\questionMark2.png" />
     <None Include="Resources\thoughtBubble.png" />
+    <Content Include="Resources\albania.jpg" />
     <Content Include="Resources\belarus.jpg" />
     <Content Include="Resources\denmark.jpg" />
     <Content Include="Resources\finland.jpg" />

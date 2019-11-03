@@ -28,8 +28,6 @@ namespace Year_13_Coursework
         private void FrmGame1_Load(object sender, EventArgs e)
         {
             pbxAvatar = getAvatarImage(Program.currentUser.currentAvatar);
-
-            Image[] array = new Image[] { Properties.Resources.};
         }
 
         private void PbxAvatar_Click(object sender, EventArgs e)

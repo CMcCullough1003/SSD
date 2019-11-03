@@ -1,0 +1,6 @@
+﻿Settings:
+Title - ms sans serif, bold, 20, black
+Subtitle - ms sans serif, 14, dim gray
+Text - ms sans serif, 8, grey
+Button - ms sans serif, 14, white, saddleBrown
+Form - white
