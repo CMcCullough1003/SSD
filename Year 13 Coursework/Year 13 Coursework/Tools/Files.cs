@@ -32,5 +32,11 @@ namespace Year_13_Coursework.Tools
                 writer.WriteLine(details);
             }
         }
+
+        public string removeExtensions(string fileName)
+        {
+            string output = fileName.Replace(".jpg", "").Replace(".png", "");
+            return output;
+        }
     }
 }

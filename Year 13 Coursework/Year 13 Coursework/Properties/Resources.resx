@@ -118,58 +118,148 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="cow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sheep" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sheep.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="elephant" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\elephant.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="zebra" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\zebra.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="hiclipart.com-id_gnwvp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\hiclipart.com-id_gnwvp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="chicken" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\chicken.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ghost" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ghost.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="earth-spinning-rotating-animation-14" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\earth-spinning-rotating-animation-14.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="questionMark2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\questionMark2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="thoughtBubble" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\thoughtBubble.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="kangaroo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\kangaroo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bee" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="dog" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dog.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="earth-cartoon-clip-art-earth (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\earth-cartoon-clip-art-earth (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="switzerland" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\switzerland.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ceramics-stone-background-texture_78636-59" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ceramics-stone-background-texture_78636-59.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="iceland" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iceland.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sweden" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sweden.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="serbia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\serbia.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="pig" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pig.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="X" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\X.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="greece" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\greece.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="questionMark1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\questionMark1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="alarmClock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alarmClock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="turkey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\turkey.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="denmark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\denmark1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="thoughtBubble3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\thoughtBubble3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bee" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="earth-spinning-rotating-animation-14" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\earth-spinning-rotating-animation-14.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="thoughtBubble2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\thoughtBubble2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="questionMark2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\questionMark2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="portugal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\portugal.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="zebra" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\zebra.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="poland" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\poland.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="germany" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\germany.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="earth-cartoon-clip-art-earth (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\earth-cartoon-clip-art-earth (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="france" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\france.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sheep" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sheep.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Untitled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Untitled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="poland1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\poland1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dog" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dog.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ireland" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ireland.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="norway" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\norway.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="turkey1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\turkey1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="russia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\russia.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="finland" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\finland.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="spain" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\spain.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hiclipart.com-id_gnwvp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hiclipart.com-id_gnwvp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ghost" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ghost.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ukraine" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ukraine.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="globe2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\globe2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="kangaroo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kangaroo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chicken" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chicken.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="thoughtBubble1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\thoughtBubble1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="italy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\italy.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="belarus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\belarus1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="albania" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\albania1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="triceratops" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\triceratops.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="questionMark1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\questionMark1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="elephant" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\elephant.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="thoughtBubble" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\thoughtBubble.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="questionMark21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\questionMark21.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

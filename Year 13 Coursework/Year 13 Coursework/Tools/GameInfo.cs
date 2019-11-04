@@ -14,7 +14,7 @@ namespace Year_13_Coursework.Tools
             string response = "";
             switch (Program.currentGame)
             {
-                case 1: response = "Game 1"; break;
+                case 1: response = "Country Outline Quiz"; break;
                 case 2: response = "Game 2"; break;
                 case 3: response = "Game 3"; break;
                 case 4: response = "Game 4"; break;
@@ -44,7 +44,7 @@ namespace Year_13_Coursework.Tools
             string response = "";
             switch (Program.currentGame)
             {
-                case 1: response = "afhfrbdbckjfweabchjdbcajhevcmdbcjhba\n cmebjx smc jhe SXCDCDBHFBREVBJBhfvbkjdfbvkjrbe  bkr vkr fjhbjr hbrfvjh "; break;
+                case 1: response = "a"; break;
                 case 2: response = "b"; break;
                 case 3: response = "c"; break;
                 case 4: response = "d"; break;

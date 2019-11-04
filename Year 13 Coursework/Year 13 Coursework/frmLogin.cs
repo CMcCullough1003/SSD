@@ -40,24 +40,28 @@ namespace Year_13_Coursework
                 return;
             }
 
-            List<string> users = getUsers();
+
+            //Get the list of all the users 
+            List<string> userList = getUsers();
 
             //Loop through all of the users from the file
-            foreach (string element in users)
+            foreach (string user in userList)
             {
                 //Split up the user details
-                List<string> userDetails = element.Split(FileConstants.USER_FILE_SEPARATOR).ToList();
+                List<string> userDetails = user.Split(FileConstants.USER_FILE_SEPARATOR).ToList();
 
                 //Get the users details from the split up string
-                string usernameFile = userDetails[FileConstants.USER_FILE_NAME_POSITION];
-                string passwordFile = userDetails[FileConstants.USER_FILE_PASSWORD_POSITION];
+                string usernameFromFile = userDetails[FileConstants.USER_FILE_NAME_POSITION];
+                string passwordFromFile = userDetails[FileConstants.USER_FILE_PASSWORD_POSITION];
+                string avatarFromFile = userDetails[FileConstants.USER_FILE_AVATAR_POSITION];
 
                 //Check if the details from the file are the same as entered on screen
-                if (usernameFile == usernameInput && passwordFile == passwordInput)
+                if (usernameFromFile == usernameInput && passwordFromFile == passwordInput)
                 {
                     //We have found a match - Set the global user details
-                    Program.currentUser.currentName = usernameFile;
-                    Program.currentUser.currentPassword = passwordFile;
+                    Program.currentUser.currentName = usernameFromFile;
+                    Program.currentUser.currentPassword = passwordFromFile;
+                    Program.currentUser.currentAvatar = avatarFromFile;
                     break;
                 }   
             }

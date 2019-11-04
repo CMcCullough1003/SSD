@@ -37,5 +37,10 @@ namespace Year_13_Coursework
             }
 
         }
+
+        private void FrmGame_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
