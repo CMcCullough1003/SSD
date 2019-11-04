@@ -177,10 +177,10 @@
             // pbxGlobe
             // 
             this.pbxGlobe.Image = global::Year_13_Coursework.Properties.Resources.globe2;
-            this.pbxGlobe.Location = new System.Drawing.Point(93, 60);
+            this.pbxGlobe.Location = new System.Drawing.Point(65, 30);
             this.pbxGlobe.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pbxGlobe.Name = "pbxGlobe";
-            this.pbxGlobe.Size = new System.Drawing.Size(233, 191);
+            this.pbxGlobe.Size = new System.Drawing.Size(261, 250);
             this.pbxGlobe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxGlobe.TabIndex = 14;
             this.pbxGlobe.TabStop = false;

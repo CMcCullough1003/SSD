@@ -7,6 +7,7 @@ using System.IO;
 
 namespace Year_13_Coursework.Tools
 {
+    //Use this class for creating files, opening files and adding to files
     public class Files
     {
         public Boolean checkFileExists(string fileName)

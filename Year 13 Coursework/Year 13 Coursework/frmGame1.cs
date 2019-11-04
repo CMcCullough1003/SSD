@@ -88,7 +88,6 @@ namespace Year_13_Coursework
             if (btnAnswer1.Text == selectedMap)
             {
                 correctGuess();
-                btnAnswer1.BackColor = System.Drawing.Color.LawnGreen;
             }
             else
             {
@@ -102,7 +101,6 @@ namespace Year_13_Coursework
             if (btnAnswer2.Text == selectedMap)
             {
                 correctGuess();
-                btnAnswer2.BackColor = System.Drawing.Color.LawnGreen;
             }
             else
             {
@@ -115,12 +113,10 @@ namespace Year_13_Coursework
             if (btnAnswer3.Text == selectedMap)
             {
                 correctGuess();
-                btnAnswer3.BackColor = System.Drawing.Color.LawnGreen;
             }
             else
             {
                 incorrectGuess();
-
             }
         }
 
@@ -129,7 +125,6 @@ namespace Year_13_Coursework
             if (btnAnswer4.Text == selectedMap)
             {
                 correctGuess();
-                btnAnswer4.BackColor = System.Drawing.Color.LawnGreen;
             }
             else
             {
@@ -149,6 +144,29 @@ namespace Year_13_Coursework
         {
             Form moveToMenu = new frmGameMenu();
             moveToMenu.Show();
+        }
+
+        private void highlightCorrectAnswer()
+        {
+            if (btnAnswer1.Text == selectedMap)
+            {
+                btnAnswer1.BackColor = System.Drawing.Color.LawnGreen;
+            }
+
+            if (btnAnswer2.Text == selectedMap)
+            {
+                btnAnswer2.BackColor = System.Drawing.Color.LawnGreen;
+            }
+
+            if (btnAnswer3.Text == selectedMap)
+            {
+                btnAnswer3.BackColor = System.Drawing.Color.LawnGreen;
+            }
+
+            if (btnAnswer4.Text == selectedMap)
+            {
+                btnAnswer4.BackColor = System.Drawing.Color.LawnGreen;
+            }
         }
 
         private void disableAllButtons()
@@ -222,6 +240,7 @@ namespace Year_13_Coursework
             saveScore(score);
             tmr1.Stop();
             disableAllButtons();
+            highlightCorrectAnswer();
 
         }
 
@@ -230,6 +249,7 @@ namespace Year_13_Coursework
             pbxThought.Image = Properties.Resources.X;
             tmr1.Stop();
             disableAllButtons();
+            highlightCorrectAnswer();
 
         }
 
