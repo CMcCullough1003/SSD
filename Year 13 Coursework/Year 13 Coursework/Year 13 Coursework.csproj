@@ -45,6 +45,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\FileConstants.cs" />
+    <Compile Include="frmGame3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGame3.Designer.cs">
+      <DependentUpon>frmGame3.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGame.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -56,6 +62,18 @@
     </Compile>
     <Compile Include="frmGame1.Designer.cs">
       <DependentUpon>frmGame1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGame2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGame2.Designer.cs">
+      <DependentUpon>frmGame2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGame4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGame4.Designer.cs">
+      <DependentUpon>frmGame4.cs</DependentUpon>
     </Compile>
     <Compile Include="frmGameInfo.cs">
       <SubType>Form</SubType>
@@ -94,6 +112,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Tools\Avatars.cs" />
     <Compile Include="Tools\Files.cs" />
     <Compile Include="Tools\GameInfo.cs" />
     <Compile Include="Tools\User.cs" />
@@ -102,6 +121,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmGame1.resx">
       <DependentUpon>frmGame1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGame2.resx">
+      <DependentUpon>frmGame2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGame3.resx">
+      <DependentUpon>frmGame3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGame4.resx">
+      <DependentUpon>frmGame4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGameInfo.resx">
       <DependentUpon>frmGameInfo.cs</DependentUpon>
@@ -179,6 +207,35 @@
     <None Include="Resources\sheep.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\gallows6.jpg" />
+    <None Include="Resources\gallows5.jpg" />
+    <None Include="Resources\gallows4.jpg" />
+    <None Include="Resources\gallows3.jpg" />
+    <None Include="Resources\gallows2.jpg" />
+    <None Include="Resources\gallows1.jpg" />
+    <None Include="Resources\gallows.jpg" />
+    <None Include="Resources\redFlag.png" />
+    <None Include="Resources\sweden3.jpg" />
+    <None Include="Resources\sweden2.jpg" />
+    <None Include="Resources\sweden1.jpg" />
+    <None Include="Resources\norway3.jpg" />
+    <None Include="Resources\norway2.jpg" />
+    <None Include="Resources\norway1.jpg" />
+    <None Include="Resources\morrocco3.jpg" />
+    <None Include="Resources\morrocco2.jpg" />
+    <None Include="Resources\morrocco1.jpg" />
+    <None Include="Resources\greece3.jpg" />
+    <None Include="Resources\greece2.jpg" />
+    <None Include="Resources\greece1.jpg" />
+    <None Include="Resources\finland3.jpg" />
+    <None Include="Resources\finland2.jpg" />
+    <None Include="Resources\finland1.jpg" />
+    <None Include="Resources\denmark3.jpg" />
+    <None Include="Resources\denmark2.jpg" />
+    <None Include="Resources\denmark11.jpg" />
+    <None Include="Resources\canada3.jpg" />
+    <None Include="Resources\canada2.jpg" />
+    <None Include="Resources\canada1.jpg" />
     <None Include="Resources\questionMark21.png" />
     <None Include="Resources\thoughtBubble3.png" />
     <None Include="Resources\thoughtBubble2.png" />

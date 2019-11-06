@@ -16,6 +16,7 @@ namespace Year_13_Coursework
     public partial class frmGame1 : frmGame
     {
         private string selectedMap = "";
+        private int gameCount = 0;
         string[] possibleAnswers = { "", "", "", "" };
 
         private const string albania = "albania.jpg";
@@ -40,48 +41,55 @@ namespace Year_13_Coursework
         private const string ukraine = "ukraine.jpg";
         private int score = 0;
 
-        private int counter = 10;
+        private int counter = 30;
         private string[] countryArray = new string[] { albania, belarus, denmark, finland, france, germany, greece, iceland, ireland, italy, norway, poland, portugal, russia, serbia, spain, sweden, switzerland, turkey, ukraine };
         private Files files = new Files();
 
         public frmGame1()
         {
             InitializeComponent();
-
-            tmr1 = new System.Windows.Forms.Timer();
-            tmr1.Tick += new EventHandler(tmr1_Tick);
-            tmr1.Interval = 1000;
-            tmr1.Start();
-            lblTimerCount.Text = counter.ToString();
         }
 
+        //The form is created
         private void FrmGame1_Load(object sender, EventArgs e)
         {
+            setUpTimer();
             displayAvatar();
-            displayMap();
-            generateWrongAnswers();
-            removeAllExtensions();
-            displayAllButtons();
             setTitle();
+            playGame();
         }
 
+        //The form is shown after frmMenu closes
+        private void FrmGame1_Activated(object sender, EventArgs e)
+        {
+            tmr1.Start();
+        }
+
+        //The timer countdown
         private void tmr1_Tick(object sender, EventArgs e)
         {
-            counter--;
-            if (counter == 0)
-            {
-                tmr1.Stop();
-                pbxThought.Image = Properties.Resources.alarmClock;
-            }
-            lblTimerCount.Text = counter.ToString();
+            displayCountdown();
         }
 
-       /* CLICK METHODS ======================================================================*/
-
-        private void Button1_Click(object sender, EventArgs e)
+        //Stops the form being moved so the menu form is always on top of the game
+        protected override void WndProc(ref Message message)
         {
-            moveToNextScreen();
+            const int WM_SYSCOMMAND = 0x0112;
+            const int SC_MOVE = 0xF010;
+
+            switch (message.Msg)
+            {
+                case WM_SYSCOMMAND:
+                    int command = message.WParam.ToInt32() & 0xfff0;
+                    if (command == SC_MOVE)
+                        return;
+                    break;
+            }
+
+            base.WndProc(ref message);
         }
+
+        /* BUTTON CLICKS  ======================================================================*/
 
         private void BtnAnswer1_Click(object sender, EventArgs e)
         {
@@ -140,6 +148,41 @@ namespace Year_13_Coursework
 
         /* MY METHODS ======================================================================*/
 
+        private void playGame()
+        {
+            if (gameCount > 0)
+            {
+                System.Threading.Thread.Sleep(500);
+            }
+
+            if (gameCount == 6)
+            {
+                moveToNextScreen();
+            }
+            resetGame();
+            displayMap();
+            generateWrongAnswers();
+            removeAllExtensions();
+            displayAllButtons();
+        }
+
+        private void resetGame()
+        {
+            enableAllButtons();
+            btnAnswer1.BackColor = System.Drawing.Color.SaddleBrown;
+            btnAnswer2.BackColor = System.Drawing.Color.SaddleBrown;
+            btnAnswer3.BackColor = System.Drawing.Color.SaddleBrown;
+            btnAnswer4.BackColor = System.Drawing.Color.SaddleBrown;
+            selectedMap = "";
+            possibleAnswers[0] = "";
+            possibleAnswers[1] = "";
+            possibleAnswers[2] = "";
+            possibleAnswers[3] = "";
+            pbxThought.Image = Properties.Resources.questionMark2;
+            gameCount++;
+
+        }
+
         private void moveToMenuScreen()
         {
             Form moveToMenu = new frmGameMenu();
@@ -169,6 +212,26 @@ namespace Year_13_Coursework
             }
         }
 
+        private void setUpTimer()
+        {
+            tmr1 = new System.Windows.Forms.Timer();
+            tmr1.Tick += new EventHandler(tmr1_Tick);
+            tmr1.Interval = 1000;
+            tmr1.Start();
+            lblTimerCount.Text = counter.ToString();
+        }
+
+        private void displayCountdown()
+        {
+            counter--;
+            if (counter == 0)
+            {
+                tmr1.Stop();
+                pbxThought.Image = Properties.Resources.alarmClock;
+            }
+            lblTimerCount.Text = counter.ToString();
+        }
+
         private void disableAllButtons()
         {
             btnAnswer1.Enabled = false;
@@ -176,7 +239,15 @@ namespace Year_13_Coursework
             btnAnswer3.Enabled = false;
             btnAnswer4.Enabled = false;
             btnHelp.Enabled = false;
-            
+        }
+
+        private void enableAllButtons()
+        {
+            btnAnswer1.Enabled = true;
+            btnAnswer2.Enabled = true;
+            btnAnswer3.Enabled = true;
+            btnAnswer4.Enabled = true;
+            btnHelp.Enabled = true;
         }
 
         private void setTitle()
@@ -238,48 +309,27 @@ namespace Year_13_Coursework
             score++;
             lblScoreCount.Text = score.ToString();
             saveScore(score);
-            tmr1.Stop();
             disableAllButtons();
             highlightCorrectAnswer();
-
+            playGame();
         }
 
         private void incorrectGuess()
         {
             pbxThought.Image = Properties.Resources.X;
-            tmr1.Stop();
             disableAllButtons();
             highlightCorrectAnswer();
+            playGame();
 
         }
 
         private void displayAvatar()
         {
-            pbxAvatar.Image = getAvatarImage(Program.currentUser.currentAvatar);
+            Avatars avatar = new Avatars();
+            pbxAvatar.Image = avatar.getAvatarImage(Program.currentUser.currentAvatar);
         }
 
-        //pass in the filename of the current users avatar
-        private Image getAvatarImage(string filename)
-        {
-            //default image so never returning a null
-            Image image = Properties.Resources.bee;
-            switch (filename)
-            {
-                case "bee.png": image = Properties.Resources.bee; break;
-                case "chicken.png": image = Properties.Resources.chicken; break;
-                case "elephant.png": image = Properties.Resources.elephant; break;
-                case "cow.png": image = Properties.Resources.cow; break;
-                case "pig.png": image = Properties.Resources.pig; break;
-                case "triceratops.png": image = Properties.Resources.triceratops; break;
-                case "dog.png": image = Properties.Resources.dog; break;
-                case "ghost.png": image = Properties.Resources.ghost; break;
-                case "sheep.png": image = Properties.Resources.sheep; break;
-            }
-            //switch on the name of the filename 
-            //assign the image to the variable
-            return image;
-        }
-
+       
         private void displayMap()
         {
             Random random = new Random();
@@ -310,5 +360,7 @@ namespace Year_13_Coursework
                 case ukraine: pbxCountry.Image = Properties.Resources.ukraine; break;
             }
         }
+
+
     }
 }

@@ -55,14 +55,23 @@ namespace Year_13_Coursework
 
         private void moveToGame2()
         {
+            this.Hide();
+            Form MoveToGame2 = new frmGame2();
+            MoveToGame2.Show();
         }
 
         private void moveToGame3()
         {
+            this.Hide();
+            Form MoveToGame3 = new frmGame3();
+            MoveToGame3.Show();
         }
 
         private void moveToGame4()
         {
+            this.Hide();
+            Form MoveToGame4 = new frmGame4();
+            MoveToGame4.Show();
         }
 
         private void moveToGame5()

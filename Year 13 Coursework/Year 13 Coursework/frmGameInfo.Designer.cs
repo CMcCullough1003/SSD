@@ -39,7 +39,7 @@
             this.btnStartGame.BackColor = System.Drawing.Color.SaddleBrown;
             this.btnStartGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStartGame.ForeColor = System.Drawing.Color.White;
-            this.btnStartGame.Location = new System.Drawing.Point(425, 449);
+            this.btnStartGame.Location = new System.Drawing.Point(746, 664);
             this.btnStartGame.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnStartGame.Name = "btnStartGame";
             this.btnStartGame.Size = new System.Drawing.Size(174, 59);
@@ -84,7 +84,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(612, 522);
+            this.ClientSize = new System.Drawing.Size(933, 737);
             this.Controls.Add(this.lblGameTitle);
             this.Controls.Add(this.lblGameNumber);
             this.Controls.Add(this.lblGameInfo);

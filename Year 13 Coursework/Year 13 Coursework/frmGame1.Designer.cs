@@ -235,6 +235,7 @@
             this.Name = "frmGame1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Game 1";
+            this.Activated += new System.EventHandler(this.FrmGame1_Activated);
             this.Load += new System.EventHandler(this.FrmGame1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxThought)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBubble3)).EndInit();

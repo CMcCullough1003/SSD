@@ -38,7 +38,7 @@
             // 
             this.lblGameTitle.AutoSize = true;
             this.lblGameTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGameTitle.Location = new System.Drawing.Point(13, 24);
+            this.lblGameTitle.Location = new System.Drawing.Point(16, 27);
             this.lblGameTitle.Name = "lblGameTitle";
             this.lblGameTitle.Size = new System.Drawing.Size(100, 46);
             this.lblGameTitle.TabIndex = 13;
@@ -49,7 +49,7 @@
             this.lblGameNumber.AutoSize = true;
             this.lblGameNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGameNumber.ForeColor = System.Drawing.Color.DimGray;
-            this.lblGameNumber.Location = new System.Drawing.Point(19, 87);
+            this.lblGameNumber.Location = new System.Drawing.Point(22, 90);
             this.lblGameNumber.Name = "lblGameNumber";
             this.lblGameNumber.Size = new System.Drawing.Size(115, 32);
             this.lblGameNumber.TabIndex = 12;
@@ -59,7 +59,7 @@
             // 
             this.lblGameInfo.AutoSize = true;
             this.lblGameInfo.ForeColor = System.Drawing.Color.Gray;
-            this.lblGameInfo.Location = new System.Drawing.Point(17, 158);
+            this.lblGameInfo.Location = new System.Drawing.Point(20, 161);
             this.lblGameInfo.Name = "lblGameInfo";
             this.lblGameInfo.Size = new System.Drawing.Size(90, 20);
             this.lblGameInfo.TabIndex = 11;
@@ -70,7 +70,7 @@
             this.btnResumeGame.BackColor = System.Drawing.Color.SaddleBrown;
             this.btnResumeGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnResumeGame.ForeColor = System.Drawing.Color.White;
-            this.btnResumeGame.Location = new System.Drawing.Point(426, 439);
+            this.btnResumeGame.Location = new System.Drawing.Point(746, 664);
             this.btnResumeGame.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnResumeGame.Name = "btnResumeGame";
             this.btnResumeGame.Size = new System.Drawing.Size(174, 59);
@@ -83,12 +83,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(612, 522);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(933, 737);
             this.Controls.Add(this.lblGameTitle);
             this.Controls.Add(this.lblGameNumber);
             this.Controls.Add(this.lblGameInfo);
             this.Controls.Add(this.btnResumeGame);
             this.Name = "frmGameMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmGameMenu";
             this.Load += new System.EventHandler(this.FrmGameMenu_Load);
             this.ResumeLayout(false);
