@@ -216,6 +216,7 @@
     <None Include="Resources\sheep.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\questionMark11.png" />
     <None Include="Resources\yacht1.png" />
     <None Include="Resources\yacht.png" />
     <None Include="Resources\boat.png" />

@@ -76,7 +76,7 @@
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Microsoft PhagsPa", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.ForeColor = System.Drawing.Color.DimGray;
-            this.lblUsername.Location = new System.Drawing.Point(55, 146);
+            this.lblUsername.Location = new System.Drawing.Point(55, 136);
             this.lblUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(146, 36);
@@ -88,7 +88,7 @@
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Microsoft PhagsPa", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.ForeColor = System.Drawing.Color.DimGray;
-            this.lblPassword.Location = new System.Drawing.Point(64, 209);
+            this.lblPassword.Location = new System.Drawing.Point(64, 204);
             this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(137, 36);
@@ -120,7 +120,7 @@
             // tbxPassword
             // 
             this.tbxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxPassword.Location = new System.Drawing.Point(216, 202);
+            this.tbxPassword.Location = new System.Drawing.Point(216, 197);
             this.tbxPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbxPassword.Name = "tbxPassword";
             this.tbxPassword.PasswordChar = '*';
@@ -130,7 +130,7 @@
             // tbxUsername
             // 
             this.tbxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxUsername.Location = new System.Drawing.Point(215, 141);
+            this.tbxUsername.Location = new System.Drawing.Point(215, 131);
             this.tbxUsername.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbxUsername.Name = "tbxUsername";
             this.tbxUsername.Size = new System.Drawing.Size(420, 53);

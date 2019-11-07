@@ -228,6 +228,9 @@ namespace Year_13_Coursework
             {
                 tmr1.Stop();
                 pbxThought.Image = Properties.Resources.alarmClock;
+                System.Threading.Thread.Sleep(500);
+                moveToNextScreen();
+
             }
             lblTimerCount.Text = counter.ToString();
         }

@@ -184,7 +184,7 @@
             // 
             this.pbxYacht.BackColor = System.Drawing.Color.Transparent;
             this.pbxYacht.Image = global::Year_13_Coursework.Properties.Resources.yacht;
-            this.pbxYacht.Location = new System.Drawing.Point(574, 123);
+            this.pbxYacht.Location = new System.Drawing.Point(574, 122);
             this.pbxYacht.Name = "pbxYacht";
             this.pbxYacht.Size = new System.Drawing.Size(99, 96);
             this.pbxYacht.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
