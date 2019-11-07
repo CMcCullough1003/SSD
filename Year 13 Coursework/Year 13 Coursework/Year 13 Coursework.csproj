@@ -45,6 +45,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\FileConstants.cs" />
+    <Compile Include="frmGame5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGame5.Designer.cs">
+      <DependentUpon>frmGame5.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGame3.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,9 @@
     <Compile Include="Tools\Files.cs" />
     <Compile Include="Tools\GameInfo.cs" />
     <Compile Include="Tools\User.cs" />
+    <EmbeddedResource Include="frmGame5.resx">
+      <DependentUpon>frmGame5.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmGame.resx">
       <DependentUpon>frmGame.cs</DependentUpon>
     </EmbeddedResource>
@@ -207,6 +216,11 @@
     <None Include="Resources\sheep.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\yacht1.png" />
+    <None Include="Resources\yacht.png" />
+    <None Include="Resources\boat.png" />
+    <None Include="Resources\sea.png" />
+    <None Include="Resources\sky.png" />
     <None Include="Resources\gallows6.jpg" />
     <None Include="Resources\gallows5.jpg" />
     <None Include="Resources\gallows4.jpg" />

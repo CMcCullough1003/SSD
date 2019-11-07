@@ -11,17 +11,18 @@ using Year_13_Coursework.Tools;
 
 namespace Year_13_Coursework
 {
-    public partial class frmGame4 : frmGame
+    public partial class frmGame5 : frmGame
     {
+
         private int counter = 30;
 
-        public frmGame4()
+        public frmGame5()
         {
             InitializeComponent();
         }
 
         //The form is created
-        private void FrmGame4_Load(object sender, EventArgs e)
+        private void FrmGame5_Load(object sender, EventArgs e)
         {
             setUpTimer();
             displayAvatar();
@@ -30,17 +31,15 @@ namespace Year_13_Coursework
         }
 
         //The form is shown after frmMenu closes
-        private void FrmGame4_Activated(object sender, EventArgs e)
+        private void FrmGame5_Activated(object sender, EventArgs e)
         {
             timer1.Start();
         }
 
-        //The timer countdown
         private void Timer1_Tick(object sender, EventArgs e)
         {
             displayCountdown();
         }
-
 
         //Stops the form being moved so the menu form is always on top of the game
         protected override void WndProc(ref Message message)
@@ -60,142 +59,106 @@ namespace Year_13_Coursework
             base.WndProc(ref message);
         }
 
+
         /* BUTTON CLICKS  ======================================================================*/
 
-
-        private void LblA_Click(object sender, EventArgs e)
-        {
-            lblA.BackColor = System.Drawing.Color.Plum;
-            lblA.ForeColor = System.Drawing.Color.Red;
-            lblA.Enabled = false;
-        }
-
-        private void LblB_Click(object sender, EventArgs e)
+        private void LblSeaOfStorms_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void LblC_Click(object sender, EventArgs e)
+        private void LblPiSea_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void LblD_Click(object sender, EventArgs e)
+        private void LblTiSea_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void LblE_Click(object sender, EventArgs e)
+        private void LblSiSea_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void LblF_Click(object sender, EventArgs e)
+        private void LblBrysSea_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void LblG_Click(object sender, EventArgs e)
+        private void LblSaltonSea_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void LblH_Click(object sender, EventArgs e)
+        private void LblBrusselSea_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void LblI_Click(object sender, EventArgs e)
+        private void LblArafuraSea_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void LblJ_Click(object sender, EventArgs e)
+        private void LblBoySea_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void LblK_Click(object sender, EventArgs e)
+        private void LblWeddellSea_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void LblL_Click(object sender, EventArgs e)
+        private void LblBadSea_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void LblM_Click(object sender, EventArgs e)
+        private void LblTasmanSea_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void LblN_Click(object sender, EventArgs e)
+        private void LblOtisSea_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void LblO_Click(object sender, EventArgs e)
+        private void LblDylanSea_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void LblP_Click(object sender, EventArgs e)
+        private void LblSeaOfPlato_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void LblQ_Click(object sender, EventArgs e)
+        private void LblEltonSea_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void LblR_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LblS_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LblT_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LblU_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LblV_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LblW_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LblX_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LblY_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LblZ_Click(object sender, EventArgs e)
+        private void LblTempleSea_Click(object sender, EventArgs e)
         {
 
         }
 
         private void BtnHelp_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            moveToMenuScreen();
+        }
+
+        private void BtnSubmitAnswer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnClear_Click(object sender, EventArgs e)
         {
 
         }

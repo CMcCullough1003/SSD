@@ -103,6 +103,16 @@ namespace Year_13_Coursework.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap boat {
+            get {
+                object obj = ResourceManager.GetObject("boat", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap canada1 {
             get {
                 object obj = ResourceManager.GetObject("canada1", resourceCulture);
@@ -643,6 +653,16 @@ namespace Year_13_Coursework.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap sea {
+            get {
+                object obj = ResourceManager.GetObject("sea", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap serbia {
             get {
                 object obj = ResourceManager.GetObject("serbia", resourceCulture);
@@ -656,6 +676,16 @@ namespace Year_13_Coursework.Properties {
         internal static System.Drawing.Bitmap sheep {
             get {
                 object obj = ResourceManager.GetObject("sheep", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sky {
+            get {
+                object obj = ResourceManager.GetObject("sky", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -816,6 +846,26 @@ namespace Year_13_Coursework.Properties {
         internal static System.Drawing.Bitmap X {
             get {
                 object obj = ResourceManager.GetObject("X", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap yacht {
+            get {
+                object obj = ResourceManager.GetObject("yacht", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap yacht1 {
+            get {
+                object obj = ResourceManager.GetObject("yacht1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

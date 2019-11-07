@@ -76,6 +76,9 @@ namespace Year_13_Coursework
 
         private void moveToGame5()
         {
+            this.Hide();
+            Form MoveToGame5 = new frmGame5();
+            MoveToGame5.Show();
         }
 
         private void moveToGame6()
