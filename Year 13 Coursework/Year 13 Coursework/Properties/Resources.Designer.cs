@@ -83,6 +83,16 @@ namespace Year_13_Coursework.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Algeria_Flag {
+            get {
+                object obj = ResourceManager.GetObject("Algeria_Flag", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bee {
             get {
                 object obj = ResourceManager.GetObject("bee", resourceCulture);
@@ -106,6 +116,26 @@ namespace Year_13_Coursework.Properties {
         internal static System.Drawing.Bitmap boat {
             get {
                 object obj = ResourceManager.GetObject("boat", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Brazil_Flag {
+            get {
+                object obj = ResourceManager.GetObject("Brazil_Flag", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Cameroon_Flag {
+            get {
+                object obj = ResourceManager.GetObject("Cameroon_Flag", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -166,6 +196,16 @@ namespace Year_13_Coursework.Properties {
         internal static System.Drawing.Bitmap cow {
             get {
                 object obj = ResourceManager.GetObject("cow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Czech_Republic_Flag {
+            get {
+                object obj = ResourceManager.GetObject("Czech_Republic_Flag", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -236,6 +276,16 @@ namespace Year_13_Coursework.Properties {
         internal static System.Drawing.Bitmap earth_spinning_rotating_animation_14 {
             get {
                 object obj = ResourceManager.GetObject("earth-spinning-rotating-animation-14", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Egypt_Flag {
+            get {
+                object obj = ResourceManager.GetObject("Egypt_Flag", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -443,9 +493,29 @@ namespace Year_13_Coursework.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Greenland_Flag {
+            get {
+                object obj = ResourceManager.GetObject("Greenland_Flag", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hiclipart_com_id_gnwvp {
             get {
                 object obj = ResourceManager.GetObject("hiclipart.com-id_gnwvp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Hong_Kong_Flag {
+            get {
+                object obj = ResourceManager.GetObject("Hong_Kong_Flag", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -493,6 +563,16 @@ namespace Year_13_Coursework.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Mexico_Flag {
+            get {
+                object obj = ResourceManager.GetObject("Mexico_Flag", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap morrocco1 {
             get {
                 object obj = ResourceManager.GetObject("morrocco1", resourceCulture);
@@ -523,9 +603,29 @@ namespace Year_13_Coursework.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Netherlands_Flag {
+            get {
+                object obj = ResourceManager.GetObject("Netherlands_Flag", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap norway {
             get {
                 object obj = ResourceManager.GetObject("norway", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Norway_Flag {
+            get {
+                object obj = ResourceManager.GetObject("Norway_Flag", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -723,6 +823,16 @@ namespace Year_13_Coursework.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Sweden_Flag {
+            get {
+                object obj = ResourceManager.GetObject("Sweden_Flag", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap sweden1 {
             get {
                 object obj = ResourceManager.GetObject("sweden1", resourceCulture);
@@ -823,9 +933,9 @@ namespace Year_13_Coursework.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap turkey1 {
+        internal static System.Drawing.Bitmap Uganda_Flag {
             get {
-                object obj = ResourceManager.GetObject("turkey1", resourceCulture);
+                object obj = ResourceManager.GetObject("Uganda_Flag", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -846,6 +956,16 @@ namespace Year_13_Coursework.Properties {
         internal static System.Drawing.Bitmap Untitled {
             get {
                 object obj = ResourceManager.GetObject("Untitled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Wales_Flag {
+            get {
+                object obj = ResourceManager.GetObject("Wales_Flag", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

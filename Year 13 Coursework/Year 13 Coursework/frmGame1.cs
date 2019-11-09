@@ -148,17 +148,19 @@ namespace Year_13_Coursework
 
         /* MY METHODS ======================================================================*/
 
-        private void playGame()
+        private async void playGame()
         {
             if (gameCount > 0)
             {
-                System.Threading.Thread.Sleep(500);
+                await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
             }
 
             if (gameCount == 6)
             {
+                tmr1.Stop();
                 moveToNextScreen();
             }
+
             resetGame();
             displayMap();
             generateWrongAnswers();
@@ -169,6 +171,7 @@ namespace Year_13_Coursework
         private void resetGame()
         {
             enableAllButtons();
+            btnAnswer1.Focus();
             btnAnswer1.BackColor = System.Drawing.Color.SaddleBrown;
             btnAnswer2.BackColor = System.Drawing.Color.SaddleBrown;
             btnAnswer3.BackColor = System.Drawing.Color.SaddleBrown;
@@ -226,10 +229,7 @@ namespace Year_13_Coursework
             counter--;
             if (counter == 0)
             {
-                tmr1.Stop();
-                pbxThought.Image = Properties.Resources.alarmClock;
-                System.Threading.Thread.Sleep(500);
-                moveToNextScreen();
+                timedOut();
 
             }
             lblTimerCount.Text = counter.ToString();
@@ -308,20 +308,20 @@ namespace Year_13_Coursework
 
         private void correctGuess()
         {
-            pbxThought.Image = Properties.Resources.Untitled;
+            pbxThought.Image = Resources.Untitled;
             score++;
             lblScoreCount.Text = score.ToString();
             saveScore(score);
-            disableAllButtons();
             highlightCorrectAnswer();
+            disableAllButtons();
             playGame();
         }
 
         private void incorrectGuess()
         {
             pbxThought.Image = Properties.Resources.X;
-            disableAllButtons();
             highlightCorrectAnswer();
+            disableAllButtons();
             playGame();
 
         }
@@ -364,6 +364,14 @@ namespace Year_13_Coursework
             }
         }
 
+        private async void timedOut()
+        {
+            tmr1.Stop();
+            pbxThought.Image = Properties.Resources.alarmClock;
 
+            await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
+
+            moveToNextScreen();
+        }
     }
 }

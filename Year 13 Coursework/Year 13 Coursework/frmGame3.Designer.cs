@@ -180,6 +180,7 @@
             this.pbxHide9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbxHide9.TabIndex = 76;
             this.pbxHide9.TabStop = false;
+            this.pbxHide9.Click += new System.EventHandler(this.PbxHide9_Click);
             // 
             // pbxHide8
             // 
@@ -190,6 +191,7 @@
             this.pbxHide8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbxHide8.TabIndex = 75;
             this.pbxHide8.TabStop = false;
+            this.pbxHide8.Click += new System.EventHandler(this.PbxHide8_Click);
             // 
             // pbxHide7
             // 
@@ -200,66 +202,73 @@
             this.pbxHide7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbxHide7.TabIndex = 74;
             this.pbxHide7.TabStop = false;
+            this.pbxHide7.Click += new System.EventHandler(this.PbxHide7_Click);
             // 
             // pbxHide6
             // 
             this.pbxHide6.Image = ((System.Drawing.Image)(resources.GetObject("pbxHide6.Image")));
-            this.pbxHide6.Location = new System.Drawing.Point(704, 268);
+            this.pbxHide6.Location = new System.Drawing.Point(704, 270);
             this.pbxHide6.Name = "pbxHide6";
             this.pbxHide6.Size = new System.Drawing.Size(210, 157);
             this.pbxHide6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbxHide6.TabIndex = 73;
             this.pbxHide6.TabStop = false;
+            this.pbxHide6.Click += new System.EventHandler(this.PbxHide6_Click);
             // 
             // pbxHide5
             // 
             this.pbxHide5.Image = ((System.Drawing.Image)(resources.GetObject("pbxHide5.Image")));
-            this.pbxHide5.Location = new System.Drawing.Point(493, 268);
+            this.pbxHide5.Location = new System.Drawing.Point(493, 270);
             this.pbxHide5.Name = "pbxHide5";
             this.pbxHide5.Size = new System.Drawing.Size(210, 157);
             this.pbxHide5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbxHide5.TabIndex = 72;
             this.pbxHide5.TabStop = false;
+            this.pbxHide5.Click += new System.EventHandler(this.PbxHide5_Click);
             // 
             // pbxHide4
             // 
             this.pbxHide4.Image = ((System.Drawing.Image)(resources.GetObject("pbxHide4.Image")));
-            this.pbxHide4.Location = new System.Drawing.Point(283, 268);
+            this.pbxHide4.Location = new System.Drawing.Point(283, 270);
             this.pbxHide4.Name = "pbxHide4";
             this.pbxHide4.Size = new System.Drawing.Size(210, 157);
             this.pbxHide4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbxHide4.TabIndex = 71;
             this.pbxHide4.TabStop = false;
+            this.pbxHide4.Click += new System.EventHandler(this.PbxHide4_Click);
             // 
             // pbxHide3
             // 
             this.pbxHide3.Image = ((System.Drawing.Image)(resources.GetObject("pbxHide3.Image")));
-            this.pbxHide3.Location = new System.Drawing.Point(704, 114);
+            this.pbxHide3.Location = new System.Drawing.Point(704, 115);
             this.pbxHide3.Name = "pbxHide3";
             this.pbxHide3.Size = new System.Drawing.Size(210, 157);
             this.pbxHide3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbxHide3.TabIndex = 70;
             this.pbxHide3.TabStop = false;
+            this.pbxHide3.Click += new System.EventHandler(this.PbxHide3_Click);
             // 
             // pbxHide2
             // 
             this.pbxHide2.Image = ((System.Drawing.Image)(resources.GetObject("pbxHide2.Image")));
-            this.pbxHide2.Location = new System.Drawing.Point(493, 114);
+            this.pbxHide2.Location = new System.Drawing.Point(493, 115);
             this.pbxHide2.Name = "pbxHide2";
             this.pbxHide2.Size = new System.Drawing.Size(210, 157);
             this.pbxHide2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbxHide2.TabIndex = 69;
             this.pbxHide2.TabStop = false;
+            this.pbxHide2.Click += new System.EventHandler(this.PbxHide2_Click);
             // 
             // pbxHide1
             // 
             this.pbxHide1.Image = global::Year_13_Coursework.Properties.Resources.redFlag;
-            this.pbxHide1.Location = new System.Drawing.Point(283, 114);
+            this.pbxHide1.Location = new System.Drawing.Point(283, 115);
             this.pbxHide1.Name = "pbxHide1";
             this.pbxHide1.Size = new System.Drawing.Size(210, 157);
             this.pbxHide1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbxHide1.TabIndex = 68;
             this.pbxHide1.TabStop = false;
+            this.pbxHide1.Click += new System.EventHandler(this.PbxHide1_Click);
             // 
             // pbxFlag
             // 
@@ -328,6 +337,7 @@
             this.Controls.Add(this.pbxAvatar);
             this.Controls.Add(this.btnSubmitAnswer);
             this.Name = "frmGame3";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Game 4";
             this.Activated += new System.EventHandler(this.FrmGame3_Activated);
             this.Load += new System.EventHandler(this.FrmGame3_Load);

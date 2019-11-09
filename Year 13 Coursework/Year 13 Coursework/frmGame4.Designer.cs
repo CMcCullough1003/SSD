@@ -602,7 +602,7 @@
             this.Controls.Add(this.pbxBubble3);
             this.Controls.Add(this.pbxAvatar);
             this.Name = "frmGame4";
-            this.Text = "frmGame4";
+            this.Text = "";
             this.Activated += new System.EventHandler(this.FrmGame4_Activated);
             this.Load += new System.EventHandler(this.FrmGame4_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

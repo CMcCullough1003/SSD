@@ -246,6 +246,7 @@ namespace Year_13_Coursework
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            timer1.Stop();
             moveToNextScreen();
         }
     }

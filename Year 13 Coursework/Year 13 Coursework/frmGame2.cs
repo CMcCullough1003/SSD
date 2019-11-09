@@ -15,19 +15,20 @@ namespace Year_13_Coursework
     {
 
         private int counter = 30;
+        private int score = 0;
 
-        int countryPosition = 0;
-        int clue1Position = 1;
-        int clue2Position = 2;
-        int clue3Position = 3;
-        int image1Position = 4;
-        int image2Position = 5;
-        int image3Position = 6;
+        const int countryPosition = 0;
+        const int clue1Position = 1;
+        const int clue2Position = 2;
+        const int clue3Position = 3;
+        const int image1Position = 4;
+        const int image2Position = 5;
+        const int image3Position = 6;
         int selectedCountry = 0;
 
         int whichClueVisible = 0;
 
-        int countryCount = 6;
+        const int countryCount = 6;
 
         string[,] clues = new string[7, 7] { 
             { "Norway", "Northern lights", "Midnight sun", "Fjords", "norway2.jpg", "norway2.jpg", "norway3.jpg" },
@@ -47,6 +48,7 @@ namespace Year_13_Coursework
         //The form is created
         private void FrmGame2_Load(object sender, EventArgs e)
         {
+            hideHints();
             setUpTimer();
             displayAvatar();
             setTitle();
@@ -89,7 +91,16 @@ namespace Year_13_Coursework
 
         private void BtnSubmitAnswer_Click(object sender, EventArgs e)
         {
-            moveToNextScreen();
+            Strings strings = new Strings();
+
+            if(strings.wasCorrectAnswerEntered(tbxGuess.Text, clues[selectedCountry, countryPosition]))
+            {
+                correctGuess();
+            }
+            else
+            {
+                incorrectGuess();
+            }
         }
 
         private void BtnHelp_Click(object sender, EventArgs e)
@@ -118,8 +129,7 @@ namespace Year_13_Coursework
             counter--;
             if (counter == 0)
             {
-                timer1.Stop();
-                pbxThought.Image = Properties.Resources.alarmClock;
+                timedOut();
             }
             lblTimerCount.Text = counter.ToString();
         }
@@ -188,6 +198,8 @@ namespace Year_13_Coursework
 
         private void displaySecondClues()
         {
+            lblHint2.Visible = true;
+
             switch (clues[selectedCountry, countryPosition])
             {
                 case "Norway":
@@ -216,6 +228,8 @@ namespace Year_13_Coursework
 
         private void displayThirdClues()
         {
+            lblHint3.Visible = true;
+
             switch (clues[selectedCountry, countryPosition])
             {
                 case "Norway":
@@ -240,6 +254,71 @@ namespace Year_13_Coursework
                     pbxClue3.Image = Properties.Resources.finland3;
                     lblHint3.Text = clues[selectedCountry, clue3Position]; break;
             }
+        }
+
+        private void disableAllButtons()
+        {
+            btnHelp.Enabled = false;
+            btnNextClue.Enabled = false;
+            btnSubmitAnswer.Enabled = false;
+        }
+
+        private async void correctGuess()
+        {
+            switch (whichClueVisible)
+            {
+                case 0:
+                    score += 3;
+                    lblScoreCount.Text = score.ToString();
+                    saveScore(score);
+                    break;
+
+                case 1:
+                    score += 2;
+                    lblScoreCount.Text = score.ToString();
+                    saveScore(score); break;
+
+                case 2:
+                    score += 1;
+                    lblScoreCount.Text = score.ToString();
+                    saveScore(score); break;
+            }
+            pbxThought.Image = Properties.Resources.Untitled;
+            disableAllButtons();
+            timer1.Stop();
+
+            await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
+
+            moveToNextScreen();
+        }
+
+        private async void incorrectGuess()
+        {
+            tbxGuess.Clear();
+            pbxThought.Image = Properties.Resources.X;
+
+            await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
+
+            pbxThought.Image = Properties.Resources.questionMark2;
+
+        }
+
+        private void hideHints()
+        {
+            lblHint2.Visible = false;
+            lblHint3.Visible = false;
+        }
+
+        private async void timedOut()
+        {
+            tbxGuess.Text = clues[selectedCountry, countryPosition];
+            timer1.Stop();
+            pbxThought.Image = Properties.Resources.alarmClock;
+            disableAllButtons();
+
+            await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
+
+            moveToNextScreen();
         }
     }
 }

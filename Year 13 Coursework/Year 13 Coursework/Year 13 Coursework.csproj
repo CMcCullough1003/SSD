@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\FileConstants.cs" />
+    <Compile Include="Constants\GameConstants.cs" />
     <Compile Include="frmGame5.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +122,7 @@
     <Compile Include="Tools\Avatars.cs" />
     <Compile Include="Tools\Files.cs" />
     <Compile Include="Tools\GameInfo.cs" />
+    <Compile Include="Tools\Strings.cs" />
     <Compile Include="Tools\User.cs" />
     <EmbeddedResource Include="frmGame5.resx">
       <DependentUpon>frmGame5.cs</DependentUpon>
@@ -216,6 +218,19 @@
     <None Include="Resources\sheep.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Mexico_Flag.jpg" />
+    <None Include="Resources\Wales_Flag.jpg" />
+    <None Include="Resources\Uganda_Flag.jpg" />
+    <None Include="Resources\Sweden_Flag.jpg" />
+    <None Include="Resources\Norway_Flag.jpg" />
+    <None Include="Resources\Netherlands_Flag.jpg" />
+    <None Include="Resources\Hong_Kong_Flag.jpg" />
+    <None Include="Resources\Greenland_Flag.jpg" />
+    <None Include="Resources\Egypt_Flag.jpg" />
+    <None Include="Resources\Czech_Republic_Flag.jpg" />
+    <None Include="Resources\Cameroon_Flag.jpg" />
+    <None Include="Resources\Brazil_Flag.jpg" />
+    <None Include="Resources\Algeria_Flag.jpg" />
     <None Include="Resources\questionMark11.png" />
     <None Include="Resources\yacht1.png" />
     <None Include="Resources\yacht.png" />
@@ -281,7 +296,6 @@
     <None Include="Resources\sweden.jpg" />
     <None Include="Resources\turkey.jpg" />
     <None Include="Resources\poland1.jpg" />
-    <None Include="Resources\turkey1.jpg" />
     <None Include="Resources\ukraine.jpg" />
     <None Include="Resources\switzerland.jpg" />
     <Content Include="Notes.txt" />
