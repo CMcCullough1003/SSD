@@ -13,6 +13,28 @@ namespace Year_13_Coursework
 {
     public partial class frmGame4 : frmGame
     {
+
+        private const int QuestionPosition = 0;
+        private const int AnswerPosition = 1;
+        private int answerLength = 0;
+
+        private List<string> letters = new List<string> { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
+
+        private string[,] questionsAnswers = new string[10, 2]{
+             {"An animal from Australia","KANGAROO"},
+             {"World's second largest country","CANADA"},
+             {"Southernmost capital city","WELLINGTON"},
+             {"Capital city of Brazil","BRASILIA"},
+             {"Capital city of Australia","CANBERRA"},
+             {"City of the largest Egyptian pyramid","GIZA"},
+             {"Famous waterway","PANAMA CANAL"},
+             {"Mountain range","ANDES"},
+             {"World's smallest country","VATICAN CITY"},
+             {"River in Italy","PO"}
+        };
+
+        int selectedPosition = 0;
+
         private int counter = 30;
 
         public frmGame4()
@@ -26,6 +48,7 @@ namespace Year_13_Coursework
             setUpTimer();
             displayAvatar();
             setTitle();
+            displayQuestion();
             playGame();
         }
 
@@ -65,139 +88,137 @@ namespace Year_13_Coursework
 
         private void LblA_Click(object sender, EventArgs e)
         {
-            lblA.BackColor = System.Drawing.Color.Plum;
-            lblA.ForeColor = System.Drawing.Color.Red;
-            lblA.Enabled = false;
+            letterClicked(lblA);
         }
 
         private void LblB_Click(object sender, EventArgs e)
         {
-
+            letterClicked(lblB);
         }
 
         private void LblC_Click(object sender, EventArgs e)
         {
-
+            letterClicked(lblC);
         }
 
         private void LblD_Click(object sender, EventArgs e)
         {
-
+            letterClicked(lblD);
         }
 
         private void LblE_Click(object sender, EventArgs e)
         {
-
+            letterClicked(lblE);
         }
 
         private void LblF_Click(object sender, EventArgs e)
         {
-
+            letterClicked(lblF);
         }
 
         private void LblG_Click(object sender, EventArgs e)
         {
-
+            letterClicked(lblG);
         }
 
         private void LblH_Click(object sender, EventArgs e)
         {
-
+            letterClicked(lblH);
         }
 
         private void LblI_Click(object sender, EventArgs e)
         {
-
+            letterClicked(lblI);
         }
 
         private void LblJ_Click(object sender, EventArgs e)
         {
-
+            letterClicked(lblJ);
         }
 
         private void LblK_Click(object sender, EventArgs e)
         {
-
+            letterClicked(lblK);
         }
 
         private void LblL_Click(object sender, EventArgs e)
         {
-
+            letterClicked(lblL);
         }
 
         private void LblM_Click(object sender, EventArgs e)
         {
-
+            letterClicked(lblM);
         }
 
         private void LblN_Click(object sender, EventArgs e)
         {
-
+            letterClicked(lblN);
         }
 
         private void LblO_Click(object sender, EventArgs e)
         {
-
+            letterClicked(lblO);
         }
 
         private void LblP_Click(object sender, EventArgs e)
         {
-
+            letterClicked(lblP);
         }
 
         private void LblQ_Click(object sender, EventArgs e)
         {
-
+            letterClicked(lblQ);
         }
 
         private void LblR_Click(object sender, EventArgs e)
         {
-
+            letterClicked(lblR);
         }
 
         private void LblS_Click(object sender, EventArgs e)
         {
-
+            letterClicked(lblS);
         }
 
         private void LblT_Click(object sender, EventArgs e)
         {
-
+            letterClicked(lblT);
         }
 
         private void LblU_Click(object sender, EventArgs e)
         {
-
+            letterClicked(lblU);
         }
 
         private void LblV_Click(object sender, EventArgs e)
         {
-
+            letterClicked(lblV);
         }
 
         private void LblW_Click(object sender, EventArgs e)
         {
-
+            letterClicked(lblW);
         }
 
         private void LblX_Click(object sender, EventArgs e)
         {
-
+            letterClicked(lblX);
         }
 
         private void LblY_Click(object sender, EventArgs e)
         {
-
+            letterClicked(lblY);
         }
 
         private void LblZ_Click(object sender, EventArgs e)
         {
-
+            letterClicked(lblZ);
         }
 
         private void BtnHelp_Click(object sender, EventArgs e)
         {
-
+            moveToMenuScreen();
         }
 
         /* MY METHODS ======================================================================*/
@@ -248,6 +269,43 @@ namespace Year_13_Coursework
         {
             timer1.Stop();
             moveToNextScreen();
+        }
+
+        private void displayQuestion()
+        {
+            int rowCount = questionsAnswers.GetLength(0);
+            Random random = new Random();
+            selectedPosition = random.Next(0, rowCount - 1);
+            answerLength = questionsAnswers[selectedPosition, AnswerPosition].Length;
+
+            for(int i = 0; i < answerLength; i++)
+            {
+                lblAnswer.Text += "_ ";
+            }
+
+            lblQuestion.Text = questionsAnswers[selectedPosition, QuestionPosition];
+        }
+
+        private void letterClicked(Label label)
+        {
+            label.BackColor = System.Drawing.Color.Plum;
+            label.ForeColor = System.Drawing.Color.Red;
+            label.Enabled = false;
+
+            letters.Remove(label.Text);
+            string answer = questionsAnswers[selectedPosition, AnswerPosition];
+            for (int i = 0; i < letters.Count; i++)
+            {
+                answer = answer.Replace(letters[i], "_");
+            }
+
+            lblAnswer.Text = "";
+
+            for (int i = 0; i < answer.Length; i++)
+            {
+                lblAnswer.Text += answer[i].ToString() + " ";
+
+            }
         }
     }
 }

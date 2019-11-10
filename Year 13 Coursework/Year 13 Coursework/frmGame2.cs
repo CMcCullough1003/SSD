@@ -299,6 +299,7 @@ namespace Year_13_Coursework
 
             await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
 
+            tbxGuess.Focus();
             pbxThought.Image = Properties.Resources.questionMark2;
 
         }
