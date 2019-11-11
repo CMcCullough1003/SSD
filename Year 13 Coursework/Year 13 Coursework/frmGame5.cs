@@ -15,19 +15,27 @@ namespace Year_13_Coursework
     {
 
         private int counter = 30;
+        private const string selected = "selected";
+        private int selectedCount = 0;
+        private const int maximumSelectionsAllowed = 4;
+
+        private string[] realSeas = new string[4];
 
         public frmGame5()
         {
             InitializeComponent();
+
         }
 
         //The form is created
         private void FrmGame5_Load(object sender, EventArgs e)
         {
+            createRealSeaArray();
             setUpTimer();
             displayAvatar();
             setTitle();
-            playGame();
+            resetGame();
+
         }
 
         //The form is shown after frmMenu closes
@@ -64,87 +72,87 @@ namespace Year_13_Coursework
 
         private void LblSeaOfStorms_Click(object sender, EventArgs e)
         {
-
+            seaClicked(lblSeaOfStorms);
         }
 
         private void LblPiSea_Click(object sender, EventArgs e)
         {
-
+            seaClicked(lblPiSea);
         }
 
         private void LblTiSea_Click(object sender, EventArgs e)
         {
-
+            seaClicked(lblTiSea);
         }
 
         private void LblSiSea_Click(object sender, EventArgs e)
         {
-
+            seaClicked(lblSiSea);
         }
 
         private void LblBrysSea_Click(object sender, EventArgs e)
         {
-
+            seaClicked(lblBrysSea);
         }
 
         private void LblSaltonSea_Click(object sender, EventArgs e)
         {
-
+            seaClicked(lblSaltonSea);
         }
 
         private void LblBrusselSea_Click(object sender, EventArgs e)
         {
-
+            seaClicked(lblBrusselSea);
         }
 
         private void LblArafuraSea_Click(object sender, EventArgs e)
         {
-
+            seaClicked(lblArafuraSea);
         }
 
         private void LblBoySea_Click(object sender, EventArgs e)
         {
-
+            seaClicked(lblBoySea);
         }
 
         private void LblWeddellSea_Click(object sender, EventArgs e)
         {
-
+            seaClicked(lblWeddellSea);
         }
 
         private void LblBadSea_Click(object sender, EventArgs e)
         {
-
+            seaClicked(lblBadSea);
         }
 
         private void LblTasmanSea_Click(object sender, EventArgs e)
         {
-
+            seaClicked(lblTasmanSea);
         }
 
         private void LblOtisSea_Click(object sender, EventArgs e)
         {
-
+            seaClicked(lblOtisSea);
         }
 
         private void LblDylanSea_Click(object sender, EventArgs e)
         {
-
+            seaClicked(lblDylanSea);
         }
 
         private void LblSeaOfPlato_Click(object sender, EventArgs e)
         {
-
+            seaClicked(lblSeaOfPlato);
         }
 
         private void LblEltonSea_Click(object sender, EventArgs e)
         {
-
+            seaClicked(lblEltonSea);
         }
 
         private void LblTempleSea_Click(object sender, EventArgs e)
         {
-
+            seaClicked(lblTempleSea);
         }
 
         private void BtnHelp_Click(object sender, EventArgs e)
@@ -160,7 +168,7 @@ namespace Year_13_Coursework
 
         private void BtnClear_Click(object sender, EventArgs e)
         {
-
+            resetGame();
         }
 
         /* MY METHODS ======================================================================*/
@@ -210,6 +218,91 @@ namespace Year_13_Coursework
         private void Button1_Click(object sender, EventArgs e)
         {
             moveToNextScreen();
+        }
+
+        private void createRealSeaArray()
+        {
+            realSeas[0] = lblSaltonSea.Text;
+            realSeas[1] = lblArafuraSea.Text;
+            realSeas[2] = lblWeddellSea.Text;
+            realSeas[3] = lblTasmanSea.Text;
+        }
+
+        private void seaClicked(Label label)
+        {
+
+            if (label.Tag == selected)
+            {
+                label.Tag = "";
+                label.BackColor = System.Drawing.Color.Red;
+                selectedCount--;
+            }
+            else
+            {
+                if (selectedCount != maximumSelectionsAllowed)
+                {
+                    label.Tag = selected;
+                    label.BackColor = System.Drawing.Color.Green;
+                    selectedCount++;
+                }
+            }
+            updateSubmitButton();
+        }
+
+        private void resetGame()
+        {
+            selectedCount = 0;
+            updateSubmitButton();
+
+            lblArafuraSea.Tag = "";
+            lblBadSea.Tag = "";
+            lblBoySea.Tag = "";
+            lblBrusselSea.Tag = "";
+            lblBrysSea.Tag = "";
+            lblDylanSea.Tag = "";
+            lblEltonSea.Tag = "";
+            lblOtisSea.Tag = "";
+            lblPiSea.Tag = "";
+            lblSaltonSea.Tag = "";
+            lblSeaOfPlato.Tag = "";
+            lblSeaOfStorms.Tag = "";
+            lblSiSea.Tag = "";
+            lblTasmanSea.Tag = "";
+            lblTempleSea.Tag = "";
+            lblTiSea.Tag = "";
+            lblWeddellSea.Tag = "";
+
+            lblArafuraSea.BackColor = System.Drawing.Color.Red;
+            lblBadSea.BackColor = System.Drawing.Color.Red;
+            lblBoySea.BackColor = System.Drawing.Color.Red;
+            lblBrusselSea.BackColor = System.Drawing.Color.Red;
+            lblBrysSea.BackColor = System.Drawing.Color.Red;
+            lblDylanSea.BackColor = System.Drawing.Color.Red;
+            lblEltonSea.BackColor = System.Drawing.Color.Red;
+            lblOtisSea.BackColor = System.Drawing.Color.Red;
+            lblPiSea.BackColor = System.Drawing.Color.Red;
+            lblSaltonSea.BackColor = System.Drawing.Color.Red;
+            lblSeaOfPlato.BackColor = System.Drawing.Color.Red;
+            lblSeaOfStorms.BackColor = System.Drawing.Color.Red;
+            lblSiSea.BackColor = System.Drawing.Color.Red;
+            lblTasmanSea.BackColor = System.Drawing.Color.Red;
+            lblTempleSea.BackColor = System.Drawing.Color.Red;
+            lblTiSea.BackColor = System.Drawing.Color.Red;
+            lblWeddellSea.BackColor = System.Drawing.Color.Red;
+        }
+
+        private void updateSubmitButton()
+        {
+            if (selectedCount == maximumSelectionsAllowed)
+            {
+                btnSubmitAnswer.Enabled = true;
+                btnSubmitAnswer.BackColor = System.Drawing.Color.SaddleBrown;
+            }
+            else
+            {
+                btnSubmitAnswer.Enabled = false;
+                btnSubmitAnswer.BackColor = System.Drawing.Color.LightGray;
+            }
         }
     }
 }

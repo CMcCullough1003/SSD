@@ -105,7 +105,7 @@
             this.lblSaltonSea.Name = "lblSaltonSea";
             this.lblSaltonSea.Size = new System.Drawing.Size(157, 34);
             this.lblSaltonSea.TabIndex = 150;
-            this.lblSaltonSea.Tag = "Y";
+            this.lblSaltonSea.Tag = "";
             this.lblSaltonSea.Text = "Salton Sea";
             this.lblSaltonSea.Click += new System.EventHandler(this.LblSaltonSea_Click);
             // 
@@ -251,7 +251,7 @@
             this.lblBrusselSea.Name = "lblBrusselSea";
             this.lblBrusselSea.Size = new System.Drawing.Size(170, 34);
             this.lblBrusselSea.TabIndex = 155;
-            this.lblBrusselSea.Tag = "N";
+            this.lblBrusselSea.Tag = "";
             this.lblBrusselSea.Text = "Brussel Sea";
             this.lblBrusselSea.Click += new System.EventHandler(this.LblBrusselSea_Click);
             // 
@@ -266,7 +266,7 @@
             this.lblArafuraSea.Name = "lblArafuraSea";
             this.lblArafuraSea.Size = new System.Drawing.Size(168, 34);
             this.lblArafuraSea.TabIndex = 156;
-            this.lblArafuraSea.Tag = "Y";
+            this.lblArafuraSea.Tag = "";
             this.lblArafuraSea.Text = "Arafura Sea";
             this.lblArafuraSea.Click += new System.EventHandler(this.LblArafuraSea_Click);
             // 
@@ -281,7 +281,7 @@
             this.lblBoySea.Name = "lblBoySea";
             this.lblBoySea.Size = new System.Drawing.Size(124, 34);
             this.lblBoySea.TabIndex = 157;
-            this.lblBoySea.Tag = "N";
+            this.lblBoySea.Tag = "";
             this.lblBoySea.Text = "Boy Sea";
             this.lblBoySea.Click += new System.EventHandler(this.LblBoySea_Click);
             // 
@@ -296,7 +296,7 @@
             this.lblWeddellSea.Name = "lblWeddellSea";
             this.lblWeddellSea.Size = new System.Drawing.Size(179, 34);
             this.lblWeddellSea.TabIndex = 158;
-            this.lblWeddellSea.Tag = "Y";
+            this.lblWeddellSea.Tag = "";
             this.lblWeddellSea.Text = "Weddell Sea";
             this.lblWeddellSea.Click += new System.EventHandler(this.LblWeddellSea_Click);
             // 
@@ -311,7 +311,7 @@
             this.lblBadSea.Name = "lblBadSea";
             this.lblBadSea.Size = new System.Drawing.Size(126, 34);
             this.lblBadSea.TabIndex = 159;
-            this.lblBadSea.Tag = "N";
+            this.lblBadSea.Tag = "";
             this.lblBadSea.Text = "Bad Sea";
             this.lblBadSea.Click += new System.EventHandler(this.LblBadSea_Click);
             // 
@@ -326,7 +326,7 @@
             this.lblTasmanSea.Name = "lblTasmanSea";
             this.lblTasmanSea.Size = new System.Drawing.Size(177, 34);
             this.lblTasmanSea.TabIndex = 160;
-            this.lblTasmanSea.Tag = "Y";
+            this.lblTasmanSea.Tag = "";
             this.lblTasmanSea.Text = "Tasman Sea";
             this.lblTasmanSea.Click += new System.EventHandler(this.LblTasmanSea_Click);
             // 
@@ -341,7 +341,7 @@
             this.lblOtisSea.Name = "lblOtisSea";
             this.lblOtisSea.Size = new System.Drawing.Size(126, 34);
             this.lblOtisSea.TabIndex = 161;
-            this.lblOtisSea.Tag = "N";
+            this.lblOtisSea.Tag = "";
             this.lblOtisSea.Text = "Otis Sea";
             this.lblOtisSea.Click += new System.EventHandler(this.LblOtisSea_Click);
             // 
@@ -356,7 +356,7 @@
             this.lblDylanSea.Name = "lblDylanSea";
             this.lblDylanSea.Size = new System.Drawing.Size(148, 34);
             this.lblDylanSea.TabIndex = 162;
-            this.lblDylanSea.Tag = "N";
+            this.lblDylanSea.Tag = "";
             this.lblDylanSea.Text = "Dylan Sea";
             this.lblDylanSea.Click += new System.EventHandler(this.LblDylanSea_Click);
             // 
@@ -371,7 +371,7 @@
             this.lblEltonSea.Name = "lblEltonSea";
             this.lblEltonSea.Size = new System.Drawing.Size(141, 34);
             this.lblEltonSea.TabIndex = 164;
-            this.lblEltonSea.Tag = "N";
+            this.lblEltonSea.Tag = "";
             this.lblEltonSea.Text = "Elton Sea";
             this.lblEltonSea.Click += new System.EventHandler(this.LblEltonSea_Click);
             // 
@@ -386,7 +386,7 @@
             this.lblTempleSea.Name = "lblTempleSea";
             this.lblTempleSea.Size = new System.Drawing.Size(170, 34);
             this.lblTempleSea.TabIndex = 165;
-            this.lblTempleSea.Tag = "N";
+            this.lblTempleSea.Tag = "";
             this.lblTempleSea.Text = "Temple Sea";
             this.lblTempleSea.Click += new System.EventHandler(this.LblTempleSea_Click);
             // 
@@ -401,7 +401,7 @@
             this.lblSeaOfPlato.Name = "lblSeaOfPlato";
             this.lblSeaOfPlato.Size = new System.Drawing.Size(172, 34);
             this.lblSeaOfPlato.TabIndex = 163;
-            this.lblSeaOfPlato.Tag = "N";
+            this.lblSeaOfPlato.Tag = "";
             this.lblSeaOfPlato.Text = "Sea of Plato";
             this.lblSeaOfPlato.Click += new System.EventHandler(this.LblSeaOfPlato_Click);
             // 
@@ -416,7 +416,7 @@
             this.lblSeaOfStorms.Name = "lblSeaOfStorms";
             this.lblSeaOfStorms.Size = new System.Drawing.Size(195, 34);
             this.lblSeaOfStorms.TabIndex = 166;
-            this.lblSeaOfStorms.Tag = "N";
+            this.lblSeaOfStorms.Tag = "";
             this.lblSeaOfStorms.Text = "Sea of Storms";
             this.lblSeaOfStorms.Click += new System.EventHandler(this.LblSeaOfStorms_Click);
             // 
@@ -431,7 +431,7 @@
             this.lblPiSea.Name = "lblPiSea";
             this.lblPiSea.Size = new System.Drawing.Size(101, 34);
             this.lblPiSea.TabIndex = 167;
-            this.lblPiSea.Tag = "N";
+            this.lblPiSea.Tag = "";
             this.lblPiSea.Text = "Pi Sea";
             this.lblPiSea.Click += new System.EventHandler(this.LblPiSea_Click);
             // 
@@ -446,7 +446,7 @@
             this.lblTiSea.Name = "lblTiSea";
             this.lblTiSea.Size = new System.Drawing.Size(99, 34);
             this.lblTiSea.TabIndex = 168;
-            this.lblTiSea.Tag = "N";
+            this.lblTiSea.Tag = "";
             this.lblTiSea.Text = "Ti Sea";
             this.lblTiSea.Click += new System.EventHandler(this.LblTiSea_Click);
             // 
@@ -461,7 +461,7 @@
             this.lblSiSea.Name = "lblSiSea";
             this.lblSiSea.Size = new System.Drawing.Size(101, 34);
             this.lblSiSea.TabIndex = 169;
-            this.lblSiSea.Tag = "N";
+            this.lblSiSea.Tag = "";
             this.lblSiSea.Text = "Si Sea";
             this.lblSiSea.Click += new System.EventHandler(this.LblSiSea_Click);
             // 
@@ -476,7 +476,7 @@
             this.lblBrysSea.Name = "lblBrysSea";
             this.lblBrysSea.Size = new System.Drawing.Size(131, 34);
             this.lblBrysSea.TabIndex = 170;
-            this.lblBrysSea.Tag = "N";
+            this.lblBrysSea.Tag = "";
             this.lblBrysSea.Text = "Brys Sea";
             this.lblBrysSea.Click += new System.EventHandler(this.LblBrysSea_Click);
             // 

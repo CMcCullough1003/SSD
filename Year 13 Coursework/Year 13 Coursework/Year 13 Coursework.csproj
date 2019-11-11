@@ -218,6 +218,7 @@
     <None Include="Resources\sheep.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\gallows11.jpg" />
     <None Include="Resources\Mexico_Flag.jpg" />
     <None Include="Resources\Wales_Flag.jpg" />
     <None Include="Resources\Uganda_Flag.jpg" />

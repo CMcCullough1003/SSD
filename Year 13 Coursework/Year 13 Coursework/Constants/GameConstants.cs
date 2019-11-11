@@ -8,6 +8,6 @@ namespace Year_13_Coursework.Constants
 {
     public class GameConstants
     {
-        public const int delayTimeInMilliseconds = 1000;
+        public const int delayTimeInMilliseconds = 1500;
     }
 }
