@@ -151,6 +151,9 @@
   <data name="norway" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\norway.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="darkClouds" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\darkClouds.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="belarus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\belarus1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -283,6 +286,9 @@
   <data name="gallows" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gallows.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="mountains" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mountains.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="sweden2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sweden2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -319,9 +325,6 @@
   <data name="gallows6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gallows6.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Sweden_Flag" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sweden_Flag.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Algeria_Flag" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Algeria_Flag.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -330,6 +333,9 @@
   </data>
   <data name="Wales_Flag" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Wales_Flag.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DarkClouds2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkClouds2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="sheep" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sheep.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -358,11 +364,14 @@
   <data name="poland1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\poland1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Netherlands_Flag" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Netherlands_Flag.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Sweden_Flag" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sweden_Flag.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ukraine" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ukraine.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Netherlands_Flag" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Netherlands_Flag.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="greece3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\greece3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -402,5 +411,8 @@
   </data>
   <data name="Brazil_Flag" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Brazil_Flag.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkClouds3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\darkClouds3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

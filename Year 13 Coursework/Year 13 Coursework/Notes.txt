@@ -4,3 +4,12 @@ Subtitle - ms sans serif, 14, dim gray
 Text - ms sans serif, 8, grey
 Button - ms sans serif, 14, white, saddleBrown
 Form - white
+
+
+To do list:
+- Screens with input have to be disabled when time runs out
+- Increase time
+- Show answers in input box at end
+- Code game 6
+- Display time in game info screen and use as constants
+- Change colours in game 5 to neutral

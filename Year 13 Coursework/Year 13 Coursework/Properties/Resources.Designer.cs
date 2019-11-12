@@ -213,6 +213,36 @@ namespace Year_13_Coursework.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap darkClouds {
+            get {
+                object obj = ResourceManager.GetObject("darkClouds", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DarkClouds2 {
+            get {
+                object obj = ResourceManager.GetObject("DarkClouds2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap darkClouds3 {
+            get {
+                object obj = ResourceManager.GetObject("darkClouds3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap denmark {
             get {
                 object obj = ResourceManager.GetObject("denmark", resourceCulture);
@@ -596,6 +626,16 @@ namespace Year_13_Coursework.Properties {
         internal static System.Drawing.Bitmap morrocco3 {
             get {
                 object obj = ResourceManager.GetObject("morrocco3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mountains {
+            get {
+                object obj = ResourceManager.GetObject("mountains", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

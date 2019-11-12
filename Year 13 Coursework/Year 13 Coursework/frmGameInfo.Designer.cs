@@ -32,6 +32,7 @@
             this.lblGameInfo = new System.Windows.Forms.Label();
             this.lblGameNumber = new System.Windows.Forms.Label();
             this.lblGameTitle = new System.Windows.Forms.Label();
+            this.lblGamePoints = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnStartGame
@@ -79,12 +80,24 @@
             this.lblGameTitle.TabIndex = 9;
             this.lblGameTitle.Text = "Title";
             // 
+            // lblGamePoints
+            // 
+            this.lblGamePoints.AutoSize = true;
+            this.lblGamePoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGamePoints.ForeColor = System.Drawing.Color.DimGray;
+            this.lblGamePoints.Location = new System.Drawing.Point(18, 406);
+            this.lblGamePoints.Name = "lblGamePoints";
+            this.lblGamePoints.Size = new System.Drawing.Size(95, 32);
+            this.lblGamePoints.TabIndex = 10;
+            this.lblGamePoints.Text = "Points";
+            // 
             // frmGameInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(933, 737);
+            this.Controls.Add(this.lblGamePoints);
             this.Controls.Add(this.lblGameTitle);
             this.Controls.Add(this.lblGameNumber);
             this.Controls.Add(this.lblGameInfo);
@@ -104,5 +117,6 @@
         private System.Windows.Forms.Label lblGameInfo;
         private System.Windows.Forms.Label lblGameNumber;
         private System.Windows.Forms.Label lblGameTitle;
+        private System.Windows.Forms.Label lblGamePoints;
     }
 }

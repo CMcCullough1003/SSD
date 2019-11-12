@@ -24,12 +24,12 @@ namespace Year_13_Coursework
         public frmGame5()
         {
             InitializeComponent();
-
         }
 
         //The form is created
         private void FrmGame5_Load(object sender, EventArgs e)
         {
+            positionYacht();
             createRealSeaArray();
             setUpTimer();
             displayAvatar();
@@ -161,9 +161,9 @@ namespace Year_13_Coursework
             moveToMenuScreen();
         }
 
-        private void BtnSubmitAnswer_Click(object sender, EventArgs e)
+        private async void BtnSubmitAnswer_Click(object sender, EventArgs e)
         {
-
+            showCorrectAnswers();
         }
 
         private void BtnClear_Click(object sender, EventArgs e)
@@ -175,6 +175,12 @@ namespace Year_13_Coursework
 
         private void playGame()
         {
+        }
+
+        private void positionYacht() {
+            pbxSky.Controls.Add(pbxYacht);
+            pbxYacht.Location = new Point(75, 5);
+            pbxYacht.BackColor = Color.Transparent;
         }
 
         private void setUpTimer()
@@ -193,6 +199,7 @@ namespace Year_13_Coursework
             {
                 timer1.Stop();
                 pbxThought.Image = Properties.Resources.alarmClock;
+                showCorrectAnswers();
             }
             lblTimerCount.Text = counter.ToString();
         }
@@ -215,10 +222,6 @@ namespace Year_13_Coursework
             moveToMenu.Show();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            moveToNextScreen();
-        }
 
         private void createRealSeaArray()
         {
@@ -242,7 +245,7 @@ namespace Year_13_Coursework
                 if (selectedCount != maximumSelectionsAllowed)
                 {
                     label.Tag = selected;
-                    label.BackColor = System.Drawing.Color.Green;
+                    label.BackColor = System.Drawing.Color.DarkOrange;
                     selectedCount++;
                 }
             }
@@ -303,6 +306,16 @@ namespace Year_13_Coursework
                 btnSubmitAnswer.Enabled = false;
                 btnSubmitAnswer.BackColor = System.Drawing.Color.LightGray;
             }
+        }
+
+        private async void showCorrectAnswers()
+        {
+            lblSaltonSea.BackColor = System.Drawing.Color.Green;
+            lblWeddellSea.BackColor = System.Drawing.Color.Green;
+            lblArafuraSea.BackColor = System.Drawing.Color.Green;
+            lblTasmanSea.BackColor = System.Drawing.Color.Green;
+            await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
+            moveToMenuScreen();
         }
     }
 }

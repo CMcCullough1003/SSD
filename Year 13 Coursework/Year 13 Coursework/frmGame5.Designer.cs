@@ -63,12 +63,14 @@
             this.lblBrysSea = new System.Windows.Forms.Label();
             this.btnSubmitAnswer = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.pbxHeader = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxYacht)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSea)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSky)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxThought)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBubble3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAvatar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxHeader)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -122,6 +124,7 @@
             // lblTimer
             // 
             this.lblTimer.AutoSize = true;
+            this.lblTimer.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTimer.ForeColor = System.Drawing.Color.Gray;
             this.lblTimer.Location = new System.Drawing.Point(866, 25);
@@ -133,6 +136,7 @@
             // lblScore
             // 
             this.lblScore.AutoSize = true;
+            this.lblScore.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScore.ForeColor = System.Drawing.Color.Gray;
             this.lblScore.Location = new System.Drawing.Point(13, 25);
@@ -144,6 +148,7 @@
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
+            this.lblTitle.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.Black;
             this.lblTitle.Location = new System.Drawing.Point(252, 44);
@@ -156,6 +161,7 @@
             // lblScoreCount
             // 
             this.lblScoreCount.AutoSize = true;
+            this.lblScoreCount.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblScoreCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScoreCount.ForeColor = System.Drawing.Color.DimGray;
             this.lblScoreCount.Location = new System.Drawing.Point(22, 55);
@@ -167,6 +173,7 @@
             // lblTimerCount
             // 
             this.lblTimerCount.AutoSize = true;
+            this.lblTimerCount.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblTimerCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTimerCount.ForeColor = System.Drawing.Color.DimGray;
             this.lblTimerCount.Location = new System.Drawing.Point(872, 55);
@@ -506,6 +513,15 @@
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.BtnClear_Click);
             // 
+            // pbxHeader
+            // 
+            this.pbxHeader.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pbxHeader.Location = new System.Drawing.Point(-1, 2);
+            this.pbxHeader.Name = "pbxHeader";
+            this.pbxHeader.Size = new System.Drawing.Size(934, 106);
+            this.pbxHeader.TabIndex = 173;
+            this.pbxHeader.TabStop = false;
+            // 
             // frmGame5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -545,6 +561,7 @@
             this.Controls.Add(this.pbxAvatar);
             this.Controls.Add(this.pbxYacht);
             this.Controls.Add(this.pbxSky);
+            this.Controls.Add(this.pbxHeader);
             this.Name = "frmGame5";
             this.Text = "Game 5";
             this.Activated += new System.EventHandler(this.FrmGame5_Activated);
@@ -555,6 +572,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxThought)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBubble3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAvatar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxHeader)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -596,5 +614,6 @@
         private System.Windows.Forms.Label lblBrysSea;
         private System.Windows.Forms.Button btnSubmitAnswer;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.PictureBox pbxHeader;
     }
 }

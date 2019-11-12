@@ -82,6 +82,12 @@
     <Compile Include="frmGame4.Designer.cs">
       <DependentUpon>frmGame4.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmGame6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGame6.Designer.cs">
+      <DependentUpon>frmGame6.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGameInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmGame4.resx">
       <DependentUpon>frmGame4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGame6.resx">
+      <DependentUpon>frmGame6.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGameInfo.resx">
       <DependentUpon>frmGameInfo.cs</DependentUpon>
@@ -218,6 +227,10 @@
     <None Include="Resources\sheep.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\darkClouds3.png" />
+    <None Include="Resources\darkClouds.png" />
+    <None Include="Resources\DarkClouds2.png" />
+    <None Include="Resources\mountains.png" />
     <None Include="Resources\gallows11.jpg" />
     <None Include="Resources\Mexico_Flag.jpg" />
     <None Include="Resources\Wales_Flag.jpg" />

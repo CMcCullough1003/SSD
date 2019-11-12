@@ -34,11 +34,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.tbxGuess = new System.Windows.Forms.TextBox();
             this.btnHelp = new System.Windows.Forms.Button();
-            this.lblTimer = new System.Windows.Forms.Label();
-            this.lblScore = new System.Windows.Forms.Label();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.lblScoreCount = new System.Windows.Forms.Label();
-            this.lblTimerCount = new System.Windows.Forms.Label();
             this.btnSubmitAnswer = new System.Windows.Forms.Button();
             this.pbxHide9 = new System.Windows.Forms.PictureBox();
             this.pbxHide8 = new System.Windows.Forms.PictureBox();
@@ -53,6 +48,12 @@
             this.pbxThought = new System.Windows.Forms.PictureBox();
             this.pbxBubble3 = new System.Windows.Forms.PictureBox();
             this.pbxAvatar = new System.Windows.Forms.PictureBox();
+            this.lblTimer = new System.Windows.Forms.Label();
+            this.lblScore = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.lblScoreCount = new System.Windows.Forms.Label();
+            this.lblTimerCount = new System.Windows.Forms.Label();
+            this.pbxHeader = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxHide9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxHide8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxHide7)).BeginInit();
@@ -66,6 +67,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxThought)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBubble3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAvatar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxHeader)).BeginInit();
             this.SuspendLayout();
             // 
             // timer1
@@ -100,63 +102,6 @@
             this.btnHelp.Text = "Help";
             this.btnHelp.UseVisualStyleBackColor = true;
             this.btnHelp.Click += new System.EventHandler(this.BtnHelp_Click);
-            // 
-            // lblTimer
-            // 
-            this.lblTimer.AutoSize = true;
-            this.lblTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTimer.ForeColor = System.Drawing.Color.Gray;
-            this.lblTimer.Location = new System.Drawing.Point(866, 25);
-            this.lblTimer.Name = "lblTimer";
-            this.lblTimer.Size = new System.Drawing.Size(48, 20);
-            this.lblTimer.TabIndex = 53;
-            this.lblTimer.Text = "Timer";
-            // 
-            // lblScore
-            // 
-            this.lblScore.AutoSize = true;
-            this.lblScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblScore.ForeColor = System.Drawing.Color.Gray;
-            this.lblScore.Location = new System.Drawing.Point(13, 25);
-            this.lblScore.Name = "lblScore";
-            this.lblScore.Size = new System.Drawing.Size(51, 20);
-            this.lblScore.TabIndex = 52;
-            this.lblScore.Text = "Score";
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.Black;
-            this.lblTitle.Location = new System.Drawing.Point(252, 44);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(100, 46);
-            this.lblTitle.TabIndex = 50;
-            this.lblTitle.Text = "Title";
-            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblScoreCount
-            // 
-            this.lblScoreCount.AutoSize = true;
-            this.lblScoreCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblScoreCount.ForeColor = System.Drawing.Color.DimGray;
-            this.lblScoreCount.Location = new System.Drawing.Point(22, 55);
-            this.lblScoreCount.Name = "lblScoreCount";
-            this.lblScoreCount.Size = new System.Drawing.Size(31, 32);
-            this.lblScoreCount.TabIndex = 49;
-            this.lblScoreCount.Text = "0";
-            // 
-            // lblTimerCount
-            // 
-            this.lblTimerCount.AutoSize = true;
-            this.lblTimerCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTimerCount.ForeColor = System.Drawing.Color.DimGray;
-            this.lblTimerCount.Location = new System.Drawing.Point(872, 55);
-            this.lblTimerCount.Name = "lblTimerCount";
-            this.lblTimerCount.Size = new System.Drawing.Size(47, 32);
-            this.lblTimerCount.TabIndex = 48;
-            this.lblTimerCount.Text = "10";
-            this.lblTimerCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnSubmitAnswer
             // 
@@ -308,12 +253,89 @@
             this.pbxAvatar.TabIndex = 46;
             this.pbxAvatar.TabStop = false;
             // 
+            // lblTimer
+            // 
+            this.lblTimer.AutoSize = true;
+            this.lblTimer.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTimer.ForeColor = System.Drawing.Color.Gray;
+            this.lblTimer.Location = new System.Drawing.Point(867, 24);
+            this.lblTimer.Name = "lblTimer";
+            this.lblTimer.Size = new System.Drawing.Size(48, 20);
+            this.lblTimer.TabIndex = 178;
+            this.lblTimer.Text = "Timer";
+            // 
+            // lblScore
+            // 
+            this.lblScore.AutoSize = true;
+            this.lblScore.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblScore.ForeColor = System.Drawing.Color.Gray;
+            this.lblScore.Location = new System.Drawing.Point(14, 24);
+            this.lblScore.Name = "lblScore";
+            this.lblScore.Size = new System.Drawing.Size(51, 20);
+            this.lblScore.TabIndex = 177;
+            this.lblScore.Text = "Score";
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.Black;
+            this.lblTitle.Location = new System.Drawing.Point(253, 43);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(100, 46);
+            this.lblTitle.TabIndex = 176;
+            this.lblTitle.Text = "Title";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblScoreCount
+            // 
+            this.lblScoreCount.AutoSize = true;
+            this.lblScoreCount.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblScoreCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblScoreCount.ForeColor = System.Drawing.Color.DimGray;
+            this.lblScoreCount.Location = new System.Drawing.Point(23, 54);
+            this.lblScoreCount.Name = "lblScoreCount";
+            this.lblScoreCount.Size = new System.Drawing.Size(31, 32);
+            this.lblScoreCount.TabIndex = 175;
+            this.lblScoreCount.Text = "0";
+            // 
+            // lblTimerCount
+            // 
+            this.lblTimerCount.AutoSize = true;
+            this.lblTimerCount.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblTimerCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTimerCount.ForeColor = System.Drawing.Color.DimGray;
+            this.lblTimerCount.Location = new System.Drawing.Point(873, 54);
+            this.lblTimerCount.Name = "lblTimerCount";
+            this.lblTimerCount.Size = new System.Drawing.Size(47, 32);
+            this.lblTimerCount.TabIndex = 174;
+            this.lblTimerCount.Text = "10";
+            this.lblTimerCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pbxHeader
+            // 
+            this.pbxHeader.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pbxHeader.Location = new System.Drawing.Point(0, 1);
+            this.pbxHeader.Name = "pbxHeader";
+            this.pbxHeader.Size = new System.Drawing.Size(934, 106);
+            this.pbxHeader.TabIndex = 179;
+            this.pbxHeader.TabStop = false;
+            // 
             // frmGame3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(933, 737);
+            this.Controls.Add(this.lblTimer);
+            this.Controls.Add(this.lblScore);
+            this.Controls.Add(this.lblTitle);
+            this.Controls.Add(this.lblScoreCount);
+            this.Controls.Add(this.lblTimerCount);
+            this.Controls.Add(this.pbxHeader);
             this.Controls.Add(this.pbxHide9);
             this.Controls.Add(this.pbxHide8);
             this.Controls.Add(this.pbxHide7);
@@ -327,18 +349,13 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.tbxGuess);
             this.Controls.Add(this.btnHelp);
-            this.Controls.Add(this.lblTimer);
-            this.Controls.Add(this.lblScore);
             this.Controls.Add(this.pbxThought);
-            this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.lblScoreCount);
-            this.Controls.Add(this.lblTimerCount);
             this.Controls.Add(this.pbxBubble3);
             this.Controls.Add(this.pbxAvatar);
             this.Controls.Add(this.btnSubmitAnswer);
             this.Name = "frmGame3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Game 4";
+            this.Text = "Game 3";
             this.Activated += new System.EventHandler(this.FrmGame3_Activated);
             this.Load += new System.EventHandler(this.FrmGame3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxHide9)).EndInit();
@@ -354,6 +371,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxThought)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBubble3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAvatar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxHeader)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -365,12 +383,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox tbxGuess;
         private System.Windows.Forms.Button btnHelp;
-        private System.Windows.Forms.Label lblTimer;
-        private System.Windows.Forms.Label lblScore;
         private System.Windows.Forms.PictureBox pbxThought;
-        private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Label lblScoreCount;
-        private System.Windows.Forms.Label lblTimerCount;
         private System.Windows.Forms.PictureBox pbxBubble3;
         private System.Windows.Forms.PictureBox pbxAvatar;
         private System.Windows.Forms.Button btnSubmitAnswer;
@@ -384,5 +397,11 @@
         private System.Windows.Forms.PictureBox pbxHide9;
         private System.Windows.Forms.PictureBox pbxHide8;
         private System.Windows.Forms.PictureBox pbxHide7;
+        private System.Windows.Forms.Label lblTimer;
+        private System.Windows.Forms.Label lblScore;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Label lblScoreCount;
+        private System.Windows.Forms.Label lblTimerCount;
+        private System.Windows.Forms.PictureBox pbxHeader;
     }
 }

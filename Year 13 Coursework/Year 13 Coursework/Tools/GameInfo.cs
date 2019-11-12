@@ -19,7 +19,7 @@ namespace Year_13_Coursework.Tools
                 case 3: response = "Uncover the Flag Quiz"; break;
                 case 4: response = "The Gruesome Hangman"; break;
                 case 5: response = "The Four Seas Quiz"; break;
-                case 6: response = "Game 6"; break;
+                case 6: response = "The Raindrop Quiz"; break;
             }
             return response;
         }
@@ -50,6 +50,20 @@ namespace Year_13_Coursework.Tools
                 case 4: response = "Gruesome and horrible. Can you save our globetrotting friend?\n\n"; break;
                 case 5: response = "Stop our little yacht from sinking.\n\nFour of the seas are real, the rest are made up.\n\n Select the real ones and keep the yacht afloat."; break;
                 case 6: response = "f"; break;
+            }
+            return response;
+        }
+
+        public string gamePoints() {
+            string response = "";
+            switch (Program.currentGame)
+            {
+                case 1: response = "Six points"; break;
+                case 2: response = "Three points"; break;
+                case 3: response = "Nine points"; break;
+                case 4: response = "Six points"; break;
+                case 5: response = "Four points"; break;
+                case 6: response = "Sixteen points"; break;
             }
             return response;
         }

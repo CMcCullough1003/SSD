@@ -44,6 +44,7 @@ namespace Year_13_Coursework
             lblGameNumber.Text = gameInfo.gameNumber();
             lblGameTitle.Text = gameInfo.gameName();
             lblGameInfo.Text = gameInfo.gameDescription();
+            lblGamePoints.Text = gameInfo.gamePoints();
         }
 
         private void moveToGame1()
