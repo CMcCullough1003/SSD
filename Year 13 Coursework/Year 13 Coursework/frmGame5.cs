@@ -17,6 +17,7 @@ namespace Year_13_Coursework
         private int counter = 30;
         private const string selected = "selected";
         private int selectedCount = 0;
+        private int correctSelections = 0;
         private const int maximumSelectionsAllowed = 4;
 
         private string[] realSeas = new string[4];
@@ -47,6 +48,7 @@ namespace Year_13_Coursework
         private void Timer1_Tick(object sender, EventArgs e)
         {
             displayCountdown();
+            sinkYacht();
         }
 
         //Stops the form being moved so the menu form is always on top of the game
@@ -161,9 +163,10 @@ namespace Year_13_Coursework
             moveToMenuScreen();
         }
 
-        private async void BtnSubmitAnswer_Click(object sender, EventArgs e)
+        private void BtnSubmitAnswer_Click(object sender, EventArgs e)
         {
-            showCorrectAnswers();
+            areAllSelectionsCorrect();
+            lblCorrectGuessCount.Text = correctSelections + "/4";
         }
 
         private void BtnClear_Click(object sender, EventArgs e)
@@ -181,6 +184,16 @@ namespace Year_13_Coursework
             pbxSky.Controls.Add(pbxYacht);
             pbxYacht.Location = new Point(75, 5);
             pbxYacht.BackColor = Color.Transparent;
+        }
+
+        private void sinkYacht()
+        {
+            pbxYacht.Location = new Point(pbxYacht.Location.X, pbxYacht.Location.Y + 2);
+        }
+
+        private void unsinkYacht()
+        {
+            
         }
 
         private void setUpTimer()
@@ -234,10 +247,10 @@ namespace Year_13_Coursework
         private void seaClicked(Label label)
         {
 
-            if (label.Tag == selected)
+            if (label.Tag.ToString() == selected)
             {
                 label.Tag = "";
-                label.BackColor = System.Drawing.Color.Red;
+                label.BackColor = System.Drawing.Color.SteelBlue;
                 selectedCount--;
             }
             else
@@ -249,12 +262,14 @@ namespace Year_13_Coursework
                     selectedCount++;
                 }
             }
+            updateCorrectSelectionCount(label);
             updateSubmitButton();
         }
 
         private void resetGame()
         {
             selectedCount = 0;
+            correctSelections = 0;
             updateSubmitButton();
 
             lblArafuraSea.Tag = "";
@@ -275,23 +290,23 @@ namespace Year_13_Coursework
             lblTiSea.Tag = "";
             lblWeddellSea.Tag = "";
 
-            lblArafuraSea.BackColor = System.Drawing.Color.Red;
-            lblBadSea.BackColor = System.Drawing.Color.Red;
-            lblBoySea.BackColor = System.Drawing.Color.Red;
-            lblBrusselSea.BackColor = System.Drawing.Color.Red;
-            lblBrysSea.BackColor = System.Drawing.Color.Red;
-            lblDylanSea.BackColor = System.Drawing.Color.Red;
-            lblEltonSea.BackColor = System.Drawing.Color.Red;
-            lblOtisSea.BackColor = System.Drawing.Color.Red;
-            lblPiSea.BackColor = System.Drawing.Color.Red;
-            lblSaltonSea.BackColor = System.Drawing.Color.Red;
-            lblSeaOfPlato.BackColor = System.Drawing.Color.Red;
-            lblSeaOfStorms.BackColor = System.Drawing.Color.Red;
-            lblSiSea.BackColor = System.Drawing.Color.Red;
-            lblTasmanSea.BackColor = System.Drawing.Color.Red;
-            lblTempleSea.BackColor = System.Drawing.Color.Red;
-            lblTiSea.BackColor = System.Drawing.Color.Red;
-            lblWeddellSea.BackColor = System.Drawing.Color.Red;
+            lblArafuraSea.BackColor = System.Drawing.Color.SteelBlue;
+            lblBadSea.BackColor = System.Drawing.Color.SteelBlue;
+            lblBoySea.BackColor = System.Drawing.Color.SteelBlue;
+            lblBrusselSea.BackColor = System.Drawing.Color.SteelBlue;
+            lblBrysSea.BackColor = System.Drawing.Color.SteelBlue;
+            lblDylanSea.BackColor = System.Drawing.Color.SteelBlue;
+            lblEltonSea.BackColor = System.Drawing.Color.SteelBlue;
+            lblOtisSea.BackColor = System.Drawing.Color.SteelBlue;
+            lblPiSea.BackColor = System.Drawing.Color.SteelBlue;
+            lblSaltonSea.BackColor = System.Drawing.Color.SteelBlue;
+            lblSeaOfPlato.BackColor = System.Drawing.Color.SteelBlue;
+            lblSeaOfStorms.BackColor = System.Drawing.Color.SteelBlue;
+            lblSiSea.BackColor = System.Drawing.Color.SteelBlue;
+            lblTasmanSea.BackColor = System.Drawing.Color.SteelBlue;
+            lblTempleSea.BackColor = System.Drawing.Color.SteelBlue;
+            lblTiSea.BackColor = System.Drawing.Color.SteelBlue;
+            lblWeddellSea.BackColor = System.Drawing.Color.SteelBlue;
         }
 
         private void updateSubmitButton()
@@ -305,6 +320,35 @@ namespace Year_13_Coursework
             {
                 btnSubmitAnswer.Enabled = false;
                 btnSubmitAnswer.BackColor = System.Drawing.Color.LightGray;
+            }
+        }
+
+        private void areAllSelectionsCorrect()
+        {
+            if (correctSelections == 4)
+            {
+                showCorrectAnswers();
+            }
+        }
+
+        private void updateCorrectSelectionCount(Label selectedSea)
+        {
+            //Check to see if the chosen sea is a real sea
+            int pos = Array.IndexOf(realSeas, selectedSea.Text);
+
+            //If real the answer will be greater than -1
+            if (pos >= 0)
+            {
+                //If the sea has been selected, increment
+                //If the sea has been unselected, decrement
+                if ( selectedSea.Tag.ToString() == selected)
+                {
+                    correctSelections++;
+                }
+                else
+                {
+                    correctSelections--;
+                }
             }
         }
 

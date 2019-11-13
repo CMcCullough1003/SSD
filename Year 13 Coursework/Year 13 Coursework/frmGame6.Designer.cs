@@ -36,7 +36,7 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblScoreCount = new System.Windows.Forms.Label();
             this.lblTimerCount = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblStatement1 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -46,6 +46,8 @@
             this.pbxBubble3 = new System.Windows.Forms.PictureBox();
             this.pbxAvatar = new System.Windows.Forms.PictureBox();
             this.pbxHeader = new System.Windows.Forms.PictureBox();
+            this.lblStatement2 = new System.Windows.Forms.Label();
+            this.lblStatement3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -129,14 +131,16 @@
             this.lblTimerCount.Text = "10";
             this.lblTimerCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // lblStatement1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(312, 247);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 20);
-            this.label1.TabIndex = 210;
-            this.label1.Text = "label1";
+            this.lblStatement1.AutoSize = true;
+            this.lblStatement1.BackColor = System.Drawing.Color.LightGray;
+            this.lblStatement1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblStatement1.Location = new System.Drawing.Point(312, 247);
+            this.lblStatement1.Name = "lblStatement1";
+            this.lblStatement1.Size = new System.Drawing.Size(53, 22);
+            this.lblStatement1.TabIndex = 210;
+            this.lblStatement1.Text = "label1";
             // 
             // pictureBox3
             // 
@@ -226,16 +230,40 @@
             this.pbxHeader.TabIndex = 207;
             this.pbxHeader.TabStop = false;
             // 
+            // lblStatement2
+            // 
+            this.lblStatement2.AutoSize = true;
+            this.lblStatement2.BackColor = System.Drawing.Color.LightGray;
+            this.lblStatement2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblStatement2.Location = new System.Drawing.Point(551, 247);
+            this.lblStatement2.Name = "lblStatement2";
+            this.lblStatement2.Size = new System.Drawing.Size(53, 22);
+            this.lblStatement2.TabIndex = 214;
+            this.lblStatement2.Text = "label2";
+            // 
+            // lblStatement3
+            // 
+            this.lblStatement3.AutoSize = true;
+            this.lblStatement3.BackColor = System.Drawing.Color.LightGray;
+            this.lblStatement3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblStatement3.Location = new System.Drawing.Point(811, 247);
+            this.lblStatement3.Name = "lblStatement3";
+            this.lblStatement3.Size = new System.Drawing.Size(53, 22);
+            this.lblStatement3.TabIndex = 215;
+            this.lblStatement3.Text = "label3";
+            // 
             // frmGame6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(933, 737);
+            this.Controls.Add(this.lblStatement3);
+            this.Controls.Add(this.lblStatement2);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblStatement1);
             this.Controls.Add(this.pbxMountains);
             this.Controls.Add(this.pbxBackground);
             this.Controls.Add(this.pbxThought);
@@ -280,9 +308,11 @@
         private System.Windows.Forms.PictureBox pbxHeader;
         private System.Windows.Forms.PictureBox pbxBackground;
         private System.Windows.Forms.PictureBox pbxMountains;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblStatement1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label lblStatement2;
+        private System.Windows.Forms.Label lblStatement3;
     }
 }

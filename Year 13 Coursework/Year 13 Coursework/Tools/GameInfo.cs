@@ -49,7 +49,7 @@ namespace Year_13_Coursework.Tools
                 case 3: response = "Reveal the flag and guess the country.\n\nClick on the squares to reveal the flag below. Guess the country from the flag.\n\nNine globetrotter points available."; break;
                 case 4: response = "Gruesome and horrible. Can you save our globetrotting friend?\n\n"; break;
                 case 5: response = "Stop our little yacht from sinking.\n\nFour of the seas are real, the rest are made up.\n\n Select the real ones and keep the yacht afloat."; break;
-                case 6: response = "f"; break;
+                case 6: response = "Shoot down the false facts.\n\nGiude your character left or right using the arrow keys to aim\n\nDont let the lies reach the mountains"; break;
             }
             return response;
         }

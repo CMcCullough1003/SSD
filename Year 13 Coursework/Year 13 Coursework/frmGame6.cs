@@ -13,8 +13,9 @@ namespace Year_13_Coursework
 {
     public partial class frmGame6 : frmGame
     {
-
-        private int counter = 30;
+        private const int maxCounter = 30;
+        private int counter = maxCounter;
+        private int currentStatement = 0;
 
         private const int statmentPosition = 0;
         private const int isStatementTruePosition = 1;
@@ -75,6 +76,7 @@ namespace Year_13_Coursework
         private void Timer1_Tick(object sender, EventArgs e)
         {
             displayCountdown();
+            dropStatements();
         }
 
         /* BUTTON CLICKS  ======================================================================*/
@@ -130,6 +132,14 @@ namespace Year_13_Coursework
             moveToMenu.Show();
         }
 
-
+        private void dropStatements()
+        {
+            switch (counter)
+            {
+                case maxCounter: lblStatement1.Location = new Point(lblStatement1.Location.X, lblStatement1.Location.Y + 20); break;
+                case maxCounter - 1: lblStatement2.Location = new Point(lblStatement2.Location.X, lblStatement2.Location.Y + 20); break;
+                default: lblStatement3.Location = new Point(lblStatement3.Location.X, lblStatement3.Location.Y + 20); break;
+            }
+        }
     }
 }

@@ -13,3 +13,12 @@ To do list:
 - Code game 6
 - Display time in game info screen and use as constants
 - Change colours in game 5 to neutral
+- Alarm clock sound
+
+342, 135
+553, 135
+811, 135
+
+533, 615
+
+480 difference

@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblCorrectGuessCount = new System.Windows.Forms.Label();
             this.lblSaltonSea = new System.Windows.Forms.Label();
             this.btnHelp = new System.Windows.Forms.Button();
             this.lblTimer = new System.Windows.Forms.Label();
@@ -84,22 +84,22 @@
             this.label3.TabIndex = 152;
             this.label3.Text = "Score:";
             // 
-            // label2
+            // lblCorrectGuessCount
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(567, 668);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 32);
-            this.label2.TabIndex = 151;
-            this.label2.Text = "Title";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCorrectGuessCount.AutoSize = true;
+            this.lblCorrectGuessCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCorrectGuessCount.ForeColor = System.Drawing.Color.DimGray;
+            this.lblCorrectGuessCount.Location = new System.Drawing.Point(567, 668);
+            this.lblCorrectGuessCount.Name = "lblCorrectGuessCount";
+            this.lblCorrectGuessCount.Size = new System.Drawing.Size(70, 32);
+            this.lblCorrectGuessCount.TabIndex = 151;
+            this.lblCorrectGuessCount.Text = "Title";
+            this.lblCorrectGuessCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblSaltonSea
             // 
             this.lblSaltonSea.AutoSize = true;
-            this.lblSaltonSea.BackColor = System.Drawing.Color.Red;
+            this.lblSaltonSea.BackColor = System.Drawing.Color.SteelBlue;
             this.lblSaltonSea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblSaltonSea.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSaltonSea.ForeColor = System.Drawing.Color.White;
@@ -191,7 +191,7 @@
             // 
             this.pbxYacht.BackColor = System.Drawing.Color.Transparent;
             this.pbxYacht.Image = global::Year_13_Coursework.Properties.Resources.yacht;
-            this.pbxYacht.Location = new System.Drawing.Point(574, 122);
+            this.pbxYacht.Location = new System.Drawing.Point(393, 122);
             this.pbxYacht.Name = "pbxYacht";
             this.pbxYacht.Size = new System.Drawing.Size(99, 96);
             this.pbxYacht.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -250,7 +250,7 @@
             // lblBrusselSea
             // 
             this.lblBrusselSea.AutoSize = true;
-            this.lblBrusselSea.BackColor = System.Drawing.Color.Red;
+            this.lblBrusselSea.BackColor = System.Drawing.Color.SteelBlue;
             this.lblBrusselSea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblBrusselSea.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBrusselSea.ForeColor = System.Drawing.Color.White;
@@ -265,7 +265,7 @@
             // lblArafuraSea
             // 
             this.lblArafuraSea.AutoSize = true;
-            this.lblArafuraSea.BackColor = System.Drawing.Color.Red;
+            this.lblArafuraSea.BackColor = System.Drawing.Color.SteelBlue;
             this.lblArafuraSea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblArafuraSea.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblArafuraSea.ForeColor = System.Drawing.Color.White;
@@ -280,7 +280,7 @@
             // lblBoySea
             // 
             this.lblBoySea.AutoSize = true;
-            this.lblBoySea.BackColor = System.Drawing.Color.Red;
+            this.lblBoySea.BackColor = System.Drawing.Color.SteelBlue;
             this.lblBoySea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblBoySea.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBoySea.ForeColor = System.Drawing.Color.White;
@@ -295,7 +295,7 @@
             // lblWeddellSea
             // 
             this.lblWeddellSea.AutoSize = true;
-            this.lblWeddellSea.BackColor = System.Drawing.Color.Red;
+            this.lblWeddellSea.BackColor = System.Drawing.Color.SteelBlue;
             this.lblWeddellSea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblWeddellSea.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWeddellSea.ForeColor = System.Drawing.Color.White;
@@ -310,7 +310,7 @@
             // lblBadSea
             // 
             this.lblBadSea.AutoSize = true;
-            this.lblBadSea.BackColor = System.Drawing.Color.Red;
+            this.lblBadSea.BackColor = System.Drawing.Color.SteelBlue;
             this.lblBadSea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblBadSea.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBadSea.ForeColor = System.Drawing.Color.White;
@@ -325,7 +325,7 @@
             // lblTasmanSea
             // 
             this.lblTasmanSea.AutoSize = true;
-            this.lblTasmanSea.BackColor = System.Drawing.Color.Red;
+            this.lblTasmanSea.BackColor = System.Drawing.Color.SteelBlue;
             this.lblTasmanSea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTasmanSea.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTasmanSea.ForeColor = System.Drawing.Color.White;
@@ -340,7 +340,7 @@
             // lblOtisSea
             // 
             this.lblOtisSea.AutoSize = true;
-            this.lblOtisSea.BackColor = System.Drawing.Color.Red;
+            this.lblOtisSea.BackColor = System.Drawing.Color.SteelBlue;
             this.lblOtisSea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblOtisSea.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOtisSea.ForeColor = System.Drawing.Color.White;
@@ -355,7 +355,7 @@
             // lblDylanSea
             // 
             this.lblDylanSea.AutoSize = true;
-            this.lblDylanSea.BackColor = System.Drawing.Color.Red;
+            this.lblDylanSea.BackColor = System.Drawing.Color.SteelBlue;
             this.lblDylanSea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblDylanSea.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDylanSea.ForeColor = System.Drawing.Color.White;
@@ -370,7 +370,7 @@
             // lblEltonSea
             // 
             this.lblEltonSea.AutoSize = true;
-            this.lblEltonSea.BackColor = System.Drawing.Color.Red;
+            this.lblEltonSea.BackColor = System.Drawing.Color.SteelBlue;
             this.lblEltonSea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblEltonSea.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEltonSea.ForeColor = System.Drawing.Color.White;
@@ -385,7 +385,7 @@
             // lblTempleSea
             // 
             this.lblTempleSea.AutoSize = true;
-            this.lblTempleSea.BackColor = System.Drawing.Color.Red;
+            this.lblTempleSea.BackColor = System.Drawing.Color.SteelBlue;
             this.lblTempleSea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTempleSea.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTempleSea.ForeColor = System.Drawing.Color.White;
@@ -400,7 +400,7 @@
             // lblSeaOfPlato
             // 
             this.lblSeaOfPlato.AutoSize = true;
-            this.lblSeaOfPlato.BackColor = System.Drawing.Color.Red;
+            this.lblSeaOfPlato.BackColor = System.Drawing.Color.SteelBlue;
             this.lblSeaOfPlato.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblSeaOfPlato.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSeaOfPlato.ForeColor = System.Drawing.Color.White;
@@ -415,7 +415,7 @@
             // lblSeaOfStorms
             // 
             this.lblSeaOfStorms.AutoSize = true;
-            this.lblSeaOfStorms.BackColor = System.Drawing.Color.Red;
+            this.lblSeaOfStorms.BackColor = System.Drawing.Color.SteelBlue;
             this.lblSeaOfStorms.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblSeaOfStorms.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSeaOfStorms.ForeColor = System.Drawing.Color.White;
@@ -430,7 +430,7 @@
             // lblPiSea
             // 
             this.lblPiSea.AutoSize = true;
-            this.lblPiSea.BackColor = System.Drawing.Color.Red;
+            this.lblPiSea.BackColor = System.Drawing.Color.SteelBlue;
             this.lblPiSea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblPiSea.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPiSea.ForeColor = System.Drawing.Color.White;
@@ -445,7 +445,7 @@
             // lblTiSea
             // 
             this.lblTiSea.AutoSize = true;
-            this.lblTiSea.BackColor = System.Drawing.Color.Red;
+            this.lblTiSea.BackColor = System.Drawing.Color.SteelBlue;
             this.lblTiSea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTiSea.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTiSea.ForeColor = System.Drawing.Color.White;
@@ -460,7 +460,7 @@
             // lblSiSea
             // 
             this.lblSiSea.AutoSize = true;
-            this.lblSiSea.BackColor = System.Drawing.Color.Red;
+            this.lblSiSea.BackColor = System.Drawing.Color.SteelBlue;
             this.lblSiSea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblSiSea.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSiSea.ForeColor = System.Drawing.Color.White;
@@ -475,7 +475,7 @@
             // lblBrysSea
             // 
             this.lblBrysSea.AutoSize = true;
-            this.lblBrysSea.BackColor = System.Drawing.Color.Red;
+            this.lblBrysSea.BackColor = System.Drawing.Color.SteelBlue;
             this.lblBrysSea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblBrysSea.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBrysSea.ForeColor = System.Drawing.Color.White;
@@ -548,7 +548,7 @@
             this.Controls.Add(this.lblBrusselSea);
             this.Controls.Add(this.pbxSea);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblCorrectGuessCount);
             this.Controls.Add(this.lblSaltonSea);
             this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.lblTimer);
@@ -563,6 +563,7 @@
             this.Controls.Add(this.pbxSky);
             this.Controls.Add(this.pbxHeader);
             this.Name = "frmGame5";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Game 5";
             this.Activated += new System.EventHandler(this.FrmGame5_Activated);
             this.Load += new System.EventHandler(this.FrmGame5_Load);
@@ -581,7 +582,7 @@
         #endregion
 
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblCorrectGuessCount;
         private System.Windows.Forms.Label lblSaltonSea;
         private System.Windows.Forms.PictureBox pbxSky;
         private System.Windows.Forms.Button btnHelp;
