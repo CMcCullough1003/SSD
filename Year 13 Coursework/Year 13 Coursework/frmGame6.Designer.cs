@@ -37,9 +37,7 @@
             this.lblScoreCount = new System.Windows.Forms.Label();
             this.lblTimerCount = new System.Windows.Forms.Label();
             this.lblStatement1 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbxCloud2 = new System.Windows.Forms.PictureBox();
             this.pbxMountains = new System.Windows.Forms.PictureBox();
             this.pbxBackground = new System.Windows.Forms.PictureBox();
             this.pbxThought = new System.Windows.Forms.PictureBox();
@@ -48,9 +46,7 @@
             this.pbxHeader = new System.Windows.Forms.PictureBox();
             this.lblStatement2 = new System.Windows.Forms.Label();
             this.lblStatement3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCloud2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxMountains)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBackground)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxThought)).BeginInit();
@@ -136,41 +132,21 @@
             this.lblStatement1.AutoSize = true;
             this.lblStatement1.BackColor = System.Drawing.Color.LightGray;
             this.lblStatement1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblStatement1.Location = new System.Drawing.Point(312, 247);
+            this.lblStatement1.Location = new System.Drawing.Point(312, 156);
             this.lblStatement1.Name = "lblStatement1";
             this.lblStatement1.Size = new System.Drawing.Size(53, 22);
             this.lblStatement1.TabIndex = 210;
             this.lblStatement1.Text = "label1";
             // 
-            // pictureBox3
+            // pbxCloud2
             // 
-            this.pictureBox3.Image = global::Year_13_Coursework.Properties.Resources.darkClouds3;
-            this.pictureBox3.Location = new System.Drawing.Point(423, 112);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(335, 90);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 213;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Year_13_Coursework.Properties.Resources.DarkClouds2;
-            this.pictureBox2.Location = new System.Drawing.Point(260, 112);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(288, 58);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 212;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Year_13_Coursework.Properties.Resources.darkClouds;
-            this.pictureBox1.Location = new System.Drawing.Point(631, 112);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(288, 58);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 211;
-            this.pictureBox1.TabStop = false;
+            this.pbxCloud2.Image = global::Year_13_Coursework.Properties.Resources.darkClouds3;
+            this.pbxCloud2.Location = new System.Drawing.Point(260, 112);
+            this.pbxCloud2.Name = "pbxCloud2";
+            this.pbxCloud2.Size = new System.Drawing.Size(661, 111);
+            this.pbxCloud2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxCloud2.TabIndex = 213;
+            this.pbxCloud2.TabStop = false;
             // 
             // pbxMountains
             // 
@@ -184,7 +160,7 @@
             // 
             // pbxBackground
             // 
-            this.pbxBackground.BackColor = System.Drawing.Color.White;
+            this.pbxBackground.BackColor = System.Drawing.Color.LightSkyBlue;
             this.pbxBackground.Location = new System.Drawing.Point(260, 112);
             this.pbxBackground.Name = "pbxBackground";
             this.pbxBackground.Size = new System.Drawing.Size(659, 597);
@@ -235,7 +211,7 @@
             this.lblStatement2.AutoSize = true;
             this.lblStatement2.BackColor = System.Drawing.Color.LightGray;
             this.lblStatement2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblStatement2.Location = new System.Drawing.Point(551, 247);
+            this.lblStatement2.Location = new System.Drawing.Point(551, 156);
             this.lblStatement2.Name = "lblStatement2";
             this.lblStatement2.Size = new System.Drawing.Size(53, 22);
             this.lblStatement2.TabIndex = 214;
@@ -246,7 +222,7 @@
             this.lblStatement3.AutoSize = true;
             this.lblStatement3.BackColor = System.Drawing.Color.LightGray;
             this.lblStatement3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblStatement3.Location = new System.Drawing.Point(811, 247);
+            this.lblStatement3.Location = new System.Drawing.Point(808, 156);
             this.lblStatement3.Name = "lblStatement3";
             this.lblStatement3.Size = new System.Drawing.Size(53, 22);
             this.lblStatement3.TabIndex = 215;
@@ -258,14 +234,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(933, 737);
-            this.Controls.Add(this.lblStatement3);
-            this.Controls.Add(this.lblStatement2);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.lblStatement1);
             this.Controls.Add(this.pbxMountains);
-            this.Controls.Add(this.pbxBackground);
+            this.Controls.Add(this.lblStatement2);
+            this.Controls.Add(this.lblStatement1);
             this.Controls.Add(this.pbxThought);
             this.Controls.Add(this.pbxBubble3);
             this.Controls.Add(this.btnHelp);
@@ -276,13 +247,15 @@
             this.Controls.Add(this.lblTimerCount);
             this.Controls.Add(this.pbxAvatar);
             this.Controls.Add(this.pbxHeader);
+            this.Controls.Add(this.lblStatement3);
+            this.Controls.Add(this.pbxCloud2);
+            this.Controls.Add(this.pbxBackground);
             this.Name = "frmGame6";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Game 6";
             this.Activated += new System.EventHandler(this.FrmGame6_Activated);
             this.Load += new System.EventHandler(this.FrmGame6_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCloud2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxMountains)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBackground)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxThought)).EndInit();
@@ -309,9 +282,7 @@
         private System.Windows.Forms.PictureBox pbxBackground;
         private System.Windows.Forms.PictureBox pbxMountains;
         private System.Windows.Forms.Label lblStatement1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pbxCloud2;
         private System.Windows.Forms.Label lblStatement2;
         private System.Windows.Forms.Label lblStatement3;
     }

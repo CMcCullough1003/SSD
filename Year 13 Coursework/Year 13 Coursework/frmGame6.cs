@@ -13,11 +13,14 @@ namespace Year_13_Coursework
 {
     public partial class frmGame6 : frmGame
     {
+        private const int StatementYStartLocation = 25;
+        private const int StatementYEndLocation = 275;
+
         private const int maxCounter = 30;
         private int counter = maxCounter;
         private int currentStatement = 0;
 
-        private const int statmentPosition = 0;
+        private const int statementPosition = 0;
         private const int isStatementTruePosition = 1;
 
         private string[,] statements = new string[30, 2] {
@@ -60,6 +63,10 @@ namespace Year_13_Coursework
 
         private void FrmGame6_Load(object sender, EventArgs e)
         {
+            transparentMountainBackground();
+            transparentCloudBackgrounds();
+            addLabelsToBackground();
+            addStatementToAllLabels();
             setUpTimer();
             displayAvatar();
             setTitle();
@@ -136,10 +143,73 @@ namespace Year_13_Coursework
         {
             switch (counter)
             {
-                case maxCounter: lblStatement1.Location = new Point(lblStatement1.Location.X, lblStatement1.Location.Y + 20); break;
-                case maxCounter - 1: lblStatement2.Location = new Point(lblStatement2.Location.X, lblStatement2.Location.Y + 20); break;
-                default: lblStatement3.Location = new Point(lblStatement3.Location.X, lblStatement3.Location.Y + 20); break;
+                case maxCounter - 1:
+                    lblStatement1.Location = new Point(lblStatement1.Location.X, lblStatement1.Location.Y + 20);
+                    break;
+                case maxCounter - 2:
+                    lblStatement1.Location = new Point(lblStatement1.Location.X, lblStatement1.Location.Y + 20);
+                    lblStatement2.Location = new Point(lblStatement2.Location.X, lblStatement2.Location.Y + 20);
+                    break;
+                default:
+                    lblStatement1.Location = new Point(lblStatement1.Location.X, lblStatement1.Location.Y + 20);
+                    lblStatement2.Location = new Point(lblStatement2.Location.X, lblStatement2.Location.Y + 20);
+                    lblStatement3.Location = new Point(lblStatement3.Location.X, lblStatement3.Location.Y + 20);
+                    break;
             }
+            checkIfMoveLabelToTop(lblStatement1);
+            checkIfMoveLabelToTop(lblStatement2);
+            checkIfMoveLabelToTop(lblStatement3);
+        }
+
+        private void transparentMountainBackground()
+        {
+            pbxBackground.Controls.Add(pbxMountains);
+            pbxMountains.Location = new Point(0, 270);
+            pbxMountains.BackColor = Color.Transparent;
+
+        }
+
+        private void transparentCloudBackgrounds()
+        {
+            pbxBackground.Controls.Add(pbxCloud2);
+            pbxCloud2.Location = new Point(0, StatementYStartLocation);
+            pbxCloud2.BackColor = Color.Transparent;
+        }
+
+        private void addLabelsToBackground()
+        {
+            pbxBackground.Controls.Add(lblStatement1);
+            lblStatement1.Location = new Point(40, StatementYStartLocation);
+
+            pbxBackground.Controls.Add(lblStatement2);
+            lblStatement2.Location = new Point(190, StatementYStartLocation);
+
+            pbxBackground.Controls.Add(lblStatement3);
+            lblStatement3.Location = new Point(340, StatementYStartLocation);
+        }
+
+        private void checkIfMoveLabelToTop(Label label)
+        {
+            if(label.Location.Y > StatementYEndLocation)
+            {
+                label.Location = new Point(label.Location.X, StatementYStartLocation);
+                addStatementToLabel(label);
+            }
+        }
+
+        private void addStatementToLabel(Label label)
+        {
+            label.Text = statements[currentStatement, statementPosition];
+            label.Tag = statements[currentStatement, isStatementTruePosition];
+            currentStatement++;
+        }
+
+        private void addStatementToAllLabels()
+        {
+            addStatementToLabel(lblStatement1);
+            addStatementToLabel(lblStatement2);
+            addStatementToLabel(lblStatement3);
+
         }
     }
 }

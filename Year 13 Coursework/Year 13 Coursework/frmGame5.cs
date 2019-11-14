@@ -180,7 +180,8 @@ namespace Year_13_Coursework
         {
         }
 
-        private void positionYacht() {
+        private void positionYacht()
+        {
             pbxSky.Controls.Add(pbxYacht);
             pbxYacht.Location = new Point(75, 5);
             pbxYacht.BackColor = Color.Transparent;

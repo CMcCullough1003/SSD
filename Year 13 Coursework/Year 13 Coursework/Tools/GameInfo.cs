@@ -19,7 +19,7 @@ namespace Year_13_Coursework.Tools
                 case 3: response = "Uncover the Flag Quiz"; break;
                 case 4: response = "The Gruesome Hangman"; break;
                 case 5: response = "The Four Seas Quiz"; break;
-                case 6: response = "The Raindrop Quiz"; break;
+                case 6: response = "Shoot Down The Lies"; break;
             }
             return response;
         }
