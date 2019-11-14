@@ -8,7 +8,7 @@ namespace Year_13_Coursework.Constants
 {
     public class FileConstants
     {
-        public const string USER_FILE_LOCATION = "Users.txt";
+        public const string USER_FILE_NAME = "Users.txt";
         public const char USER_FILE_SEPARATOR = '~';
 
         public const int USER_FILE_NAME_POSITION = 0;

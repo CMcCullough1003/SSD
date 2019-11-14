@@ -87,9 +87,9 @@ namespace Year_13_Coursework
                 return;
             }
 
-            if (!File.Exists(FileConstants.USER_FILE_LOCATION))
+            if (!files.checkFileExists(FileConstants.USER_FILE_NAME))
             {
-                File.Create(FileConstants.USER_FILE_LOCATION);
+                files.createNewFile(FileConstants.USER_FILE_NAME);
             }
 
             MessageBox.Show("Your registration was successful", "Success");
@@ -205,7 +205,7 @@ namespace Year_13_Coursework
         private void saveUserDetailsToFile()
         {
             string userDetails = tbxUsername.Text + FileConstants.USER_FILE_SEPARATOR + tbxPassword.Text + FileConstants.USER_FILE_SEPARATOR + pbxSelected.Tag;
-            files.appendToFile(FileConstants.USER_FILE_LOCATION, userDetails);
+            files.appendToFile(FileConstants.USER_FILE_NAME, userDetails);
         }
 
         private void saveAsCurrentUser()

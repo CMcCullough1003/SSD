@@ -34,9 +34,9 @@ namespace Year_13_Coursework
                 return;
             }
 
-            if (! files.checkFileExists(FileConstants.USER_FILE_LOCATION))
+            if (! files.checkFileExists(FileConstants.USER_FILE_NAME))
             {
-                MessageBox.Show("Please check the file exists", "No file found");
+                MessageBox.Show("We have no user file. You must be our first user. Please register.", "No file found");
                 return;
             }
 
@@ -86,7 +86,7 @@ namespace Year_13_Coursework
 
         private List<string> getUsers()
         {
-            return files.getFileContents(FileConstants.USER_FILE_LOCATION);
+            return files.getFileContents(FileConstants.USER_FILE_NAME);
         }
 
         private Boolean checkInputsProvided(string name, string password) 

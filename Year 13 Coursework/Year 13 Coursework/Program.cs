@@ -19,7 +19,7 @@ namespace Year_13_Coursework
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmGame6());
+            Application.Run(new frmLogin());
         }
     }
 }
