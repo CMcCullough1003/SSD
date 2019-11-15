@@ -593,6 +593,16 @@ namespace Year_13_Coursework.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap LoginBackground {
+            get {
+                object obj = ResourceManager.GetObject("LoginBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Mexico_Flag {
             get {
                 object obj = ResourceManager.GetObject("Mexico_Flag", resourceCulture);

@@ -30,13 +30,13 @@ namespace Year_13_Coursework
 
             if (checkInputsProvided(usernameInput, passwordInput))
             {
-                MessageBox.Show("Username and Password must not be empty", "try again");
+                lblError.Text = "Please fill all fields";
                 return;
             }
 
             if (! files.checkFileExists(FileConstants.USER_FILE_NAME))
             {
-                MessageBox.Show("We have no user file. You must be our first user. Please register.", "No file found");
+                lblError.Text = "No file found. Please register";
                 return;
             }
 
@@ -69,7 +69,7 @@ namespace Year_13_Coursework
             //Did we find a match?
             if (Program.currentUser.currentName == "")
             {
-                MessageBox.Show("Your username or password is incorrect", "failure");
+                lblError.Text = "Invalid credentials";
                 clearUserInputs();
             }
             else
@@ -116,6 +116,11 @@ namespace Year_13_Coursework
         private void FrmLogin_Load(object sender, EventArgs e)
         {
             Program.currentUser.resetUser();
+        }
+
+        private void LblCreateAccount_Click(object sender, EventArgs e)
+        {
+            moveToRegisterScreen();
         }
     }
 }

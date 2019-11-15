@@ -227,6 +227,7 @@
     <None Include="Resources\sheep.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\LoginBackground.jpg" />
     <None Include="Resources\darkClouds3.png" />
     <None Include="Resources\darkClouds.png" />
     <None Include="Resources\DarkClouds2.png" />

@@ -130,13 +130,16 @@
             // lblStatement1
             // 
             this.lblStatement1.AutoSize = true;
-            this.lblStatement1.BackColor = System.Drawing.Color.LightGray;
+            this.lblStatement1.BackColor = System.Drawing.Color.White;
             this.lblStatement1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblStatement1.Location = new System.Drawing.Point(312, 156);
             this.lblStatement1.Name = "lblStatement1";
-            this.lblStatement1.Size = new System.Drawing.Size(53, 22);
+            this.lblStatement1.Padding = new System.Windows.Forms.Padding(10);
+            this.lblStatement1.Size = new System.Drawing.Size(73, 42);
             this.lblStatement1.TabIndex = 210;
             this.lblStatement1.Text = "label1";
+            this.lblStatement1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblStatement1.Click += new System.EventHandler(this.LblStatement1_Click);
             // 
             // pbxCloud2
             // 
@@ -209,24 +212,30 @@
             // lblStatement2
             // 
             this.lblStatement2.AutoSize = true;
-            this.lblStatement2.BackColor = System.Drawing.Color.LightGray;
+            this.lblStatement2.BackColor = System.Drawing.Color.White;
             this.lblStatement2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblStatement2.Location = new System.Drawing.Point(551, 156);
             this.lblStatement2.Name = "lblStatement2";
-            this.lblStatement2.Size = new System.Drawing.Size(53, 22);
+            this.lblStatement2.Padding = new System.Windows.Forms.Padding(10);
+            this.lblStatement2.Size = new System.Drawing.Size(73, 42);
             this.lblStatement2.TabIndex = 214;
             this.lblStatement2.Text = "label2";
+            this.lblStatement2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblStatement2.Click += new System.EventHandler(this.LblStatement2_Click);
             // 
             // lblStatement3
             // 
             this.lblStatement3.AutoSize = true;
-            this.lblStatement3.BackColor = System.Drawing.Color.LightGray;
+            this.lblStatement3.BackColor = System.Drawing.Color.White;
             this.lblStatement3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblStatement3.Location = new System.Drawing.Point(808, 156);
             this.lblStatement3.Name = "lblStatement3";
-            this.lblStatement3.Size = new System.Drawing.Size(53, 22);
+            this.lblStatement3.Padding = new System.Windows.Forms.Padding(10);
+            this.lblStatement3.Size = new System.Drawing.Size(73, 42);
             this.lblStatement3.TabIndex = 215;
             this.lblStatement3.Text = "label3";
+            this.lblStatement3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblStatement3.Click += new System.EventHandler(this.LblStatement3_Click);
             // 
             // frmGame6
             // 

@@ -15,45 +15,53 @@ namespace Year_13_Coursework
     {
         private const int StatementYStartLocation = 25;
         private const int StatementYEndLocation = 275;
+        private const int Statement1XPosition = 40;
+        private const int Statement2XPosition = 170;
+        private const int Statement3XPosition = 300;
+        private const int YCoordinateMovePerTick = 20;
 
-        private const int maxCounter = 30;
+        private const string trueStatement = "T";
+        private const string falseStatement = "F";
+
+        private const int maxCounter = 10;
         private int counter = maxCounter;
         private int currentStatement = 0;
+        private int score = 0;
 
         private const int statementPosition = 0;
         private const int isStatementTruePosition = 1;
 
         private string[,] statements = new string[30, 2] {
             {"China is in Asia", "T"},
-            {"Heated water turns to ice", "F"},
-            {"The Lagan River flows through Glasgow", "F"},
-            {"Australia is wider than the moon", "T"},
-            {"90% of people live in the northen hemisphere", "T"},
-            {"Monaco is the smallest country", "F"},
-            {"Mt Everest is in Tibet", "T"},
-            {"There are 7,100+ island in the Philippines", "T"},
-            {"San Marino is completely surrounded by Italy", "T"},
-            {"81 % of the Earth's surface is water", "F"},
-            {"Toronto is the capital of Canada", "F"},
-            {"Africa spans all four hemispheres", "T"},
-            {"The 25 tallest mountain are in the Himalayas", "F"},
-            {"The island nation of Naru has no capital city", "T"},
-            {"It snowed in the Sahara in 2018", "T"},
-            {"The are no rivers in Saudi Arabia", "T"},
-            {"Nepal's flag is shaped like mountains", "T"},
-            {"The United States and Russia are 51 miles part", "T"},
-            {"All bears live in the Northen hemisphere", "F"},
-            {"The US has land borders with 3 countries", "F"},
-            {"Polar bears hunt penguins for food", "F"},
-            {"Mount Everest can fit inside the Mariana Trench", "T"},
-            {"There are no crocodiles in Australia", "F"},
-            {"Every continent has acity called Rome", "F"},
-            {"France has a village called Y", "T"},
-            {"The coldest recorded temperature is -89.2C ", "T"},
-            {"Iceland has more volcanoes tan any other country", "F"},
-            {"Russia has 10 time zones", "F"},
-            {"Hurricanes hit China more than any other country", "T"},
-            {"Japan is west of India", "F"},
+            {"Heated water turns\nto ice", "F"},
+            {"The Lagan River flows\nthrough Glasgow", "F"},
+            {"Australia is wider\nthan the moon", "T"},
+            {"90% of people live\nin the northen\nhemisphere", "T"},
+            {"Monaco is the\nsmallest country", "F"},
+            {"Mt Everest is in\nTibet", "T"},
+            {"There are 7,100+\nisland in the\nPhilippines", "T"},
+            {"San Marino is\ncompletely surrounded\nby Italy", "T"},
+            {"81 % of the Earth's\nsurface is water", "F"},
+            {"Toronto is the\ncapital of Canada", "F"},
+            {"Africa spans all\nfour hemispheres", "T"},
+            {"The 25 tallest\nmountain are in\nthe Himalayas", "F"},
+            {"The island nation\nof Naru has no\ncapital city", "T"},
+            {"It snowed in the\nSahara in 2018", "T"},
+            {"The are no rivers\nin Saudi Arabia", "T"},
+            {"Nepal's flag is\nshaped like mountains", "T"},
+            {"The United States\nand Russia are 51\nmiles part", "T"},
+            {"All bears live in\nthe Northen hemisphere", "F"},
+            {"The US has land\nborders with 3\ncountries", "F"},
+            {"Polar bears hunt\npenguins for food", "F"},
+            {"Mount Everest can\nfit inside the\nMariana Trench", "T"},
+            {"There are no crocodiles\nin Australia", "F"},
+            {"Every continent has\na city called Rome", "F"},
+            {"France has a\nvillage called Y", "T"},
+            {"The coldest recorded\ntemperature is\n-89.2C ", "T"},
+            {"Iceland has more\nvolcanoes than any other\ncountry", "F"},
+            {"Russia has 10\ntime zones", "F"},
+            {"Hurricanes hit China\nmore than any other\ncountry", "T"},
+            {"Japan is west of\nIndia", "F"},
         };
 
         public frmGame6()
@@ -69,6 +77,7 @@ namespace Year_13_Coursework
             addStatementToAllLabels();
             setUpTimer();
             displayAvatar();
+            displayScore();
             setTitle();
             playGame();
         }
@@ -110,13 +119,16 @@ namespace Year_13_Coursework
             lblTimerCount.Text = counter.ToString();
         }
 
-        private void displayCountdown()
+        private async void displayCountdown()
         {
             counter--;
             if (counter == 0)
             {
                 timer1.Stop();
                 pbxThought.Image = Properties.Resources.alarmClock;
+                disableAllButtons();
+                await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
+                moveToNextScreen();
             }
             lblTimerCount.Text = counter.ToString();
         }
@@ -144,16 +156,16 @@ namespace Year_13_Coursework
             switch (counter)
             {
                 case maxCounter - 1:
-                    lblStatement1.Location = new Point(lblStatement1.Location.X, lblStatement1.Location.Y + 20);
+                    lblStatement1.Location = new Point(lblStatement1.Location.X, lblStatement1.Location.Y + YCoordinateMovePerTick);
                     break;
                 case maxCounter - 2:
-                    lblStatement1.Location = new Point(lblStatement1.Location.X, lblStatement1.Location.Y + 20);
-                    lblStatement2.Location = new Point(lblStatement2.Location.X, lblStatement2.Location.Y + 20);
+                    lblStatement1.Location = new Point(lblStatement1.Location.X, lblStatement1.Location.Y + YCoordinateMovePerTick);
+                    lblStatement2.Location = new Point(lblStatement2.Location.X, lblStatement2.Location.Y + YCoordinateMovePerTick);
                     break;
                 default:
-                    lblStatement1.Location = new Point(lblStatement1.Location.X, lblStatement1.Location.Y + 20);
-                    lblStatement2.Location = new Point(lblStatement2.Location.X, lblStatement2.Location.Y + 20);
-                    lblStatement3.Location = new Point(lblStatement3.Location.X, lblStatement3.Location.Y + 20);
+                    lblStatement1.Location = new Point(lblStatement1.Location.X, lblStatement1.Location.Y + YCoordinateMovePerTick);
+                    lblStatement2.Location = new Point(lblStatement2.Location.X, lblStatement2.Location.Y + YCoordinateMovePerTick);
+                    lblStatement3.Location = new Point(lblStatement3.Location.X, lblStatement3.Location.Y + YCoordinateMovePerTick);
                     break;
             }
             checkIfMoveLabelToTop(lblStatement1);
@@ -166,7 +178,6 @@ namespace Year_13_Coursework
             pbxBackground.Controls.Add(pbxMountains);
             pbxMountains.Location = new Point(0, 270);
             pbxMountains.BackColor = Color.Transparent;
-
         }
 
         private void transparentCloudBackgrounds()
@@ -179,13 +190,13 @@ namespace Year_13_Coursework
         private void addLabelsToBackground()
         {
             pbxBackground.Controls.Add(lblStatement1);
-            lblStatement1.Location = new Point(40, StatementYStartLocation);
+            lblStatement1.Location = new Point(Statement1XPosition, StatementYStartLocation);
 
             pbxBackground.Controls.Add(lblStatement2);
-            lblStatement2.Location = new Point(190, StatementYStartLocation);
+            lblStatement2.Location = new Point(Statement2XPosition, StatementYStartLocation);
 
             pbxBackground.Controls.Add(lblStatement3);
-            lblStatement3.Location = new Point(340, StatementYStartLocation);
+            lblStatement3.Location = new Point(Statement3XPosition, StatementYStartLocation);
         }
 
         private void checkIfMoveLabelToTop(Label label)
@@ -209,7 +220,48 @@ namespace Year_13_Coursework
             addStatementToLabel(lblStatement1);
             addStatementToLabel(lblStatement2);
             addStatementToLabel(lblStatement3);
+        }
 
+        private void LblStatement1_Click(object sender, EventArgs e)
+        {
+            labelClicked(lblStatement1);
+        }
+
+        private void LblStatement2_Click(object sender, EventArgs e)
+        {
+            labelClicked(lblStatement2);
+        }
+
+        private void LblStatement3_Click(object sender, EventArgs e)
+        {
+            labelClicked(lblStatement3);
+        }
+
+        private void labelClicked(Label label) {
+            if (label.Tag.ToString() == trueStatement)
+            {
+                score++;
+            }
+            else
+            {
+                score--;
+            }
+            label.Location = new Point(label.Location.X, StatementYStartLocation);
+            addStatementToLabel(label);
+            displayScore();
+        }
+
+        private void displayScore()
+        {
+            lblScoreCount.Text = score.ToString();
+        }
+
+        private void disableAllButtons()
+        {
+            lblStatement1.Enabled = false;
+            lblStatement2.Enabled = false;
+            lblStatement3.Enabled = false;
+            btnHelp.Enabled = false;
         }
     }
 }
