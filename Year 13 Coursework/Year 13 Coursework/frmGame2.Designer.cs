@@ -40,7 +40,6 @@
             this.lblHint3 = new System.Windows.Forms.Label();
             this.lblHint1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pbxClue3 = new System.Windows.Forms.PictureBox();
             this.pbxClue2 = new System.Windows.Forms.PictureBox();
             this.pbxClue1 = new System.Windows.Forms.PictureBox();
@@ -53,6 +52,7 @@
             this.lblScoreCount = new System.Windows.Forms.Label();
             this.lblTimerCount = new System.Windows.Forms.Label();
             this.pbxHeader = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbxClue3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxClue2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxClue1)).BeginInit();
@@ -182,10 +182,6 @@
             this.label7.Size = new System.Drawing.Size(133, 20);
             this.label7.TabIndex = 44;
             this.label7.Text = "Enter your guess:";
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // pbxClue3
             // 
@@ -383,11 +379,11 @@
         private System.Windows.Forms.Label lblHint3;
         private System.Windows.Forms.Label lblHint1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lblTimer;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblScoreCount;
         private System.Windows.Forms.Label lblTimerCount;
         private System.Windows.Forms.PictureBox pbxHeader;
+        private System.Windows.Forms.Timer timer1;
     }
 }

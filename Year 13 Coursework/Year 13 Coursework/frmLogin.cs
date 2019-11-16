@@ -21,6 +21,12 @@ namespace Year_13_Coursework
         public frmLogin()
         {
             InitializeComponent();
+            
+            if (File.Exists(FileConstants.USER_FILE_NAME) == false)
+            {
+                var myFile = File.Create(FileConstants.USER_FILE_NAME);
+                myFile.Close();
+            }
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -33,13 +39,6 @@ namespace Year_13_Coursework
                 lblError.Text = "Please fill all fields";
                 return;
             }
-
-            if (! files.checkFileExists(FileConstants.USER_FILE_NAME))
-            {
-                lblError.Text = "No file found. Please register";
-                return;
-            }
-
 
             //Get the list of all the users 
             List<string> userList = getUsers();

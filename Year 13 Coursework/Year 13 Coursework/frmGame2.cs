@@ -106,7 +106,7 @@ namespace Year_13_Coursework
         private void BtnHelp_Click(object sender, EventArgs e)
         {
             timer1.Stop();
-            moveToNextScreen();
+            moveToMenuScreen();
         }
 
         /* MY METHODS ======================================================================*/
@@ -286,6 +286,7 @@ namespace Year_13_Coursework
             pbxThought.Image = Properties.Resources.Untitled;
             disableAllButtons();
             timer1.Stop();
+            timer1 = null;
 
             await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
 
@@ -314,6 +315,7 @@ namespace Year_13_Coursework
         {
             tbxGuess.Text = clues[selectedCountry, countryPosition];
             timer1.Stop();
+            timer1 = null;
             pbxThought.Image = Properties.Resources.alarmClock;
             disableAllButtons();
 

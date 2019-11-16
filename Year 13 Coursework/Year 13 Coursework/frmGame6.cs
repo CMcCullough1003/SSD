@@ -22,8 +22,9 @@ namespace Year_13_Coursework
 
         private const string trueStatement = "T";
         private const string falseStatement = "F";
+        private int clickedOrReachedBottomCount = 0;
 
-        private const int maxCounter = 10;
+        private const int maxCounter = 60;
         private int counter = maxCounter;
         private int currentStatement = 0;
         private int score = 0;
@@ -125,10 +126,12 @@ namespace Year_13_Coursework
             if (counter == 0)
             {
                 timer1.Stop();
+                timer1 = null;
                 pbxThought.Image = Properties.Resources.alarmClock;
                 disableAllButtons();
                 await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
-                moveToNextScreen();
+                saveScore(score);
+                moveToResultsScreen();
             }
             lblTimerCount.Text = counter.ToString();
         }
@@ -205,14 +208,20 @@ namespace Year_13_Coursework
             {
                 label.Location = new Point(label.Location.X, StatementYStartLocation);
                 addStatementToLabel(label);
+                clickedOrReachedBottomCount++;
+                checkIfMoveToResults();
             }
         }
 
         private void addStatementToLabel(Label label)
         {
-            label.Text = statements[currentStatement, statementPosition];
-            label.Tag = statements[currentStatement, isStatementTruePosition];
-            currentStatement++;
+            if (currentStatement < statements.GetLength(0))
+            {
+                label.Text = statements[currentStatement, statementPosition];
+                label.Tag = statements[currentStatement, isStatementTruePosition];
+                currentStatement++;
+            }
+
         }
 
         private void addStatementToAllLabels()
@@ -244,11 +253,16 @@ namespace Year_13_Coursework
             }
             else
             {
-                score--;
+                if(score > 0)
+                {
+                    score--;
+                }
             }
             label.Location = new Point(label.Location.X, StatementYStartLocation);
-            addStatementToLabel(label);
             displayScore();
+            clickedOrReachedBottomCount++;
+            checkIfMoveToResults();
+            addStatementToLabel(label);
         }
 
         private void displayScore()
@@ -262,6 +276,21 @@ namespace Year_13_Coursework
             lblStatement2.Enabled = false;
             lblStatement3.Enabled = false;
             btnHelp.Enabled = false;
+        }
+
+        private void moveToResultsScreen()
+        {
+            this.Close();
+            Form frm = new frmResults();
+            frm.Show();
+        }
+
+        private void checkIfMoveToResults()
+        {
+            if (clickedOrReachedBottomCount == statements.GetLength(0))
+            {
+                moveToResultsScreen();
+            }
         }
     }
 }

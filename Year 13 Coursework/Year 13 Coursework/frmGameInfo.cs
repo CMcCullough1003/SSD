@@ -49,41 +49,44 @@ namespace Year_13_Coursework
 
         private void moveToGame1()
         {
-            this.Hide();
+            this.Close();
             Form MoveToGame1 = new frmGame1();
             MoveToGame1.Show();
         }
 
         private void moveToGame2()
         {
-            this.Hide();
+            this.Close();
             Form MoveToGame2 = new frmGame2();
             MoveToGame2.Show();
         }
 
         private void moveToGame3()
         {
-            this.Hide();
+            this.Close();
             Form MoveToGame3 = new frmGame3();
             MoveToGame3.Show();
         }
 
         private void moveToGame4()
         {
-            this.Hide();
+            this.Close();
             Form MoveToGame4 = new frmGame4();
             MoveToGame4.Show();
         }
 
         private void moveToGame5()
         {
-            this.Hide();
+            this.Close();
             Form MoveToGame5 = new frmGame5();
             MoveToGame5.Show();
         }
 
         private void moveToGame6()
         {
+            this.Close();
+            Form MoveToGame6 = new frmGame6();
+            MoveToGame6.Show();
         }
     }
 }

@@ -62,7 +62,7 @@ namespace Year_13_Coursework
         //The form is shown after frmMenu closes
         private void FrmGame1_Activated(object sender, EventArgs e)
         {
-            tmr1.Start();
+            timer1.Start();
         }
 
         //The timer countdown
@@ -142,7 +142,7 @@ namespace Year_13_Coursework
 
         private void BtnMenu_Click(object sender, EventArgs e)
         {
-            tmr1.Stop();
+            timer1.Stop();
             moveToMenuScreen();
         }
 
@@ -157,7 +157,8 @@ namespace Year_13_Coursework
 
             if (gameCount == 6)
             {
-                tmr1.Stop();
+                timer1.Stop();
+                timer1 = null;
                 moveToNextScreen();
             }
 
@@ -217,10 +218,10 @@ namespace Year_13_Coursework
 
         private void setUpTimer()
         {
-            tmr1 = new System.Windows.Forms.Timer();
-            tmr1.Tick += new EventHandler(tmr1_Tick);
-            tmr1.Interval = 1000;
-            tmr1.Start();
+            timer1 = new System.Windows.Forms.Timer();
+            timer1.Tick += new EventHandler(tmr1_Tick);
+            timer1.Interval = 1000;
+            timer1.Start();
             lblTimerCount.Text = counter.ToString();
         }
 
@@ -366,7 +367,8 @@ namespace Year_13_Coursework
 
         private async void timedOut()
         {
-            tmr1.Stop();
+            timer1.Stop();
+            timer1 = null;
             pbxThought.Image = Properties.Resources.alarmClock;
 
             await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);

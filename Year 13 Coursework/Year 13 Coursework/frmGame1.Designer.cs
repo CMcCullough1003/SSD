@@ -33,7 +33,7 @@
             this.btnAnswer1 = new System.Windows.Forms.Button();
             this.btnAnswer3 = new System.Windows.Forms.Button();
             this.btnAnswer4 = new System.Windows.Forms.Button();
-            this.tmr1 = new System.Windows.Forms.Timer(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnHelp = new System.Windows.Forms.Button();
             this.pbxThought = new System.Windows.Forms.PictureBox();
             this.pbxBubble3 = new System.Windows.Forms.PictureBox();
@@ -104,10 +104,10 @@
             this.btnAnswer4.UseVisualStyleBackColor = false;
             this.btnAnswer4.Click += new System.EventHandler(this.BtnAnswer4_Click);
             // 
-            // tmr1
+            // timer1
             // 
-            this.tmr1.Interval = 1000;
-            this.tmr1.Tick += new System.EventHandler(this.tmr1_Tick);
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.tmr1_Tick);
             // 
             // btnHelp
             // 
@@ -273,7 +273,7 @@
         private System.Windows.Forms.Button btnAnswer4;
         private System.Windows.Forms.PictureBox pbxAvatar;
         private System.Windows.Forms.PictureBox pbxBubble3;
-        private System.Windows.Forms.Timer tmr1;
+        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox pbxThought;
         private System.Windows.Forms.Button btnHelp;
         private System.Windows.Forms.Label lblTimer;

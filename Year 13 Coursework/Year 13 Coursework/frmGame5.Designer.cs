@@ -91,9 +91,8 @@
             this.lblCorrectGuessCount.ForeColor = System.Drawing.Color.DimGray;
             this.lblCorrectGuessCount.Location = new System.Drawing.Point(567, 668);
             this.lblCorrectGuessCount.Name = "lblCorrectGuessCount";
-            this.lblCorrectGuessCount.Size = new System.Drawing.Size(70, 32);
+            this.lblCorrectGuessCount.Size = new System.Drawing.Size(0, 32);
             this.lblCorrectGuessCount.TabIndex = 151;
-            this.lblCorrectGuessCount.Text = "Title";
             this.lblCorrectGuessCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblSaltonSea

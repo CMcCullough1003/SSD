@@ -39,10 +39,10 @@
             this.btnExitQuiz = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblSubtitle = new System.Windows.Forms.Label();
+            this.lblError = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pbxGlobe = new System.Windows.Forms.PictureBox();
             this.pbxLoginBackground = new System.Windows.Forms.PictureBox();
-            this.lblError = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxGlobe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLoginBackground)).BeginInit();
@@ -173,12 +173,22 @@
             // 
             this.lblSubtitle.AutoSize = true;
             this.lblSubtitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubtitle.Location = new System.Drawing.Point(629, 219);
+            this.lblSubtitle.Location = new System.Drawing.Point(618, 219);
             this.lblSubtitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSubtitle.Name = "lblSubtitle";
             this.lblSubtitle.Size = new System.Drawing.Size(237, 25);
             this.lblSubtitle.TabIndex = 13;
             this.lblSubtitle.Text = "A Quiz about the Globe";
+            // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.ForeColor = System.Drawing.Color.Red;
+            this.lblError.Location = new System.Drawing.Point(664, 268);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(0, 25);
+            this.lblError.TabIndex = 17;
             // 
             // pictureBox1
             // 
@@ -209,16 +219,6 @@
             this.pbxLoginBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxLoginBackground.TabIndex = 16;
             this.pbxLoginBackground.TabStop = false;
-            // 
-            // lblError
-            // 
-            this.lblError.AutoSize = true;
-            this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblError.ForeColor = System.Drawing.Color.Red;
-            this.lblError.Location = new System.Drawing.Point(664, 268);
-            this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(0, 25);
-            this.lblError.TabIndex = 17;
             // 
             // frmLogin
             // 

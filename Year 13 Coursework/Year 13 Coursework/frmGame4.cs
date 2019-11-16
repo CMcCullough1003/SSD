@@ -13,6 +13,7 @@ namespace Year_13_Coursework
 {
     public partial class frmGame4 : frmGame
     {
+        private const int maximumScore = 6;
 
         private const int QuestionPosition = 0;
         private const int AnswerPosition = 1;
@@ -37,7 +38,7 @@ namespace Year_13_Coursework
 
         int selectedPosition = 0;
 
-        private int counter = 50;
+        private int counter = 30;
 
         public frmGame4()
         {
@@ -272,6 +273,7 @@ namespace Year_13_Coursework
 
         private void BtnHelp_Click(object sender, EventArgs e)
         {
+            timer1.Stop();
             moveToMenuScreen();
         }
 
@@ -296,6 +298,7 @@ namespace Year_13_Coursework
             if (counter == 0)
             {
                 timer1.Stop();
+                timer1 = null;
                 pbxThought.Image = Properties.Resources.alarmClock;
 
                 await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
@@ -321,12 +324,6 @@ namespace Year_13_Coursework
         {
             Form moveToMenu = new frmGameMenu();
             moveToMenu.Show();
-        }
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            timer1.Stop();
-            moveToNextScreen();
         }
 
         private void displayQuestion()
@@ -367,7 +364,7 @@ namespace Year_13_Coursework
         }
         private async void isLetterInAnswer(Label label)
         {
-            if (!lblAnswer.Text.Contains(label.Text))
+            if (lblAnswer.Text.Contains(label.Text))
             {
                 correctAnswer();
             }
@@ -379,6 +376,10 @@ namespace Year_13_Coursework
             if (numberOfIncorrectGuesses == 6)
             {
                 pbxHangman.Image = Properties.Resources.gallows6;
+                saveScore(maximumScore - numberOfIncorrectGuesses);
+                displayScore();
+                timer1.Stop();
+                timer1 = null;
                 await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
                 moveToNextScreen();
             }
@@ -396,31 +397,41 @@ namespace Year_13_Coursework
 
         private async void correctAnswer()
         {
-            pbxThought.Image = Properties.Resources.X;
-            numberOfIncorrectGuesses++;
-
+            pbxThought.Image = Properties.Resources.Untitled;
+            displayScore();
             await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
             pbxThought.Image = Properties.Resources.questionMark2;
         }
 
         private async void incorrectAnswer()
         {
-            pbxThought.Image = Properties.Resources.Untitled;
-
+            pbxThought.Image = Properties.Resources.X;
+            numberOfIncorrectGuesses++;
+            displayScore();
             await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
             pbxThought.Image = Properties.Resources.questionMark2;
         }
         
         private async void answerComplete()
         {
-            string ans = lblAnswer.Text.Replace(" ", "");
+            string usersAnswer = lblAnswer.Text.Replace(" ", "");
+            string correctAnswer = questionsAnswers[selectedPosition, AnswerPosition].Replace (" ", "");
 
-            if (ans == questionsAnswers[selectedPosition, AnswerPosition].ToString())
+            if (usersAnswer == correctAnswer)
             {
                 pbxThought.Image = Properties.Resources.Untitled;
+                saveScore(maximumScore - numberOfIncorrectGuesses);
+                displayScore();
+                timer1.Stop();
+                timer1 = null;
                 await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
                 moveToNextScreen();
             }
+        }
+
+        private void displayScore()
+        {
+            lblScoreCount.Text = (maximumScore - numberOfIncorrectGuesses).ToString();
         }
     }
 }

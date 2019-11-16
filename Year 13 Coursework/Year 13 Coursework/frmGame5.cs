@@ -36,7 +36,6 @@ namespace Year_13_Coursework
             displayAvatar();
             setTitle();
             resetGame();
-
         }
 
         //The form is shown after frmMenu closes
@@ -165,8 +164,9 @@ namespace Year_13_Coursework
 
         private void BtnSubmitAnswer_Click(object sender, EventArgs e)
         {
-            areAllSelectionsCorrect();
             lblCorrectGuessCount.Text = correctSelections + "/4";
+            displayScore();
+            areAllSelectionsCorrect();
         }
 
         private void BtnClear_Click(object sender, EventArgs e)
@@ -212,6 +212,7 @@ namespace Year_13_Coursework
             if (counter == 0)
             {
                 timer1.Stop();
+                timer1 = null;
                 pbxThought.Image = Properties.Resources.alarmClock;
                 showCorrectAnswers();
             }
@@ -329,6 +330,7 @@ namespace Year_13_Coursework
             if (correctSelections == 4)
             {
                 showCorrectAnswers();
+
             }
         }
 
@@ -359,8 +361,15 @@ namespace Year_13_Coursework
             lblWeddellSea.BackColor = System.Drawing.Color.Green;
             lblArafuraSea.BackColor = System.Drawing.Color.Green;
             lblTasmanSea.BackColor = System.Drawing.Color.Green;
+            displayScore();
             await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
-            moveToMenuScreen();
+            saveScore(correctSelections);
+            moveToNextScreen();
+        }
+
+        private void displayScore()
+        {
+            lblScoreCount.Text = correctSelections.ToString();
         }
     }
 }

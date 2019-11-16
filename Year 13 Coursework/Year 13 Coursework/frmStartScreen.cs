@@ -19,7 +19,7 @@ namespace Year_13_Coursework
 
         private void BtnContinue_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             Form moveToGameInfo = new frmGameInfo();
             moveToGameInfo.Show();
         }

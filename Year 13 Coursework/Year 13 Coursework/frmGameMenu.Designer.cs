@@ -104,7 +104,7 @@
             this.Controls.Add(this.btnResumeGame);
             this.Name = "frmGameMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmGameMenu";
+            this.Text = "Game Help";
             this.Load += new System.EventHandler(this.FrmGameMenu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lblAnswerText = new System.Windows.Forms.Label();
             this.lblAnswer = new System.Windows.Forms.Label();
             this.lblQuestion = new System.Windows.Forms.Label();
@@ -71,16 +70,13 @@
             this.lblScoreCount = new System.Windows.Forms.Label();
             this.lblTimerCount = new System.Windows.Forms.Label();
             this.pbxHeader = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbxHangman)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxThought)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBubble3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxHeader)).BeginInit();
             this.SuspendLayout();
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // lblAnswerText
             // 
@@ -624,7 +620,6 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pbxHangman;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lblQuestionText;
         private System.Windows.Forms.Label lblA;
         private System.Windows.Forms.Button btnHelp;
@@ -665,5 +660,6 @@
         private System.Windows.Forms.Label lblScoreCount;
         private System.Windows.Forms.Label lblTimerCount;
         private System.Windows.Forms.PictureBox pbxHeader;
+        private System.Windows.Forms.Timer timer1;
     }
 }

@@ -112,6 +112,12 @@
     <Compile Include="frmRegister.Designer.cs">
       <DependentUpon>frmRegister.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmResults.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmResults.Designer.cs">
+      <DependentUpon>frmResults.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmStartScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRegister.resx">
       <DependentUpon>frmRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmResults.resx">
+      <DependentUpon>frmResults.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmStartScreen.resx">
       <DependentUpon>frmStartScreen.cs</DependentUpon>
@@ -227,6 +236,7 @@
     <None Include="Resources\sheep.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\38580.jpg" />
     <None Include="Resources\LoginBackground.jpg" />
     <None Include="Resources\darkClouds3.png" />
     <None Include="Resources\darkClouds.png" />

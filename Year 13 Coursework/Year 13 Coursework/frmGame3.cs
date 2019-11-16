@@ -226,6 +226,7 @@ namespace Year_13_Coursework
             lblScoreCount.Text = score.ToString();
             saveScore(score);
             timer1.Stop();
+            timer1 = null;
 
             await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
 
@@ -252,6 +253,7 @@ namespace Year_13_Coursework
         {
             revealFlag();
             timer1.Stop();
+            timer1 = null;
             pbxThought.Image = Properties.Resources.alarmClock;
             disableAllButtons();
 
