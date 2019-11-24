@@ -36,7 +36,7 @@ namespace Year_13_Coursework
                 case 5: Program.currentUser.game5Score = score; break;
                 case 6: Program.currentUser.game6Score = score; break;
             }
-
+            Program.currentUser.calculateTotalScore();
         }
 
         private void FrmGame_Load(object sender, EventArgs e)

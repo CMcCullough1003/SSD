@@ -23,5 +23,17 @@ namespace Year_13_Coursework
             Form moveToGameInfo = new frmGameInfo();
             moveToGameInfo.Show();
         }
+
+        private void moveToLoginScreen()
+        {
+            this.Close();
+            Form moveToLogin = new frmLogin();
+            moveToLogin.Show();
+        }
+
+        private void lblBackToLogin_Click(object sender, EventArgs e)
+        {
+            moveToLoginScreen();
+        }
     }
 }

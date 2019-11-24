@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGame6));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnHelp = new System.Windows.Forms.Button();
             this.lblTimer = new System.Windows.Forms.Label();
@@ -46,6 +47,7 @@
             this.pbxHeader = new System.Windows.Forms.PictureBox();
             this.lblStatement2 = new System.Windows.Forms.Label();
             this.lblStatement3 = new System.Windows.Forms.Label();
+            this.lblSkipGame = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCloud2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxMountains)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBackground)).BeginInit();
@@ -71,7 +73,7 @@
             this.lblTimer.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTimer.ForeColor = System.Drawing.Color.Gray;
-            this.lblTimer.Location = new System.Drawing.Point(866, 23);
+            this.lblTimer.Location = new System.Drawing.Point(871, 54);
             this.lblTimer.Name = "lblTimer";
             this.lblTimer.Size = new System.Drawing.Size(48, 20);
             this.lblTimer.TabIndex = 181;
@@ -83,7 +85,7 @@
             this.lblScore.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScore.ForeColor = System.Drawing.Color.Gray;
-            this.lblScore.Location = new System.Drawing.Point(13, 23);
+            this.lblScore.Location = new System.Drawing.Point(13, 54);
             this.lblScore.Name = "lblScore";
             this.lblScore.Size = new System.Drawing.Size(51, 20);
             this.lblScore.TabIndex = 180;
@@ -95,7 +97,7 @@
             this.lblTitle.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.Black;
-            this.lblTitle.Location = new System.Drawing.Point(252, 42);
+            this.lblTitle.Location = new System.Drawing.Point(252, 63);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(100, 46);
             this.lblTitle.TabIndex = 178;
@@ -108,7 +110,7 @@
             this.lblScoreCount.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblScoreCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScoreCount.ForeColor = System.Drawing.Color.DimGray;
-            this.lblScoreCount.Location = new System.Drawing.Point(22, 53);
+            this.lblScoreCount.Location = new System.Drawing.Point(22, 76);
             this.lblScoreCount.Name = "lblScoreCount";
             this.lblScoreCount.Size = new System.Drawing.Size(31, 32);
             this.lblScoreCount.TabIndex = 177;
@@ -120,7 +122,7 @@
             this.lblTimerCount.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblTimerCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTimerCount.ForeColor = System.Drawing.Color.DimGray;
-            this.lblTimerCount.Location = new System.Drawing.Point(872, 53);
+            this.lblTimerCount.Location = new System.Drawing.Point(872, 76);
             this.lblTimerCount.Name = "lblTimerCount";
             this.lblTimerCount.Size = new System.Drawing.Size(47, 32);
             this.lblTimerCount.TabIndex = 176;
@@ -205,7 +207,7 @@
             this.pbxHeader.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pbxHeader.Location = new System.Drawing.Point(-1, 0);
             this.pbxHeader.Name = "pbxHeader";
-            this.pbxHeader.Size = new System.Drawing.Size(934, 106);
+            this.pbxHeader.Size = new System.Drawing.Size(945, 50);
             this.pbxHeader.TabIndex = 207;
             this.pbxHeader.TabStop = false;
             // 
@@ -237,12 +239,24 @@
             this.lblStatement3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblStatement3.Click += new System.EventHandler(this.LblStatement3_Click);
             // 
+            // lblSkipGame
+            // 
+            this.lblSkipGame.AutoSize = true;
+            this.lblSkipGame.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblSkipGame.Location = new System.Drawing.Point(20, 15);
+            this.lblSkipGame.Name = "lblSkipGame";
+            this.lblSkipGame.Size = new System.Drawing.Size(84, 20);
+            this.lblSkipGame.TabIndex = 216;
+            this.lblSkipGame.Text = "Skip game";
+            this.lblSkipGame.Click += new System.EventHandler(this.LblSkipGame_Click);
+            // 
             // frmGame6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(933, 737);
+            this.Controls.Add(this.lblSkipGame);
             this.Controls.Add(this.pbxMountains);
             this.Controls.Add(this.lblStatement2);
             this.Controls.Add(this.lblStatement1);
@@ -259,6 +273,7 @@
             this.Controls.Add(this.lblStatement3);
             this.Controls.Add(this.pbxCloud2);
             this.Controls.Add(this.pbxBackground);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmGame6";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Game 6";
@@ -294,5 +309,6 @@
         private System.Windows.Forms.PictureBox pbxCloud2;
         private System.Windows.Forms.Label lblStatement2;
         private System.Windows.Forms.Label lblStatement3;
+        private System.Windows.Forms.Label lblSkipGame;
     }
 }

@@ -433,5 +433,11 @@ namespace Year_13_Coursework
         {
             lblScoreCount.Text = (maximumScore - numberOfIncorrectGuesses).ToString();
         }
+
+        private void LblSkipGame_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            moveToNextScreen();
+        }
     }
 }

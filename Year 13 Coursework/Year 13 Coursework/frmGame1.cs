@@ -243,6 +243,7 @@ namespace Year_13_Coursework
             btnAnswer3.Enabled = false;
             btnAnswer4.Enabled = false;
             btnHelp.Enabled = false;
+            btnSkipGame.Enabled = false;
         }
 
         private void enableAllButtons()
@@ -252,6 +253,7 @@ namespace Year_13_Coursework
             btnAnswer3.Enabled = true;
             btnAnswer4.Enabled = true;
             btnHelp.Enabled = true;
+            btnSkipGame.Enabled = true;
         }
 
         private void setTitle()
@@ -373,6 +375,12 @@ namespace Year_13_Coursework
 
             await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
 
+            moveToNextScreen();
+        }
+
+        private void BtnSkipGame_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
             moveToNextScreen();
         }
     }

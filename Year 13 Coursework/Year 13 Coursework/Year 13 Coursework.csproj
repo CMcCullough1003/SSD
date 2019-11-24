@@ -236,6 +236,19 @@
     <None Include="Resources\sheep.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\resultsBG.jpg" />
+    <None Include="Resources\startScreenBG.jpg" />
+    <None Include="Resources\Game1Bg.jpg" />
+    <None Include="Resources\LoginBackground1.jpg" />
+    <None Include="Resources\signs.png" />
+    <None Include="Resources\icecream.png" />
+    <None Include="Resources\cocktail.png" />
+    <None Include="Resources\camera.png" />
+    <None Include="Resources\globe.png" />
+    <None Include="Resources\18camp_115462.png" />
+    <None Include="Resources\Landmarks.jpg" />
+    <None Include="Resources\WhiteSign.jpg" />
+    <None Include="Resources\Notepad.jpg" />
     <None Include="Resources\38580.jpg" />
     <None Include="Resources\LoginBackground.jpg" />
     <None Include="Resources\darkClouds3.png" />

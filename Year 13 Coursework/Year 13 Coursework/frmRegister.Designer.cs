@@ -47,7 +47,7 @@
             this.pbxAvatar1 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pbxLoginBackground = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblBackToLogin = new System.Windows.Forms.Label();
             this.lblError = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSelected)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAvatar9)).BeginInit();
@@ -65,7 +65,7 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.BackColor = System.Drawing.Color.White;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(535, 146);
+            this.lblTitle.Location = new System.Drawing.Point(546, 162);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(168, 46);
@@ -78,7 +78,7 @@
             this.lblUsername.BackColor = System.Drawing.Color.White;
             this.lblUsername.Font = new System.Drawing.Font("Bahnschrift Condensed", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.ForeColor = System.Drawing.Color.DimGray;
-            this.lblUsername.Location = new System.Drawing.Point(539, 293);
+            this.lblUsername.Location = new System.Drawing.Point(550, 309);
             this.lblUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(79, 24);
@@ -91,7 +91,7 @@
             this.lblPassword.BackColor = System.Drawing.Color.White;
             this.lblPassword.Font = new System.Drawing.Font("Bahnschrift Condensed", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.ForeColor = System.Drawing.Color.DimGray;
-            this.lblPassword.Location = new System.Drawing.Point(539, 382);
+            this.lblPassword.Location = new System.Drawing.Point(550, 398);
             this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(77, 24);
@@ -104,7 +104,7 @@
             this.lblConfirmPassword.BackColor = System.Drawing.Color.White;
             this.lblConfirmPassword.Font = new System.Drawing.Font("Bahnschrift Condensed", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConfirmPassword.ForeColor = System.Drawing.Color.DimGray;
-            this.lblConfirmPassword.Location = new System.Drawing.Point(539, 472);
+            this.lblConfirmPassword.Location = new System.Drawing.Point(550, 488);
             this.lblConfirmPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblConfirmPassword.Name = "lblConfirmPassword";
             this.lblConfirmPassword.Size = new System.Drawing.Size(65, 24);
@@ -114,7 +114,7 @@
             // tbxConfirmPassword
             // 
             this.tbxConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxConfirmPassword.Location = new System.Drawing.Point(543, 501);
+            this.tbxConfirmPassword.Location = new System.Drawing.Point(554, 517);
             this.tbxConfirmPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbxConfirmPassword.Name = "tbxConfirmPassword";
             this.tbxConfirmPassword.PasswordChar = '*';
@@ -124,7 +124,7 @@
             // tbxPassword
             // 
             this.tbxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxPassword.Location = new System.Drawing.Point(543, 411);
+            this.tbxPassword.Location = new System.Drawing.Point(554, 427);
             this.tbxPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbxPassword.Name = "tbxPassword";
             this.tbxPassword.PasswordChar = '*';
@@ -134,7 +134,7 @@
             // tbxUsername
             // 
             this.tbxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxUsername.Location = new System.Drawing.Point(543, 322);
+            this.tbxUsername.Location = new System.Drawing.Point(554, 338);
             this.tbxUsername.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbxUsername.Name = "tbxUsername";
             this.tbxUsername.Size = new System.Drawing.Size(401, 53);
@@ -145,7 +145,7 @@
             this.btnRegister.BackColor = System.Drawing.Color.SaddleBrown;
             this.btnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegister.ForeColor = System.Drawing.Color.White;
-            this.btnRegister.Location = new System.Drawing.Point(543, 592);
+            this.btnRegister.Location = new System.Drawing.Point(554, 608);
             this.btnRegister.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(401, 61);
@@ -160,7 +160,7 @@
             this.lblAvatar.BackColor = System.Drawing.Color.White;
             this.lblAvatar.Font = new System.Drawing.Font("Bahnschrift Condensed", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAvatar.ForeColor = System.Drawing.Color.DimGray;
-            this.lblAvatar.Location = new System.Drawing.Point(539, 200);
+            this.lblAvatar.Location = new System.Drawing.Point(550, 216);
             this.lblAvatar.Name = "lblAvatar";
             this.lblAvatar.Size = new System.Drawing.Size(56, 24);
             this.lblAvatar.TabIndex = 22;
@@ -179,7 +179,7 @@
             // 
             this.pbxAvatar9.BackColor = System.Drawing.Color.White;
             this.pbxAvatar9.Image = global::Year_13_Coursework.Properties.Resources.sheep;
-            this.pbxAvatar9.Location = new System.Drawing.Point(816, 235);
+            this.pbxAvatar9.Location = new System.Drawing.Point(827, 251);
             this.pbxAvatar9.Margin = new System.Windows.Forms.Padding(6);
             this.pbxAvatar9.Name = "pbxAvatar9";
             this.pbxAvatar9.Size = new System.Drawing.Size(61, 53);
@@ -192,7 +192,7 @@
             // 
             this.pbxAvatar5.BackColor = System.Drawing.Color.White;
             this.pbxAvatar5.Image = global::Year_13_Coursework.Properties.Resources.pig;
-            this.pbxAvatar5.Location = new System.Drawing.Point(749, 235);
+            this.pbxAvatar5.Location = new System.Drawing.Point(760, 251);
             this.pbxAvatar5.Margin = new System.Windows.Forms.Padding(6);
             this.pbxAvatar5.Name = "pbxAvatar5";
             this.pbxAvatar5.Size = new System.Drawing.Size(61, 53);
@@ -205,7 +205,7 @@
             // 
             this.pbxAvatar3.BackColor = System.Drawing.Color.White;
             this.pbxAvatar3.Image = global::Year_13_Coursework.Properties.Resources.chicken;
-            this.pbxAvatar3.Location = new System.Drawing.Point(681, 235);
+            this.pbxAvatar3.Location = new System.Drawing.Point(692, 251);
             this.pbxAvatar3.Margin = new System.Windows.Forms.Padding(10);
             this.pbxAvatar3.Name = "pbxAvatar3";
             this.pbxAvatar3.Padding = new System.Windows.Forms.Padding(3);
@@ -219,7 +219,7 @@
             // 
             this.pbxAvatar2.BackColor = System.Drawing.Color.White;
             this.pbxAvatar2.Image = global::Year_13_Coursework.Properties.Resources.bee;
-            this.pbxAvatar2.Location = new System.Drawing.Point(612, 234);
+            this.pbxAvatar2.Location = new System.Drawing.Point(623, 250);
             this.pbxAvatar2.Margin = new System.Windows.Forms.Padding(6);
             this.pbxAvatar2.Name = "pbxAvatar2";
             this.pbxAvatar2.Size = new System.Drawing.Size(61, 53);
@@ -232,7 +232,7 @@
             // 
             this.pbxAvatar6.BackColor = System.Drawing.Color.White;
             this.pbxAvatar6.Image = global::Year_13_Coursework.Properties.Resources.triceratops;
-            this.pbxAvatar6.Location = new System.Drawing.Point(883, 235);
+            this.pbxAvatar6.Location = new System.Drawing.Point(894, 251);
             this.pbxAvatar6.Margin = new System.Windows.Forms.Padding(6);
             this.pbxAvatar6.Name = "pbxAvatar6";
             this.pbxAvatar6.Size = new System.Drawing.Size(61, 53);
@@ -245,7 +245,7 @@
             // 
             this.pbxAvatar1.BackColor = System.Drawing.Color.White;
             this.pbxAvatar1.Image = global::Year_13_Coursework.Properties.Resources.cow;
-            this.pbxAvatar1.Location = new System.Drawing.Point(543, 234);
+            this.pbxAvatar1.Location = new System.Drawing.Point(554, 250);
             this.pbxAvatar1.Margin = new System.Windows.Forms.Padding(6);
             this.pbxAvatar1.Name = "pbxAvatar1";
             this.pbxAvatar1.Size = new System.Drawing.Size(61, 53);
@@ -258,7 +258,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(498, 119);
+            this.pictureBox1.Location = new System.Drawing.Point(515, 137);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(484, 585);
             this.pictureBox1.TabIndex = 23;
@@ -274,19 +274,19 @@
             this.pbxLoginBackground.TabIndex = 24;
             this.pbxLoginBackground.TabStop = false;
             // 
-            // label1
+            // lblBackToLogin
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(539, 658);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 24);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "Return to login";
-            this.label1.Click += new System.EventHandler(this.Label1_Click);
+            this.lblBackToLogin.AutoSize = true;
+            this.lblBackToLogin.BackColor = System.Drawing.Color.White;
+            this.lblBackToLogin.Font = new System.Drawing.Font("Bahnschrift Condensed", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBackToLogin.ForeColor = System.Drawing.Color.DimGray;
+            this.lblBackToLogin.Location = new System.Drawing.Point(550, 674);
+            this.lblBackToLogin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblBackToLogin.Name = "lblBackToLogin";
+            this.lblBackToLogin.Size = new System.Drawing.Size(106, 24);
+            this.lblBackToLogin.TabIndex = 25;
+            this.lblBackToLogin.Text = "Return to login";
+            this.lblBackToLogin.Click += new System.EventHandler(this.lblBackToLogin_Click);
             // 
             // lblError
             // 
@@ -304,7 +304,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1514, 858);
             this.Controls.Add(this.lblError);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblBackToLogin);
             this.Controls.Add(this.lblAvatar);
             this.Controls.Add(this.pbxSelected);
             this.Controls.Add(this.pbxAvatar9);
@@ -323,6 +323,7 @@
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pbxLoginBackground);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmRegister";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -362,7 +363,7 @@
         private System.Windows.Forms.Label lblAvatar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pbxLoginBackground;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblBackToLogin;
         private System.Windows.Forms.Label lblError;
     }
 }

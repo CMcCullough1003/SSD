@@ -323,5 +323,36 @@ namespace Year_13_Coursework
 
             moveToNextScreen();
         }
+
+        private void LblSkipGame_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            moveToNextScreen();
+        }
+
+        private void LblScoreCount_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LblScore_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LblTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LblTimerCount_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LblTimer_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

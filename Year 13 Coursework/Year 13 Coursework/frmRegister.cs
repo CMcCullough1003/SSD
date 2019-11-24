@@ -28,17 +28,17 @@ namespace Year_13_Coursework
 
         private void addAvatars()
         {
-            pbxAvatar1.Image = Properties.Resources.cow;
+            pbxAvatar1.Image = Properties.Resources._18camp_115462;
             pbxAvatar1.Tag = "cow.png";
-            pbxAvatar2.Image = Properties.Resources.bee;
+            pbxAvatar2.Image = Properties.Resources.signs;
             pbxAvatar2.Tag = "bee.png";
-            pbxAvatar3.Image = Properties.Resources.chicken;
+            pbxAvatar3.Image = Properties.Resources.camera;
             pbxAvatar3.Tag = "chicken.png";
-            pbxAvatar5.Image = Properties.Resources.pig;
+            pbxAvatar5.Image = Properties.Resources.cocktail;
             pbxAvatar5.Tag = "pig.png";
-            pbxAvatar6.Image = Properties.Resources.triceratops;
+            pbxAvatar6.Image = Properties.Resources.globe;
             pbxAvatar6.Tag = "triceratops.png";
-            pbxAvatar9.Image = Properties.Resources.sheep;
+            pbxAvatar9.Image = Properties.Resources.icecream;
             pbxAvatar9.Tag = "sheep.png";
         }
 
@@ -182,11 +182,6 @@ namespace Year_13_Coursework
 
         }
 
-        private void Label1_Click(object sender, EventArgs e)
-        {
-            moveToLoginScreen();
-        }
-
         private void avatarSelected(PictureBox avatar)
         {
             clearAllBorders();
@@ -204,6 +199,11 @@ namespace Year_13_Coursework
             pbxAvatar9.BorderStyle = BorderStyle.None;
             pbxAvatar6.BorderStyle = BorderStyle.None;
 
+        }
+
+        private void lblBackToLogin_Click(object sender, EventArgs e)
+        {
+            moveToLoginScreen();
         }
     }
 }

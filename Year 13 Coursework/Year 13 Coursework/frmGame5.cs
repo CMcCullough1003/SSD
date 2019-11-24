@@ -192,11 +192,6 @@ namespace Year_13_Coursework
             pbxYacht.Location = new Point(pbxYacht.Location.X, pbxYacht.Location.Y + 2);
         }
 
-        private void unsinkYacht()
-        {
-            
-        }
-
         private void setUpTimer()
         {
             timer1 = new System.Windows.Forms.Timer();
@@ -370,6 +365,12 @@ namespace Year_13_Coursework
         private void displayScore()
         {
             lblScoreCount.Text = correctSelections.ToString();
+        }
+
+        private void LblSkipGame_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            moveToNextScreen();
         }
     }
 }

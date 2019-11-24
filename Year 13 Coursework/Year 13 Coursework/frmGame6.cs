@@ -292,5 +292,11 @@ namespace Year_13_Coursework
                 moveToResultsScreen();
             }
         }
+
+        private void LblSkipGame_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            moveToResultsScreen();
+        }
     }
 }

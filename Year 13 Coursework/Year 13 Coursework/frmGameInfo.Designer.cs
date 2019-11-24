@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGameInfo));
             this.btnStartGame = new System.Windows.Forms.Button();
             this.lblGameInfo = new System.Windows.Forms.Label();
             this.lblGameNumber = new System.Windows.Forms.Label();
@@ -102,6 +103,7 @@
             this.Controls.Add(this.lblGameNumber);
             this.Controls.Add(this.lblGameInfo);
             this.Controls.Add(this.btnStartGame);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmGameInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Game Information";

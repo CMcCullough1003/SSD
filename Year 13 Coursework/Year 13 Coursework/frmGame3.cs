@@ -282,5 +282,11 @@ namespace Year_13_Coursework
             pbxHide8.Visible = false;
             pbxHide9.Visible = false;
         }
+
+        private void LblSkipGame_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            moveToNextScreen();
+        }
     }
 }

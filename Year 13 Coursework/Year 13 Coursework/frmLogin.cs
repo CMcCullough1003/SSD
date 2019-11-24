@@ -107,11 +107,6 @@ namespace Year_13_Coursework
             MoveToRegister.Show();
         }
 
-        private void btnRegister_Click(object sender, EventArgs e)
-        {
-            moveToRegisterScreen();
-        }
-
         private void FrmLogin_Load(object sender, EventArgs e)
         {
             Program.currentUser.resetUser();

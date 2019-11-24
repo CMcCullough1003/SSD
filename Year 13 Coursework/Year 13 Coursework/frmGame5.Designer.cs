@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGame5));
             this.label3 = new System.Windows.Forms.Label();
             this.lblCorrectGuessCount = new System.Windows.Forms.Label();
             this.lblSaltonSea = new System.Windows.Forms.Label();
@@ -64,6 +65,7 @@
             this.btnSubmitAnswer = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.pbxHeader = new System.Windows.Forms.PictureBox();
+            this.lblSkipGame = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxYacht)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSea)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSky)).BeginInit();
@@ -126,7 +128,7 @@
             this.lblTimer.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTimer.ForeColor = System.Drawing.Color.Gray;
-            this.lblTimer.Location = new System.Drawing.Point(866, 25);
+            this.lblTimer.Location = new System.Drawing.Point(866, 59);
             this.lblTimer.Name = "lblTimer";
             this.lblTimer.Size = new System.Drawing.Size(48, 20);
             this.lblTimer.TabIndex = 120;
@@ -138,7 +140,7 @@
             this.lblScore.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScore.ForeColor = System.Drawing.Color.Gray;
-            this.lblScore.Location = new System.Drawing.Point(13, 25);
+            this.lblScore.Location = new System.Drawing.Point(12, 59);
             this.lblScore.Name = "lblScore";
             this.lblScore.Size = new System.Drawing.Size(51, 20);
             this.lblScore.TabIndex = 119;
@@ -150,7 +152,7 @@
             this.lblTitle.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.Black;
-            this.lblTitle.Location = new System.Drawing.Point(252, 44);
+            this.lblTitle.Location = new System.Drawing.Point(252, 68);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(100, 46);
             this.lblTitle.TabIndex = 117;
@@ -163,7 +165,7 @@
             this.lblScoreCount.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblScoreCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScoreCount.ForeColor = System.Drawing.Color.DimGray;
-            this.lblScoreCount.Location = new System.Drawing.Point(22, 55);
+            this.lblScoreCount.Location = new System.Drawing.Point(12, 79);
             this.lblScoreCount.Name = "lblScoreCount";
             this.lblScoreCount.Size = new System.Drawing.Size(31, 32);
             this.lblScoreCount.TabIndex = 116;
@@ -175,7 +177,7 @@
             this.lblTimerCount.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblTimerCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTimerCount.ForeColor = System.Drawing.Color.DimGray;
-            this.lblTimerCount.Location = new System.Drawing.Point(872, 55);
+            this.lblTimerCount.Location = new System.Drawing.Point(869, 79);
             this.lblTimerCount.Name = "lblTimerCount";
             this.lblTimerCount.Size = new System.Drawing.Size(47, 32);
             this.lblTimerCount.TabIndex = 115;
@@ -515,11 +517,22 @@
             // pbxHeader
             // 
             this.pbxHeader.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pbxHeader.Location = new System.Drawing.Point(-1, 2);
+            this.pbxHeader.Location = new System.Drawing.Point(-1, 0);
             this.pbxHeader.Name = "pbxHeader";
-            this.pbxHeader.Size = new System.Drawing.Size(934, 106);
+            this.pbxHeader.Size = new System.Drawing.Size(945, 50);
             this.pbxHeader.TabIndex = 173;
             this.pbxHeader.TabStop = false;
+            // 
+            // lblSkipGame
+            // 
+            this.lblSkipGame.AutoSize = true;
+            this.lblSkipGame.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblSkipGame.Location = new System.Drawing.Point(20, 15);
+            this.lblSkipGame.Name = "lblSkipGame";
+            this.lblSkipGame.Size = new System.Drawing.Size(84, 20);
+            this.lblSkipGame.TabIndex = 217;
+            this.lblSkipGame.Text = "Skip game";
+            this.lblSkipGame.Click += new System.EventHandler(this.LblSkipGame_Click);
             // 
             // frmGame5
             // 
@@ -527,6 +540,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(933, 737);
+            this.Controls.Add(this.lblSkipGame);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSubmitAnswer);
             this.Controls.Add(this.lblBrysSea);
@@ -561,6 +575,7 @@
             this.Controls.Add(this.pbxYacht);
             this.Controls.Add(this.pbxSky);
             this.Controls.Add(this.pbxHeader);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmGame5";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Game 5";
@@ -615,5 +630,6 @@
         private System.Windows.Forms.Button btnSubmitAnswer;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.PictureBox pbxHeader;
+        private System.Windows.Forms.Label lblSkipGame;
     }
 }
