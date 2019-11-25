@@ -283,7 +283,7 @@ namespace Year_13_Coursework
             pbxHide9.Visible = false;
         }
 
-        private void LblSkipGame_Click(object sender, EventArgs e)
+        private void BtnSkipGame_Click(object sender, EventArgs e)
         {
             timer1.Stop();
             moveToNextScreen();

@@ -283,7 +283,7 @@ namespace Year_13_Coursework
                     lblScoreCount.Text = score.ToString();
                     saveScore(score); break;
             }
-            pbxThought.Image = Properties.Resources.Untitled;
+            pbxThought.Image = Properties.Resources.Childish_Tick_24982;
             disableAllButtons();
             timer1.Stop();
             timer1 = null;
@@ -296,7 +296,7 @@ namespace Year_13_Coursework
         private async void incorrectGuess()
         {
             tbxGuess.Clear();
-            pbxThought.Image = Properties.Resources.X;
+            pbxThought.Image = Properties.Resources.Childish_Cross_24996;
 
             await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
 
@@ -316,7 +316,7 @@ namespace Year_13_Coursework
             tbxGuess.Text = clues[selectedCountry, countryPosition];
             timer1.Stop();
             timer1 = null;
-            pbxThought.Image = Properties.Resources.alarmClock;
+            pbxThought.Image = Properties.Resources.clock;
             disableAllButtons();
 
             await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
@@ -324,35 +324,10 @@ namespace Year_13_Coursework
             moveToNextScreen();
         }
 
-        private void LblSkipGame_Click(object sender, EventArgs e)
+        private void BtnSkipGame_Click(object sender, EventArgs e)
         {
             timer1.Stop();
             moveToNextScreen();
-        }
-
-        private void LblScoreCount_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LblScore_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LblTitle_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LblTimerCount_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LblTimer_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

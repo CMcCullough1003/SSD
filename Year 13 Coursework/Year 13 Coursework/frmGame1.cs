@@ -311,7 +311,7 @@ namespace Year_13_Coursework
 
         private void correctGuess()
         {
-            pbxThought.Image = Resources.Untitled;
+            pbxThought.Image = Resources.Childish_Tick_24982;
             score++;
             lblScoreCount.Text = score.ToString();
             saveScore(score);
@@ -322,7 +322,7 @@ namespace Year_13_Coursework
 
         private void incorrectGuess()
         {
-            pbxThought.Image = Properties.Resources.X;
+            pbxThought.Image = Properties.Resources.Childish_Cross_24996;
             highlightCorrectAnswer();
             disableAllButtons();
             playGame();
@@ -371,7 +371,7 @@ namespace Year_13_Coursework
         {
             timer1.Stop();
             timer1 = null;
-            pbxThought.Image = Properties.Resources.alarmClock;
+            pbxThought.Image = Properties.Resources.Childish_Clock_25009;
 
             await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
 

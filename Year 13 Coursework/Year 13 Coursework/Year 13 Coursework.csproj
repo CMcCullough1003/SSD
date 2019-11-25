@@ -236,6 +236,18 @@
     <None Include="Resources\sheep.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\lake-louise-canada-5k-oa.jpg" />
+    <None Include="Resources\game6BG.jpg" />
+    <None Include="Resources\game3BG.jpg" />
+    <None Include="Resources\game4BG.jpg" />
+    <None Include="Resources\game5BG.jpg" />
+    <None Include="Resources\game2BG.jpg" />
+    <None Include="Resources\BackgroundRoad.jpg" />
+    <None Include="Resources\Game1WP.jpg" />
+    <None Include="Resources\Childish-Tick_24982.png" />
+    <None Include="Resources\Childish-Cross_24996.png" />
+    <None Include="Resources\Childish-Clock_25009.png" />
+    <None Include="Resources\clock.png" />
     <None Include="Resources\resultsBG.jpg" />
     <None Include="Resources\startScreenBG.jpg" />
     <None Include="Resources\Game1Bg.jpg" />

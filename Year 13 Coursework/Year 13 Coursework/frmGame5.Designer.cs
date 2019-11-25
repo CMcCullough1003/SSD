@@ -40,12 +40,6 @@
             this.lblScoreCount = new System.Windows.Forms.Label();
             this.lblTimerCount = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.pbxYacht = new System.Windows.Forms.PictureBox();
-            this.pbxSea = new System.Windows.Forms.PictureBox();
-            this.pbxSky = new System.Windows.Forms.PictureBox();
-            this.pbxThought = new System.Windows.Forms.PictureBox();
-            this.pbxBubble3 = new System.Windows.Forms.PictureBox();
-            this.pbxAvatar = new System.Windows.Forms.PictureBox();
             this.lblBrusselSea = new System.Windows.Forms.Label();
             this.lblArafuraSea = new System.Windows.Forms.Label();
             this.lblBoySea = new System.Windows.Forms.Label();
@@ -64,15 +58,23 @@
             this.lblBrysSea = new System.Windows.Forms.Label();
             this.btnSubmitAnswer = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
-            this.pbxHeader = new System.Windows.Forms.PictureBox();
-            this.lblSkipGame = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxYacht)).BeginInit();
+            this.btnSkipGame = new System.Windows.Forms.Button();
+            this.pbxSea = new System.Windows.Forms.PictureBox();
+            this.pbxThought = new System.Windows.Forms.PictureBox();
+            this.pbxAvatar = new System.Windows.Forms.PictureBox();
+            this.pbxYacht = new System.Windows.Forms.PictureBox();
+            this.pbxSky = new System.Windows.Forms.PictureBox();
+            this.pbxCountry = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSea)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxSky)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxThought)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxBubble3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAvatar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxHeader)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxYacht)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxSky)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCountry)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -80,21 +82,22 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(501, 678);
+            this.label3.Location = new System.Drawing.Point(388, 610);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 20);
+            this.label3.Size = new System.Drawing.Size(109, 20);
             this.label3.TabIndex = 152;
-            this.label3.Text = "Score:";
+            this.label3.Text = "Current score:";
             // 
             // lblCorrectGuessCount
             // 
             this.lblCorrectGuessCount.AutoSize = true;
             this.lblCorrectGuessCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCorrectGuessCount.ForeColor = System.Drawing.Color.DimGray;
-            this.lblCorrectGuessCount.Location = new System.Drawing.Point(567, 668);
+            this.lblCorrectGuessCount.Location = new System.Drawing.Point(523, 610);
             this.lblCorrectGuessCount.Name = "lblCorrectGuessCount";
-            this.lblCorrectGuessCount.Size = new System.Drawing.Size(0, 32);
+            this.lblCorrectGuessCount.Size = new System.Drawing.Size(55, 32);
             this.lblCorrectGuessCount.TabIndex = 151;
+            this.lblCorrectGuessCount.Text = "0/4";
             this.lblCorrectGuessCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblSaltonSea
@@ -104,7 +107,7 @@
             this.lblSaltonSea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblSaltonSea.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSaltonSea.ForeColor = System.Drawing.Color.White;
-            this.lblSaltonSea.Location = new System.Drawing.Point(260, 470);
+            this.lblSaltonSea.Location = new System.Drawing.Point(392, 472);
             this.lblSaltonSea.Name = "lblSaltonSea";
             this.lblSaltonSea.Size = new System.Drawing.Size(157, 34);
             this.lblSaltonSea.TabIndex = 150;
@@ -114,9 +117,9 @@
             // 
             // btnHelp
             // 
-            this.btnHelp.Location = new System.Drawing.Point(18, 665);
+            this.btnHelp.Location = new System.Drawing.Point(1046, 595);
             this.btnHelp.Name = "btnHelp";
-            this.btnHelp.Size = new System.Drawing.Size(225, 46);
+            this.btnHelp.Size = new System.Drawing.Size(93, 51);
             this.btnHelp.TabIndex = 121;
             this.btnHelp.Text = "Help";
             this.btnHelp.UseVisualStyleBackColor = true;
@@ -125,10 +128,10 @@
             // lblTimer
             // 
             this.lblTimer.AutoSize = true;
-            this.lblTimer.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblTimer.BackColor = System.Drawing.Color.White;
             this.lblTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTimer.ForeColor = System.Drawing.Color.Gray;
-            this.lblTimer.Location = new System.Drawing.Point(866, 59);
+            this.lblTimer.Location = new System.Drawing.Point(1042, 183);
             this.lblTimer.Name = "lblTimer";
             this.lblTimer.Size = new System.Drawing.Size(48, 20);
             this.lblTimer.TabIndex = 120;
@@ -137,10 +140,10 @@
             // lblScore
             // 
             this.lblScore.AutoSize = true;
-            this.lblScore.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblScore.BackColor = System.Drawing.Color.White;
             this.lblScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScore.ForeColor = System.Drawing.Color.Gray;
-            this.lblScore.Location = new System.Drawing.Point(12, 59);
+            this.lblScore.Location = new System.Drawing.Point(1042, 246);
             this.lblScore.Name = "lblScore";
             this.lblScore.Size = new System.Drawing.Size(51, 20);
             this.lblScore.TabIndex = 119;
@@ -149,10 +152,10 @@
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblTitle.BackColor = System.Drawing.Color.White;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.Black;
-            this.lblTitle.Location = new System.Drawing.Point(252, 68);
+            this.lblTitle.Location = new System.Drawing.Point(376, 134);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(100, 46);
             this.lblTitle.TabIndex = 117;
@@ -162,10 +165,10 @@
             // lblScoreCount
             // 
             this.lblScoreCount.AutoSize = true;
-            this.lblScoreCount.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblScoreCount.BackColor = System.Drawing.Color.White;
             this.lblScoreCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScoreCount.ForeColor = System.Drawing.Color.DimGray;
-            this.lblScoreCount.Location = new System.Drawing.Point(12, 79);
+            this.lblScoreCount.Location = new System.Drawing.Point(1042, 266);
             this.lblScoreCount.Name = "lblScoreCount";
             this.lblScoreCount.Size = new System.Drawing.Size(31, 32);
             this.lblScoreCount.TabIndex = 116;
@@ -174,10 +177,10 @@
             // lblTimerCount
             // 
             this.lblTimerCount.AutoSize = true;
-            this.lblTimerCount.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblTimerCount.BackColor = System.Drawing.Color.White;
             this.lblTimerCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTimerCount.ForeColor = System.Drawing.Color.DimGray;
-            this.lblTimerCount.Location = new System.Drawing.Point(869, 79);
+            this.lblTimerCount.Location = new System.Drawing.Point(1042, 203);
             this.lblTimerCount.Name = "lblTimerCount";
             this.lblTimerCount.Size = new System.Drawing.Size(47, 32);
             this.lblTimerCount.TabIndex = 115;
@@ -188,66 +191,6 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
-            // pbxYacht
-            // 
-            this.pbxYacht.BackColor = System.Drawing.Color.Transparent;
-            this.pbxYacht.Image = global::Year_13_Coursework.Properties.Resources.yacht;
-            this.pbxYacht.Location = new System.Drawing.Point(393, 122);
-            this.pbxYacht.Name = "pbxYacht";
-            this.pbxYacht.Size = new System.Drawing.Size(99, 96);
-            this.pbxYacht.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxYacht.TabIndex = 154;
-            this.pbxYacht.TabStop = false;
-            // 
-            // pbxSea
-            // 
-            this.pbxSea.Image = global::Year_13_Coursework.Properties.Resources.sea;
-            this.pbxSea.Location = new System.Drawing.Point(260, 220);
-            this.pbxSea.Name = "pbxSea";
-            this.pbxSea.Size = new System.Drawing.Size(654, 161);
-            this.pbxSea.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxSea.TabIndex = 153;
-            this.pbxSea.TabStop = false;
-            // 
-            // pbxSky
-            // 
-            this.pbxSky.Image = global::Year_13_Coursework.Properties.Resources.sky;
-            this.pbxSky.Location = new System.Drawing.Point(260, 120);
-            this.pbxSky.Name = "pbxSky";
-            this.pbxSky.Size = new System.Drawing.Size(654, 102);
-            this.pbxSky.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxSky.TabIndex = 123;
-            this.pbxSky.TabStop = false;
-            // 
-            // pbxThought
-            // 
-            this.pbxThought.Image = global::Year_13_Coursework.Properties.Resources.questionMark21;
-            this.pbxThought.Location = new System.Drawing.Point(76, 185);
-            this.pbxThought.Name = "pbxThought";
-            this.pbxThought.Size = new System.Drawing.Size(118, 112);
-            this.pbxThought.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxThought.TabIndex = 118;
-            this.pbxThought.TabStop = false;
-            // 
-            // pbxBubble3
-            // 
-            this.pbxBubble3.Image = global::Year_13_Coursework.Properties.Resources.thoughtBubble3;
-            this.pbxBubble3.Location = new System.Drawing.Point(18, 114);
-            this.pbxBubble3.Name = "pbxBubble3";
-            this.pbxBubble3.Size = new System.Drawing.Size(225, 336);
-            this.pbxBubble3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxBubble3.TabIndex = 114;
-            this.pbxBubble3.TabStop = false;
-            // 
-            // pbxAvatar
-            // 
-            this.pbxAvatar.Location = new System.Drawing.Point(18, 456);
-            this.pbxAvatar.Name = "pbxAvatar";
-            this.pbxAvatar.Size = new System.Drawing.Size(225, 203);
-            this.pbxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxAvatar.TabIndex = 113;
-            this.pbxAvatar.TabStop = false;
-            // 
             // lblBrusselSea
             // 
             this.lblBrusselSea.AutoSize = true;
@@ -255,7 +198,7 @@
             this.lblBrusselSea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblBrusselSea.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBrusselSea.ForeColor = System.Drawing.Color.White;
-            this.lblBrusselSea.Location = new System.Drawing.Point(428, 470);
+            this.lblBrusselSea.Location = new System.Drawing.Point(556, 472);
             this.lblBrusselSea.Name = "lblBrusselSea";
             this.lblBrusselSea.Size = new System.Drawing.Size(170, 34);
             this.lblBrusselSea.TabIndex = 155;
@@ -270,7 +213,7 @@
             this.lblArafuraSea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblArafuraSea.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblArafuraSea.ForeColor = System.Drawing.Color.White;
-            this.lblArafuraSea.Location = new System.Drawing.Point(609, 470);
+            this.lblArafuraSea.Location = new System.Drawing.Point(732, 472);
             this.lblArafuraSea.Name = "lblArafuraSea";
             this.lblArafuraSea.Size = new System.Drawing.Size(168, 34);
             this.lblArafuraSea.TabIndex = 156;
@@ -285,7 +228,7 @@
             this.lblBoySea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblBoySea.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBoySea.ForeColor = System.Drawing.Color.White;
-            this.lblBoySea.Location = new System.Drawing.Point(790, 470);
+            this.lblBoySea.Location = new System.Drawing.Point(907, 472);
             this.lblBoySea.Name = "lblBoySea";
             this.lblBoySea.Size = new System.Drawing.Size(124, 34);
             this.lblBoySea.TabIndex = 157;
@@ -300,7 +243,7 @@
             this.lblWeddellSea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblWeddellSea.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWeddellSea.ForeColor = System.Drawing.Color.White;
-            this.lblWeddellSea.Location = new System.Drawing.Point(260, 513);
+            this.lblWeddellSea.Location = new System.Drawing.Point(392, 510);
             this.lblWeddellSea.Name = "lblWeddellSea";
             this.lblWeddellSea.Size = new System.Drawing.Size(179, 34);
             this.lblWeddellSea.TabIndex = 158;
@@ -315,7 +258,7 @@
             this.lblBadSea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblBadSea.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBadSea.ForeColor = System.Drawing.Color.White;
-            this.lblBadSea.Location = new System.Drawing.Point(452, 513);
+            this.lblBadSea.Location = new System.Drawing.Point(582, 510);
             this.lblBadSea.Name = "lblBadSea";
             this.lblBadSea.Size = new System.Drawing.Size(126, 34);
             this.lblBadSea.TabIndex = 159;
@@ -330,7 +273,7 @@
             this.lblTasmanSea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTasmanSea.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTasmanSea.ForeColor = System.Drawing.Color.White;
-            this.lblTasmanSea.Location = new System.Drawing.Point(593, 513);
+            this.lblTasmanSea.Location = new System.Drawing.Point(718, 510);
             this.lblTasmanSea.Name = "lblTasmanSea";
             this.lblTasmanSea.Size = new System.Drawing.Size(177, 34);
             this.lblTasmanSea.TabIndex = 160;
@@ -345,7 +288,7 @@
             this.lblOtisSea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblOtisSea.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOtisSea.ForeColor = System.Drawing.Color.White;
-            this.lblOtisSea.Location = new System.Drawing.Point(788, 513);
+            this.lblOtisSea.Location = new System.Drawing.Point(905, 510);
             this.lblOtisSea.Name = "lblOtisSea";
             this.lblOtisSea.Size = new System.Drawing.Size(126, 34);
             this.lblOtisSea.TabIndex = 161;
@@ -360,7 +303,7 @@
             this.lblDylanSea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblDylanSea.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDylanSea.ForeColor = System.Drawing.Color.White;
-            this.lblDylanSea.Location = new System.Drawing.Point(260, 557);
+            this.lblDylanSea.Location = new System.Drawing.Point(392, 548);
             this.lblDylanSea.Name = "lblDylanSea";
             this.lblDylanSea.Size = new System.Drawing.Size(148, 34);
             this.lblDylanSea.TabIndex = 162;
@@ -375,7 +318,7 @@
             this.lblEltonSea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblEltonSea.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEltonSea.ForeColor = System.Drawing.Color.White;
-            this.lblEltonSea.Location = new System.Drawing.Point(595, 557);
+            this.lblEltonSea.Location = new System.Drawing.Point(717, 548);
             this.lblEltonSea.Name = "lblEltonSea";
             this.lblEltonSea.Size = new System.Drawing.Size(141, 34);
             this.lblEltonSea.TabIndex = 164;
@@ -390,7 +333,7 @@
             this.lblTempleSea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTempleSea.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTempleSea.ForeColor = System.Drawing.Color.White;
-            this.lblTempleSea.Location = new System.Drawing.Point(744, 557);
+            this.lblTempleSea.Location = new System.Drawing.Point(861, 548);
             this.lblTempleSea.Name = "lblTempleSea";
             this.lblTempleSea.Size = new System.Drawing.Size(170, 34);
             this.lblTempleSea.TabIndex = 165;
@@ -405,7 +348,7 @@
             this.lblSeaOfPlato.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblSeaOfPlato.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSeaOfPlato.ForeColor = System.Drawing.Color.White;
-            this.lblSeaOfPlato.Location = new System.Drawing.Point(415, 557);
+            this.lblSeaOfPlato.Location = new System.Drawing.Point(542, 548);
             this.lblSeaOfPlato.Name = "lblSeaOfPlato";
             this.lblSeaOfPlato.Size = new System.Drawing.Size(172, 34);
             this.lblSeaOfPlato.TabIndex = 163;
@@ -420,7 +363,7 @@
             this.lblSeaOfStorms.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblSeaOfStorms.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSeaOfStorms.ForeColor = System.Drawing.Color.White;
-            this.lblSeaOfStorms.Location = new System.Drawing.Point(260, 426);
+            this.lblSeaOfStorms.Location = new System.Drawing.Point(392, 435);
             this.lblSeaOfStorms.Name = "lblSeaOfStorms";
             this.lblSeaOfStorms.Size = new System.Drawing.Size(195, 34);
             this.lblSeaOfStorms.TabIndex = 166;
@@ -435,7 +378,7 @@
             this.lblPiSea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblPiSea.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPiSea.ForeColor = System.Drawing.Color.White;
-            this.lblPiSea.Location = new System.Drawing.Point(461, 426);
+            this.lblPiSea.Location = new System.Drawing.Point(590, 435);
             this.lblPiSea.Name = "lblPiSea";
             this.lblPiSea.Size = new System.Drawing.Size(101, 34);
             this.lblPiSea.TabIndex = 167;
@@ -450,7 +393,7 @@
             this.lblTiSea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTiSea.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTiSea.ForeColor = System.Drawing.Color.White;
-            this.lblTiSea.Location = new System.Drawing.Point(572, 426);
+            this.lblTiSea.Location = new System.Drawing.Point(694, 435);
             this.lblTiSea.Name = "lblTiSea";
             this.lblTiSea.Size = new System.Drawing.Size(99, 34);
             this.lblTiSea.TabIndex = 168;
@@ -465,7 +408,7 @@
             this.lblSiSea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblSiSea.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSiSea.ForeColor = System.Drawing.Color.White;
-            this.lblSiSea.Location = new System.Drawing.Point(678, 426);
+            this.lblSiSea.Location = new System.Drawing.Point(796, 435);
             this.lblSiSea.Name = "lblSiSea";
             this.lblSiSea.Size = new System.Drawing.Size(101, 34);
             this.lblSiSea.TabIndex = 169;
@@ -480,7 +423,7 @@
             this.lblBrysSea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblBrysSea.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBrysSea.ForeColor = System.Drawing.Color.White;
-            this.lblBrysSea.Location = new System.Drawing.Point(785, 426);
+            this.lblBrysSea.Location = new System.Drawing.Point(900, 435);
             this.lblBrysSea.Name = "lblBrysSea";
             this.lblBrysSea.Size = new System.Drawing.Size(131, 34);
             this.lblBrysSea.TabIndex = 170;
@@ -493,9 +436,9 @@
             this.btnSubmitAnswer.BackColor = System.Drawing.Color.SaddleBrown;
             this.btnSubmitAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmitAnswer.ForeColor = System.Drawing.Color.White;
-            this.btnSubmitAnswer.Location = new System.Drawing.Point(260, 654);
+            this.btnSubmitAnswer.Location = new System.Drawing.Point(714, 651);
             this.btnSubmitAnswer.Name = "btnSubmitAnswer";
-            this.btnSubmitAnswer.Size = new System.Drawing.Size(225, 60);
+            this.btnSubmitAnswer.Size = new System.Drawing.Size(320, 54);
             this.btnSubmitAnswer.TabIndex = 171;
             this.btnSubmitAnswer.Text = "Submit";
             this.btnSubmitAnswer.UseVisualStyleBackColor = false;
@@ -506,41 +449,112 @@
             this.btnClear.BackColor = System.Drawing.Color.SaddleBrown;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(689, 654);
+            this.btnClear.Location = new System.Drawing.Point(714, 595);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(225, 60);
+            this.btnClear.Size = new System.Drawing.Size(320, 54);
             this.btnClear.TabIndex = 172;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.BtnClear_Click);
             // 
-            // pbxHeader
+            // btnSkipGame
             // 
-            this.pbxHeader.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pbxHeader.Location = new System.Drawing.Point(-1, 0);
-            this.pbxHeader.Name = "pbxHeader";
-            this.pbxHeader.Size = new System.Drawing.Size(945, 50);
-            this.pbxHeader.TabIndex = 173;
-            this.pbxHeader.TabStop = false;
+            this.btnSkipGame.Location = new System.Drawing.Point(1046, 652);
+            this.btnSkipGame.Name = "btnSkipGame";
+            this.btnSkipGame.Size = new System.Drawing.Size(93, 53);
+            this.btnSkipGame.TabIndex = 220;
+            this.btnSkipGame.Text = "Skip";
+            this.btnSkipGame.UseVisualStyleBackColor = true;
+            this.btnSkipGame.Click += new System.EventHandler(this.BtnSkipGame_Click);
             // 
-            // lblSkipGame
+            // pbxSea
             // 
-            this.lblSkipGame.AutoSize = true;
-            this.lblSkipGame.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.lblSkipGame.Location = new System.Drawing.Point(20, 15);
-            this.lblSkipGame.Name = "lblSkipGame";
-            this.lblSkipGame.Size = new System.Drawing.Size(84, 20);
-            this.lblSkipGame.TabIndex = 217;
-            this.lblSkipGame.Text = "Skip game";
-            this.lblSkipGame.Click += new System.EventHandler(this.LblSkipGame_Click);
+            this.pbxSea.Image = global::Year_13_Coursework.Properties.Resources.sea;
+            this.pbxSea.Location = new System.Drawing.Point(384, 283);
+            this.pbxSea.Name = "pbxSea";
+            this.pbxSea.Size = new System.Drawing.Size(652, 146);
+            this.pbxSea.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxSea.TabIndex = 153;
+            this.pbxSea.TabStop = false;
+            // 
+            // pbxThought
+            // 
+            this.pbxThought.Image = global::Year_13_Coursework.Properties.Resources.questionMark21;
+            this.pbxThought.Location = new System.Drawing.Point(1046, 403);
+            this.pbxThought.Name = "pbxThought";
+            this.pbxThought.Size = new System.Drawing.Size(92, 89);
+            this.pbxThought.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxThought.TabIndex = 118;
+            this.pbxThought.TabStop = false;
+            // 
+            // pbxAvatar
+            // 
+            this.pbxAvatar.Location = new System.Drawing.Point(1046, 498);
+            this.pbxAvatar.Name = "pbxAvatar";
+            this.pbxAvatar.Size = new System.Drawing.Size(92, 89);
+            this.pbxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxAvatar.TabIndex = 113;
+            this.pbxAvatar.TabStop = false;
+            // 
+            // pbxYacht
+            // 
+            this.pbxYacht.BackColor = System.Drawing.Color.Transparent;
+            this.pbxYacht.Image = global::Year_13_Coursework.Properties.Resources.yacht;
+            this.pbxYacht.Location = new System.Drawing.Point(479, 195);
+            this.pbxYacht.Name = "pbxYacht";
+            this.pbxYacht.Size = new System.Drawing.Size(99, 95);
+            this.pbxYacht.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxYacht.TabIndex = 154;
+            this.pbxYacht.TabStop = false;
+            // 
+            // pbxSky
+            // 
+            this.pbxSky.Image = global::Year_13_Coursework.Properties.Resources.sky;
+            this.pbxSky.Location = new System.Drawing.Point(384, 183);
+            this.pbxSky.Name = "pbxSky";
+            this.pbxSky.Size = new System.Drawing.Size(652, 102);
+            this.pbxSky.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxSky.TabIndex = 123;
+            this.pbxSky.TabStop = false;
+            // 
+            // pbxCountry
+            // 
+            this.pbxCountry.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbxCountry.Location = new System.Drawing.Point(384, 183);
+            this.pbxCountry.Name = "pbxCountry";
+            this.pbxCountry.Size = new System.Drawing.Size(652, 404);
+            this.pbxCountry.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxCountry.TabIndex = 219;
+            this.pbxCountry.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(352, 114);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(808, 630);
+            this.pictureBox1.TabIndex = 218;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Year_13_Coursework.Properties.Resources.game6BG;
+            this.pictureBox2.Location = new System.Drawing.Point(-9, -66);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(1570, 1016);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 221;
+            this.pictureBox2.TabStop = false;
             // 
             // frmGame5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(933, 737);
-            this.Controls.Add(this.lblSkipGame);
+            this.ClientSize = new System.Drawing.Size(1514, 858);
+            this.Controls.Add(this.btnSkipGame);
+            this.Controls.Add(this.pbxSea);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSubmitAnswer);
             this.Controls.Add(this.lblBrysSea);
@@ -559,7 +573,6 @@
             this.Controls.Add(this.lblBoySea);
             this.Controls.Add(this.lblArafuraSea);
             this.Controls.Add(this.lblBrusselSea);
-            this.Controls.Add(this.pbxSea);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblCorrectGuessCount);
             this.Controls.Add(this.lblSaltonSea);
@@ -570,24 +583,27 @@
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.lblScoreCount);
             this.Controls.Add(this.lblTimerCount);
-            this.Controls.Add(this.pbxBubble3);
             this.Controls.Add(this.pbxAvatar);
             this.Controls.Add(this.pbxYacht);
             this.Controls.Add(this.pbxSky);
-            this.Controls.Add(this.pbxHeader);
+            this.Controls.Add(this.pbxCountry);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBox2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmGame5";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Game 5";
             this.Activated += new System.EventHandler(this.FrmGame5_Activated);
             this.Load += new System.EventHandler(this.FrmGame5_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pbxYacht)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSea)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxSky)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxThought)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxBubble3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAvatar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxHeader)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxYacht)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxSky)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCountry)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -606,7 +622,6 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblScoreCount;
         private System.Windows.Forms.Label lblTimerCount;
-        private System.Windows.Forms.PictureBox pbxBubble3;
         private System.Windows.Forms.PictureBox pbxAvatar;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox pbxSea;
@@ -629,7 +644,9 @@
         private System.Windows.Forms.Label lblBrysSea;
         private System.Windows.Forms.Button btnSubmitAnswer;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.PictureBox pbxHeader;
-        private System.Windows.Forms.Label lblSkipGame;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbxCountry;
+        private System.Windows.Forms.Button btnSkipGame;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

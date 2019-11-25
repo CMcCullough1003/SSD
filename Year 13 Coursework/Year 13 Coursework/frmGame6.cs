@@ -72,6 +72,7 @@ namespace Year_13_Coursework
 
         private void FrmGame6_Load(object sender, EventArgs e)
         {
+
             transparentMountainBackground();
             transparentCloudBackgrounds();
             addLabelsToBackground();
@@ -293,7 +294,7 @@ namespace Year_13_Coursework
             }
         }
 
-        private void LblSkipGame_Click(object sender, EventArgs e)
+        private void BtnSkipGame_Click(object sender, EventArgs e)
         {
             timer1.Stop();
             moveToResultsScreen();

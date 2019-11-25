@@ -113,6 +113,16 @@ namespace Year_13_Coursework.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BackgroundRoad {
+            get {
+                object obj = ResourceManager.GetObject("BackgroundRoad", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bee {
             get {
                 object obj = ResourceManager.GetObject("bee", resourceCulture);
@@ -216,6 +226,46 @@ namespace Year_13_Coursework.Properties {
         internal static System.Drawing.Bitmap chicken {
             get {
                 object obj = ResourceManager.GetObject("chicken", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Childish_Clock_25009 {
+            get {
+                object obj = ResourceManager.GetObject("Childish-Clock_25009", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Childish_Cross_24996 {
+            get {
+                object obj = ResourceManager.GetObject("Childish-Cross_24996", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Childish_Tick_24982 {
+            get {
+                object obj = ResourceManager.GetObject("Childish-Tick_24982", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap clock {
+            get {
+                object obj = ResourceManager.GetObject("clock", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -503,6 +553,66 @@ namespace Year_13_Coursework.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Game1WP {
+            get {
+                object obj = ResourceManager.GetObject("Game1WP", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap game2BG {
+            get {
+                object obj = ResourceManager.GetObject("game2BG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap game3BG {
+            get {
+                object obj = ResourceManager.GetObject("game3BG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap game4BG {
+            get {
+                object obj = ResourceManager.GetObject("game4BG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap game5BG {
+            get {
+                object obj = ResourceManager.GetObject("game5BG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap game6BG {
+            get {
+                object obj = ResourceManager.GetObject("game6BG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap germany {
             get {
                 object obj = ResourceManager.GetObject("germany", resourceCulture);
@@ -656,6 +766,16 @@ namespace Year_13_Coursework.Properties {
         internal static System.Drawing.Bitmap kangaroo {
             get {
                 object obj = ResourceManager.GetObject("kangaroo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lake_louise_canada_5k_oa {
+            get {
+                object obj = ResourceManager.GetObject("lake-louise-canada-5k-oa", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

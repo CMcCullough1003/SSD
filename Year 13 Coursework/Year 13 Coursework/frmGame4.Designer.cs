@@ -61,23 +61,25 @@
             this.lblQuestionText = new System.Windows.Forms.Label();
             this.lblA = new System.Windows.Forms.Label();
             this.btnHelp = new System.Windows.Forms.Button();
-            this.pbxHangman = new System.Windows.Forms.PictureBox();
-            this.pbxThought = new System.Windows.Forms.PictureBox();
-            this.pbxBubble3 = new System.Windows.Forms.PictureBox();
-            this.pbxAvatar = new System.Windows.Forms.PictureBox();
             this.lblTimer = new System.Windows.Forms.Label();
             this.lblScore = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblScoreCount = new System.Windows.Forms.Label();
             this.lblTimerCount = new System.Windows.Forms.Label();
-            this.pbxHeader = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.lblSkipGame = new System.Windows.Forms.Label();
+            this.btnSkipGame = new System.Windows.Forms.Button();
+            this.pbxHangman = new System.Windows.Forms.PictureBox();
+            this.pbxThought = new System.Windows.Forms.PictureBox();
+            this.pbxAvatar = new System.Windows.Forms.PictureBox();
+            this.pbxCountry = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxHangman)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxThought)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxBubble3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAvatar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxHeader)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCountry)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // lblAnswerText
@@ -85,7 +87,7 @@
             this.lblAnswerText.AutoSize = true;
             this.lblAnswerText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnswerText.ForeColor = System.Drawing.Color.Gray;
-            this.lblAnswerText.Location = new System.Drawing.Point(328, 626);
+            this.lblAnswerText.Location = new System.Drawing.Point(380, 652);
             this.lblAnswerText.Name = "lblAnswerText";
             this.lblAnswerText.Size = new System.Drawing.Size(66, 20);
             this.lblAnswerText.TabIndex = 112;
@@ -96,7 +98,7 @@
             this.lblAnswer.AutoSize = true;
             this.lblAnswer.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnswer.ForeColor = System.Drawing.Color.Black;
-            this.lblAnswer.Location = new System.Drawing.Point(416, 611);
+            this.lblAnswer.Location = new System.Drawing.Point(378, 670);
             this.lblAnswer.Name = "lblAnswer";
             this.lblAnswer.Size = new System.Drawing.Size(0, 36);
             this.lblAnswer.TabIndex = 111;
@@ -107,7 +109,7 @@
             this.lblQuestion.AutoSize = true;
             this.lblQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuestion.ForeColor = System.Drawing.Color.DimGray;
-            this.lblQuestion.Location = new System.Drawing.Point(416, 528);
+            this.lblQuestion.Location = new System.Drawing.Point(378, 615);
             this.lblQuestion.Name = "lblQuestion";
             this.lblQuestion.Size = new System.Drawing.Size(130, 32);
             this.lblQuestion.TabIndex = 110;
@@ -118,7 +120,7 @@
             this.lblZ.AutoSize = true;
             this.lblZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblZ.ForeColor = System.Drawing.Color.DimGray;
-            this.lblZ.Location = new System.Drawing.Point(759, 403);
+            this.lblZ.Location = new System.Drawing.Point(846, 503);
             this.lblZ.Name = "lblZ";
             this.lblZ.Size = new System.Drawing.Size(32, 32);
             this.lblZ.TabIndex = 109;
@@ -130,7 +132,7 @@
             this.lblV.AutoSize = true;
             this.lblV.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblV.ForeColor = System.Drawing.Color.DimGray;
-            this.lblV.Location = new System.Drawing.Point(718, 358);
+            this.lblV.Location = new System.Drawing.Point(805, 458);
             this.lblV.Name = "lblV";
             this.lblV.Size = new System.Drawing.Size(34, 32);
             this.lblV.TabIndex = 108;
@@ -142,7 +144,7 @@
             this.lblW.AutoSize = true;
             this.lblW.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblW.ForeColor = System.Drawing.Color.DimGray;
-            this.lblW.Location = new System.Drawing.Point(759, 358);
+            this.lblW.Location = new System.Drawing.Point(846, 458);
             this.lblW.Name = "lblW";
             this.lblW.Size = new System.Drawing.Size(41, 32);
             this.lblW.TabIndex = 107;
@@ -154,7 +156,7 @@
             this.lblX.AutoSize = true;
             this.lblX.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblX.ForeColor = System.Drawing.Color.DimGray;
-            this.lblX.Location = new System.Drawing.Point(800, 358);
+            this.lblX.Location = new System.Drawing.Point(887, 458);
             this.lblX.Name = "lblX";
             this.lblX.Size = new System.Drawing.Size(34, 32);
             this.lblX.TabIndex = 106;
@@ -166,7 +168,7 @@
             this.lblY.AutoSize = true;
             this.lblY.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblY.ForeColor = System.Drawing.Color.DimGray;
-            this.lblY.Location = new System.Drawing.Point(838, 358);
+            this.lblY.Location = new System.Drawing.Point(925, 458);
             this.lblY.Name = "lblY";
             this.lblY.Size = new System.Drawing.Size(34, 32);
             this.lblY.TabIndex = 105;
@@ -178,7 +180,7 @@
             this.lblU.AutoSize = true;
             this.lblU.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblU.ForeColor = System.Drawing.Color.DimGray;
-            this.lblU.Location = new System.Drawing.Point(680, 358);
+            this.lblU.Location = new System.Drawing.Point(767, 458);
             this.lblU.Name = "lblU";
             this.lblU.Size = new System.Drawing.Size(35, 32);
             this.lblU.TabIndex = 104;
@@ -190,7 +192,7 @@
             this.lblQ.AutoSize = true;
             this.lblQ.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQ.ForeColor = System.Drawing.Color.DimGray;
-            this.lblQ.Location = new System.Drawing.Point(718, 303);
+            this.lblQ.Location = new System.Drawing.Point(805, 403);
             this.lblQ.Name = "lblQ";
             this.lblQ.Size = new System.Drawing.Size(37, 32);
             this.lblQ.TabIndex = 103;
@@ -202,7 +204,7 @@
             this.lblR.AutoSize = true;
             this.lblR.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblR.ForeColor = System.Drawing.Color.DimGray;
-            this.lblR.Location = new System.Drawing.Point(759, 303);
+            this.lblR.Location = new System.Drawing.Point(846, 403);
             this.lblR.Name = "lblR";
             this.lblR.Size = new System.Drawing.Size(35, 32);
             this.lblR.TabIndex = 102;
@@ -214,7 +216,7 @@
             this.lblS.AutoSize = true;
             this.lblS.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblS.ForeColor = System.Drawing.Color.DimGray;
-            this.lblS.Location = new System.Drawing.Point(800, 303);
+            this.lblS.Location = new System.Drawing.Point(887, 403);
             this.lblS.Name = "lblS";
             this.lblS.Size = new System.Drawing.Size(34, 32);
             this.lblS.TabIndex = 101;
@@ -226,7 +228,7 @@
             this.lblT.AutoSize = true;
             this.lblT.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblT.ForeColor = System.Drawing.Color.DimGray;
-            this.lblT.Location = new System.Drawing.Point(838, 303);
+            this.lblT.Location = new System.Drawing.Point(925, 403);
             this.lblT.Name = "lblT";
             this.lblT.Size = new System.Drawing.Size(32, 32);
             this.lblT.TabIndex = 100;
@@ -238,7 +240,7 @@
             this.lblP.AutoSize = true;
             this.lblP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblP.ForeColor = System.Drawing.Color.DimGray;
-            this.lblP.Location = new System.Drawing.Point(680, 303);
+            this.lblP.Location = new System.Drawing.Point(767, 403);
             this.lblP.Name = "lblP";
             this.lblP.Size = new System.Drawing.Size(34, 32);
             this.lblP.TabIndex = 99;
@@ -250,7 +252,7 @@
             this.lblL.AutoSize = true;
             this.lblL.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblL.ForeColor = System.Drawing.Color.DimGray;
-            this.lblL.Location = new System.Drawing.Point(718, 248);
+            this.lblL.Location = new System.Drawing.Point(805, 348);
             this.lblL.Name = "lblL";
             this.lblL.Size = new System.Drawing.Size(31, 32);
             this.lblL.TabIndex = 98;
@@ -262,7 +264,7 @@
             this.lblM.AutoSize = true;
             this.lblM.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblM.ForeColor = System.Drawing.Color.DimGray;
-            this.lblM.Location = new System.Drawing.Point(759, 248);
+            this.lblM.Location = new System.Drawing.Point(846, 348);
             this.lblM.Name = "lblM";
             this.lblM.Size = new System.Drawing.Size(38, 32);
             this.lblM.TabIndex = 97;
@@ -274,7 +276,7 @@
             this.lblN.AutoSize = true;
             this.lblN.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblN.ForeColor = System.Drawing.Color.DimGray;
-            this.lblN.Location = new System.Drawing.Point(800, 248);
+            this.lblN.Location = new System.Drawing.Point(887, 348);
             this.lblN.Name = "lblN";
             this.lblN.Size = new System.Drawing.Size(35, 32);
             this.lblN.TabIndex = 96;
@@ -286,7 +288,7 @@
             this.lblO.AutoSize = true;
             this.lblO.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblO.ForeColor = System.Drawing.Color.DimGray;
-            this.lblO.Location = new System.Drawing.Point(838, 248);
+            this.lblO.Location = new System.Drawing.Point(925, 348);
             this.lblO.Name = "lblO";
             this.lblO.Size = new System.Drawing.Size(37, 32);
             this.lblO.TabIndex = 95;
@@ -298,7 +300,7 @@
             this.lblK.AutoSize = true;
             this.lblK.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblK.ForeColor = System.Drawing.Color.DimGray;
-            this.lblK.Location = new System.Drawing.Point(680, 248);
+            this.lblK.Location = new System.Drawing.Point(767, 348);
             this.lblK.Name = "lblK";
             this.lblK.Size = new System.Drawing.Size(34, 32);
             this.lblK.TabIndex = 94;
@@ -310,7 +312,7 @@
             this.lblG.AutoSize = true;
             this.lblG.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblG.ForeColor = System.Drawing.Color.DimGray;
-            this.lblG.Location = new System.Drawing.Point(718, 194);
+            this.lblG.Location = new System.Drawing.Point(805, 294);
             this.lblG.Name = "lblG";
             this.lblG.Size = new System.Drawing.Size(37, 32);
             this.lblG.TabIndex = 93;
@@ -322,7 +324,7 @@
             this.lblH.AutoSize = true;
             this.lblH.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblH.ForeColor = System.Drawing.Color.DimGray;
-            this.lblH.Location = new System.Drawing.Point(759, 194);
+            this.lblH.Location = new System.Drawing.Point(846, 294);
             this.lblH.Name = "lblH";
             this.lblH.Size = new System.Drawing.Size(35, 32);
             this.lblH.TabIndex = 92;
@@ -334,7 +336,7 @@
             this.lblI.AutoSize = true;
             this.lblI.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblI.ForeColor = System.Drawing.Color.DimGray;
-            this.lblI.Location = new System.Drawing.Point(800, 194);
+            this.lblI.Location = new System.Drawing.Point(887, 294);
             this.lblI.Name = "lblI";
             this.lblI.Size = new System.Drawing.Size(22, 32);
             this.lblI.TabIndex = 91;
@@ -346,7 +348,7 @@
             this.lblJ.AutoSize = true;
             this.lblJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblJ.ForeColor = System.Drawing.Color.DimGray;
-            this.lblJ.Location = new System.Drawing.Point(838, 194);
+            this.lblJ.Location = new System.Drawing.Point(925, 294);
             this.lblJ.Name = "lblJ";
             this.lblJ.Size = new System.Drawing.Size(29, 32);
             this.lblJ.TabIndex = 90;
@@ -358,7 +360,7 @@
             this.lblF.AutoSize = true;
             this.lblF.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblF.ForeColor = System.Drawing.Color.DimGray;
-            this.lblF.Location = new System.Drawing.Point(680, 194);
+            this.lblF.Location = new System.Drawing.Point(767, 294);
             this.lblF.Name = "lblF";
             this.lblF.Size = new System.Drawing.Size(32, 32);
             this.lblF.TabIndex = 89;
@@ -370,7 +372,7 @@
             this.lblB.AutoSize = true;
             this.lblB.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblB.ForeColor = System.Drawing.Color.DimGray;
-            this.lblB.Location = new System.Drawing.Point(718, 142);
+            this.lblB.Location = new System.Drawing.Point(805, 242);
             this.lblB.Name = "lblB";
             this.lblB.Size = new System.Drawing.Size(34, 32);
             this.lblB.TabIndex = 88;
@@ -382,7 +384,7 @@
             this.lblC.AutoSize = true;
             this.lblC.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblC.ForeColor = System.Drawing.Color.DimGray;
-            this.lblC.Location = new System.Drawing.Point(759, 142);
+            this.lblC.Location = new System.Drawing.Point(846, 242);
             this.lblC.Name = "lblC";
             this.lblC.Size = new System.Drawing.Size(35, 32);
             this.lblC.TabIndex = 87;
@@ -394,7 +396,7 @@
             this.lblD.AutoSize = true;
             this.lblD.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblD.ForeColor = System.Drawing.Color.DimGray;
-            this.lblD.Location = new System.Drawing.Point(800, 142);
+            this.lblD.Location = new System.Drawing.Point(887, 242);
             this.lblD.Name = "lblD";
             this.lblD.Size = new System.Drawing.Size(35, 32);
             this.lblD.TabIndex = 86;
@@ -406,7 +408,7 @@
             this.lblE.AutoSize = true;
             this.lblE.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblE.ForeColor = System.Drawing.Color.DimGray;
-            this.lblE.Location = new System.Drawing.Point(838, 142);
+            this.lblE.Location = new System.Drawing.Point(925, 242);
             this.lblE.Name = "lblE";
             this.lblE.Size = new System.Drawing.Size(34, 32);
             this.lblE.TabIndex = 85;
@@ -418,7 +420,7 @@
             this.lblQuestionText.AutoSize = true;
             this.lblQuestionText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuestionText.ForeColor = System.Drawing.Color.Gray;
-            this.lblQuestionText.Location = new System.Drawing.Point(318, 538);
+            this.lblQuestionText.Location = new System.Drawing.Point(380, 595);
             this.lblQuestionText.Name = "lblQuestionText";
             this.lblQuestionText.Size = new System.Drawing.Size(77, 20);
             this.lblQuestionText.TabIndex = 64;
@@ -429,7 +431,7 @@
             this.lblA.AutoSize = true;
             this.lblA.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblA.ForeColor = System.Drawing.Color.DimGray;
-            this.lblA.Location = new System.Drawing.Point(680, 142);
+            this.lblA.Location = new System.Drawing.Point(767, 242);
             this.lblA.Name = "lblA";
             this.lblA.Size = new System.Drawing.Size(34, 32);
             this.lblA.TabIndex = 58;
@@ -438,60 +440,21 @@
             // 
             // btnHelp
             // 
-            this.btnHelp.Location = new System.Drawing.Point(18, 665);
+            this.btnHelp.Location = new System.Drawing.Point(1046, 592);
             this.btnHelp.Name = "btnHelp";
-            this.btnHelp.Size = new System.Drawing.Size(225, 46);
+            this.btnHelp.Size = new System.Drawing.Size(92, 54);
             this.btnHelp.TabIndex = 54;
             this.btnHelp.Text = "Help";
             this.btnHelp.UseVisualStyleBackColor = true;
             this.btnHelp.Click += new System.EventHandler(this.BtnHelp_Click);
             // 
-            // pbxHangman
-            // 
-            this.pbxHangman.Image = global::Year_13_Coursework.Properties.Resources.gallows;
-            this.pbxHangman.Location = new System.Drawing.Point(279, 122);
-            this.pbxHangman.Name = "pbxHangman";
-            this.pbxHangman.Size = new System.Drawing.Size(328, 329);
-            this.pbxHangman.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxHangman.TabIndex = 62;
-            this.pbxHangman.TabStop = false;
-            // 
-            // pbxThought
-            // 
-            this.pbxThought.Image = global::Year_13_Coursework.Properties.Resources.questionMark21;
-            this.pbxThought.Location = new System.Drawing.Point(76, 185);
-            this.pbxThought.Name = "pbxThought";
-            this.pbxThought.Size = new System.Drawing.Size(118, 112);
-            this.pbxThought.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxThought.TabIndex = 51;
-            this.pbxThought.TabStop = false;
-            // 
-            // pbxBubble3
-            // 
-            this.pbxBubble3.Image = global::Year_13_Coursework.Properties.Resources.thoughtBubble3;
-            this.pbxBubble3.Location = new System.Drawing.Point(18, 114);
-            this.pbxBubble3.Name = "pbxBubble3";
-            this.pbxBubble3.Size = new System.Drawing.Size(225, 335);
-            this.pbxBubble3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxBubble3.TabIndex = 47;
-            this.pbxBubble3.TabStop = false;
-            // 
-            // pbxAvatar
-            // 
-            this.pbxAvatar.Location = new System.Drawing.Point(18, 455);
-            this.pbxAvatar.Name = "pbxAvatar";
-            this.pbxAvatar.Size = new System.Drawing.Size(225, 203);
-            this.pbxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxAvatar.TabIndex = 46;
-            this.pbxAvatar.TabStop = false;
-            // 
             // lblTimer
             // 
             this.lblTimer.AutoSize = true;
-            this.lblTimer.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblTimer.BackColor = System.Drawing.Color.White;
             this.lblTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTimer.ForeColor = System.Drawing.Color.Gray;
-            this.lblTimer.Location = new System.Drawing.Point(873, 56);
+            this.lblTimer.Location = new System.Drawing.Point(1042, 183);
             this.lblTimer.Name = "lblTimer";
             this.lblTimer.Size = new System.Drawing.Size(48, 20);
             this.lblTimer.TabIndex = 178;
@@ -500,10 +463,10 @@
             // lblScore
             // 
             this.lblScore.AutoSize = true;
-            this.lblScore.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblScore.BackColor = System.Drawing.Color.White;
             this.lblScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScore.ForeColor = System.Drawing.Color.Gray;
-            this.lblScore.Location = new System.Drawing.Point(14, 64);
+            this.lblScore.Location = new System.Drawing.Point(1042, 246);
             this.lblScore.Name = "lblScore";
             this.lblScore.Size = new System.Drawing.Size(51, 20);
             this.lblScore.TabIndex = 177;
@@ -512,10 +475,10 @@
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblTitle.BackColor = System.Drawing.Color.White;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.Black;
-            this.lblTitle.Location = new System.Drawing.Point(249, 68);
+            this.lblTitle.Location = new System.Drawing.Point(376, 134);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(100, 46);
             this.lblTitle.TabIndex = 176;
@@ -525,10 +488,10 @@
             // lblScoreCount
             // 
             this.lblScoreCount.AutoSize = true;
-            this.lblScoreCount.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblScoreCount.BackColor = System.Drawing.Color.White;
             this.lblScoreCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScoreCount.ForeColor = System.Drawing.Color.DimGray;
-            this.lblScoreCount.Location = new System.Drawing.Point(18, 79);
+            this.lblScoreCount.Location = new System.Drawing.Point(1042, 266);
             this.lblScoreCount.Name = "lblScoreCount";
             this.lblScoreCount.Size = new System.Drawing.Size(31, 32);
             this.lblScoreCount.TabIndex = 175;
@@ -537,49 +500,97 @@
             // lblTimerCount
             // 
             this.lblTimerCount.AutoSize = true;
-            this.lblTimerCount.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblTimerCount.BackColor = System.Drawing.Color.White;
             this.lblTimerCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTimerCount.ForeColor = System.Drawing.Color.DimGray;
-            this.lblTimerCount.Location = new System.Drawing.Point(874, 79);
+            this.lblTimerCount.Location = new System.Drawing.Point(1042, 203);
             this.lblTimerCount.Name = "lblTimerCount";
             this.lblTimerCount.Size = new System.Drawing.Size(47, 32);
             this.lblTimerCount.TabIndex = 174;
             this.lblTimerCount.Text = "10";
             this.lblTimerCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pbxHeader
+            // btnSkipGame
             // 
-            this.pbxHeader.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pbxHeader.Location = new System.Drawing.Point(0, 1);
-            this.pbxHeader.Name = "pbxHeader";
-            this.pbxHeader.Size = new System.Drawing.Size(945, 50);
-            this.pbxHeader.TabIndex = 179;
-            this.pbxHeader.TabStop = false;
+            this.btnSkipGame.Location = new System.Drawing.Point(1046, 652);
+            this.btnSkipGame.Name = "btnSkipGame";
+            this.btnSkipGame.Size = new System.Drawing.Size(92, 54);
+            this.btnSkipGame.TabIndex = 183;
+            this.btnSkipGame.Text = "Skip";
+            this.btnSkipGame.UseVisualStyleBackColor = true;
+            this.btnSkipGame.Click += new System.EventHandler(this.BtnSkipGame_Click);
             // 
-            // lblSkipGame
+            // pbxHangman
             // 
-            this.lblSkipGame.AutoSize = true;
-            this.lblSkipGame.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.lblSkipGame.Location = new System.Drawing.Point(20, 15);
-            this.lblSkipGame.Name = "lblSkipGame";
-            this.lblSkipGame.Size = new System.Drawing.Size(84, 20);
-            this.lblSkipGame.TabIndex = 181;
-            this.lblSkipGame.Text = "Skip game";
-            this.lblSkipGame.Click += new System.EventHandler(this.LblSkipGame_Click);
+            this.pbxHangman.Image = global::Year_13_Coursework.Properties.Resources.gallows;
+            this.pbxHangman.Location = new System.Drawing.Point(413, 225);
+            this.pbxHangman.Name = "pbxHangman";
+            this.pbxHangman.Size = new System.Drawing.Size(328, 329);
+            this.pbxHangman.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxHangman.TabIndex = 62;
+            this.pbxHangman.TabStop = false;
+            // 
+            // pbxThought
+            // 
+            this.pbxThought.Image = global::Year_13_Coursework.Properties.Resources.questionMark21;
+            this.pbxThought.Location = new System.Drawing.Point(1046, 403);
+            this.pbxThought.Name = "pbxThought";
+            this.pbxThought.Size = new System.Drawing.Size(92, 89);
+            this.pbxThought.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxThought.TabIndex = 51;
+            this.pbxThought.TabStop = false;
+            // 
+            // pbxAvatar
+            // 
+            this.pbxAvatar.Location = new System.Drawing.Point(1046, 498);
+            this.pbxAvatar.Name = "pbxAvatar";
+            this.pbxAvatar.Size = new System.Drawing.Size(92, 89);
+            this.pbxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxAvatar.TabIndex = 46;
+            this.pbxAvatar.TabStop = false;
+            // 
+            // pbxCountry
+            // 
+            this.pbxCountry.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbxCountry.Location = new System.Drawing.Point(384, 183);
+            this.pbxCountry.Name = "pbxCountry";
+            this.pbxCountry.Size = new System.Drawing.Size(652, 404);
+            this.pbxCountry.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxCountry.TabIndex = 184;
+            this.pbxCountry.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(352, 114);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(808, 630);
+            this.pictureBox1.TabIndex = 182;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Year_13_Coursework.Properties.Resources.game3BG;
+            this.pictureBox2.Location = new System.Drawing.Point(-8, -6);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(1525, 869);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 220;
+            this.pictureBox2.TabStop = false;
             // 
             // frmGame4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(933, 737);
-            this.Controls.Add(this.lblSkipGame);
+            this.ClientSize = new System.Drawing.Size(1514, 858);
+            this.Controls.Add(this.btnSkipGame);
             this.Controls.Add(this.lblTimer);
             this.Controls.Add(this.lblScore);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.lblScoreCount);
             this.Controls.Add(this.lblTimerCount);
-            this.Controls.Add(this.pbxHeader);
             this.Controls.Add(this.lblAnswerText);
             this.Controls.Add(this.lblAnswer);
             this.Controls.Add(this.lblQuestion);
@@ -613,8 +624,10 @@
             this.Controls.Add(this.lblA);
             this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.pbxThought);
-            this.Controls.Add(this.pbxBubble3);
             this.Controls.Add(this.pbxAvatar);
+            this.Controls.Add(this.pbxCountry);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBox2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmGame4";
@@ -624,9 +637,10 @@
             this.Load += new System.EventHandler(this.FrmGame4_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxHangman)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxThought)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxBubble3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAvatar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxHeader)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCountry)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -639,7 +653,6 @@
         private System.Windows.Forms.Label lblA;
         private System.Windows.Forms.Button btnHelp;
         private System.Windows.Forms.PictureBox pbxThought;
-        private System.Windows.Forms.PictureBox pbxBubble3;
         private System.Windows.Forms.PictureBox pbxAvatar;
         private System.Windows.Forms.Label lblE;
         private System.Windows.Forms.Label lblD;
@@ -674,8 +687,10 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblScoreCount;
         private System.Windows.Forms.Label lblTimerCount;
-        private System.Windows.Forms.PictureBox pbxHeader;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label lblSkipGame;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnSkipGame;
+        private System.Windows.Forms.PictureBox pbxCountry;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
