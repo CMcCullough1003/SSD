@@ -324,8 +324,8 @@ namespace Year_13_Coursework
         {
             if (correctSelections == 4)
             {
+                pbxThought.Image = Properties.Resources.Childish_Tick_24982;
                 showCorrectAnswers();
-
             }
         }
 
@@ -357,7 +357,9 @@ namespace Year_13_Coursework
             lblArafuraSea.BackColor = System.Drawing.Color.Green;
             lblTasmanSea.BackColor = System.Drawing.Color.Green;
             displayScore();
+            pbxThought.Image = Properties.Resources.Childish_Tick_24982;
             await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
+            pbxThought.Image = Properties.Resources.questionMark2;
             saveScore(correctSelections);
             moveToNextScreen();
         }

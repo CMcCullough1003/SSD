@@ -7,11 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Year_13_Coursework.Constants;
+using Year_13_Coursework.Tools;
+using Year_13_Coursework.Exceptions;
+using System.Collections;
 
 namespace Year_13_Coursework
 {
     public partial class frmResults : Form
     {
+        List<string> userList = new List<string>();
+
+        private Files files = new Files();
         private string grade = "";
 
         public frmResults()
@@ -23,6 +30,17 @@ namespace Year_13_Coursework
         {
             displayScores();
             displayGrade();
+            createListOfAllUserScores();
+            sortUserScores();
+
+            //delete all rows in file
+
+            //write list into file
+            //loop through all users
+            //Register file - saveUserDetailsToFile()
+
+            string x = "";
+
         }
 
         private void displayScores() {
@@ -81,5 +99,124 @@ namespace Year_13_Coursework
             Form frm = new frmStartScreen();
             frm.Show();
         }
+
+        private void getUsers()
+        {
+            try
+            {
+                userList = files.getFileContents(FileConstants.USER_FILE_NAME);
+            }
+            catch (NoUsersFoundException ex)
+            {
+                userList = new List<string>();
+            }
+        }
+
+        private void createListOfAllUserScores()
+        {
+            getUsers();
+            checkIfUserOnList();
+        }
+
+        private string createUserString()
+        {
+            string userToSave = "";
+            userToSave += Program.currentUser.currentName + Char.ToString(Constants.FileConstants.USER_FILE_SEPARATOR);
+            userToSave += Program.currentUser.currentPassword + Char.ToString(Constants.FileConstants.USER_FILE_SEPARATOR);
+            userToSave += Program.currentUser.currentAvatar + Char.ToString(Constants.FileConstants.USER_FILE_SEPARATOR);
+            userToSave += Program.currentUser.game1Score + Char.ToString(Constants.FileConstants.USER_FILE_SEPARATOR);
+            userToSave += Program.currentUser.game2Score + Char.ToString(Constants.FileConstants.USER_FILE_SEPARATOR);
+            userToSave += Program.currentUser.game3Score + Char.ToString(Constants.FileConstants.USER_FILE_SEPARATOR);
+            userToSave += Program.currentUser.game4Score + Char.ToString(Constants.FileConstants.USER_FILE_SEPARATOR);
+            userToSave += Program.currentUser.game5Score + Char.ToString(Constants.FileConstants.USER_FILE_SEPARATOR);
+            userToSave += Program.currentUser.game6Score + Char.ToString(Constants.FileConstants.USER_FILE_SEPARATOR);
+            userToSave += Program.currentUser.totalScore;
+
+            return userToSave;
+        }
+
+
+        private void checkIfUserOnList()
+        {
+            for(int i = 0; i < userList.Count; i++)
+            {
+                //Split up the user details
+                List<string> userDetailsFromFile = userList[i].Split(FileConstants.USER_FILE_SEPARATOR).ToList();
+
+                //Get the users details from the split up string
+                string usernameFromFile = userDetailsFromFile[FileConstants.USER_FILE_NAME_POSITION];
+
+                //Found current user on the list
+                if (Program.currentUser.currentName == usernameFromFile)
+                {
+                    if (checkIfUserHasAPreviousTotal(userDetailsFromFile))
+                    {
+                        int oldScore = Convert.ToInt32(userDetailsFromFile[FileConstants.USER_FILE_TOTAL_SCORE]);
+                        updateIfBetterScore(oldScore, i);
+                    }
+                    else
+                    {
+                        string userString = createUserString();
+                        userList[i] = userString;
+                    }
+                }
+            }
+        }
+
+        private Boolean checkIfUserHasAPreviousTotal(List<string> userDetails)
+        {
+            if (userDetails.Count > 3)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private void updateIfBetterScore(int oldScore, int listPosition)
+        {
+            int newScore = Program.currentUser.totalScore;
+            
+            if (newScore > oldScore)
+            {
+                string userString = createUserString();
+                userList[listPosition] = userString;
+            }
+        }
+
+        private void sortUserScores()
+        {
+
+            userList.Sort(new myTotalScoreComparer());
+        }
+    }
+
+    public class myTotalScoreComparer : IComparer<string>
+    {
+        public int Compare(string left, string right)
+        {
+
+            try
+            {
+                //Splits the users by the tildas
+                List<string> leftUser = left.Split(FileConstants.USER_FILE_SEPARATOR).ToList();
+                List<string> rightUser = right.Split(FileConstants.USER_FILE_SEPARATOR).ToList();
+
+                //Finds the total score for both users - string
+                string leftUserScoreString = leftUser[FileConstants.USER_FILE_TOTAL_SCORE];
+                string rightUserScoreString = rightUser[FileConstants.USER_FILE_TOTAL_SCORE];
+
+                //Convert the string totals to ints
+                int leftUserScore = Convert.ToInt32(leftUserScoreString);
+                int rightUserScore = Convert.ToInt32(rightUserScoreString);
+
+                //sort by total score
+                return leftUserScore.CompareTo(rightUserScore);
+            }
+            catch(Exception ex)
+            {
+                return -1;
+            }
+        }
+
     }
 }

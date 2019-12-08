@@ -397,7 +397,7 @@ namespace Year_13_Coursework
 
         private async void correctAnswer()
         {
-            pbxThought.Image = Properties.Resources.Untitled;
+            pbxThought.Image = Properties.Resources.Childish_Tick_24982;
             displayScore();
             await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
             pbxThought.Image = Properties.Resources.questionMark2;
@@ -405,7 +405,7 @@ namespace Year_13_Coursework
 
         private async void incorrectAnswer()
         {
-            pbxThought.Image = Properties.Resources.X;
+            pbxThought.Image = Properties.Resources.Childish_Cross_24996;
             numberOfIncorrectGuesses++;
             displayScore();
             await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);

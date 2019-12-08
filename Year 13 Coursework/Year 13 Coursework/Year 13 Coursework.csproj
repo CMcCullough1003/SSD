@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Constants\FileConstants.cs" />
     <Compile Include="Constants\GameConstants.cs" />
+    <Compile Include="Exceptions\NoUsersFoundException.cs" />
     <Compile Include="frmGame5.cs">
       <SubType>Form</SubType>
     </Compile>

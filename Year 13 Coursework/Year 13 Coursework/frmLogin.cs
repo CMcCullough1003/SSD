@@ -10,12 +10,12 @@ using System.Windows.Forms;
 using System.IO;
 using Year_13_Coursework.Tools;
 using Year_13_Coursework.Constants;
+using Year_13_Coursework.Exceptions;
 
 namespace Year_13_Coursework
 {
     public partial class frmLogin : Form
     {
-
         private Files files = new Files();
 
         public frmLogin()
@@ -85,7 +85,17 @@ namespace Year_13_Coursework
 
         private List<string> getUsers()
         {
-            return files.getFileContents(FileConstants.USER_FILE_NAME);
+            List<string> users;
+
+            try
+            {
+                users = files.getFileContents(FileConstants.USER_FILE_NAME);
+            }
+            catch(NoUsersFoundException ex)
+            {
+                users = new List<string>();
+            }
+            return users;
         }
 
         private Boolean checkInputsProvided(string name, string password) 

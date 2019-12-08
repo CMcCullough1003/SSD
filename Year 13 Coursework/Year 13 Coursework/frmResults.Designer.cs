@@ -41,12 +41,13 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblTotalScore = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.lblGradeScore = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -132,7 +133,7 @@
             this.lblGrade.AutoSize = true;
             this.lblGrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGrade.ForeColor = System.Drawing.Color.DimGray;
-            this.lblGrade.Location = new System.Drawing.Point(861, 526);
+            this.lblGrade.Location = new System.Drawing.Point(861, 540);
             this.lblGrade.Name = "lblGrade";
             this.lblGrade.Size = new System.Drawing.Size(94, 32);
             this.lblGrade.TabIndex = 7;
@@ -143,7 +144,7 @@
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.DimGray;
-            this.lblTotal.Location = new System.Drawing.Point(861, 452);
+            this.lblTotal.Location = new System.Drawing.Point(717, 540);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(79, 32);
             this.lblTotal.TabIndex = 8;
@@ -193,16 +194,16 @@
             this.label7.TabIndex = 20;
             this.label7.Text = "Game 1:";
             // 
-            // label8
+            // lblTotalScore
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Bahnschrift Condensed", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.DimGray;
-            this.label8.Location = new System.Drawing.Point(863, 428);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(59, 24);
-            this.label8.TabIndex = 21;
-            this.label8.Text = "Game 1:";
+            this.lblTotalScore.AutoSize = true;
+            this.lblTotalScore.Font = new System.Drawing.Font("Bahnschrift Condensed", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalScore.ForeColor = System.Drawing.Color.DimGray;
+            this.lblTotalScore.Location = new System.Drawing.Point(719, 516);
+            this.lblTotalScore.Name = "lblTotalScore";
+            this.lblTotalScore.Size = new System.Drawing.Size(45, 24);
+            this.lblTotalScore.TabIndex = 21;
+            this.lblTotalScore.Text = "Total:";
             // 
             // label9
             // 
@@ -259,17 +260,29 @@
             this.label13.TabIndex = 26;
             this.label13.Text = "Game 3:";
             // 
+            // lblGradeScore
+            // 
+            this.lblGradeScore.AutoSize = true;
+            this.lblGradeScore.Font = new System.Drawing.Font("Bahnschrift Condensed", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGradeScore.ForeColor = System.Drawing.Color.DimGray;
+            this.lblGradeScore.Location = new System.Drawing.Point(863, 516);
+            this.lblGradeScore.Name = "lblGradeScore";
+            this.lblGradeScore.Size = new System.Drawing.Size(52, 24);
+            this.lblGradeScore.TabIndex = 27;
+            this.lblGradeScore.Text = "Grade:";
+            // 
             // frmResults
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1514, 858);
+            this.Controls.Add(this.lblGradeScore);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.lblTotalScore);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnContinue);
             this.Controls.Add(this.lblTotal);
@@ -309,11 +322,12 @@
         private System.Windows.Forms.Button btnContinue;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblTotalScore;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblGradeScore;
     }
 }

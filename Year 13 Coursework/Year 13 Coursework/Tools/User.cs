@@ -18,6 +18,7 @@ namespace Year_13_Coursework.Tools
         public int game5Score = 0;
         public int game6Score = 0;
         public int totalScore = 0;
+        public string grade = "";
 
         public void resetUser()
         {

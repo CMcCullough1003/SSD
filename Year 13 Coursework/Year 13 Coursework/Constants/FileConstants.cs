@@ -20,5 +20,6 @@ namespace Year_13_Coursework.Constants
         public const int USER_FILE_GAME4_SCORE = 6;
         public const int USER_FILE_GAME5_SCORE = 7;
         public const int USER_FILE_GAME6_SCORE = 8;
+        public const int USER_FILE_TOTAL_SCORE = 9;
     }
 }

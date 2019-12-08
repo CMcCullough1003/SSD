@@ -10,11 +10,6 @@ namespace Year_13_Coursework.Tools
     //Use this class for creating files, opening files and adding to files
     public class Files
     {
-        public Boolean checkFileExists(string fileName)
-        {
-            return File.Exists(fileName);
-        }
-
         public List<string> getFileContents(string fileName)
         {
             return File.ReadLines(fileName).ToList();

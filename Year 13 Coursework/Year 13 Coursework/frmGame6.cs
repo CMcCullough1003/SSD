@@ -247,20 +247,26 @@ namespace Year_13_Coursework
             labelClicked(lblStatement3);
         }
 
-        private void labelClicked(Label label) {
+        private async void labelClicked(Label label) {
             if (label.Tag.ToString() == trueStatement)
             {
                 score++;
+                pbxThought.Image = Properties.Resources.Childish_Tick_24982;
             }
             else
             {
                 if(score > 0)
                 {
                     score--;
+                    pbxThought.Image = Properties.Resources.Childish_Cross_24996;
                 }
             }
             label.Location = new Point(label.Location.X, StatementYStartLocation);
             displayScore();
+
+            await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
+            pbxThought.Image = Properties.Resources.questionMark2;
+
             clickedOrReachedBottomCount++;
             checkIfMoveToResults();
             addStatementToLabel(label);

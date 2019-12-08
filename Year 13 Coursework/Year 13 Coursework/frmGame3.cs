@@ -222,7 +222,7 @@ namespace Year_13_Coursework
 
         private async void correctAnswer()
         {
-            pbxThought.Image = Properties.Resources.Untitled;
+            pbxThought.Image = Properties.Resources.Childish_Tick_24982;
             lblScoreCount.Text = score.ToString();
             saveScore(score);
             timer1.Stop();
@@ -235,7 +235,7 @@ namespace Year_13_Coursework
 
         private async void incorrectAnswer()
         {
-            pbxThought.Image = Properties.Resources.X;
+            pbxThought.Image = Properties.Resources.Childish_Cross_24996;
 
             await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
 
