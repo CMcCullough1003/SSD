@@ -34,13 +34,18 @@ namespace Year_13_Coursework
             sortUserScores();
 
             //delete all rows in file
+            files.deleteFileContents(FileConstants.USER_FILE_NAME);
 
             //write list into file
+
+
             //loop through all users
             //Register file - saveUserDetailsToFile()
 
-            string x = "";
-
+            foreach(string user in userList)
+            {
+                files.addToFile(FileConstants.USER_FILE_NAME, user);
+            }
         }
 
         private void displayScores() {
@@ -118,23 +123,6 @@ namespace Year_13_Coursework
             checkIfUserOnList();
         }
 
-        private string createUserString()
-        {
-            string userToSave = "";
-            userToSave += Program.currentUser.currentName + Char.ToString(Constants.FileConstants.USER_FILE_SEPARATOR);
-            userToSave += Program.currentUser.currentPassword + Char.ToString(Constants.FileConstants.USER_FILE_SEPARATOR);
-            userToSave += Program.currentUser.currentAvatar + Char.ToString(Constants.FileConstants.USER_FILE_SEPARATOR);
-            userToSave += Program.currentUser.game1Score + Char.ToString(Constants.FileConstants.USER_FILE_SEPARATOR);
-            userToSave += Program.currentUser.game2Score + Char.ToString(Constants.FileConstants.USER_FILE_SEPARATOR);
-            userToSave += Program.currentUser.game3Score + Char.ToString(Constants.FileConstants.USER_FILE_SEPARATOR);
-            userToSave += Program.currentUser.game4Score + Char.ToString(Constants.FileConstants.USER_FILE_SEPARATOR);
-            userToSave += Program.currentUser.game5Score + Char.ToString(Constants.FileConstants.USER_FILE_SEPARATOR);
-            userToSave += Program.currentUser.game6Score + Char.ToString(Constants.FileConstants.USER_FILE_SEPARATOR);
-            userToSave += Program.currentUser.totalScore;
-
-            return userToSave;
-        }
-
 
         private void checkIfUserOnList()
         {
@@ -149,27 +137,10 @@ namespace Year_13_Coursework
                 //Found current user on the list
                 if (Program.currentUser.currentName == usernameFromFile)
                 {
-                    if (checkIfUserHasAPreviousTotal(userDetailsFromFile))
-                    {
-                        int oldScore = Convert.ToInt32(userDetailsFromFile[FileConstants.USER_FILE_TOTAL_SCORE]);
-                        updateIfBetterScore(oldScore, i);
-                    }
-                    else
-                    {
-                        string userString = createUserString();
-                        userList[i] = userString;
-                    }
+                    int oldScore = Convert.ToInt32(userDetailsFromFile[FileConstants.USER_FILE_TOTAL_SCORE]);
+                    updateIfBetterScore(oldScore, i); 
                 }
             }
-        }
-
-        private Boolean checkIfUserHasAPreviousTotal(List<string> userDetails)
-        {
-            if (userDetails.Count > 3)
-            {
-                return true;
-            }
-            return false;
         }
 
         private void updateIfBetterScore(int oldScore, int listPosition)
@@ -178,7 +149,7 @@ namespace Year_13_Coursework
             
             if (newScore > oldScore)
             {
-                string userString = createUserString();
+                string userString = Program.currentUser.convertUserToString();
                 userList[listPosition] = userString;
             }
         }
@@ -190,11 +161,12 @@ namespace Year_13_Coursework
         }
     }
 
+    //Sorting a list of strings by a substring. The following site was referenced.
+    //https://www.csharp-console-examples.com/arrays/c-program-to-sort-arraylist-of-custom-objects-by-property/
     public class myTotalScoreComparer : IComparer<string>
     {
         public int Compare(string left, string right)
         {
-
             try
             {
                 //Splits the users by the tildas
@@ -210,7 +182,7 @@ namespace Year_13_Coursework
                 int rightUserScore = Convert.ToInt32(rightUserScoreString);
 
                 //sort by total score
-                return leftUserScore.CompareTo(rightUserScore);
+                return rightUserScore.CompareTo(leftUserScore);
             }
             catch(Exception ex)
             {

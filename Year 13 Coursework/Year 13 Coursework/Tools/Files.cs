@@ -15,6 +15,19 @@ namespace Year_13_Coursework.Tools
             return File.ReadLines(fileName).ToList();
         }
 
+        public void deleteFileContents(string filename)
+        {
+            System.IO.File.WriteAllText(filename, string.Empty);
+        }
+
+        public void addToFile(string fileName, string userDetails)
+        {
+            using (StreamWriter writer = File.AppendText(fileName))
+            {
+                writer.WriteLine(userDetails);
+            }
+        }
+
         public string removeExtensions(string fileName)
         {
             string output = fileName.Replace(".jpg", "").Replace(".png", "");

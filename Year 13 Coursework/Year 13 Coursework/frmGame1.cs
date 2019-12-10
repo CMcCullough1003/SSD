@@ -16,7 +16,7 @@ namespace Year_13_Coursework
     public partial class frmGame1 : frmGame
     {
         private string selectedMap = "";
-        private int gameCount = 0;
+        private int mapCount = 0;
         string[] possibleAnswers = { "", "", "", "" };
 
         private const string albania = "albania.jpg";
@@ -150,12 +150,12 @@ namespace Year_13_Coursework
 
         private async void playGame()
         {
-            if (gameCount > 0)
+            if (mapCount > 0)
             {
                 await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
             }
 
-            if (gameCount == 6)
+            if (mapCount == 6)
             {
                 timer1.Stop();
                 timer1 = null;
@@ -183,7 +183,7 @@ namespace Year_13_Coursework
             possibleAnswers[2] = "";
             possibleAnswers[3] = "";
             pbxThought.Image = Properties.Resources.questionMark2;
-            gameCount++;
+            mapCount++;
 
         }
 

@@ -15,11 +15,11 @@ namespace Year_13_Coursework.Tools
             switch (Program.currentGame)
             {
                 case 1: response = "Country Outline Quiz"; break;
-                case 2: response = "Guess the Country Quiz"; break;
-                case 3: response = "Uncover the Flag Quiz"; break;
+                case 2: response = "Guess the Country"; break;
+                case 3: response = "Uncover the Flag"; break;
                 case 4: response = "The Gruesome Hangman"; break;
                 case 5: response = "The Four Seas Quiz"; break;
-                case 6: response = "Shoot What Is True"; break;
+                case 6: response = "Click The True Statements"; break;
             }
             return response;
         }

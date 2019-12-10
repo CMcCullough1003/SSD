@@ -82,8 +82,8 @@ namespace Year_13_Coursework
             }
 
             //MessageBox.Show("Your registration was successful", "Success");
-            saveUserDetailsToFile();
             saveAsCurrentUser();
+            saveUserDetailsToFile();
             moveToStartScreen();
                         
         }
@@ -163,7 +163,7 @@ namespace Year_13_Coursework
         //Saving the user inputs
         private void saveUserDetailsToFile()
         {
-            string userDetails = tbxUsername.Text + FileConstants.USER_FILE_SEPARATOR + tbxPassword.Text + FileConstants.USER_FILE_SEPARATOR + pbxSelected.Tag;
+            string userDetails = Program.currentUser.convertUserToString();
             using (StreamWriter writer = File.AppendText(FileConstants.USER_FILE_NAME))
             {
                 writer.WriteLine(userDetails);

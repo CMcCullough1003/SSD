@@ -297,6 +297,7 @@ namespace Year_13_Coursework
             counter--;
             if (counter == 0)
             {
+                disableAllButtons();
                 timer1.Stop();
                 timer1 = null;
                 pbxThought.Image = Properties.Resources.alarmClock;
@@ -437,7 +438,14 @@ namespace Year_13_Coursework
         private void BtnSkipGame_Click(object sender, EventArgs e)
         {
             timer1.Stop();
+            timer1 = null;
             moveToNextScreen();
+        }
+
+        private void disableAllButtons()
+        {
+            btnHelp.Enabled = false;
+            btnSkipGame.Enabled = false;
         }
     }
 }

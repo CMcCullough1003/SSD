@@ -20,6 +20,23 @@ namespace Year_13_Coursework.Tools
         public int totalScore = 0;
         public string grade = "";
 
+        public string convertUserToString()
+        {
+            string userToSave = "";
+            userToSave += Program.currentUser.currentName + Char.ToString(Constants.FileConstants.USER_FILE_SEPARATOR);
+            userToSave += Program.currentUser.currentPassword + Char.ToString(Constants.FileConstants.USER_FILE_SEPARATOR);
+            userToSave += Program.currentUser.currentAvatar + Char.ToString(Constants.FileConstants.USER_FILE_SEPARATOR);
+            userToSave += Program.currentUser.game1Score + Char.ToString(Constants.FileConstants.USER_FILE_SEPARATOR);
+            userToSave += Program.currentUser.game2Score + Char.ToString(Constants.FileConstants.USER_FILE_SEPARATOR);
+            userToSave += Program.currentUser.game3Score + Char.ToString(Constants.FileConstants.USER_FILE_SEPARATOR);
+            userToSave += Program.currentUser.game4Score + Char.ToString(Constants.FileConstants.USER_FILE_SEPARATOR);
+            userToSave += Program.currentUser.game5Score + Char.ToString(Constants.FileConstants.USER_FILE_SEPARATOR);
+            userToSave += Program.currentUser.game6Score + Char.ToString(Constants.FileConstants.USER_FILE_SEPARATOR);
+            userToSave += Program.currentUser.totalScore;
+
+            return userToSave;
+        }
+
         public void resetUser()
         {
             currentName = "";

@@ -35,5 +35,16 @@ namespace Year_13_Coursework
         {
             moveToLoginScreen();
         }
+
+        private void FrmStartScreen_Load(object sender, EventArgs e)
+        {
+            resetGame();
+        }
+
+        private void resetGame()
+        {
+            Program.currentGame = 0;
+
+        }
     }
 }
