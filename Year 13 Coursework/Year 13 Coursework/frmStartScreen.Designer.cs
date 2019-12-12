@@ -36,18 +36,21 @@
             this.lblBackToLogin = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // lsvLeaderboards
             // 
+            this.lsvLeaderboards.BackColor = System.Drawing.Color.White;
             this.lsvLeaderboards.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Player,
             this.Score});
-            this.lsvLeaderboards.Location = new System.Drawing.Point(554, 346);
+            this.lsvLeaderboards.GridLines = true;
+            this.lsvLeaderboards.Location = new System.Drawing.Point(553, 346);
             this.lsvLeaderboards.Name = "lsvLeaderboards";
-            this.lsvLeaderboards.Size = new System.Drawing.Size(401, 254);
+            this.lsvLeaderboards.Size = new System.Drawing.Size(402, 254);
             this.lsvLeaderboards.TabIndex = 0;
             this.lsvLeaderboards.UseCompatibleStateImageBehavior = false;
             this.lsvLeaderboards.View = System.Windows.Forms.View.Details;
@@ -55,12 +58,12 @@
             // Player
             // 
             this.Player.Text = "Player";
-            this.Player.Width = 200;
+            this.Player.Width = 140;
             // 
             // Score
             // 
             this.Score.Text = "Score";
-            this.Score.Width = 201;
+            this.Score.Width = 125;
             // 
             // btnContinue
             // 
@@ -121,11 +124,24 @@
             this.pictureBox2.TabIndex = 27;
             this.pictureBox2.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(550, 212);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(398, 120);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "Ahoy intrepid traveller!\r\n\r\nYou are about to embark on a splendid globetrotting \r" +
+    "\nadventure. Strap yourself in for 6 games of glorious fun.\r\n\r\nThere are 44 point" +
+    "s available. How will you compare?";
+            // 
             // frmStartScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1514, 858);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblBackToLogin);
             this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.btnContinue);
@@ -154,5 +170,6 @@
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Label lblBackToLogin;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label1;
     }
 }
