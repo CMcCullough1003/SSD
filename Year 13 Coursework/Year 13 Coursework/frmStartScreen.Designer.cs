@@ -36,7 +36,7 @@
             this.lblBackToLogin = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblIntroduction = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -70,10 +70,10 @@
             this.btnContinue.BackColor = System.Drawing.Color.SaddleBrown;
             this.btnContinue.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnContinue.ForeColor = System.Drawing.Color.White;
-            this.btnContinue.Location = new System.Drawing.Point(554, 608);
+            this.btnContinue.Location = new System.Drawing.Point(553, 608);
             this.btnContinue.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnContinue.Name = "btnContinue";
-            this.btnContinue.Size = new System.Drawing.Size(401, 61);
+            this.btnContinue.Size = new System.Drawing.Size(402, 61);
             this.btnContinue.TabIndex = 5;
             this.btnContinue.Text = "Begin";
             this.btnContinue.UseVisualStyleBackColor = false;
@@ -124,15 +124,15 @@
             this.pictureBox2.TabIndex = 27;
             this.pictureBox2.TabStop = false;
             // 
-            // label1
+            // lblIntroduction
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(550, 212);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(398, 120);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "Ahoy intrepid traveller!\r\n\r\nYou are about to embark on a splendid globetrotting \r" +
+            this.lblIntroduction.AutoSize = true;
+            this.lblIntroduction.BackColor = System.Drawing.Color.White;
+            this.lblIntroduction.Location = new System.Drawing.Point(550, 212);
+            this.lblIntroduction.Name = "lblIntroduction";
+            this.lblIntroduction.Size = new System.Drawing.Size(398, 120);
+            this.lblIntroduction.TabIndex = 28;
+            this.lblIntroduction.Text = "Ahoy intrepid traveller!\r\n\r\nYou are about to embark on a splendid globetrotting \r" +
     "\nadventure. Strap yourself in for 6 games of glorious fun.\r\n\r\nThere are 44 point" +
     "s available. How will you compare?";
             // 
@@ -141,7 +141,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1514, 858);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblIntroduction);
             this.Controls.Add(this.lblBackToLogin);
             this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.btnContinue);
@@ -170,6 +170,6 @@
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Label lblBackToLogin;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblIntroduction;
     }
 }

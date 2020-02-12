@@ -52,6 +52,7 @@ namespace Year_13_Coursework
             displayAvatar();
             setTitle();
             displayQuestion();
+            displayScore();
             playGame();
         }
 

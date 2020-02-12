@@ -572,9 +572,9 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Year_13_Coursework.Properties.Resources.game3BG;
-            this.pictureBox2.Location = new System.Drawing.Point(-8, -6);
+            this.pictureBox2.Location = new System.Drawing.Point(-21, -14);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1525, 869);
+            this.pictureBox2.Size = new System.Drawing.Size(1547, 892);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 220;
             this.pictureBox2.TabStop = false;

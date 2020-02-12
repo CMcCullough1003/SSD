@@ -16,6 +16,7 @@ namespace Year_13_Coursework
 
         private int counter = 30;
         private int score = 0;
+        private int maxScore = 3;
 
         const int countryPosition = 0;
         const int clue1Position = 1;
@@ -194,6 +195,7 @@ namespace Year_13_Coursework
                     pbxClue1.Image = Properties.Resources.finland1;
                     lblHint1.Text = clues[selectedCountry, clue1Position]; break;
             }
+            displayScore(3);
         }
 
         private void displaySecondClues()
@@ -224,6 +226,7 @@ namespace Year_13_Coursework
                     pbxClue2.Image = Properties.Resources.finland2;
                     lblHint2.Text = clues[selectedCountry, clue2Position]; break;
             }
+            displayScore(2);
         }
 
         private void displayThirdClues()
@@ -254,6 +257,7 @@ namespace Year_13_Coursework
                     pbxClue3.Image = Properties.Resources.finland3;
                     lblHint3.Text = clues[selectedCountry, clue3Position]; break;
             }
+            displayScore(1);
         }
 
         private void disableAllButtons()
@@ -328,6 +332,11 @@ namespace Year_13_Coursework
         {
             timer1.Stop();
             moveToNextScreen();
+        }
+
+        private void displayScore(int score)
+        {
+            lblScoreCount.Text = score.ToString();
         }
     }
 }

@@ -44,14 +44,14 @@
             this.pbxMountains = new System.Windows.Forms.PictureBox();
             this.pbxThought = new System.Windows.Forms.PictureBox();
             this.pbxAvatar = new System.Windows.Forms.PictureBox();
-            this.pbxCloud2 = new System.Windows.Forms.PictureBox();
+            this.pbxCloud = new System.Windows.Forms.PictureBox();
             this.pbxBackground = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxMountains)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxThought)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAvatar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxCloud2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCloud)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBackground)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -210,15 +210,15 @@
             this.pbxAvatar.TabIndex = 174;
             this.pbxAvatar.TabStop = false;
             // 
-            // pbxCloud2
+            // pbxCloud
             // 
-            this.pbxCloud2.Image = global::Year_13_Coursework.Properties.Resources.darkClouds3;
-            this.pbxCloud2.Location = new System.Drawing.Point(384, 183);
-            this.pbxCloud2.Name = "pbxCloud2";
-            this.pbxCloud2.Size = new System.Drawing.Size(652, 111);
-            this.pbxCloud2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxCloud2.TabIndex = 213;
-            this.pbxCloud2.TabStop = false;
+            this.pbxCloud.Image = global::Year_13_Coursework.Properties.Resources.darkClouds3;
+            this.pbxCloud.Location = new System.Drawing.Point(384, 183);
+            this.pbxCloud.Name = "pbxCloud";
+            this.pbxCloud.Size = new System.Drawing.Size(652, 111);
+            this.pbxCloud.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxCloud.TabIndex = 213;
+            this.pbxCloud.TabStop = false;
             // 
             // pbxBackground
             // 
@@ -269,7 +269,7 @@
             this.Controls.Add(this.lblTimerCount);
             this.Controls.Add(this.pbxAvatar);
             this.Controls.Add(this.lblStatement3);
-            this.Controls.Add(this.pbxCloud2);
+            this.Controls.Add(this.pbxCloud);
             this.Controls.Add(this.pbxBackground);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
@@ -283,7 +283,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxMountains)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxThought)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAvatar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxCloud2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCloud)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBackground)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -305,7 +305,7 @@
         private System.Windows.Forms.PictureBox pbxBackground;
         private System.Windows.Forms.PictureBox pbxMountains;
         private System.Windows.Forms.Label lblStatement1;
-        private System.Windows.Forms.PictureBox pbxCloud2;
+        private System.Windows.Forms.PictureBox pbxCloud;
         private System.Windows.Forms.Label lblStatement2;
         private System.Windows.Forms.Label lblStatement3;
         private System.Windows.Forms.PictureBox pictureBox1;

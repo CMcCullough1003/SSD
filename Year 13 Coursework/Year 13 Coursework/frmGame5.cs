@@ -176,10 +176,6 @@ namespace Year_13_Coursework
 
         /* MY METHODS ======================================================================*/
 
-        private void playGame()
-        {
-        }
-
         private void positionYacht()
         {
             pbxSky.Controls.Add(pbxYacht);
@@ -206,10 +202,14 @@ namespace Year_13_Coursework
             counter--;
             if (counter == 0)
             {
-                timer1.Stop();
-                timer1 = null;
+                if(timer1 != null)
+                {
+                    timer1.Stop();
+                    timer1 = null;
+                    showCorrectAnswers();
+                }
                 pbxThought.Image = Properties.Resources.alarmClock;
-                showCorrectAnswers();
+                
             }
             lblTimerCount.Text = counter.ToString();
         }
@@ -325,6 +325,8 @@ namespace Year_13_Coursework
             if (correctSelections == 4)
             {
                 pbxThought.Image = Properties.Resources.Childish_Tick_24982;
+                timer1.Stop();
+                timer1 = null;
                 showCorrectAnswers();
             }
         }
@@ -372,6 +374,7 @@ namespace Year_13_Coursework
         private void BtnSkipGame_Click(object sender, EventArgs e)
         {
             timer1.Stop();
+            timer1 = null;
             moveToNextScreen();
         }
     }

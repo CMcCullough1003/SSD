@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGame5));
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblCurrentScore = new System.Windows.Forms.Label();
             this.lblCorrectGuessCount = new System.Windows.Forms.Label();
             this.lblSaltonSea = new System.Windows.Forms.Label();
             this.btnHelp = new System.Windows.Forms.Button();
@@ -77,16 +77,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // label3
+            // lblCurrentScore
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(388, 610);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 20);
-            this.label3.TabIndex = 152;
-            this.label3.Text = "Current score:";
+            this.lblCurrentScore.AutoSize = true;
+            this.lblCurrentScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurrentScore.ForeColor = System.Drawing.Color.DimGray;
+            this.lblCurrentScore.Location = new System.Drawing.Point(388, 610);
+            this.lblCurrentScore.Name = "lblCurrentScore";
+            this.lblCurrentScore.Size = new System.Drawing.Size(109, 20);
+            this.lblCurrentScore.TabIndex = 152;
+            this.lblCurrentScore.Text = "Current score:";
             // 
             // lblCorrectGuessCount
             // 
@@ -573,7 +573,7 @@
             this.Controls.Add(this.lblBoySea);
             this.Controls.Add(this.lblArafuraSea);
             this.Controls.Add(this.lblBrusselSea);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblCurrentScore);
             this.Controls.Add(this.lblCorrectGuessCount);
             this.Controls.Add(this.lblSaltonSea);
             this.Controls.Add(this.btnHelp);
@@ -590,7 +590,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmGame5";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Game 5";
@@ -611,7 +611,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblCurrentScore;
         private System.Windows.Forms.Label lblCorrectGuessCount;
         private System.Windows.Forms.Label lblSaltonSea;
         private System.Windows.Forms.PictureBox pbxSky;

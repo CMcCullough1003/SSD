@@ -186,9 +186,9 @@ namespace Year_13_Coursework
 
         private void transparentCloudBackgrounds()
         {
-            pbxBackground.Controls.Add(pbxCloud2);
-            pbxCloud2.Location = new Point(0, StatementYStartLocation);
-            pbxCloud2.BackColor = Color.Transparent;
+            pbxBackground.Controls.Add(pbxCloud);
+            pbxCloud.Location = new Point(0, StatementYStartLocation);
+            pbxCloud.BackColor = Color.Transparent;
         }
 
         private void addLabelsToBackground()

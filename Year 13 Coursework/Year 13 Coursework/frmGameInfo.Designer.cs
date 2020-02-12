@@ -97,9 +97,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Year_13_Coursework.Properties.Resources.Landmarks;
-            this.pictureBox1.Location = new System.Drawing.Point(-9, -17);
+            this.pictureBox1.Location = new System.Drawing.Point(-28, -17);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(712, 766);
+            this.pictureBox1.Size = new System.Drawing.Size(732, 808);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;

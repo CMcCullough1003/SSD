@@ -258,7 +258,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(515, 137);
+            this.pictureBox1.Location = new System.Drawing.Point(514, 137);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(484, 585);
             this.pictureBox1.TabIndex = 23;
@@ -267,7 +267,7 @@
             // pbxLoginBackground
             // 
             this.pbxLoginBackground.Image = ((System.Drawing.Image)(resources.GetObject("pbxLoginBackground.Image")));
-            this.pbxLoginBackground.Location = new System.Drawing.Point(-30, -14);
+            this.pbxLoginBackground.Location = new System.Drawing.Point(-22, -18);
             this.pbxLoginBackground.Name = "pbxLoginBackground";
             this.pbxLoginBackground.Size = new System.Drawing.Size(1574, 886);
             this.pbxLoginBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -293,7 +293,7 @@
             this.lblError.AutoSize = true;
             this.lblError.BackColor = System.Drawing.Color.White;
             this.lblError.ForeColor = System.Drawing.Color.Red;
-            this.lblError.Location = new System.Drawing.Point(539, 567);
+            this.lblError.Location = new System.Drawing.Point(539, 580);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(0, 20);
             this.lblError.TabIndex = 26;

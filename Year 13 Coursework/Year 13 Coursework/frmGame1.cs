@@ -157,9 +157,12 @@ namespace Year_13_Coursework
 
             if (mapCount == 6)
             {
-                timer1.Stop();
-                timer1 = null;
-                moveToNextScreen();
+                if (timer1 != null)
+                {
+                    timer1.Stop();
+                    timer1 = null;
+                    moveToNextScreen();
+                }
             }
 
             resetGame();
