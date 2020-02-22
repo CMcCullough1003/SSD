@@ -131,13 +131,13 @@
             // lblGrade
             // 
             this.lblGrade.AutoSize = true;
-            this.lblGrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGrade.ForeColor = System.Drawing.Color.DimGray;
-            this.lblGrade.Location = new System.Drawing.Point(861, 540);
+            this.lblGrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 112F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGrade.ForeColor = System.Drawing.Color.Black;
+            this.lblGrade.Location = new System.Drawing.Point(680, 261);
             this.lblGrade.Name = "lblGrade";
-            this.lblGrade.Size = new System.Drawing.Size(94, 32);
+            this.lblGrade.Size = new System.Drawing.Size(256, 255);
             this.lblGrade.TabIndex = 7;
-            this.lblGrade.Text = "Grade";
+            this.lblGrade.Text = "A";
             // 
             // lblTotal
             // 
@@ -265,7 +265,7 @@
             this.lblGradeScore.AutoSize = true;
             this.lblGradeScore.Font = new System.Drawing.Font("Bahnschrift Condensed", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGradeScore.ForeColor = System.Drawing.Color.DimGray;
-            this.lblGradeScore.Location = new System.Drawing.Point(863, 516);
+            this.lblGradeScore.Location = new System.Drawing.Point(712, 248);
             this.lblGradeScore.Name = "lblGradeScore";
             this.lblGradeScore.Size = new System.Drawing.Size(52, 24);
             this.lblGradeScore.TabIndex = 27;

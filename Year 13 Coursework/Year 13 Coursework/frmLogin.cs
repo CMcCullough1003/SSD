@@ -11,6 +11,7 @@ using System.IO;
 using Year_13_Coursework.Tools;
 using Year_13_Coursework.Constants;
 using Year_13_Coursework.Exceptions;
+using System.Media;
 
 namespace Year_13_Coursework
 {
@@ -32,10 +33,6 @@ namespace Year_13_Coursework
         private void FrmLogin_Load(object sender, EventArgs e)
         {
             Program.currentUser.resetUser();
-
-            System.IO.Stream str = Properties.Resources.ResourceManager.GetStream(@"Clock-sound-tick-tock.mp3");
-            System.Media.SoundPlayer snd = new System.Media.SoundPlayer(str);
-            snd.Play();
         }
 
         //MY METHODS ------------------------------------------------------------------------------------------
