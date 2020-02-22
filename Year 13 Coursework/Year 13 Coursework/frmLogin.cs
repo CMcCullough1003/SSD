@@ -33,7 +33,9 @@ namespace Year_13_Coursework
         {
             Program.currentUser.resetUser();
 
-
+            System.IO.Stream str = Properties.Resources.ResourceManager.GetStream(@"Clock-sound-tick-tock.mp3");
+            System.Media.SoundPlayer snd = new System.Media.SoundPlayer(str);
+            snd.Play();
         }
 
         //MY METHODS ------------------------------------------------------------------------------------------
