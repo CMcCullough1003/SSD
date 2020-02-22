@@ -24,6 +24,20 @@ namespace Year_13_Coursework
             fillLabels();
         }
 
+        //MY METHODS ------------------------------------------------------------------------------------------
+
+        private void fillLabels()
+        {
+            GameInfo gameInfo = new GameInfo();
+
+            lblGameNumber.Text = gameInfo.gameNumber();
+            lblGameTitle.Text = gameInfo.gameName();
+            lblGameInfo.Text = gameInfo.gameDescription();
+            lblGamePoints.Text = gameInfo.gamePoints();
+        }
+
+        //CLICK EVENTS ----------------------------------------------------------------------------------------
+
         private void BtnStartGame_Click(object sender, EventArgs e)
         {
             switch (Program.currentGame)
@@ -37,15 +51,7 @@ namespace Year_13_Coursework
             }
         }
 
-        private void fillLabels()
-        {
-            GameInfo gameInfo = new GameInfo();
-
-            lblGameNumber.Text = gameInfo.gameNumber();
-            lblGameTitle.Text = gameInfo.gameName();
-            lblGameInfo.Text = gameInfo.gameDescription();
-            lblGamePoints.Text = gameInfo.gamePoints();
-        }
+        //MOVE SCREENS ----------------------------------------------------------------------------------------
 
         private void moveToGame1()
         {

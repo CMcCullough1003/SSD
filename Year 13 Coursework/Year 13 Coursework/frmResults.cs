@@ -48,6 +48,8 @@ namespace Year_13_Coursework
             }
         }
 
+        //MY METHODS ----------------------------------------------------------------------------------------------------------
+
         private void displayScores() {
             label1.Text = Program.currentUser.game1Score.ToString() + "/6";
             label2.Text = Program.currentUser.game2Score.ToString() + "/3";
@@ -92,19 +94,6 @@ namespace Year_13_Coursework
             }
         }
 
-        private void BtnContinue_Click(object sender, EventArgs e)
-        {
-            moveToStartScreen();
-            Program.currentUser.resetUserScores();
-        }
-
-        private void moveToStartScreen()
-        {
-            this.Close();
-            Form frm = new frmStartScreen();
-            frm.Show();
-        }
-
         private void getUsers()
         {
             try
@@ -126,7 +115,7 @@ namespace Year_13_Coursework
 
         private void checkIfUserOnList()
         {
-            for(int i = 0; i < userList.Count; i++)
+            for (int i = 0; i < userList.Count; i++)
             {
                 //Split up the user details
                 List<string> userDetailsFromFile = userList[i].Split(FileConstants.USER_FILE_SEPARATOR).ToList();
@@ -138,7 +127,7 @@ namespace Year_13_Coursework
                 if (Program.currentUser.currentName == usernameFromFile)
                 {
                     int oldScore = Convert.ToInt32(userDetailsFromFile[FileConstants.USER_FILE_TOTAL_SCORE]);
-                    updateIfBetterScore(oldScore, i); 
+                    updateIfBetterScore(oldScore, i);
                 }
             }
         }
@@ -146,7 +135,7 @@ namespace Year_13_Coursework
         private void updateIfBetterScore(int oldScore, int listPosition)
         {
             int newScore = Program.currentUser.totalScore;
-            
+
             if (newScore > oldScore)
             {
                 string userString = Program.currentUser.convertUserToString();
@@ -159,36 +148,52 @@ namespace Year_13_Coursework
 
             userList.Sort(new myTotalScoreComparer());
         }
-    }
 
-    //Sorting a list of strings by a substring. The following site was referenced.
-    //https://www.csharp-console-examples.com/arrays/c-program-to-sort-arraylist-of-custom-objects-by-property/
-    public class myTotalScoreComparer : IComparer<string>
-    {
-        public int Compare(string left, string right)
+        //Sorting a list of strings by a substring. The following site was referenced.
+        //https://www.csharp-console-examples.com/arrays/c-program-to-sort-arraylist-of-custom-objects-by-property/
+        public class myTotalScoreComparer : IComparer<string>
         {
-            try
+            public int Compare(string left, string right)
             {
-                //Splits the users by the tildas
-                List<string> leftUser = left.Split(FileConstants.USER_FILE_SEPARATOR).ToList();
-                List<string> rightUser = right.Split(FileConstants.USER_FILE_SEPARATOR).ToList();
+                try
+                {
+                    //Splits the users by the tildas
+                    List<string> leftUser = left.Split(FileConstants.USER_FILE_SEPARATOR).ToList();
+                    List<string> rightUser = right.Split(FileConstants.USER_FILE_SEPARATOR).ToList();
 
-                //Finds the total score for both users - string
-                string leftUserScoreString = leftUser[FileConstants.USER_FILE_TOTAL_SCORE];
-                string rightUserScoreString = rightUser[FileConstants.USER_FILE_TOTAL_SCORE];
+                    //Finds the total score for both users - string
+                    string leftUserScoreString = leftUser[FileConstants.USER_FILE_TOTAL_SCORE];
+                    string rightUserScoreString = rightUser[FileConstants.USER_FILE_TOTAL_SCORE];
 
-                //Convert the string totals to ints
-                int leftUserScore = Convert.ToInt32(leftUserScoreString);
-                int rightUserScore = Convert.ToInt32(rightUserScoreString);
+                    //Convert the string totals to ints
+                    int leftUserScore = Convert.ToInt32(leftUserScoreString);
+                    int rightUserScore = Convert.ToInt32(rightUserScoreString);
 
-                //sort by total score
-                return rightUserScore.CompareTo(leftUserScore);
-            }
-            catch(Exception ex)
-            {
-                return -1;
+                    //sort by total score
+                    return rightUserScore.CompareTo(leftUserScore);
+                }
+                catch (Exception ex)
+                {
+                    return -1;
+                }
             }
         }
 
+        //CLICK EVENTS --------------------------------------------------------------------------------------------------------
+
+        private void BtnContinue_Click(object sender, EventArgs e)
+        {
+            Program.currentUser.resetUserScores();
+            moveToStartScreen();
+        }
+
+        //MOVE SCREENS --------------------------------------------------------------------------------------------------------
+
+        private void moveToStartScreen()
+        {
+            this.Close();
+            Form frm = new frmStartScreen();
+            frm.Show();
+        }
     }
 }

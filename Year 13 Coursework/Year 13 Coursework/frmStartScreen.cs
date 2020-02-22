@@ -19,25 +19,6 @@ namespace Year_13_Coursework
             InitializeComponent();
         }
 
-        private void BtnContinue_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            Form moveToGameInfo = new frmGameInfo();
-            moveToGameInfo.Show();
-        }
-
-        private void moveToLoginScreen()
-        {
-            this.Close();
-            Form moveToLogin = new frmLogin();
-            moveToLogin.Show();
-        }
-
-        private void lblBackToLogin_Click(object sender, EventArgs e)
-        {
-            moveToLoginScreen();
-        }
-
         private void FrmStartScreen_Load(object sender, EventArgs e)
         {
             lblWelcome.Text = "Welcome " + Program.currentUser.currentName;
@@ -45,11 +26,14 @@ namespace Year_13_Coursework
             displayPlayerScores();
         }
 
+        //MY METHODS ------------------------------------------------------------------------------------------
+
         private void resetGame()
         {
             Program.currentGame = 0;
         }
 
+        //Leaderboard
         private void addPlayerScoreRow(string player, string score)
         {
             ListViewItem row = new ListViewItem(player);
@@ -69,6 +53,33 @@ namespace Year_13_Coursework
                 string score = userDetails[FileConstants.USER_FILE_TOTAL_SCORE];
                 addPlayerScoreRow(playerName, score);
             }
+        }
+
+        //CLICK EVENTS ----------------------------------------------------------------------------------------
+        private void BtnContinue_Click(object sender, EventArgs e)
+        {
+            moveToGameInfoScreen();
+        }
+
+        private void lblBackToLogin_Click(object sender, EventArgs e)
+        {
+            moveToLoginScreen();
+        }
+
+        //MOVE SCREENS ----------------------------------------------------------------------------------------
+
+        private void moveToLoginScreen()
+        {
+            this.Close();
+            Form moveToLogin = new frmLogin();
+            moveToLogin.Show();
+        }
+
+        private void moveToGameInfoScreen()
+        {
+            this.Close();
+            Form moveToGameInfo = new frmGameInfo();
+            moveToGameInfo.Show();
         }
     }
 }

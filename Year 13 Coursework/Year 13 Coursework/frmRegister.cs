@@ -19,12 +19,13 @@ namespace Year_13_Coursework
         private const int MINIMUM_PASSWORD_LENGTH = 4;
         private const int MINIMUM_USERNAME_LENGTH = 4;
 
-        //Setting up the screen
         public frmRegister()
         {
             InitializeComponent();
             addAvatars();
         }
+
+        //MY METHODS ------------------------------------------------------------------------------------------
 
         private void addAvatars()
         {
@@ -42,95 +43,22 @@ namespace Year_13_Coursework
             pbxAvatar9.Tag = "sheep.png";
         }
 
-        //On click methods
-        private void button1_Click(object sender, EventArgs e)
+        private void avatarSelected(PictureBox avatar)
         {
-            string username = tbxUsername.Text;
-            string password = tbxPassword.Text;
-            string confirmPassword = tbxConfirmPassword.Text;
-
-            if(checkAllInputsProvided(username, password, confirmPassword))
-            {
-                lblError.Text = "Please fill all fields";
-                return;
-            }
-
-            if(username.Length < MINIMUM_USERNAME_LENGTH)
-            {
-                lblError.Text = "Username must be " + MINIMUM_USERNAME_LENGTH + " characters long";
-                return;
-            }
-
-            if (password.Length < MINIMUM_PASSWORD_LENGTH)
-            {
-                lblError.Text = "Password must be " + MINIMUM_PASSWORD_LENGTH + " characters long";
-                clearPasswords();
-                return;
-            }
-
-            if (password != confirmPassword)
-            {
-                lblError.Text = "Password must be the same in both feilds";
-                clearPasswords();
-                return;
-            }
-
-            if (pbxSelected.Tag == null)
-            {
-                lblError.Text = "Please select an avatar";
-                return;
-            }
-
-            //MessageBox.Show("Your registration was successful", "Success");
-            saveAsCurrentUser();
-            saveUserDetailsToFile();
-            moveToStartScreen();
-                        
+            clearAllBorders();
+            avatar.BorderStyle = BorderStyle.FixedSingle;
+            pbxSelected.Image = avatar.Image;
+            pbxSelected.Tag = avatar.Tag;
         }
 
-        private void PictureBox1_Click(object sender, EventArgs e)
+        private void clearAllBorders()
         {
-            avatarSelected(pbxAvatar1);
-        }
-
-        private void PictureBox3_Click(object sender, EventArgs e)
-        {
-            avatarSelected(pbxAvatar2);
-        }
-
-        private void PbxAvatar3_Click(object sender, EventArgs e)
-        {
-            avatarSelected(pbxAvatar3);
-        }
-
-        private void PbxAvatar5_Click(object sender, EventArgs e)
-        {
-            avatarSelected(pbxAvatar5);
-        }
-
-        private void PbxAvatar6_Click(object sender, EventArgs e)
-        {
-            avatarSelected(pbxAvatar6);
-        }
-
-        private void PbxAvatar9_Click(object sender, EventArgs e)
-        {
-            avatarSelected(pbxAvatar9);
-        }
-
-        //Move to other screens
-        private void moveToStartScreen()
-        {
-            this.Close();
-            Form MoveToStartScreen = new frmStartScreen();
-            MoveToStartScreen.Show();
-        }
-
-        private void moveToLoginScreen()
-        {
-            this.Close();
-            Form MoveToLogin = new frmLogin();
-            MoveToLogin.Show();
+            pbxAvatar1.BorderStyle = BorderStyle.None;
+            pbxAvatar2.BorderStyle = BorderStyle.None;
+            pbxAvatar3.BorderStyle = BorderStyle.None;
+            pbxAvatar5.BorderStyle = BorderStyle.None;
+            pbxAvatar9.BorderStyle = BorderStyle.None;
+            pbxAvatar6.BorderStyle = BorderStyle.None;
         }
 
         //Input fields
@@ -177,33 +105,100 @@ namespace Year_13_Coursework
             Program.currentUser.currentAvatar = pbxSelected.Tag.ToString();
         }
 
-        private void FrmRegister_Load(object sender, EventArgs e)
-        {
+        //CLICK EVENTS ----------------------------------------------------------------------------------------
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string username = tbxUsername.Text;
+            string password = tbxPassword.Text;
+            string confirmPassword = tbxConfirmPassword.Text;
+
+            if (checkAllInputsProvided(username, password, confirmPassword))
+            {
+                lblError.Text = "Please fill all fields";
+                return;
+            }
+
+            if (username.Length < MINIMUM_USERNAME_LENGTH)
+            {
+                lblError.Text = "Username must be " + MINIMUM_USERNAME_LENGTH + " characters long";
+                return;
+            }
+
+            if (password.Length < MINIMUM_PASSWORD_LENGTH)
+            {
+                lblError.Text = "Password must be " + MINIMUM_PASSWORD_LENGTH + " characters long";
+                clearPasswords();
+                return;
+            }
+
+            if (password != confirmPassword)
+            {
+                lblError.Text = "Password must be the same in both feilds";
+                clearPasswords();
+                return;
+            }
+
+            if (pbxSelected.Tag == null)
+            {
+                lblError.Text = "Please select an avatar";
+                return;
+            }
+
+            saveAsCurrentUser();
+            saveUserDetailsToFile();
+            moveToStartScreen();
         }
 
-        private void avatarSelected(PictureBox avatar)
+        private void PictureBox1_Click(object sender, EventArgs e)
         {
-            clearAllBorders();
-            avatar.BorderStyle = BorderStyle.FixedSingle;
-            pbxSelected.Image = avatar.Image;
-            pbxSelected.Tag = avatar.Tag;
+            avatarSelected(pbxAvatar1);
         }
 
-        private void clearAllBorders()
+        private void PictureBox3_Click(object sender, EventArgs e)
         {
-            pbxAvatar1.BorderStyle = BorderStyle.None;
-            pbxAvatar2.BorderStyle = BorderStyle.None;
-            pbxAvatar3.BorderStyle = BorderStyle.None;
-            pbxAvatar5.BorderStyle = BorderStyle.None;
-            pbxAvatar9.BorderStyle = BorderStyle.None;
-            pbxAvatar6.BorderStyle = BorderStyle.None;
+            avatarSelected(pbxAvatar2);
+        }
 
+        private void PbxAvatar3_Click(object sender, EventArgs e)
+        {
+            avatarSelected(pbxAvatar3);
+        }
+
+        private void PbxAvatar5_Click(object sender, EventArgs e)
+        {
+            avatarSelected(pbxAvatar5);
+        }
+
+        private void PbxAvatar6_Click(object sender, EventArgs e)
+        {
+            avatarSelected(pbxAvatar6);
+        }
+
+        private void PbxAvatar9_Click(object sender, EventArgs e)
+        {
+            avatarSelected(pbxAvatar9);
         }
 
         private void lblBackToLogin_Click(object sender, EventArgs e)
         {
             moveToLoginScreen();
+        }
+
+        //MOVE SCREENS ----------------------------------------------------------------------------------------
+
+        private void moveToStartScreen()
+        {
+            this.Close();
+            Form MoveToStartScreen = new frmStartScreen();
+            MoveToStartScreen.Show();
+        }
+
+        private void moveToLoginScreen()
+        {
+            this.Close();
+            Form MoveToLogin = new frmLogin();
+            MoveToLogin.Show();
         }
     }
 }

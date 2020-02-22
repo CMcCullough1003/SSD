@@ -29,6 +29,43 @@ namespace Year_13_Coursework
             }
         }
 
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+            Program.currentUser.resetUser();
+
+
+        }
+
+        //MY METHODS ------------------------------------------------------------------------------------------
+
+        private void clearUserInputs()
+        {
+            tbxPassword.Clear();
+            tbxUsername.Clear();
+        }
+
+        private List<string> getUsers()
+        {
+            List<string> users;
+
+            try
+            {
+                users = files.getFileContents(FileConstants.USER_FILE_NAME);
+            }
+            catch(NoUsersFoundException ex)
+            {
+                users = new List<string>();
+            }
+            return users;
+        }
+
+        private Boolean checkInputsProvided(string name, string password) 
+        {
+            return string.IsNullOrEmpty(name) || string.IsNullOrEmpty(password);
+        }
+
+        //CLICK EVENTS ---------------------------------------------------------------------------------------
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string usernameInput = tbxUsername.Text;
@@ -62,7 +99,7 @@ namespace Year_13_Coursework
                     Program.currentUser.currentPassword = passwordFromFile;
                     Program.currentUser.currentAvatar = avatarFromFile;
                     break;
-                }   
+                }
             }
 
             //Did we find a match?
@@ -75,33 +112,14 @@ namespace Year_13_Coursework
             {
                 moveToStartScreen();
             }
-
         }
-        private void clearUserInputs()
+
+        private void LblCreateAccount_Click(object sender, EventArgs e)
         {
-            tbxPassword.Clear();
-            tbxUsername.Clear();
+            moveToRegisterScreen();
         }
 
-        private List<string> getUsers()
-        {
-            List<string> users;
-
-            try
-            {
-                users = files.getFileContents(FileConstants.USER_FILE_NAME);
-            }
-            catch(NoUsersFoundException ex)
-            {
-                users = new List<string>();
-            }
-            return users;
-        }
-
-        private Boolean checkInputsProvided(string name, string password) 
-        {
-            return string.IsNullOrEmpty(name) || string.IsNullOrEmpty(password);
-        }
+        //MOVE SCREENS ----------------------------------------------------------------------------------------
 
         private void moveToStartScreen()
         {
@@ -115,16 +133,6 @@ namespace Year_13_Coursework
             this.Hide();
             Form MoveToRegister = new frmRegister();
             MoveToRegister.Show();
-        }
-
-        private void FrmLogin_Load(object sender, EventArgs e)
-        {
-            Program.currentUser.resetUser();
-        }
-
-        private void LblCreateAccount_Click(object sender, EventArgs e)
-        {
-            moveToRegisterScreen();
         }
     }
 }

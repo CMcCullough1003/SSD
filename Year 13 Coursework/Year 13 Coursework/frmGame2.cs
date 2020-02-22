@@ -263,6 +263,7 @@ namespace Year_13_Coursework
         private void disableAllButtons()
         {
             btnHelp.Enabled = false;
+            btnSkipGame.Enabled = false;
             btnNextClue.Enabled = false;
             btnSubmitAnswer.Enabled = false;
         }

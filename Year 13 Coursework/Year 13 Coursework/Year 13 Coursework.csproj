@@ -237,6 +237,7 @@
     <None Include="Resources\sheep.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\guess_incorrect.wav" />
     <None Include="Resources\lake-louise-canada-5k-oa.jpg" />
     <None Include="Resources\game6BG.jpg" />
     <None Include="Resources\game3BG.jpg" />

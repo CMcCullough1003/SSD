@@ -23,6 +23,8 @@ namespace Year_13_Coursework
             fillLabels();
         }
 
+        //MY METHODS ------------------------------------------------------------------------------------------
+
         private void fillLabels()
         {
             GameInfo gameInfo = new GameInfo();
@@ -31,11 +33,6 @@ namespace Year_13_Coursework
             lblGameTitle.Text = gameInfo.gameName();
             lblGameInfo.Text = gameInfo.gameDescription();
             lblGamePoints.Text = gameInfo.gamePoints();
-        }
-
-        private void BtnResumeGame_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         protected override void WndProc(ref Message message)
@@ -53,6 +50,13 @@ namespace Year_13_Coursework
             }
 
             base.WndProc(ref message);
+        }
+
+        //CLICK EVENTS ----------------------------------------------------------------------------------------
+
+        private void BtnResumeGame_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
