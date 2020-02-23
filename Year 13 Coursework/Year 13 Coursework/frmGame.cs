@@ -18,12 +18,7 @@ namespace Year_13_Coursework
             InitializeComponent();
         }
 
-        public void moveToNextScreen()
-        {
-            this.Close();
-            Form moveToNextScreen = new frmGameInfo();
-            moveToNextScreen.Show();
-        }
+        //MY METHODS --------------------------------------------------------------------------------------
 
         public void saveScore(int score)
         {
@@ -39,9 +34,13 @@ namespace Year_13_Coursework
             Program.currentUser.calculateTotalScore();
         }
 
-        private void FrmGame_Load(object sender, EventArgs e)
-        {
+        //MOVE SCREENS -------------------------------------------------------------------------------------
 
+        public void moveToNextScreen()
+        {
+            this.Close();
+            Form moveToNextScreen = new frmGameInfo();
+            moveToNextScreen.Show();
         }
     }
 }

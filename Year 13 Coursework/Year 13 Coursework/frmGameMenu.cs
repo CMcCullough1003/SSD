@@ -35,6 +35,8 @@ namespace Year_13_Coursework
             lblGamePoints.Text = gameInfo.gamePoints();
         }
 
+        //Keep screen in position above the game form to ensure it cannot be moved offscreen
+        //Found on stackoverflow after googling
         protected override void WndProc(ref Message message)
         {
             const int WM_SYSCOMMAND = 0x0112;

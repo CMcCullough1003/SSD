@@ -50,7 +50,6 @@ namespace Year_13_Coursework
             InitializeComponent();
         }
 
-        //The form is created
         private void FrmGame1_Load(object sender, EventArgs e)
         {
             setUpTimer();
@@ -59,7 +58,7 @@ namespace Year_13_Coursework
             playGame();
         }
 
-        //The form is shown after frmMenu closes
+        //The timer continues once frmMenu closes
         private void FrmGame1_Activated(object sender, EventArgs e)
         {
             timer1.Start();
@@ -89,69 +88,13 @@ namespace Year_13_Coursework
             base.WndProc(ref message);
         }
 
-        /* BUTTON CLICKS  ======================================================================*/
-
-        private void BtnAnswer1_Click(object sender, EventArgs e)
-        {
-            if (btnAnswer1.Text == selectedMap)
-            {
-                correctGuess();
-            }
-            else
-            {
-                incorrectGuess();
-            }
-
-        }
-
-        private void BtnAnswer2_Click(object sender, EventArgs e)
-        {
-            if (btnAnswer2.Text == selectedMap)
-            {
-                correctGuess();
-            }
-            else
-            {
-                incorrectGuess();
-            }
-        }
-
-        private void BtnAnswer3_Click(object sender, EventArgs e)
-        {
-            if (btnAnswer3.Text == selectedMap)
-            {
-                correctGuess();
-            }
-            else
-            {
-                incorrectGuess();
-            }
-        }
-
-        private void BtnAnswer4_Click(object sender, EventArgs e)
-        {
-            if (btnAnswer4.Text == selectedMap)
-            {
-                correctGuess();
-            }
-            else
-            {
-                incorrectGuess();
-            }
-        }
-
-        private void BtnMenu_Click(object sender, EventArgs e)
-        {
-            timer1.Stop();
-            moveToMenuScreen();
-        }
-
-        /* MY METHODS ======================================================================*/
+        //MY METHODS ------------------------------------------------------------------------------------------------------
 
         private async void playGame()
         {
             if (mapCount > 0)
             {
+                //Pause for half a second to allow the game to display feedback to the user's answer
                 await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
             }
 
@@ -187,13 +130,6 @@ namespace Year_13_Coursework
             possibleAnswers[3] = "";
             pbxThought.Image = Properties.Resources.questionMark2;
             mapCount++;
-
-        }
-
-        private void moveToMenuScreen()
-        {
-            Form moveToMenu = new frmGameMenu();
-            moveToMenu.Show();
         }
 
         private void highlightCorrectAnswer()
@@ -275,13 +211,13 @@ namespace Year_13_Coursework
             possibleAnswers[2] = files.removeExtensions(possibleAnswers[2]);
             possibleAnswers[3] = files.removeExtensions(possibleAnswers[3]);
 
-            //use alphabetical order to change where right answer might be
+            //Use alphabetical order to change where right answer might be
             Array.Sort(possibleAnswers);
         }
 
         private void displayAllButtons()
         {
-            //put the countries on the answer buttons
+            //Display the countries on the answer buttons
             btnAnswer1.Text = possibleAnswers[0];
             btnAnswer2.Text = possibleAnswers[1];
             btnAnswer3.Text = possibleAnswers[2];
@@ -329,7 +265,6 @@ namespace Year_13_Coursework
             highlightCorrectAnswer();
             disableAllButtons();
             playGame();
-
         }
 
         private void displayAvatar()
@@ -338,7 +273,7 @@ namespace Year_13_Coursework
             pbxAvatar.Image = avatar.getAvatarImage(Program.currentUser.currentAvatar);
         }
 
-       
+
         private void displayMap()
         {
             Random random = new Random();
@@ -386,5 +321,71 @@ namespace Year_13_Coursework
             timer1.Stop();
             moveToNextScreen();
         }
+
+        //CLICK EVENTS ------------------------------------------------------------------------------------------------
+
+        private void BtnAnswer1_Click(object sender, EventArgs e)
+        {
+            if (btnAnswer1.Text == selectedMap)
+            {
+                correctGuess();
+            }
+            else
+            {
+                incorrectGuess();
+            }
+        }
+
+        private void BtnAnswer2_Click(object sender, EventArgs e)
+        {
+            if (btnAnswer2.Text == selectedMap)
+            {
+                correctGuess();
+            }
+            else
+            {
+                incorrectGuess();
+            }
+        }
+
+        private void BtnAnswer3_Click(object sender, EventArgs e)
+        {
+            if (btnAnswer3.Text == selectedMap)
+            {
+                correctGuess();
+            }
+            else
+            {
+                incorrectGuess();
+            }
+        }
+
+        private void BtnAnswer4_Click(object sender, EventArgs e)
+        {
+            if (btnAnswer4.Text == selectedMap)
+            {
+                correctGuess();
+            }
+            else
+            {
+                incorrectGuess();
+            }
+        }
+
+        private void BtnMenu_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            moveToMenuScreen();
+        }
+
+        //MOVE SCREENS ------------------------------------------------------------------------------------------------
+
+        private void moveToMenuScreen()
+        {
+            Form moveToMenu = new frmGameMenu();
+            moveToMenu.Show();
+        }
+
+        //The method moveToNextScreen is found in frmGame
     }
 }
