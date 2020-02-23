@@ -70,24 +70,6 @@ namespace Year_13_Coursework
             displayCountdown();
         }
 
-        //Stops the form being moved so the menu form is always on top of the game
-        protected override void WndProc(ref Message message)
-        {
-            const int WM_SYSCOMMAND = 0x0112;
-            const int SC_MOVE = 0xF010;
-
-            switch (message.Msg)
-            {
-                case WM_SYSCOMMAND:
-                    int command = message.WParam.ToInt32() & 0xfff0;
-                    if (command == SC_MOVE)
-                        return;
-                    break;
-            }
-
-            base.WndProc(ref message);
-        }
-
         //MY METHODS ------------------------------------------------------------------------------------------------------
 
         private async void playGame()
@@ -320,6 +302,24 @@ namespace Year_13_Coursework
         {
             timer1.Stop();
             moveToNextScreen();
+        }
+
+        //Stops the form being moved so the menu form is always on top of the game
+        protected override void WndProc(ref Message message)
+        {
+            const int WM_SYSCOMMAND = 0x0112;
+            const int SC_MOVE = 0xF010;
+
+            switch (message.Msg)
+            {
+                case WM_SYSCOMMAND:
+                    int command = message.WParam.ToInt32() & 0xfff0;
+                    if (command == SC_MOVE)
+                        return;
+                    break;
+            }
+
+            base.WndProc(ref message);
         }
 
         //CLICK EVENTS ------------------------------------------------------------------------------------------------

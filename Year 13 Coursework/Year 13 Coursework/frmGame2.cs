@@ -13,7 +13,6 @@ namespace Year_13_Coursework
 {
     public partial class frmGame2 : frmGame
     {
-
         private int counter = 30;
         private int score = 0;
         private int maxScore = 3;
@@ -53,7 +52,6 @@ namespace Year_13_Coursework
             setUpTimer();
             displayAvatar();
             setTitle();
-            playGame();
             chooseCountry();
             displayFirstClues();
         }
@@ -70,51 +68,7 @@ namespace Year_13_Coursework
             displayCountdown();
         }
 
-        //Stops the form being moved so the menu form is always on top of the game
-        protected override void WndProc(ref Message message)
-        {
-            const int WM_SYSCOMMAND = 0x0112;
-            const int SC_MOVE = 0xF010;
-
-            switch (message.Msg)
-            {
-                case WM_SYSCOMMAND:
-                    int command = message.WParam.ToInt32() & 0xfff0;
-                    if (command == SC_MOVE)
-                        return;
-                    break;
-            }
-
-            base.WndProc(ref message);
-        }
-
-        /* BUTTON CLICKS  ======================================================================*/
-
-        private void BtnSubmitAnswer_Click(object sender, EventArgs e)
-        {
-            Strings strings = new Strings();
-
-            if(strings.wasCorrectAnswerEntered(tbxGuess.Text, clues[selectedCountry, countryPosition]))
-            {
-                correctGuess();
-            }
-            else
-            {
-                incorrectGuess();
-            }
-        }
-
-        private void BtnHelp_Click(object sender, EventArgs e)
-        {
-            timer1.Stop();
-            moveToMenuScreen();
-        }
-
-        /* MY METHODS ======================================================================*/
-
-        private void playGame()
-        {
-        }
+        // MY METHODS ------------------------------------------------------------------------------------
 
         private void setUpTimer()
         {
@@ -145,23 +99,6 @@ namespace Year_13_Coursework
         {
             Avatars avatar = new Avatars();
             pbxAvatar.Image = avatar.getAvatarImage(Program.currentUser.currentAvatar);
-        }
-
-        private void moveToMenuScreen()
-        {
-            Form moveToMenu = new frmGameMenu();
-            moveToMenu.Show();
-        }
-
-        private void BtnNextClue_Click(object sender, EventArgs e)
-        {
-            whichClueVisible++;
-
-            switch (whichClueVisible)
-            {
-                case 1: displaySecondClues(); break;
-                case 2: displayThirdClues(); break;
-            }
         }
 
         private void chooseCountry()
@@ -288,11 +225,13 @@ namespace Year_13_Coursework
                     lblScoreCount.Text = score.ToString();
                     saveScore(score); break;
             }
+
             pbxThought.Image = Properties.Resources.Childish_Tick_24982;
             disableAllButtons();
             timer1.Stop();
             timer1 = null;
 
+            //Pause for half a second to allow the game to display feedback to the user's answer
             await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
 
             moveToNextScreen();
@@ -303,13 +242,13 @@ namespace Year_13_Coursework
             tbxGuess.Clear();
             pbxThought.Image = Properties.Resources.Childish_Cross_24996;
 
+            //Pause for half a second to allow the game to display feedback to the user's answer
             await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
 
             tbxGuess.Focus();
             pbxThought.Image = Properties.Resources.questionMark2;
 
         }
-
         private void hideHints()
         {
             lblHint2.Visible = false;
@@ -329,15 +268,74 @@ namespace Year_13_Coursework
             moveToNextScreen();
         }
 
+        private void displayScore(int score)
+        {
+            lblScoreCount.Text = score.ToString();
+        }
+
+        //Stops the form being moved so the menu form is always on top of the game
+        protected override void WndProc(ref Message message)
+        {
+            const int WM_SYSCOMMAND = 0x0112;
+            const int SC_MOVE = 0xF010;
+
+            switch (message.Msg)
+            {
+                case WM_SYSCOMMAND:
+                    int command = message.WParam.ToInt32() & 0xfff0;
+                    if (command == SC_MOVE)
+                        return;
+                    break;
+            }
+
+            base.WndProc(ref message);
+        }
+
+        //CLICK EVENTS ------------------------------------------------------------------------------------
+
+        private void BtnSubmitAnswer_Click(object sender, EventArgs e)
+        {
+            Strings strings = new Strings();
+
+            if (strings.wasCorrectAnswerEntered(tbxGuess.Text, clues[selectedCountry, countryPosition]))
+            {
+                correctGuess();
+            }
+            else
+            {
+                incorrectGuess();
+            }
+        }
+
+        private void BtnNextClue_Click(object sender, EventArgs e)
+        {
+            whichClueVisible++;
+
+            switch (whichClueVisible)
+            {
+                case 1: displaySecondClues(); break;
+                case 2: displayThirdClues(); break;
+            }
+        }
+
+        private void BtnHelp_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            moveToMenuScreen();
+        }
+
         private void BtnSkipGame_Click(object sender, EventArgs e)
         {
             timer1.Stop();
             moveToNextScreen();
         }
 
-        private void displayScore(int score)
+        //MOVE SCREENS ------------------------------------------------------------------------------------
+
+        private void moveToMenuScreen()
         {
-            lblScoreCount.Text = score.ToString();
+            Form moveToMenu = new frmGameMenu();
+            moveToMenu.Show();
         }
     }
 }
