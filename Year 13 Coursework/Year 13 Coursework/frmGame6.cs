@@ -81,7 +81,6 @@ namespace Year_13_Coursework
             displayAvatar();
             displayScore();
             setTitle();
-            playGame();
         }
 
         //The form is shown after frmMenu closes
@@ -97,20 +96,7 @@ namespace Year_13_Coursework
             dropStatements();
         }
 
-        /* BUTTON CLICKS  ======================================================================*/
-
-        private void BtnHelp_Click(object sender, EventArgs e)
-        {
-            timer1.Stop();
-            moveToMenuScreen();
-        }
-
-
-        /* MY METHODS ======================================================================*/
-
-        private void playGame()
-        {
-        }
+        //MY METHODS --------------------------------------------------------------------------------------------------
 
         private void setUpTimer()
         {
@@ -121,6 +107,7 @@ namespace Year_13_Coursework
             lblTimerCount.Text = counter.ToString();
         }
 
+        //Counts down from 60, double the length to give the user enough time to complete the game
         private async void displayCountdown()
         {
             counter--;
@@ -149,12 +136,7 @@ namespace Year_13_Coursework
             pbxAvatar.Image = avatar.getAvatarImage(Program.currentUser.currentAvatar);
         }
 
-        private void moveToMenuScreen()
-        {
-            Form moveToMenu = new frmGameMenu();
-            moveToMenu.Show();
-        }
-
+        //The labels should drop slowly from the top of the game area to the bottom
         private void dropStatements()
         {
             switch (counter)
@@ -203,6 +185,7 @@ namespace Year_13_Coursework
             lblStatement3.Location = new Point(Statement3XPosition, StatementYStartLocation);
         }
 
+        //The labels should move to their starting position once they have dissapered offscreen 
         private void checkIfMoveLabelToTop(Label label)
         {
             if(label.Location.Y > StatementYEndLocation)
@@ -214,6 +197,7 @@ namespace Year_13_Coursework
             }
         }
 
+        //Adds the next statement in the array chronologically to the next box to fall
         private void addStatementToLabel(Label label)
         {
             if (currentStatement < statements.GetLength(0))
@@ -222,7 +206,6 @@ namespace Year_13_Coursework
                 label.Tag = statements[currentStatement, isStatementTruePosition];
                 currentStatement++;
             }
-
         }
 
         private void addStatementToAllLabels()
@@ -232,21 +215,7 @@ namespace Year_13_Coursework
             addStatementToLabel(lblStatement3);
         }
 
-        private void LblStatement1_Click(object sender, EventArgs e)
-        {
-            labelClicked(lblStatement1);
-        }
-
-        private void LblStatement2_Click(object sender, EventArgs e)
-        {
-            labelClicked(lblStatement2);
-        }
-
-        private void LblStatement3_Click(object sender, EventArgs e)
-        {
-            labelClicked(lblStatement3);
-        }
-
+        //When clicked the label returns to its starting position
         private async void labelClicked(Label label) {
             if (label.Tag.ToString() == trueStatement)
             {
@@ -255,6 +224,7 @@ namespace Year_13_Coursework
             }
             else
             {
+                //The score cannot go below 0
                 if(score > 0)
                 {
                     score--;
@@ -285,13 +255,6 @@ namespace Year_13_Coursework
             btnHelp.Enabled = false;
         }
 
-        private void moveToResultsScreen()
-        {
-            this.Close();
-            Form frm = new frmResults();
-            frm.Show();
-        }
-
         private void checkIfMoveToResults()
         {
             if (clickedOrReachedBottomCount == statements.GetLength(0))
@@ -300,10 +263,48 @@ namespace Year_13_Coursework
             }
         }
 
+        //CLICK EVENTS ------------------------------------------------------------------------------------------------
+
+        private void LblStatement1_Click(object sender, EventArgs e)
+        {
+            labelClicked(lblStatement1);
+        }
+
+        private void LblStatement2_Click(object sender, EventArgs e)
+        {
+            labelClicked(lblStatement2);
+        }
+
+        private void LblStatement3_Click(object sender, EventArgs e)
+        {
+            labelClicked(lblStatement3);
+        }
+
+        private void BtnHelp_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            moveToMenuScreen();
+        }
+
         private void BtnSkipGame_Click(object sender, EventArgs e)
         {
             timer1.Stop();
             moveToResultsScreen();
+        }
+
+        //MOVE SCREENS -----------------------------------------------------------------------------------------------
+
+        private void moveToResultsScreen()
+        {
+            this.Close();
+            Form frm = new frmResults();
+            frm.Show();
+        }
+
+        private void moveToMenuScreen()
+        {
+            Form moveToMenu = new frmGameMenu();
+            moveToMenu.Show();
         }
     }
 }

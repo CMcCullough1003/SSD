@@ -50,6 +50,7 @@ namespace Year_13_Coursework
             InitializeComponent();
         }
 
+        //The form is created
         private void FrmGame1_Load(object sender, EventArgs e)
         {
             setUpTimer();
@@ -76,7 +77,7 @@ namespace Year_13_Coursework
         {
             if (mapCount > 0)
             {
-                //Pause for half a second to allow the game to display feedback to the user's answer
+                //Pause for one and a half seconds to allow the game to display feedback to the user's answer
                 await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
             }
 
@@ -146,6 +147,7 @@ namespace Year_13_Coursework
             lblTimerCount.Text = counter.ToString();
         }
 
+        //Counts down from 30
         private void displayCountdown()
         {
             counter--;

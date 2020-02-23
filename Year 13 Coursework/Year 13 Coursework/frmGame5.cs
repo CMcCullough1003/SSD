@@ -68,113 +68,7 @@ namespace Year_13_Coursework
             base.WndProc(ref message);
         }
 
-
-        /* BUTTON CLICKS  ======================================================================*/
-
-        private void LblSeaOfStorms_Click(object sender, EventArgs e)
-        {
-            seaClicked(lblSeaOfStorms);
-        }
-
-        private void LblPiSea_Click(object sender, EventArgs e)
-        {
-            seaClicked(lblPiSea);
-        }
-
-        private void LblTiSea_Click(object sender, EventArgs e)
-        {
-            seaClicked(lblTiSea);
-        }
-
-        private void LblSiSea_Click(object sender, EventArgs e)
-        {
-            seaClicked(lblSiSea);
-        }
-
-        private void LblBrysSea_Click(object sender, EventArgs e)
-        {
-            seaClicked(lblBrysSea);
-        }
-
-        private void LblSaltonSea_Click(object sender, EventArgs e)
-        {
-            seaClicked(lblSaltonSea);
-        }
-
-        private void LblBrusselSea_Click(object sender, EventArgs e)
-        {
-            seaClicked(lblBrusselSea);
-        }
-
-        private void LblArafuraSea_Click(object sender, EventArgs e)
-        {
-            seaClicked(lblArafuraSea);
-        }
-
-        private void LblBoySea_Click(object sender, EventArgs e)
-        {
-            seaClicked(lblBoySea);
-        }
-
-        private void LblWeddellSea_Click(object sender, EventArgs e)
-        {
-            seaClicked(lblWeddellSea);
-        }
-
-        private void LblBadSea_Click(object sender, EventArgs e)
-        {
-            seaClicked(lblBadSea);
-        }
-
-        private void LblTasmanSea_Click(object sender, EventArgs e)
-        {
-            seaClicked(lblTasmanSea);
-        }
-
-        private void LblOtisSea_Click(object sender, EventArgs e)
-        {
-            seaClicked(lblOtisSea);
-        }
-
-        private void LblDylanSea_Click(object sender, EventArgs e)
-        {
-            seaClicked(lblDylanSea);
-        }
-
-        private void LblSeaOfPlato_Click(object sender, EventArgs e)
-        {
-            seaClicked(lblSeaOfPlato);
-        }
-
-        private void LblEltonSea_Click(object sender, EventArgs e)
-        {
-            seaClicked(lblEltonSea);
-        }
-
-        private void LblTempleSea_Click(object sender, EventArgs e)
-        {
-            seaClicked(lblTempleSea);
-        }
-
-        private void BtnHelp_Click(object sender, EventArgs e)
-        {
-            timer1.Stop();
-            moveToMenuScreen();
-        }
-
-        private void BtnSubmitAnswer_Click(object sender, EventArgs e)
-        {
-            lblCorrectGuessCount.Text = correctSelections + "/4";
-            displayScore();
-            areAllSelectionsCorrect();
-        }
-
-        private void BtnClear_Click(object sender, EventArgs e)
-        {
-            resetGame();
-        }
-
-        /* MY METHODS ======================================================================*/
+        //MY METHODS ------------------------------------------------------------------------------------------------------
 
         private void positionYacht()
         {
@@ -183,6 +77,7 @@ namespace Year_13_Coursework
             pbxYacht.BackColor = Color.Transparent;
         }
 
+        //The yacht will sink behind pbxSea in time with the countdown, disapearing at 0
         private void sinkYacht()
         {
             pbxYacht.Location = new Point(pbxYacht.Location.X, pbxYacht.Location.Y + 2);
@@ -197,6 +92,7 @@ namespace Year_13_Coursework
             lblTimerCount.Text = counter.ToString();
         }
 
+        //Counts down from 30
         private void displayCountdown()
         {
             counter--;
@@ -226,13 +122,7 @@ namespace Year_13_Coursework
             pbxAvatar.Image = avatar.getAvatarImage(Program.currentUser.currentAvatar);
         }
 
-        private void moveToMenuScreen()
-        {
-            Form moveToMenu = new frmGameMenu();
-            moveToMenu.Show();
-        }
-
-
+        //An array of the correct answers
         private void createRealSeaArray()
         {
             realSeas[0] = lblSaltonSea.Text;
@@ -243,7 +133,6 @@ namespace Year_13_Coursework
 
         private void seaClicked(Label label)
         {
-
             if (label.Tag.ToString() == selected)
             {
                 label.Tag = "";
@@ -252,6 +141,7 @@ namespace Year_13_Coursework
             }
             else
             {
+                //Only 4 seas can be selected at once
                 if (selectedCount != maximumSelectionsAllowed)
                 {
                     label.Tag = selected;
@@ -371,11 +261,126 @@ namespace Year_13_Coursework
             lblScoreCount.Text = correctSelections.ToString();
         }
 
+        // CLICK EVENTS ---------------------------------------------------------------------------------------------------
+
+        private void LblSeaOfStorms_Click(object sender, EventArgs e)
+        {
+            seaClicked(lblSeaOfStorms);
+        }
+
+        private void LblPiSea_Click(object sender, EventArgs e)
+        {
+            seaClicked(lblPiSea);
+        }
+
+        private void LblTiSea_Click(object sender, EventArgs e)
+        {
+            seaClicked(lblTiSea);
+        }
+
+        private void LblSiSea_Click(object sender, EventArgs e)
+        {
+            seaClicked(lblSiSea);
+        }
+
+        private void LblBrysSea_Click(object sender, EventArgs e)
+        {
+            seaClicked(lblBrysSea);
+        }
+
+        private void LblSaltonSea_Click(object sender, EventArgs e)
+        {
+            seaClicked(lblSaltonSea);
+        }
+
+        private void LblBrusselSea_Click(object sender, EventArgs e)
+        {
+            seaClicked(lblBrusselSea);
+        }
+
+        private void LblArafuraSea_Click(object sender, EventArgs e)
+        {
+            seaClicked(lblArafuraSea);
+        }
+
+        private void LblBoySea_Click(object sender, EventArgs e)
+        {
+            seaClicked(lblBoySea);
+        }
+
+        private void LblWeddellSea_Click(object sender, EventArgs e)
+        {
+            seaClicked(lblWeddellSea);
+        }
+
+        private void LblBadSea_Click(object sender, EventArgs e)
+        {
+            seaClicked(lblBadSea);
+        }
+
+        private void LblTasmanSea_Click(object sender, EventArgs e)
+        {
+            seaClicked(lblTasmanSea);
+        }
+
+        private void LblOtisSea_Click(object sender, EventArgs e)
+        {
+            seaClicked(lblOtisSea);
+        }
+
+        private void LblDylanSea_Click(object sender, EventArgs e)
+        {
+            seaClicked(lblDylanSea);
+        }
+
+        private void LblSeaOfPlato_Click(object sender, EventArgs e)
+        {
+            seaClicked(lblSeaOfPlato);
+        }
+
+        private void LblEltonSea_Click(object sender, EventArgs e)
+        {
+            seaClicked(lblEltonSea);
+        }
+
+        private void LblTempleSea_Click(object sender, EventArgs e)
+        {
+            seaClicked(lblTempleSea);
+        }
+
+        private void BtnSubmitAnswer_Click(object sender, EventArgs e)
+        {
+            lblCorrectGuessCount.Text = correctSelections + "/4";
+            displayScore();
+            areAllSelectionsCorrect();
+        }
+
+        private void BtnClear_Click(object sender, EventArgs e)
+        {
+            resetGame();
+        }
+
         private void BtnSkipGame_Click(object sender, EventArgs e)
         {
             timer1.Stop();
             timer1 = null;
             moveToNextScreen();
         }
+
+        private void BtnHelp_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            moveToMenuScreen();
+        }
+
+        //MOVE SCREENS ----------------------------------------------------------------------------------------------------
+
+        private void moveToMenuScreen()
+        {
+            Form moveToMenu = new frmGameMenu();
+            moveToMenu.Show();
+        }
+
+        //The method moveToNextScreen is found in frmGame
     }
 }

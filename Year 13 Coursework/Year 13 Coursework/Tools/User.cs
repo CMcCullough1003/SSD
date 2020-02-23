@@ -37,6 +37,7 @@ namespace Year_13_Coursework.Tools
             return userToSave;
         }
 
+        //For when the user is changed
         public void resetUser()
         {
             currentName = "";
@@ -45,6 +46,7 @@ namespace Year_13_Coursework.Tools
             resetUserScores();
         }
 
+        //For when the user replays the game
         public void resetUserScores()
         {
             game1Score = 0;

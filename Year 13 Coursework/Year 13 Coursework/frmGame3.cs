@@ -47,48 +47,7 @@ namespace Year_13_Coursework
             displayCountdown();
         }
 
-        //Stops the form being moved so the menu form is always on top of the game
-        protected override void WndProc(ref Message message)
-        {
-            const int WM_SYSCOMMAND = 0x0112;
-            const int SC_MOVE = 0xF010;
-
-            switch (message.Msg)
-            {
-                case WM_SYSCOMMAND:
-                    int command = message.WParam.ToInt32() & 0xfff0;
-                    if (command == SC_MOVE)
-                        return;
-                    break;
-            }
-
-            base.WndProc(ref message);
-        }
-
-        /* BUTTON CLICKS  ======================================================================*/
-
-        private void BtnSubmitAnswer_Click(object sender, EventArgs e)
-        {
-            Strings strings = new Strings();
-            
-            if (strings.wasCorrectAnswerEntered(tbxGuess.Text, selectedFlag))
-            {
-                correctAnswer();
-            }
-            else
-            {
-                incorrectAnswer();
-            }
-        }
-
-        private void BtnHelp_Click(object sender, EventArgs e)
-        {
-            timer1.Stop();
-            moveToMenuScreen();
-        }
-
-
-        /* MY METHODS ======================================================================*/
+        // MY METHODS ----------------------------------------------------------------------------------------------------
 
         private void playGame()
         {
@@ -105,6 +64,7 @@ namespace Year_13_Coursework
             lblTimerCount.Text = counter.ToString();
         }
 
+        //Counts down from 30
         private void displayCountdown()
         {
             counter--;
@@ -127,77 +87,9 @@ namespace Year_13_Coursework
             pbxAvatar.Image = avatar.getAvatarImage(Program.currentUser.currentAvatar);
         }
 
-        private void moveToMenuScreen()
-        {
-            Form moveToMenu = new frmGameMenu();
-            moveToMenu.Show();
-        }
-
-        private void PbxHide1_Click(object sender, EventArgs e)
-        {
-            pbxHide1.Visible = false;
-            score -= 1;
-            displayScore();
-        }
-
-        private void PbxHide2_Click(object sender, EventArgs e)
-        {
-            pbxHide2.Visible = false;
-            score -= 1;
-            displayScore();
-        }
-
-        private void PbxHide3_Click(object sender, EventArgs e)
-        {
-            pbxHide3.Visible = false;
-            score -= 1;
-            displayScore();
-        }
-
-        private void PbxHide4_Click(object sender, EventArgs e)
-        {
-            pbxHide4.Visible = false;
-            score -= 1;
-            displayScore();
-        }
-
-        private void PbxHide5_Click(object sender, EventArgs e)
-        {
-            pbxHide5.Visible = false;
-            score -= 1;
-            displayScore();
-        }
-
-        private void PbxHide6_Click(object sender, EventArgs e)
-        {
-            pbxHide6.Visible = false;
-            score -= 1;
-            displayScore();
-        }
-
-        private void PbxHide7_Click(object sender, EventArgs e)
-        {
-            pbxHide7.Visible = false;
-            score -= 1;
-            displayScore();
-        }
-
-        private void PbxHide8_Click(object sender, EventArgs e)
-        {
-            pbxHide8.Visible = false;
-            score -= 1;
-            displayScore();
-        }
-
-        private void PbxHide9_Click(object sender, EventArgs e)
-        {
-            pbxHide9.Visible = false;
-            score -= 1;
-            displayScore();
-        }
-
         private void displayFlag()
         {
+            //Chooses a random country from the array and displays the corrosponding flag
             Random random = new Random();
             int position = random.Next(0, flagArray.Length - 1);
             selectedFlag = flagArray[position];
@@ -262,7 +154,7 @@ namespace Year_13_Coursework
             moveToNextScreen();
         }
 
- 
+
         private void disableAllButtons()
         {
             btnHelp.Enabled = false;
@@ -288,5 +180,119 @@ namespace Year_13_Coursework
             timer1.Stop();
             moveToNextScreen();
         }
+
+        //Stops the form being moved so the menu form is always on top of the game
+        protected override void WndProc(ref Message message)
+        {
+            const int WM_SYSCOMMAND = 0x0112;
+            const int SC_MOVE = 0xF010;
+
+            switch (message.Msg)
+            {
+                case WM_SYSCOMMAND:
+                    int command = message.WParam.ToInt32() & 0xfff0;
+                    if (command == SC_MOVE)
+                        return;
+                    break;
+            }
+
+            base.WndProc(ref message);
+        }
+
+        //CLICK EVENTS ---------------------------------------------------------------------------------------------------
+
+        private void BtnSubmitAnswer_Click(object sender, EventArgs e)
+        {
+            Strings strings = new Strings();
+            
+            if (strings.wasCorrectAnswerEntered(tbxGuess.Text, selectedFlag))
+            {
+                correctAnswer();
+            }
+            else
+            {
+                incorrectAnswer();
+            }
+        }
+
+        private void BtnHelp_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            moveToMenuScreen();
+        }
+
+        //Areas covering flag clicked
+        private void PbxHide1_Click(object sender, EventArgs e)
+        {
+            pbxHide1.Visible = false;
+            score -= 1;
+            displayScore();
+        }
+
+        private void PbxHide2_Click(object sender, EventArgs e)
+        {
+            pbxHide2.Visible = false;
+            score -= 1;
+            displayScore();
+        }
+
+        private void PbxHide3_Click(object sender, EventArgs e)
+        {
+            pbxHide3.Visible = false;
+            score -= 1;
+            displayScore();
+        }
+
+        private void PbxHide4_Click(object sender, EventArgs e)
+        {
+            pbxHide4.Visible = false;
+            score -= 1;
+            displayScore();
+        }
+
+        private void PbxHide5_Click(object sender, EventArgs e)
+        {
+            pbxHide5.Visible = false;
+            score -= 1;
+            displayScore();
+        }
+
+        private void PbxHide6_Click(object sender, EventArgs e)
+        {
+            pbxHide6.Visible = false;
+            score -= 1;
+            displayScore();
+        }
+
+        private void PbxHide7_Click(object sender, EventArgs e)
+        {
+            pbxHide7.Visible = false;
+            score -= 1;
+            displayScore();
+        }
+
+        private void PbxHide8_Click(object sender, EventArgs e)
+        {
+            pbxHide8.Visible = false;
+            score -= 1;
+            displayScore();
+        }
+
+        private void PbxHide9_Click(object sender, EventArgs e)
+        {
+            pbxHide9.Visible = false;
+            score -= 1;
+            displayScore();
+        }
+
+        //MOVE SCREENS ----------------------------------------------------------------------------------------------------
+
+        private void moveToMenuScreen()
+        {
+            Form moveToMenu = new frmGameMenu();
+            moveToMenu.Show();
+        }
+
+        //The method moveToNextScreen is found in frmGame
     }
 }

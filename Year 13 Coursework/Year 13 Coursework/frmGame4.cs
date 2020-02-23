@@ -53,7 +53,6 @@ namespace Year_13_Coursework
             setTitle();
             displayQuestion();
             displayScore();
-            playGame();
         }
 
         //The form is shown after frmMenu closes
@@ -68,6 +67,170 @@ namespace Year_13_Coursework
             displayCountdown();
         }
 
+        /* MY METHODS ======================================================================*/
+
+        private void setUpTimer()
+        {
+            timer1 = new System.Windows.Forms.Timer();
+            timer1.Tick += new EventHandler(Timer1_Tick);
+            timer1.Interval = 1000;
+            timer1.Start();
+            lblTimerCount.Text = counter.ToString();
+        }
+
+        //Counts down from 30
+        private async void displayCountdown()
+        {
+            counter--;
+            if (counter == 0)
+            {
+                disableAllButtons();
+                timer1.Stop();
+                timer1 = null;
+                pbxThought.Image = Properties.Resources.alarmClock;
+
+                await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
+
+                moveToNextScreen();
+            }
+            lblTimerCount.Text = counter.ToString();
+        }
+
+        private void setTitle()
+        {
+            GameInfo gameInfo = new GameInfo();
+            lblTitle.Text = gameInfo.gameName();
+        }
+
+        private void displayAvatar()
+        {
+            Avatars avatar = new Avatars();
+            pbxAvatar.Image = avatar.getAvatarImage(Program.currentUser.currentAvatar);
+        }
+
+        private void displayQuestion()
+        {
+            //Chooses a random question and answer from an array and displays them
+            int rowCount = questionsAnswers.GetLength(0);
+            Random random = new Random();
+            selectedPosition = random.Next(0, rowCount - 1);
+            answerLength = questionsAnswers[selectedPosition, AnswerPosition].Length;
+
+            //The answer is displayed as a series of underscores
+            for(int i = 0; i < answerLength; i++)
+            {
+                lblAnswer.Text += "_ ";
+            }
+
+            lblQuestion.Text = questionsAnswers[selectedPosition, QuestionPosition];
+        }
+
+        private void letterClicked(Label label)
+        {
+            label.BackColor = System.Drawing.Color.Plum;
+            label.ForeColor = System.Drawing.Color.Red;
+            label.Enabled = false;
+
+            //Replaces the underscore with the correct letter
+            letters.Remove(label.Text);
+            answer = questionsAnswers[selectedPosition, AnswerPosition];
+            for (int i = 0; i < letters.Count; i++)
+            {
+                answer = answer.Replace(letters[i], "_");
+            }
+
+            lblAnswer.Text = "";
+
+            for (int i = 0; i < answer.Length; i++)
+            {
+                lblAnswer.Text += answer[i].ToString() + " ";
+
+            }
+        }
+        private async void isLetterInAnswer(Label label)
+        {
+            if (lblAnswer.Text.Contains(label.Text))
+            {
+                correctAnswer();
+            }
+            else
+            {
+                incorrectAnswer();
+            }
+
+            if (numberOfIncorrectGuesses == 6)
+            {
+                pbxHangman.Image = Properties.Resources.gallows6;
+                saveScore(maximumScore - numberOfIncorrectGuesses);
+                displayScore();
+                timer1.Stop();
+                timer1 = null;
+                await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
+                moveToNextScreen();
+            }
+
+            switch (numberOfIncorrectGuesses)
+            {
+                case 1: pbxHangman.Image = Properties.Resources.gallows1; break;
+                case 2: pbxHangman.Image = Properties.Resources.gallows2; break;
+                case 3: pbxHangman.Image = Properties.Resources.gallows3; break;
+                case 4: pbxHangman.Image = Properties.Resources.gallows4; break;
+                case 5: pbxHangman.Image = Properties.Resources.gallows5; break;
+                case 6: pbxHangman.Image = Properties.Resources.gallows6; break;
+            }
+        }
+
+        private async void correctAnswer()
+        {
+            pbxThought.Image = Properties.Resources.Childish_Tick_24982;
+            displayScore();
+            await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
+            pbxThought.Image = Properties.Resources.questionMark2;
+        }
+
+        private async void incorrectAnswer()
+        {
+            pbxThought.Image = Properties.Resources.Childish_Cross_24996;
+            numberOfIncorrectGuesses++;
+            displayScore();
+            await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
+            pbxThought.Image = Properties.Resources.questionMark2;
+        }
+        
+        private async void answerComplete()
+        {
+            string usersAnswer = lblAnswer.Text.Replace(" ", "");
+            string correctAnswer = questionsAnswers[selectedPosition, AnswerPosition].Replace (" ", "");
+
+            if (usersAnswer == correctAnswer)
+            {
+                pbxThought.Image = Properties.Resources.Untitled;
+                saveScore(maximumScore - numberOfIncorrectGuesses);
+                displayScore();
+                timer1.Stop();
+                timer1 = null;
+                await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
+                moveToNextScreen();
+            }
+        }
+
+        private void displayScore()
+        {
+            lblScoreCount.Text = (maximumScore - numberOfIncorrectGuesses).ToString();
+        }
+
+        private void BtnSkipGame_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            timer1 = null;
+            moveToNextScreen();
+        }
+
+        private void disableAllButtons()
+        {
+            btnHelp.Enabled = false;
+            btnSkipGame.Enabled = false;
+        }
 
         //Stops the form being moved so the menu form is always on top of the game
         protected override void WndProc(ref Message message)
@@ -87,8 +250,7 @@ namespace Year_13_Coursework
             base.WndProc(ref message);
         }
 
-        /* BUTTON CLICKS  ======================================================================*/
-
+        // CLICK EVENTS ------------------------------------------------------------------------------------------------------
 
         private void LblA_Click(object sender, EventArgs e)
         {
@@ -278,49 +440,7 @@ namespace Year_13_Coursework
             moveToMenuScreen();
         }
 
-        /* MY METHODS ======================================================================*/
-
-        private void playGame()
-        {
-        }
-
-        private void setUpTimer()
-        {
-            timer1 = new System.Windows.Forms.Timer();
-            timer1.Tick += new EventHandler(Timer1_Tick);
-            timer1.Interval = 1000;
-            timer1.Start();
-            lblTimerCount.Text = counter.ToString();
-        }
-
-        private async void displayCountdown()
-        {
-            counter--;
-            if (counter == 0)
-            {
-                disableAllButtons();
-                timer1.Stop();
-                timer1 = null;
-                pbxThought.Image = Properties.Resources.alarmClock;
-
-                await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
-
-                moveToNextScreen();
-            }
-            lblTimerCount.Text = counter.ToString();
-        }
-
-        private void setTitle()
-        {
-            GameInfo gameInfo = new GameInfo();
-            lblTitle.Text = gameInfo.gameName();
-        }
-
-        private void displayAvatar()
-        {
-            Avatars avatar = new Avatars();
-            pbxAvatar.Image = avatar.getAvatarImage(Program.currentUser.currentAvatar);
-        }
+        //MOVE SCREENS ------------------------------------------------------------------------------------------------------
 
         private void moveToMenuScreen()
         {
@@ -328,125 +448,6 @@ namespace Year_13_Coursework
             moveToMenu.Show();
         }
 
-        private void displayQuestion()
-        {
-            int rowCount = questionsAnswers.GetLength(0);
-            Random random = new Random();
-            selectedPosition = random.Next(0, rowCount - 1);
-            answerLength = questionsAnswers[selectedPosition, AnswerPosition].Length;
-
-            for(int i = 0; i < answerLength; i++)
-            {
-                lblAnswer.Text += "_ ";
-            }
-
-            lblQuestion.Text = questionsAnswers[selectedPosition, QuestionPosition];
-        }
-
-        private void letterClicked(Label label)
-        {
-            label.BackColor = System.Drawing.Color.Plum;
-            label.ForeColor = System.Drawing.Color.Red;
-            label.Enabled = false;
-
-            letters.Remove(label.Text);
-            answer = questionsAnswers[selectedPosition, AnswerPosition];
-            for (int i = 0; i < letters.Count; i++)
-            {
-                answer = answer.Replace(letters[i], "_");
-            }
-
-            lblAnswer.Text = "";
-
-            for (int i = 0; i < answer.Length; i++)
-            {
-                lblAnswer.Text += answer[i].ToString() + " ";
-
-            }
-        }
-        private async void isLetterInAnswer(Label label)
-        {
-            if (lblAnswer.Text.Contains(label.Text))
-            {
-                correctAnswer();
-            }
-            else
-            {
-                incorrectAnswer();
-            }
-
-            if (numberOfIncorrectGuesses == 6)
-            {
-                pbxHangman.Image = Properties.Resources.gallows6;
-                saveScore(maximumScore - numberOfIncorrectGuesses);
-                displayScore();
-                timer1.Stop();
-                timer1 = null;
-                await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
-                moveToNextScreen();
-            }
-
-            switch (numberOfIncorrectGuesses)
-            {
-                case 1: pbxHangman.Image = Properties.Resources.gallows1; break;
-                case 2: pbxHangman.Image = Properties.Resources.gallows2; break;
-                case 3: pbxHangman.Image = Properties.Resources.gallows3; break;
-                case 4: pbxHangman.Image = Properties.Resources.gallows4; break;
-                case 5: pbxHangman.Image = Properties.Resources.gallows5; break;
-                case 6: pbxHangman.Image = Properties.Resources.gallows6; break;
-            }
-        }
-
-        private async void correctAnswer()
-        {
-            pbxThought.Image = Properties.Resources.Childish_Tick_24982;
-            displayScore();
-            await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
-            pbxThought.Image = Properties.Resources.questionMark2;
-        }
-
-        private async void incorrectAnswer()
-        {
-            pbxThought.Image = Properties.Resources.Childish_Cross_24996;
-            numberOfIncorrectGuesses++;
-            displayScore();
-            await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
-            pbxThought.Image = Properties.Resources.questionMark2;
-        }
-        
-        private async void answerComplete()
-        {
-            string usersAnswer = lblAnswer.Text.Replace(" ", "");
-            string correctAnswer = questionsAnswers[selectedPosition, AnswerPosition].Replace (" ", "");
-
-            if (usersAnswer == correctAnswer)
-            {
-                pbxThought.Image = Properties.Resources.Untitled;
-                saveScore(maximumScore - numberOfIncorrectGuesses);
-                displayScore();
-                timer1.Stop();
-                timer1 = null;
-                await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
-                moveToNextScreen();
-            }
-        }
-
-        private void displayScore()
-        {
-            lblScoreCount.Text = (maximumScore - numberOfIncorrectGuesses).ToString();
-        }
-
-        private void BtnSkipGame_Click(object sender, EventArgs e)
-        {
-            timer1.Stop();
-            timer1 = null;
-            moveToNextScreen();
-        }
-
-        private void disableAllButtons()
-        {
-            btnHelp.Enabled = false;
-            btnSkipGame.Enabled = false;
-        }
+        //The method moveToNextScreen is found in frmGame
     }
 }

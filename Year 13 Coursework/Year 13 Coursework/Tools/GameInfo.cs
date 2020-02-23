@@ -19,7 +19,7 @@ namespace Year_13_Coursework.Tools
                 case 3: response = "Uncover the Flag"; break;
                 case 4: response = "The Gruesome Hangman"; break;
                 case 5: response = "The Four Seas Quiz"; break;
-                case 6: response = "Click The True Statements"; break;
+                case 6: response = "The Falling Statements"; break;
             }
             return response;
         }
@@ -44,12 +44,12 @@ namespace Year_13_Coursework.Tools
             string response = "";
             switch (Program.currentGame)
             {
-                case 1: response = "An outline of a country will be shown on the next screen.\n\nYou must choose between four options the country name which matches the \noutline.\n\nA point is allocated for each correct answer.\n\nSix globetrotter points available."; break;
-                case 2: response = "You have to guess the country.\n\nThere will be clues but the more clues you use the less points you win.\n\nThree globetrotter points available."; break;
-                case 3: response = "Reveal the flag and guess the country.\n\nClick on the squares to reveal the flag below. Guess the country from the flag.\n\nNine globetrotter points available."; break;
+                case 1: response = "An outline of a country will be shown on the next screen.\n\nYou must choose between four options the country name which matches the \noutline.\n\nA point is allocated for each correct answer."; break;
+                case 2: response = "You have to guess the country.\n\nThere will be clues but the more clues you use the less points you win."; break;
+                case 3: response = "Reveal the flag and guess the country.\n\nClick on the squares to reveal the flag below. Guess the country from the flag."; break;
                 case 4: response = "Gruesome and horrible. Can you save our globetrotting friend?\n\n"; break;
                 case 5: response = "Stop our little yacht from sinking.\n\nFour of the seas are real, the rest are made up.\n\n Select the real ones and keep the yacht afloat."; break;
-                case 6: response = "Shoot down the false facts.\n\nGiude your character left or right using the arrow keys to aim\n\nDont let the lies reach the mountains"; break;
+                case 6: response = "Click the true facts.\n\nDont let the lies reach the mountains!"; break;
             }
             return response;
         }
@@ -58,12 +58,12 @@ namespace Year_13_Coursework.Tools
             string response = "";
             switch (Program.currentGame)
             {
-                case 1: response = "Six points"; break;
-                case 2: response = "Three points"; break;
-                case 3: response = "Nine points"; break;
-                case 4: response = "Six points"; break;
-                case 5: response = "Four points"; break;
-                case 6: response = "Sixteen points"; break;
+                case 1: response = "Six globetrotter points"; break;
+                case 2: response = "Three globetrotter points"; break;
+                case 3: response = "Nine globetrotter points"; break;
+                case 4: response = "Six globetrotter points"; break;
+                case 5: response = "Four globetrotter points"; break;
+                case 6: response = "Sixteen globetrotter points"; break;
             }
             return response;
         }

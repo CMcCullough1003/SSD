@@ -79,6 +79,7 @@ namespace Year_13_Coursework
             lblTimerCount.Text = counter.ToString();
         }
 
+        //Counts down from 30
         private void displayCountdown()
         {
             counter--;
@@ -231,7 +232,7 @@ namespace Year_13_Coursework
             timer1.Stop();
             timer1 = null;
 
-            //Pause for half a second to allow the game to display feedback to the user's answer
+            //Pause for one and a half seconds to allow the game to display feedback to the user's answer
             await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
 
             moveToNextScreen();
@@ -242,7 +243,7 @@ namespace Year_13_Coursework
             tbxGuess.Clear();
             pbxThought.Image = Properties.Resources.Childish_Cross_24996;
 
-            //Pause for half a second to allow the game to display feedback to the user's answer
+            //Pause for one and a half seconds to allow the game to display feedback to the user's answer
             await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
 
             tbxGuess.Focus();
@@ -263,6 +264,7 @@ namespace Year_13_Coursework
             pbxThought.Image = Properties.Resources.clock;
             disableAllButtons();
 
+            //Pause for one and a half seconds to allow the game to display feedback to the user's answer
             await Task.Delay(Constants.GameConstants.delayTimeInMilliseconds);
 
             moveToNextScreen();
@@ -336,6 +338,8 @@ namespace Year_13_Coursework
         {
             Form moveToMenu = new frmGameMenu();
             moveToMenu.Show();
+
+            //The method moveToNextScreen is found in frmGame
         }
     }
 }
