@@ -2,7 +2,8 @@
 # Pushing to Git
 
 ### Go to the right folder
-###### cd C:\Users\cmcc1\Documents\SSD
+~~cd C:\Users\cmcc1\Documents\SSD
+
 cd C:\Users\cmcc1\OneDrive\Documents\SSD
 
 ### See which files have been changed
