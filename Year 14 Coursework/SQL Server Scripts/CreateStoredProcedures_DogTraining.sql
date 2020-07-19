@@ -5,25 +5,61 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-DROP PROC InsertStaffMember;
+DROP PROC CreateClient;
+DROP PROC CreateDog;
+
 GO
 
-CREATE PROC InsertStaffMember(
-  @StaffID int output,
-  @Name varchar(100)
+
+CREATE PROC CreateDog(
+  @DogID int output,
+  @Name varchar(100),
+  @RegularQualificationAchieved bit,
+  @ExperienceForAdvancedProgram bit,
+  @Experience text
 ) AS
 BEGIN
-    INSERT INTO Staff(Name)
-    VALUES (@Name);
+    INSERT INTO Dog(Name, RegularQualificationAchieved, ExperienceForAdvancedProgram, Experience)
+    VALUES (@Name, @RegularQualificationAchieved, @ExperienceForAdvancedProgram, @Experience);
 
-    SET @StaffID = SCOPE_IDENTITY();
+    SET @DogID = SCOPE_IDENTITY();
 END
 GO
 
-DECLARE @StaffID int;
+DECLARE @DogID int;
 
-EXEC InsertStaffMember
-  @StaffID output,
-  'Bob'
+EXEC CreateDog
+  @DogID output,
+  'Ted',
+  1,
+  0,
+  'None'
 
-SELECT @StaffID 
+SELECT @DogID 
+GO
+
+
+CREATE PROC CreateClient(
+  @ClientID int output,
+  @Name varchar(100),
+  @Phone varchar(20),
+  @Email varchar(50)
+) AS
+BEGIN
+    INSERT INTO Client(Name, Phone, Email)
+    VALUES (@Name, @Phone, @Email);
+
+    SET @ClientID = SCOPE_IDENTITY();
+END
+GO
+
+DECLARE @ClientID int;
+
+EXEC CreateClient
+  @ClientID output,
+  'Cameron',
+  '07561101169',
+  'cmcc1003@gmail.com'
+
+SELECT @ClientID 
+GO
