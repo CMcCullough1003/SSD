@@ -30,7 +30,7 @@ CREATE TABLE Dog (
 	Name varchar(100) NOT NULL,
 	RegularQualificationAchieved bit DEFAULT 0 NOT NULL,
 	ExperienceForAdvancedProgram bit DEFAULT 0 NOT NULL,
-	Experience text
+	Experience text DEFAULT '' NOT NULL
 )
 
 CREATE TABLE Staff (
@@ -62,7 +62,7 @@ CREATE TABLE Class (
 	ClassID int IDENTITY(1,1) PRIMARY KEY,
 	ProgramID int FOREIGN KEY REFERENCES Program(ProgramID),
 	StaffID int FOREIGN KEY REFERENCES Staff(StaffID),
-	Date date CHECK (Date >= GetDate()) NOT NULL,
+	ClassDate date CHECK (ClassDate >= GetDate()) NOT NULL,
 	StartTime time NOT NULL,
 	EndTime time NOT NULL
 )

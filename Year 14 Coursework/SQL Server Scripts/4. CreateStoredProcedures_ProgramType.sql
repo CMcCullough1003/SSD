@@ -5,6 +5,8 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
+DROP PROC DeleteProgramTypeAll;
+DROP PROC CountProgramType;
 DROP PROC DeleteProgramTypeByID;
 DROP PROC UpdateProgramTypeByID;
 DROP PROC ReadProgramTypeByID;
