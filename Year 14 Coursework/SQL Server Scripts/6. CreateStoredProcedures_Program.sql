@@ -101,7 +101,7 @@ EXEC UpdateProgramByID @ProgramID, 9, 12, 12, 5
 
 EXEC ReadProgramByID @ProgramID
 
-EXEC DeleteProgramByID @ProgramID
+/* EXEC DeleteProgramByID @ProgramID */
 
 EXEC ReadProgramByID @ProgramID
 GO

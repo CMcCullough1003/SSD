@@ -99,13 +99,13 @@ SET @StartTime = CONVERT(TIME, '11:00')
 SET @EndTime = CONVERT(TIME, '13:00')
 
 
-EXEC CreateClass @ClassID output, 6, 5, @ClassDate, @StartTime,  @EndTime
+EXEC CreateClass @ClassID output, 9, 5, @ClassDate, @StartTime,  @EndTime
 
 SELECT @ClassID 
 
 EXEC ReadClassByID @ClassID
 
-EXEC UpdateClassByID @ClassID, 6, 5,  @ClassDate, @StartTime,  @EndTime
+EXEC UpdateClassByID @ClassID, 9, 5,  @ClassDate, @StartTime,  @EndTime
 
 EXEC ReadClassByID @ClassID
 

@@ -47,8 +47,7 @@ CREATE PROC UpdateEnrollmentByID(
 ) AS
 BEGIN
 	UPDATE Enrollment
-	SET ProgramID = @ProgramID,
-		ClientID = @ClientID,
+	SET ClientID = @ClientID,
 		DogID = @DogID,
 		ProgramID = @ProgramID
 
@@ -89,13 +88,13 @@ DECLARE @EnrollmentID int;
 
 EXEC CreateEnrollment
   @EnrollmentID output, 
-  6, 5, GETDATE, 1, 4
+  3, 4, 7
 
 SELECT @EnrollmentID 
 
 EXEC ReadEnrollmentByID @EnrollmentID
 
-EXEC UpdateEnrollmentByID @EnrollmentID, 6, 5, GETDATE, 1, 4
+EXEC UpdateEnrollmentByID @EnrollmentID, 3, 4, 9
 
 EXEC ReadEnrollmentByID @EnrollmentID
 

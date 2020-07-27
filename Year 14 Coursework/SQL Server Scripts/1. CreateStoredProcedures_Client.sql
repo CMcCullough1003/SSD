@@ -81,7 +81,7 @@ EXEC UpdateClientByID @ClientID, 'Katie', '07561 101169', 'katie@gamil.com'
 
 EXEC ReadClientByID @ClientID
 
-EXEC DeleteClientByID @ClientID
+/* EXEC DeleteClientByID @ClientID */
 
 EXEC ReadClientByID @ClientID
 GO
