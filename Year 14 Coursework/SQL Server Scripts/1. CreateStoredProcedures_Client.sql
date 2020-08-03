@@ -5,6 +5,8 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
+DROP PROC DeleteClientAll;
+DROP PROC CountClient;
 DROP PROC DeleteClientByID;
 DROP PROC UpdateClientByID;
 DROP PROC ReadClientByID;
@@ -59,6 +61,21 @@ CREATE PROC DeleteClientByID (
 BEGIN
 	DELETE FROM Client
 	WHERE ClientID = @ClientID
+END
+GO
+
+CREATE PROC CountClient
+AS
+BEGIN
+	SELECT * FROM Client
+END
+GO
+
+
+CREATE PROC DeleteClientAll 
+AS
+BEGIN
+	DELETE FROM Client
 END
 GO
 

@@ -7,8 +7,7 @@ namespace JDDogCare
     {
         static void Main(string[] args)
         {
-            DataStore.ClientTable clientTable = new ClientTable();
-            clientTable.createNewClient();
+
         }
     }
 }
