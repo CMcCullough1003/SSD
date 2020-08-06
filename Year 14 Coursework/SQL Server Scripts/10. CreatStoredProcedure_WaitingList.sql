@@ -96,13 +96,13 @@ SET @WLJoinDate = CONVERT(DATE, '2021-08-15')
 
 EXEC CreateWaitingList
   @WaitingListID output, 
-  20, 19, 9, @WLJoinDate, 1
+  21, 2, 9, @WLJoinDate, 1
 
 SELECT @WaitingListID 
 
 EXEC ReadWaitingListByID @WaitingListID
 
-EXEC UpdateWaitingListByID @WaitingListID, 20, 19, 9, @WLJoinDate, 1
+EXEC UpdateWaitingListByID @WaitingListID, 21, 4, 9, @WLJoinDate, 1
 
 EXEC ReadWaitingListByID @WaitingListID
 

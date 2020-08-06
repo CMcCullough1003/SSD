@@ -25,5 +25,10 @@ namespace DataStore
         {
             connection.Close();
         }
+
+        public void clearAllTables()
+        {
+            new ClientTable().deleteAll();
+        }
     }
 }

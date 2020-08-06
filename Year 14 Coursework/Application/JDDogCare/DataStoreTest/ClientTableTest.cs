@@ -19,9 +19,7 @@ namespace DataStoreTest
         [TestInitialize]
         public void deleteAll()
         {
-            ClientTable clientTable = new ClientTable();
-
-            clientTable.deleteAllClients();
+            new DataStoreHelper().clearAllTables();
         }
 
 

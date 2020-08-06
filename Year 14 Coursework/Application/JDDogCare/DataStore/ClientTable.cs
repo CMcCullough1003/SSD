@@ -71,7 +71,7 @@ namespace DataStore
             return clientModel;
         }
 
-        public void deleteAllClients()
+        public void deleteAll()
         {
 
             try

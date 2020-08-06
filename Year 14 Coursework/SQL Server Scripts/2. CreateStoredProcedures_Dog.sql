@@ -85,7 +85,9 @@ EXEC UpdateDogByID @DogID, 'Thor', 1, 1, 'Hammers'
 
 EXEC ReadDogByID @DogID
 
-EXEC DeleteDogByID @DogID
+/* EXEC DeleteDogByID @DogID */
 
 EXEC ReadDogByID @DogID
+
+SELECT * FROM Dog
 GO
