@@ -5,8 +5,9 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
+DROP PROC ReadClients;
 DROP PROC DeleteClientAll;
-DROP PROC CountClient;
+DROP PROC CountClients;
 DROP PROC DeleteClientByID;
 DROP PROC UpdateClientByID;
 DROP PROC ReadClientByID;
@@ -79,6 +80,13 @@ BEGIN
 END
 GO
 
+CREATE PROC ReadClients
+AS
+BEGIN
+	Select * FROM Client
+END
+GO
+
 
 /* Executing Stored Procedures */
 
@@ -94,11 +102,13 @@ SELECT @ClientID
 
 EXEC ReadClientByID @ClientID
 
+EXEC ReadClients
+
 EXEC UpdateClientByID @ClientID, 'Katie', '07561 101169', 'katie@gamil.com'
 
 EXEC ReadClientByID @ClientID
 
-/* EXEC DeleteClientByID @ClientID */
+EXEC DeleteClientByID @ClientID
 
 EXEC ReadClientByID @ClientID
 GO

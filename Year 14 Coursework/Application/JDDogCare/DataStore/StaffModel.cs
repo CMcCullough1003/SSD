@@ -4,11 +4,9 @@ using System.Text;
 
 namespace DataStore
 {
-    public class ClientModel
+    public class StaffModel
     {
         public int id = 0;
         public string name = "";
-        public string phone = "";
-        public string email = "";
     }
 }

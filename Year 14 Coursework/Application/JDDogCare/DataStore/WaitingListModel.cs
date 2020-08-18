@@ -4,11 +4,9 @@ using System.Text;
 
 namespace DataStore
 {
-    public class Adding
+    public class WaitingListModel
     {
-        public int add(int a, int b)
-        {
-            return a + b;
-        }
+        public int id = 0;
+
     }
 }

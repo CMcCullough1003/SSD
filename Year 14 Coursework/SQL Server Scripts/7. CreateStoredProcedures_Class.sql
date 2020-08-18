@@ -5,6 +5,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
+DROP PROC ReadClass;
 DROP PROC DeleteClassAll;
 DROP PROC CountClass;
 DROP PROC DeleteClassByID;
@@ -88,6 +89,14 @@ END
 GO
 
 
+CREATE PROC ReadClass
+AS
+BEGIN
+	Select * FROM Class
+END
+GO
+
+
 /* Executing Stored Procedures */
 
 DECLARE @ClassID int;
@@ -104,6 +113,8 @@ EXEC CreateClass @ClassID output, 9, 5, @ClassDate, @StartTime,  @EndTime
 SELECT @ClassID 
 
 EXEC ReadClassByID @ClassID
+
+EXEC ReadClass
 
 EXEC UpdateClassByID @ClassID, 9, 5,  @ClassDate, @StartTime,  @EndTime
 

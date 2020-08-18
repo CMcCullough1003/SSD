@@ -5,6 +5,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
+DROP PROC ReadEnrollment;
 DROP PROC DeleteEnrollmentAll;
 DROP PROC CountEnrollment;
 DROP PROC DeleteEnrollmentByID;
@@ -81,6 +82,13 @@ BEGIN
 END
 GO
 
+CREATE PROC ReadEnrollment
+AS
+BEGIN
+	Select * FROM Enrollment
+END
+GO
+
 
 /* Executing Stored Procedures */
 
@@ -93,6 +101,8 @@ EXEC CreateEnrollment
 SELECT @EnrollmentID 
 
 EXEC ReadEnrollmentByID @EnrollmentID
+
+EXEC ReadEnrollment
 
 EXEC UpdateEnrollmentByID @EnrollmentID, 3, 4, 9
 

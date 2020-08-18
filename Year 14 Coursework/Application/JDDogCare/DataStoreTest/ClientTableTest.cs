@@ -22,9 +22,40 @@ namespace DataStoreTest
             new DataStoreHelper().clearAllTables();
         }
 
+        [TestMethod]
+        public void Count_AllRecordsDeleted_0()
+        {
+            //Assemble
+            int expected = 0;
+            ClientTable clientTable = new ClientTable();
+
+            //Act
+            int actual = clientTable.count();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
 
         [TestMethod]
-        public void CreateNewClient_ValidData_ClientIDReturned()
+        public void Create_ValidData_ClientIDReturned()
+        {
+            //Assemble
+            ClientModel clientModel = new ClientModel();
+            clientModel.name = "Bob";
+            clientModel.phone = "07561 101169";
+            clientModel.email = "bob@gmail.com";
+            int notCreated = 0;
+            ClientTable clientTable = new ClientTable();
+
+            //Act
+            int actual = clientTable.create(clientModel);
+
+            //Assert
+            Assert.AreNotEqual(notCreated, actual);
+        }
+
+        [TestMethod]
+        public void Count_Created1Record_1()
         {
             //Assemble
             ClientModel clientModel = new ClientModel();
@@ -35,10 +66,31 @@ namespace DataStoreTest
             ClientTable clientTable = new ClientTable();
 
             //Act
-            int actual = clientTable.createNewClient(clientModel);
+            int clientID = clientTable.create(clientModel);
+            int actual = clientTable.count();
 
             //Assert
             Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Count_CreatedAndRead1Record_CorrectValues()
+        {
+            //Assemble
+            ClientModel clientModel = new ClientModel();
+            clientModel.name = "Bob";
+            clientModel.phone = "07561 101169";
+            clientModel.email = "bob@gmail.com";
+            ClientTable clientTable = new ClientTable();
+
+            //Act
+            int clientID = clientTable.create(clientModel);
+            ClientModel actual = clientTable.read(clientID);
+
+            //Assert
+            Assert.AreEqual(clientModel.name, actual.name);
+            Assert.AreEqual(clientModel.phone, actual.phone);
+            Assert.AreEqual(clientModel.email, actual.email);
         }
     }
 }

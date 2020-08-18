@@ -5,6 +5,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
+DROP PROC ReadProgram;
 DROP PROC DeleteProgramAll;
 DROP PROC CountProgram;
 DROP PROC DeleteProgramByID;
@@ -85,6 +86,14 @@ END
 GO
 
 
+CREATE PROC ReadProgram
+AS
+BEGIN
+	Select * FROM Program
+END
+GO
+
+
 /* Executing Stored Procedures */
 
 DECLARE @ProgramID int;
@@ -97,14 +106,15 @@ SELECT @ProgramID
 
 EXEC ReadProgramByID @ProgramID
 
+EXEC ReadProgram
+
 EXEC UpdateProgramByID @ProgramID, 9, 12, 12, 5
 
 EXEC ReadProgramByID @ProgramID
 
-/* EXEC DeleteProgramByID @ProgramID */
+EXEC DeleteProgramByID @ProgramID
 
 EXEC ReadProgramByID @ProgramID
-GO
 
 EXEC CountProgram
 GO

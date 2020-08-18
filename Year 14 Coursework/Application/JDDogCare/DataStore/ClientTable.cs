@@ -8,7 +8,7 @@ namespace DataStore
 {
     public class ClientTable
     {
-        public int createNewClient(ClientModel clientModel)
+        public int create(ClientModel clientModel)
         {
             int clientID = 0;
             try
@@ -40,7 +40,7 @@ namespace DataStore
             return clientID;
         }
 
-        public ClientModel retrieveClient(int clientID)
+        public ClientModel read(int clientID)
         {
             ClientModel clientModel = new ClientModel();
 
@@ -56,6 +56,7 @@ namespace DataStore
                 SqlDataReader dataReader = commandRead.ExecuteReader();
 
                 dataReader.Read();
+                clientModel.id = clientID;
                 clientModel.name = dataReader.GetString(1);
                 clientModel.phone = dataReader.GetString(2);
                 clientModel.email = dataReader.GetString(3);
@@ -71,9 +72,92 @@ namespace DataStore
             return clientModel;
         }
 
+        public List<ClientModel> readAll()
+        {
+            List<ClientModel> clients = new List<ClientModel>(); 
+
+            try
+            {
+                DataStoreHelper dataStoreHelper = new DataStoreHelper();
+                SqlConnection connection = dataStoreHelper.createConnection();
+
+                SqlCommand commandRead = new SqlCommand("ReadClients");
+                commandRead.CommandType = System.Data.CommandType.StoredProcedure;
+                commandRead.Connection = connection;
+                SqlDataReader dataReader = commandRead.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    ClientModel clientModel = new ClientModel();
+                    clientModel.id = dataReader.GetInt32(0);
+                    clientModel.name = dataReader.GetString(1);
+                    clientModel.phone = dataReader.GetString(2);
+                    clientModel.email = dataReader.GetString(3);
+                }
+
+                dataStoreHelper.closeConnection(connection);
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception thrown: " + ex.Message);
+            }
+
+            return clients;
+        }
+
+        public void update(ClientModel clientModel) {
+            try
+            {
+                DataStoreHelper dataStoreHelper = new DataStoreHelper();
+                SqlConnection connection = dataStoreHelper.createConnection();
+
+                SqlCommand commandCreate = new SqlCommand("UpdateClientByID");
+                commandCreate.CommandType = System.Data.CommandType.StoredProcedure;
+                commandCreate.Parameters.Add("@ClientID", SqlDbType.Int).Value = clientModel.id;
+                commandCreate.Parameters.Add("@Name", SqlDbType.VarChar).Value = clientModel.name;
+                commandCreate.Parameters.Add("@Phone", SqlDbType.VarChar).Value = clientModel.phone;
+                commandCreate.Parameters.Add("@Email", SqlDbType.VarChar).Value = clientModel.email;
+
+                commandCreate.Connection = connection;
+
+                commandCreate.ExecuteNonQuery();
+
+                dataStoreHelper.closeConnection(connection);
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception thrown: " + ex.Message);
+            }
+        }
+
+        public void delete(int clientID)
+        {
+            try
+            {
+                DataStoreHelper dataStoreHelper = new DataStoreHelper();
+                SqlConnection connection = dataStoreHelper.createConnection();
+
+                SqlCommand commandCreate = new SqlCommand("DeleteClientByID");
+                commandCreate.CommandType = System.Data.CommandType.StoredProcedure;
+                commandCreate.Parameters.Add("@ClientID", SqlDbType.Int).Value = clientID;
+
+                commandCreate.Connection = connection;
+
+                commandCreate.ExecuteNonQuery();
+
+                dataStoreHelper.closeConnection(connection);
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception thrown: " + ex.Message);
+            }
+        }
+
         public void deleteAll()
         {
-
             try
             {
                 DataStoreHelper dataStoreHelper = new DataStoreHelper();
@@ -95,37 +179,22 @@ namespace DataStore
             }
         }
 
-
-        public void createNewClientXX()
+        public int count()
         {
+            int count = 0;
+
             try
             {
                 DataStoreHelper dataStoreHelper = new DataStoreHelper();
                 SqlConnection connection = dataStoreHelper.createConnection();
 
-                SqlCommand commandCreate = new SqlCommand("CreateClient");
-                commandCreate.CommandType = System.Data.CommandType.StoredProcedure;
-                commandCreate.Parameters.Add("@ClientID", SqlDbType.Int).Direction = ParameterDirection.Output;
-                commandCreate.Parameters.Add("@Name", SqlDbType.VarChar).Value = "Bob";
-                commandCreate.Parameters.Add("@Phone", SqlDbType.VarChar).Value = "07561 465879";
-                commandCreate.Parameters.Add("@Email", SqlDbType.VarChar).Value = "bob@gmail.com";
-
-                commandCreate.Connection = connection;
-
-                commandCreate.ExecuteNonQuery();
-
-                int clientID = Convert.ToInt32(commandCreate.Parameters["@ClientID"].Value);
-
-                SqlCommand commandRead = new SqlCommand("ReadClientByID");
+                SqlCommand commandRead = new SqlCommand("CountClients");
                 commandRead.CommandType = System.Data.CommandType.StoredProcedure;
-                commandRead.Parameters.Add("@ClientID", SqlDbType.Int).Value = clientID;
                 commandRead.Connection = connection;
                 SqlDataReader dataReader = commandRead.ExecuteReader();
 
-                while (dataReader.Read())
-                {
-                    Console.WriteLine("<" + dataReader.GetValue(0) + "> <" + dataReader.GetValue(1) + "> < " + dataReader.GetValue(2) + " > <" + dataReader.GetValue(3) + ">");
-                }
+                dataReader.Read();
+                count = dataReader.GetInt32(0);
 
                 dataStoreHelper.closeConnection(connection);
 
@@ -134,6 +203,8 @@ namespace DataStore
             {
                 Console.WriteLine("Exception thrown: " + ex.Message);
             }
+
+            return count;
         }
     }
 }

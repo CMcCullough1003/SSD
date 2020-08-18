@@ -5,6 +5,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
+DROP PROC ReadPayment;
 DROP PROC DeletePaymentAll;
 DROP PROC CountPayment;
 DROP PROC DeletePaymentByID;
@@ -89,6 +90,13 @@ BEGIN
 END
 GO
 
+CREATE PROC ReadPayment
+AS
+BEGIN
+	Select * FROM Payment
+END
+GO
+
 
 /* Executing Stored Procedures */
 
@@ -105,6 +113,8 @@ EXEC CreatePayment
 SELECT @PaymentID 
 
 EXEC ReadPaymentByID @PaymentID
+
+EXEC ReadPayment
 
 EXEC UpdatePaymentByID @PaymentID,  1, 60.00, @PaymentDueDate, 1, @PaymentRecievedDate, 1
 

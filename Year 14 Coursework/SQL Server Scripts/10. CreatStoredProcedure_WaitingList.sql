@@ -5,6 +5,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
+DROP PROC ReadWaitingList;
 DROP PROC DeleteWaitingListAll;
 DROP PROC CountWaitingList;
 DROP PROC DeleteWaitingListByID;
@@ -88,6 +89,13 @@ END
 GO
 
 
+CREATE PROC ReadWaitingList
+AS
+BEGIN
+	Select * FROM WaitingList
+END
+GO
+
 /* Executing Stored Procedures */
 
 DECLARE @WaitingListID int;
@@ -101,6 +109,8 @@ EXEC CreateWaitingList
 SELECT @WaitingListID 
 
 EXEC ReadWaitingListByID @WaitingListID
+
+EXEC ReadWaitingList
 
 EXEC UpdateWaitingListByID @WaitingListID, 21, 4, 9, @WLJoinDate, 1
 

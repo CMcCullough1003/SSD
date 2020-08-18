@@ -5,6 +5,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
+DROP PROC ReadProgramType;
 DROP PROC DeleteProgramTypeAll;
 DROP PROC CountProgramType;
 DROP PROC DeleteProgramTypeByID;
@@ -74,6 +75,13 @@ BEGIN
 END
 GO
 
+CREATE PROC ReadProgramType
+AS
+BEGIN
+	Select * FROM ProgramType
+END
+GO
+
 
 /* Executing Stored Procedures */
 
@@ -91,10 +99,11 @@ EXEC UpdateProgramTypeByID @ProgramTypeID, 'Advanced'
 
 EXEC ReadProgramTypeByID @ProgramTypeID
 
+EXEC ReadProgramType
+
 EXEC DeleteProgramTypeByID @ProgramTypeID
 
 EXEC ReadProgramTypeByID @ProgramTypeID
-GO
 
 EXEC CountProgramType
 GO

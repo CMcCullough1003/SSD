@@ -4,11 +4,11 @@ using System.Text;
 
 namespace DataStore
 {
-    public class ClientModel
+    public class EnrollmentModel
     {
         public int id = 0;
-        public string name = "";
-        public string phone = "";
-        public string email = "";
+        public int clientId = 0;
+        public int dogId = 0;
+        public int programId = 0;
     }
 }

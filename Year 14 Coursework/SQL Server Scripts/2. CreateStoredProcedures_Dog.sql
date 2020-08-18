@@ -5,6 +5,9 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
+DROP PROC ReadDogs;
+DROP PROC DeleteDogAll;
+DROP PROC CountDog;
 DROP PROC DeleteDogByID;
 DROP PROC UpdateDogByID;
 DROP PROC ReadDogByID;
@@ -66,6 +69,30 @@ END
 GO
 
 
+CREATE PROC CountDog
+AS
+BEGIN
+	SELECT * FROM Dog
+END
+GO
+
+
+CREATE PROC DeleteDogAll 
+AS
+BEGIN
+	DELETE FROM Dog
+END
+GO
+
+
+CREATE PROC ReadDogs
+AS
+BEGIN
+	Select * FROM Dog
+END
+GO
+
+
 /* Executing Stored Procedures */
 
 DECLARE @DogID int;
@@ -81,11 +108,13 @@ SELECT @DogID
 
 EXEC ReadDogByID @DogID
 
+EXEC ReadDogs
+
 EXEC UpdateDogByID @DogID, 'Thor', 1, 1, 'Hammers'
 
 EXEC ReadDogByID @DogID
 
-/* EXEC DeleteDogByID @DogID */
+EXEC DeleteDogByID @DogID
 
 EXEC ReadDogByID @DogID
 

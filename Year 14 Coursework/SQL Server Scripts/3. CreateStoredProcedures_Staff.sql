@@ -5,6 +5,9 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
+DROP PROC ReadStaff;
+DROP PROC DeleteStaffAll;
+DROP PROC CountStaff;
 DROP PROC DeleteStaffByID;
 DROP PROC UpdateStaffByID;
 DROP PROC ReadStaffByID;
@@ -57,6 +60,30 @@ END
 GO
 
 
+CREATE PROC CountStaff
+AS
+BEGIN
+	SELECT * FROM Staff
+END
+GO
+
+
+CREATE PROC DeleteStaffAll 
+AS
+BEGIN
+	DELETE FROM Staff
+END
+GO
+
+
+CREATE PROC ReadStaff
+AS
+BEGIN
+	Select * FROM Staff
+END
+GO
+
+
 /* Executing Stored Procedures */
 
 DECLARE @StaffID int;
@@ -72,6 +99,8 @@ EXEC ReadStaffByID @StaffID
 EXEC UpdateStaffByID @StaffID, 'Katie'
 
 EXEC ReadStaffByID @StaffID
+
+EXEC ReadStaff
 
 EXEC DeleteStaffByID @StaffID
 

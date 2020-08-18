@@ -5,6 +5,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
+DROP PROC ReadProgramCost
 DROP PROC DeleteProgramCostAll;
 DROP PROC CountProgramCost;
 DROP PROC DeleteProgramCostByID;
@@ -81,6 +82,13 @@ BEGIN
 END
 GO
 
+CREATE PROC ReadProgramCost
+AS
+BEGIN
+	Select * FROM ProgramCost
+END
+GO
+
 
 /* Executing Stored Procedures */
 
@@ -94,6 +102,8 @@ SELECT @ProgramCostID
 
 EXEC ReadProgramCostByID @ProgramCostID
 
+EXEC ReadProgramCost
+
 EXEC UpdateProgramCostByID @ProgramCostID, 80, 30, 30
 
 EXEC ReadProgramCostByID @ProgramCostID
@@ -101,7 +111,6 @@ EXEC ReadProgramCostByID @ProgramCostID
 EXEC DeleteProgramCostByID @ProgramCostID
 
 EXEC ReadProgramCostByID @ProgramCostID
-GO
 
 EXEC CountProgramCost
 GO

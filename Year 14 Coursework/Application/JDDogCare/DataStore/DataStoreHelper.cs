@@ -28,6 +28,16 @@ namespace DataStore
 
         public void clearAllTables()
         {
+            new ClientDogTable().deleteAll();
+            new WaitingListTable().deleteAll();
+            new PaymentTable().deleteAll();
+            new EnrollmentTable().deleteAll();
+            new ClassTable().deleteAll();
+            new ProgramTable().deleteAll();
+            new ProgramCostTable().deleteAll();
+            new ProgramTypeTable().deleteAll();
+            new StaffTable().deleteAll();
+            new DogTable().deleteAll();
             new ClientTable().deleteAll();
         }
     }
