@@ -19,7 +19,7 @@ namespace DataStoreTest
         [TestInitialize]
         public void deleteAll()
         {
-            new DataStoreHelper().clearAllTables();
+            new DataStoreTableHelper().clearAllTables();
         }
 
         [TestMethod]

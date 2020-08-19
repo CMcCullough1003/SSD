@@ -6,26 +6,21 @@ using System.Data;
 
 namespace DataStore
 {
-    public class DataStoreHelper
+    public class DataStoreTableHelper
     {
-        public SqlConnection createConnection()
-        {
-            string connectionDetails = @"Data Source=.\SQLEXPRESS;Initial Catalog=Dogs;Integrated Security=True";
+        /*
+          Purpose: 
+          Delete all records from the database
 
-            //Create an object that can make a connection to the database server running on your computer. 
-            //Think of this as the bit of string
-            var connection = new SqlConnection(connectionDetails);
+          Parameters: 
+          No parameters
 
-            connection.Open();
+          Return:
+          No return
 
-            return connection;
-        }
-
-        public void closeConnection(SqlConnection connection)
-        {
-            connection.Close();
-        }
-
+          Exceptions:
+          None expected
+      */
         public void clearAllTables()
         {
             new ClientDogTable().deleteAll();

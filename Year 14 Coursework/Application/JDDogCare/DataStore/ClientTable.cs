@@ -8,110 +8,203 @@ namespace DataStore
 {
     public class ClientTable
     {
+
+        /*
+            Purpose: 
+            Creates a new record in the client table
+        
+            Parameters: 
+            ClientModel will be populated, although clientID will have a defualt value of 0
+
+            Return:
+            clientID of the record created
+
+            Exceptions:
+            Logs any exception thrown within the stored procedure and rethrows
+        */
         public int create(ClientModel clientModel)
         {
             int clientID = 0;
             try
             {
-                DataStoreHelper dataStoreHelper = new DataStoreHelper();
+                DataStoreConnectionHelper dataStoreHelper = new DataStoreConnectionHelper();
+
+                //Create connection to database
                 SqlConnection connection = dataStoreHelper.createConnection();
 
+                //Set up the stored procedure and the parameters
                 SqlCommand commandCreate = new SqlCommand("CreateClient");
                 commandCreate.CommandType = System.Data.CommandType.StoredProcedure;
-                commandCreate.Parameters.Add("@ClientID", SqlDbType.Int).Direction = ParameterDirection.Output;
+                commandCreate.Parameters.Add("@ClientID", SqlDbType.Int).Direction = ParameterDirection.Output; //Output parameter that will be returned from this function
                 commandCreate.Parameters.Add("@Name", SqlDbType.VarChar).Value = clientModel.name;
                 commandCreate.Parameters.Add("@Phone", SqlDbType.VarChar).Value = clientModel.phone;
                 commandCreate.Parameters.Add("@Email", SqlDbType.VarChar).Value = clientModel.email;
 
+                //Which connection to execute the command against
                 commandCreate.Connection = connection;
 
-                commandCreate.ExecuteNonQuery();
+                //Execute the command
+                commandCreate.ExecuteNonQuery(); //Used for creating new records
 
-                clientID = Convert.ToInt32(commandCreate.Parameters["@ClientID"].Value);
+                //Handle return values
+                clientID = Convert.ToInt32(commandCreate.Parameters["@ClientID"].Value); //Convert the output value from the SP into an int
 
+                //Close connection to database
                 dataStoreHelper.closeConnection(connection);
 
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception thrown: " + ex.Message);
+                //Log the exception and rethrow
+                Console.WriteLine("Exception thrown create: " + this.GetType().Name + ". <" + ex.Message + ">");
+                throw ex;
             }
 
             return clientID;
         }
 
+        /*
+            Purpose: 
+            Reads a record from the client table
+
+            Parameters: 
+            clientID allows the user to select a specific record
+
+            Return:
+            All information from the selected record
+
+            Exceptions:
+            Logs any exception thrown within the stored procedure and rethrows
+        */
         public ClientModel read(int clientID)
         {
             ClientModel clientModel = new ClientModel();
 
             try
             {
-                DataStoreHelper dataStoreHelper = new DataStoreHelper();
+                DataStoreConnectionHelper dataStoreHelper = new DataStoreConnectionHelper();
+
+                //Create connection to database
                 SqlConnection connection = dataStoreHelper.createConnection();
 
+                //Set up the stored procedure and the parameters
                 SqlCommand commandRead = new SqlCommand("ReadClientByID");
                 commandRead.CommandType = System.Data.CommandType.StoredProcedure;
                 commandRead.Parameters.Add("@ClientID", SqlDbType.Int).Value = clientID;
-                commandRead.Connection = connection;
-                SqlDataReader dataReader = commandRead.ExecuteReader();
 
-                dataReader.Read();
+                //Which connection to execute the command against
+                commandRead.Connection = connection;
+
+                //Execute the command
+                SqlDataReader dataReader = commandRead.ExecuteReader(); //Used for reading records
+
+                //Handle return values
+                dataReader.Read(); //Only expecting one record - Read moves to the first record - Get values from the columns
                 clientModel.id = clientID;
                 clientModel.name = dataReader.GetString(1);
                 clientModel.phone = dataReader.GetString(2);
                 clientModel.email = dataReader.GetString(3);
 
+                //Close connection to database
                 dataStoreHelper.closeConnection(connection);
 
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception thrown: " + ex.Message);
+                //Log the exception and rethrow
+                Console.WriteLine("Exception thrown read: " + this.GetType().Name + ". <" + ex.Message + ">");
+                throw ex;
             }
 
             return clientModel;
         }
 
+        /*
+            Purpose: 
+            Reads all records from the client table
+
+            Parameters: 
+            No parameters
+
+            Return:
+            All information from every record
+
+            Exceptions:
+            Logs any exception thrown within the stored procedure and rethrows
+        */
         public List<ClientModel> readAll()
         {
             List<ClientModel> clients = new List<ClientModel>(); 
 
             try
             {
-                DataStoreHelper dataStoreHelper = new DataStoreHelper();
+                DataStoreConnectionHelper dataStoreHelper = new DataStoreConnectionHelper();
+
+                //Create connection to database
                 SqlConnection connection = dataStoreHelper.createConnection();
 
+                //Set up the stored procedure and the parameters
                 SqlCommand commandRead = new SqlCommand("ReadClients");
                 commandRead.CommandType = System.Data.CommandType.StoredProcedure;
-                commandRead.Connection = connection;
-                SqlDataReader dataReader = commandRead.ExecuteReader();
 
-                while (dataReader.Read())
+                //Which connection to execute the command against
+                commandRead.Connection = connection;
+
+                //Execute the command
+                SqlDataReader dataReader = commandRead.ExecuteReader(); //Used for reading records
+
+                //Handle return values
+                while (dataReader.Read()) //Expecting multiple records - Read moves to the next record - Get values from the columns
                 {
+                    //Create a new client model for every record in the data reader
                     ClientModel clientModel = new ClientModel();
+
+                    //Copy information from the data reader into the new data model
                     clientModel.id = dataReader.GetInt32(0);
                     clientModel.name = dataReader.GetString(1);
                     clientModel.phone = dataReader.GetString(2);
                     clientModel.email = dataReader.GetString(3);
+
+                    //Copy the new model onto the end of the list
+                    clients.Add(clientModel);
                 }
 
+                //Close connection to database
                 dataStoreHelper.closeConnection(connection);
 
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception thrown: " + ex.Message);
+                //Log the exception and rethrow
+                Console.WriteLine("Exception thrown readAll: " + this.GetType().Name + ". <" + ex.Message + ">");
+                throw ex;
             }
 
             return clients;
         }
 
+        /*
+            Purpose: 
+            Updates a record from the client table
+
+            Parameters: 
+            clientID to select a specific record
+
+            Return:
+            No return
+
+            Exceptions:
+            Logs any exception thrown within the stored procedure and rethrows
+        */
         public void update(ClientModel clientModel) {
             try
             {
-                DataStoreHelper dataStoreHelper = new DataStoreHelper();
+                DataStoreConnectionHelper dataStoreHelper = new DataStoreConnectionHelper();
+
+                //Create connection to database
                 SqlConnection connection = dataStoreHelper.createConnection();
 
+                //Set up the stored procedure and the parameters
                 SqlCommand commandCreate = new SqlCommand("UpdateClientByID");
                 commandCreate.CommandType = System.Data.CommandType.StoredProcedure;
                 commandCreate.Parameters.Add("@ClientID", SqlDbType.Int).Value = clientModel.id;
@@ -119,165 +212,163 @@ namespace DataStore
                 commandCreate.Parameters.Add("@Phone", SqlDbType.VarChar).Value = clientModel.phone;
                 commandCreate.Parameters.Add("@Email", SqlDbType.VarChar).Value = clientModel.email;
 
+                //Which connection to execute the command against
                 commandCreate.Connection = connection;
 
-                commandCreate.ExecuteNonQuery();
+                //Execute the command
+                commandCreate.ExecuteNonQuery(); //Used for updating new records
 
+                //Close connection to database
                 dataStoreHelper.closeConnection(connection);
 
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception thrown: " + ex.Message);
+                //Log the exception and rethrow
+                Console.WriteLine("Exception thrown update: " + this.GetType().Name + ". <" + ex.Message + ">");
+                throw ex;
             }
         }
 
+        /*
+            Purpose: 
+            Deletes a record from the client table
+
+            Parameters: 
+            clientID to select a specific record
+
+            Return:
+            No return
+
+            Exceptions:
+            Logs any exception thrown within the stored procedure and rethrows
+        */
         public void delete(int clientID)
         {
             try
             {
-                DataStoreHelper dataStoreHelper = new DataStoreHelper();
+                DataStoreConnectionHelper dataStoreHelper = new DataStoreConnectionHelper();
+
+                //Create connection to database
                 SqlConnection connection = dataStoreHelper.createConnection();
 
+                //Set up the stored procedure and the parameters
                 SqlCommand commandCreate = new SqlCommand("DeleteClientByID");
                 commandCreate.CommandType = System.Data.CommandType.StoredProcedure;
                 commandCreate.Parameters.Add("@ClientID", SqlDbType.Int).Value = clientID;
 
+                //Which connection to execute the command against
                 commandCreate.Connection = connection;
 
-                commandCreate.ExecuteNonQuery();
+                //Execute the command
+                commandCreate.ExecuteNonQuery(); //Used for deleting new records
 
+                //Close connection to database
                 dataStoreHelper.closeConnection(connection);
 
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception thrown: " + ex.Message);
+                //Log the exception and rethrow
+                Console.WriteLine("Exception thrown delete: " + this.GetType().Name + ". <" + ex.Message + ">");
+                throw ex;
             }
         }
+        /*
+            Purpose: 
+            Deletes all record from the client table
 
+            Parameters: 
+            No parameters
+
+            Return:
+            No return
+
+            Exceptions:
+            Logs any exception thrown within the stored procedure and rethrows
+        */
         public void deleteAll()
         {
             try
             {
-                DataStoreHelper dataStoreHelper = new DataStoreHelper();
+                DataStoreConnectionHelper dataStoreHelper = new DataStoreConnectionHelper();
+
+                //Create connection to database
                 SqlConnection connection = dataStoreHelper.createConnection();
 
+                //Set up the stored procedure and the parameters
                 SqlCommand commandCreate = new SqlCommand("DeleteClientAll");
                 commandCreate.CommandType = System.Data.CommandType.StoredProcedure;
 
+                //Which connection to execute the command against
                 commandCreate.Connection = connection;
 
-                commandCreate.ExecuteNonQuery();
+                //Execute the command
+                commandCreate.ExecuteNonQuery(); //Used for deleting new records
 
+                //Close connection to database
                 dataStoreHelper.closeConnection(connection);
 
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception thrown: " + ex.Message);
+                //Log the exception and rethrow
+                Console.WriteLine("Exception thrown deleteAll: " + this.GetType().Name + ". <" + ex.Message + ">");
+                throw ex;
             }
         }
 
+
+        /*
+            Purpose: 
+            Counts the number of records in the client table
+
+            Parameters: 
+            No parameters
+
+            Return:
+            The number of records
+
+            Exceptions:
+            Logs any exception thrown within the stored procedure and rethrows
+        */
         public int count()
         {
             int count = 0;
 
             try
             {
-                DataStoreHelper dataStoreHelper = new DataStoreHelper();
+                DataStoreConnectionHelper dataStoreHelper = new DataStoreConnectionHelper();
+
+                //Create connection to database
                 SqlConnection connection = dataStoreHelper.createConnection();
 
+                //Set up the stored procedure and the parameters
                 SqlCommand commandRead = new SqlCommand("CountClients");
                 commandRead.CommandType = System.Data.CommandType.StoredProcedure;
-                commandRead.Connection = connection;
-                SqlDataReader dataReader = commandRead.ExecuteReader();
 
-                dataReader.Read();
+                //Which connection to execute the command against
+                commandRead.Connection = connection;
+
+                //Execute the command
+                SqlDataReader dataReader = commandRead.ExecuteReader(); //Used for counting records
+
+                //Handle return values
+                dataReader.Read(); //Expecting one record with one column
                 count = dataReader.GetInt32(0);
 
+                //Close connection to database
                 dataStoreHelper.closeConnection(connection);
 
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception thrown: " + ex.Message);
+                //Log the exception and rethrow
+                Console.WriteLine("Exception thrown count: " + this.GetType().Name + ". <" + ex.Message + ">");
+                throw ex;
             }
 
             return count;
         }
     }
 }
-
-
-/*
-using System;
-using System.Windows;
-using System.Data.SqlClient;
-using System.Data;
-
-namespace Database_Connection
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-
-            //Think of your application and the datbase server as using plastic cups and string to communicate.
-            //Your app has a cup that you talk into.
-            //The database has a cup that it uses to listen with.
-            //You need to create the string that connects the two.
-
-            //These are the details for connecting your app to the database server running on your computer
-            //"Data Source=.\SQLEXPRESS". SQLEXPRESS indicates the type of database server. The ".\" means the database server is running on the same computer as the app
-            //"Initial Catalog=SchoolBuilders". This is the name of the database we want to use 
-            string connectionDetails = @"Data Source=.\SQLEXPRESS;Initial Catalog=Dogs;Integrated Security=True";
-
-            //Create an object that can make a connection to the database server running on your computer. 
-            //Think of this as the bit of string
-            var connection = new SqlConnection(connectionDetails);
-
-            try
-            {
-                //Try to open a connection to the database server
-                //Think of this as trying to join the cups with the bit of string
-                connection.Open();
-
-                //Create a command object that can run an sql statement against the database 
-                //Think of this as what you are going to say into the app cup
-                //SqlCommand command = new SqlCommand("Select * from address");
-                SqlCommand command = new SqlCommand("SelectAddress");
-                command.CommandType = System.Data.CommandType.StoredProcedure;
-                command.Parameters.Add("@Postcode", SqlDbType.VarChar).Value = "CCC";
-
-                //It's possible for your app to attempt to connect with many database servers
-                //Think of this as making sure we are sending the right request down the right bit of string
-                command.Connection = connection;
-
-                //Execute the select request
-                //Think of this as sending the request from the app cup down the string. When the response comes back put it into the DataReader 
-                SqlDataReader dataReader = command.ExecuteReader();
-
-                //The response will (hopefully) contain a list of information. Loop down this list until we get to the end
-                while (dataReader.Read())
-                {
-
-                    //GetValue(0) gets the contents of the first column. GetValue(1) gets the contents of the second column. etc
-                    Console.WriteLine("<" + dataReader.GetValue(0) + "> <" + dataReader.GetValue(1) + ">");
-                }
-
-                //Always close the connection to the database when you have finished
-                //The database server has many cups to listen for requests from different computers and users but if they are all busy the next user can't connect.
-                //Think of this as cutting the string and freeing up one of the database servers cups.
-                connection.Close();
-            }
-            catch (Exception ex)
-            {
-                //Uh-oh.
-                //Something went wrong.
-                Console.WriteLine("Exception thrown: " + ex.Message);
-            }
-        }
-    }
-}
-*/
