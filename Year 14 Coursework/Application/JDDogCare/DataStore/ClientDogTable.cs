@@ -12,7 +12,7 @@ namespace DataStore
         {
             try
             {
-                DataStoreHelper dataStoreHelper = new DataStoreHelper();
+                DataStoreConnectionHelper dataStoreHelper = new DataStoreConnectionHelper();
                 SqlConnection connection = dataStoreHelper.createConnection();
 
                 SqlCommand commandCreate = new SqlCommand("DeleteClientDogAll");
