@@ -1,3 +1,6 @@
+/*This script creates all the stored procedures for the client table*/
+
+/*Specifies which database is being used*/
 USE [Dogs]
 GO
 SET ANSI_NULLS ON
@@ -5,6 +8,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
+/*Drop all stored procedures*/
 DROP PROC ReadClients;
 DROP PROC DeleteClientAll;
 DROP PROC CountClients;
@@ -14,6 +18,42 @@ DROP PROC ReadClientByID;
 DROP PROC CreateClient;
 GO
 
+/*Stored Procedures:
+  Name: Createclient
+  Purpose: new record in table 
+  Parameters: data required to create new record 
+  Return: ID of new record
+  
+  Name: ReadclientByID
+  Purpose: Read the record in the table with the specified ID
+  Parameters: ID
+  Return: A cursor with one record
+
+  Name: Readclients
+  Purpose: Read all the records in the table
+  Parameters: None
+  Return: A cursor with multiple records
+
+  Name: UpdateclientByID
+  Purpose: Update the record in the table with the specified ID
+  Parameters: ID and updated values
+  Return: None
+
+  Name: DeleteclientByID
+  Purpose: Delete the record in the table with the specified ID
+  Parameters: ID
+  Return: None
+
+  Name: DeleteclientAll
+  Purpose: Delete all the records in the table
+  Parameters: None
+  Return: None
+
+  Name: Countclient
+  Purpose: Count the number of records in the table
+  Parameters: None
+  Return: Cursor with one row and one column
+*/
 
 CREATE PROC CreateClient(
   @ClientID int output,
@@ -88,7 +128,7 @@ END
 GO
 
 
-/* Executing Stored Procedures */
+/* Testing Stored Procedures 
 
 DECLARE @ClientID int;
 
@@ -112,3 +152,5 @@ EXEC DeleteClientByID @ClientID
 
 EXEC ReadClientByID @ClientID
 GO
+
+*/

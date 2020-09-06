@@ -1,3 +1,6 @@
+/*This script creates all the stored procedures for the payment table*/
+
+/*Specifies which database is being used*/
 USE [Dogs]
 GO
 SET ANSI_NULLS ON
@@ -5,6 +8,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
+/*Drop all stored procedures*/
 DROP PROC ReadPayment;
 DROP PROC DeletePaymentAll;
 DROP PROC CountPayment;
@@ -14,6 +18,42 @@ DROP PROC ReadPaymentByID;
 DROP PROC CreatePayment;
 GO
 
+/*Stored Procedures:
+  Name: Createpayment
+  Purpose: new record in table 
+  Parameters: data required to create new record 
+  Return: ID of new record
+  
+  Name: ReadpaymentByID
+  Purpose: Read the record in the table with the specified ID
+  Parameters: ID
+  Return: A cursor with one record
+
+  Name: Readpayments
+  Purpose: Read all the records in the table
+  Parameters: None
+  Return: A cursor with multiple records
+
+  Name: UpdatepaymentByID
+  Purpose: Update the record in the table with the specified ID
+  Parameters: ID and updated values
+  Return: None
+
+  Name: DeletepaymentByID
+  Purpose: Delete the record in the table with the specified ID
+  Parameters: ID
+  Return: None
+
+  Name: DeletepaymentAll
+  Purpose: Delete all the records in the table
+  Parameters: None
+  Return: None
+
+  Name: Countpayment
+  Purpose: Count the number of records in the table
+  Parameters: None
+  Return: Cursor with one row and one column
+*/
 
 CREATE PROC CreatePayment(
   @PaymentID int output,
@@ -78,7 +118,7 @@ GO
 CREATE PROC CountPayment
 AS
 BEGIN
-	SELECT * FROM Payment
+	SELECT COUNT(*) FROM Payment
 END
 GO
 
@@ -98,7 +138,7 @@ END
 GO
 
 
-/* Executing Stored Procedures */
+/* Testing Stored Procedures 
 
 DECLARE @PaymentID int;
 DECLARE @PaymentDueDate Date
@@ -127,3 +167,5 @@ GO
 
 EXEC CountPayment
 GO
+
+*/

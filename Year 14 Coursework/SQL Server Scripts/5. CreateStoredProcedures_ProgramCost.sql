@@ -1,3 +1,6 @@
+/*This script creates all the stored procedures for the programCost table*/
+
+/*Specifies which database is being used*/
 USE [Dogs]
 GO
 SET ANSI_NULLS ON
@@ -5,6 +8,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
+/*Drop all stored procedures*/
 DROP PROC ReadProgramCost
 DROP PROC DeleteProgramCostAll;
 DROP PROC CountProgramCost;
@@ -14,6 +18,42 @@ DROP PROC ReadProgramCostByID;
 DROP PROC CreateProgramCost;
 GO
 
+/*Stored Procedures:
+  Name: CreateprogramCost
+  Purpose: new record in table 
+  Parameters: data required to create new record 
+  Return: ID of new record
+  
+  Name: ReadprogramCostByID
+  Purpose: Read the record in the table with the specified ID
+  Parameters: ID
+  Return: A cursor with one record
+
+  Name: ReadprogramCosts
+  Purpose: Read all the records in the table
+  Parameters: None
+  Return: A cursor with multiple records
+
+  Name: UpdateprogramCostByID
+  Purpose: Update the record in the table with the specified ID
+  Parameters: ID and updated values
+  Return: None
+
+  Name: DeleteprogramCostByID
+  Purpose: Delete the record in the table with the specified ID
+  Parameters: ID
+  Return: None
+
+  Name: DeleteprogramCostAll
+  Purpose: Delete all the records in the table
+  Parameters: None
+  Return: None
+
+  Name: CountprogramCost
+  Purpose: Count the number of records in the table
+  Parameters: None
+  Return: Cursor with one row and one column
+*/
 
 CREATE PROC CreateProgramCost(
   @ProgramCostID int output,
@@ -70,7 +110,7 @@ GO
 CREATE PROC CountProgramCost
 AS
 BEGIN
-	SELECT * FROM ProgramCost
+	SELECT COUNT(*) FROM ProgramCost
 END
 GO
 
@@ -90,7 +130,7 @@ END
 GO
 
 
-/* Executing Stored Procedures */
+/* Testing Stored Procedures 
 
 DECLARE @ProgramCostID int;
 
@@ -114,3 +154,5 @@ EXEC ReadProgramCostByID @ProgramCostID
 
 EXEC CountProgramCost
 GO
+
+*/

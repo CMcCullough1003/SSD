@@ -8,7 +8,6 @@ namespace DataStore
 {
     public class ClientTable
     {
-
         /*
             Purpose: 
             Creates a new record in the client table
@@ -100,10 +99,7 @@ namespace DataStore
 
                 //Handle return values
                 dataReader.Read(); //Only expecting one record - Read moves to the first record - Get values from the columns
-                clientModel.id = clientID;
-                clientModel.name = dataReader.GetString(1);
-                clientModel.phone = dataReader.GetString(2);
-                clientModel.email = dataReader.GetString(3);
+                clientModel = convertCursorRecordToModel(dataReader);
 
                 //Close connection to database
                 dataStoreHelper.closeConnection(connection);
@@ -160,10 +156,7 @@ namespace DataStore
                     ClientModel clientModel = new ClientModel();
 
                     //Copy information from the data reader into the new data model
-                    clientModel.id = dataReader.GetInt32(0);
-                    clientModel.name = dataReader.GetString(1);
-                    clientModel.phone = dataReader.GetString(2);
-                    clientModel.email = dataReader.GetString(3);
+                    clientModel = convertCursorRecordToModel(dataReader);
 
                     //Copy the new model onto the end of the list
                     clients.Add(clientModel);
@@ -181,6 +174,63 @@ namespace DataStore
             }
 
             return clients;
+        }
+
+        /*
+            Purpose: 
+            Counts the number of records in the client table
+
+            Parameters: 
+            No parameters
+
+            Return:
+            The number of records
+
+            Exceptions:
+            Logs any exception thrown within the stored procedure and rethrows
+        */
+
+        public int count()
+        {
+            int count = 0;
+
+            try
+            {
+                DataStoreConnectionHelper dataStoreHelper = new DataStoreConnectionHelper();
+
+                //Create connection to database
+                SqlConnection connection = dataStoreHelper.createConnection();
+
+                //Set up the stored procedure and the parameters
+                SqlCommand commandRead = new SqlCommand("CountClients");
+                commandRead.CommandType = System.Data.CommandType.StoredProcedure;
+
+                //Which connection to execute the command against
+                commandRead.Connection = connection;
+
+                //Execute the command
+                SqlDataReader dataReader = commandRead.ExecuteReader(); //Used for counting records
+
+                //Only overwrite defualt when record is returned
+                if (dataReader.HasRows == true)
+                {
+                    //Handle return values
+                    dataReader.Read(); //Expecting one record with one column
+                    count = dataReader.GetInt32(0);
+                }
+
+                //Close connection to database
+                dataStoreHelper.closeConnection(connection);
+
+            }
+            catch (Exception ex)
+            {
+                //Log the exception and rethrow
+                Console.WriteLine("Exception thrown count: " + this.GetType().Name + ". <" + ex.Message + ">");
+                throw ex;
+            }
+
+            return count;
         }
 
         /*
@@ -274,6 +324,7 @@ namespace DataStore
                 throw ex;
             }
         }
+
         /*
             Purpose: 
             Deletes all record from the client table
@@ -317,58 +368,16 @@ namespace DataStore
                 throw ex;
             }
         }
-
-
-        /*
-            Purpose: 
-            Counts the number of records in the client table
-
-            Parameters: 
-            No parameters
-
-            Return:
-            The number of records
-
-            Exceptions:
-            Logs any exception thrown within the stored procedure and rethrows
-        */
-        public int count()
+        private ClientModel convertCursorRecordToModel(SqlDataReader dataReader)
         {
-            int count = 0;
+            ClientModel clientModel = new ClientModel();
 
-            try
-            {
-                DataStoreConnectionHelper dataStoreHelper = new DataStoreConnectionHelper();
+            clientModel.id = dataReader.GetInt32(0);
+            clientModel.name = dataReader.GetString(1);
+            clientModel.phone = dataReader.GetString(2);
+            clientModel.email = dataReader.GetString(3);
 
-                //Create connection to database
-                SqlConnection connection = dataStoreHelper.createConnection();
-
-                //Set up the stored procedure and the parameters
-                SqlCommand commandRead = new SqlCommand("CountClients");
-                commandRead.CommandType = System.Data.CommandType.StoredProcedure;
-
-                //Which connection to execute the command against
-                commandRead.Connection = connection;
-
-                //Execute the command
-                SqlDataReader dataReader = commandRead.ExecuteReader(); //Used for counting records
-
-                //Handle return values
-                dataReader.Read(); //Expecting one record with one column
-                count = dataReader.GetInt32(0);
-
-                //Close connection to database
-                dataStoreHelper.closeConnection(connection);
-
-            }
-            catch (Exception ex)
-            {
-                //Log the exception and rethrow
-                Console.WriteLine("Exception thrown count: " + this.GetType().Name + ". <" + ex.Message + ">");
-                throw ex;
-            }
-
-            return count;
+            return clientModel;
         }
     }
 }

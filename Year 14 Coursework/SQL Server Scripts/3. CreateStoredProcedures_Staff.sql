@@ -1,3 +1,6 @@
+/*This script creates all the stored procedures for the staff table*/
+
+/*Specifies which database is being used*/
 USE [Dogs]
 GO
 SET ANSI_NULLS ON
@@ -5,6 +8,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
+/*Drop all stored procedures*/
 DROP PROC ReadStaff;
 DROP PROC DeleteStaffAll;
 DROP PROC CountStaff;
@@ -14,6 +18,42 @@ DROP PROC ReadStaffByID;
 DROP PROC CreateStaff;
 GO
 
+/*Stored Procedures:
+  Name: Createstaff
+  Purpose: new record in table 
+  Parameters: data required to create new record 
+  Return: ID of new record
+  
+  Name: ReadstaffByID
+  Purpose: Read the record in the table with the specified ID
+  Parameters: ID
+  Return: A cursor with one record
+
+  Name: Readstaffs
+  Purpose: Read all the records in the table
+  Parameters: None
+  Return: A cursor with multiple records
+
+  Name: UpdatestaffByID
+  Purpose: Update the record in the table with the specified ID
+  Parameters: ID and updated values
+  Return: None
+
+  Name: DeletestaffByID
+  Purpose: Delete the record in the table with the specified ID
+  Parameters: ID
+  Return: None
+
+  Name: DeletestaffAll
+  Purpose: Delete all the records in the table
+  Parameters: None
+  Return: None
+
+  Name: Countstaff
+  Purpose: Count the number of records in the table
+  Parameters: None
+  Return: Cursor with one row and one column
+*/
 
 CREATE PROC CreateStaff(
   @StaffID int output,
@@ -63,7 +103,7 @@ GO
 CREATE PROC CountStaff
 AS
 BEGIN
-	SELECT * FROM Staff
+	SELECT COUNT(*) FROM Staff
 END
 GO
 
@@ -84,7 +124,7 @@ END
 GO
 
 
-/* Executing Stored Procedures */
+/* Testing Stored Procedures 
 
 DECLARE @StaffID int;
 
@@ -106,3 +146,5 @@ EXEC DeleteStaffByID @StaffID
 
 EXEC ReadStaffByID @StaffID
 GO
+
+*/

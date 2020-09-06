@@ -1,3 +1,6 @@
+/*This script creates all the stored procedures for the programType table*/
+
+/*Specifies which database is being used*/
 USE [Dogs]
 GO
 SET ANSI_NULLS ON
@@ -5,6 +8,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
+/*Drop all stored procedures*/
 DROP PROC ReadProgramType;
 DROP PROC DeleteProgramTypeAll;
 DROP PROC CountProgramType;
@@ -14,6 +18,42 @@ DROP PROC ReadProgramTypeByID;
 DROP PROC CreateProgramType;
 GO
 
+/*Stored Procedures:
+  Name: CreateprogramType
+  Purpose: new record in table 
+  Parameters: data required to create new record 
+  Return: ID of new record
+  
+  Name: ReadprogramTypeByID
+  Purpose: Read the record in the table with the specified ID
+  Parameters: ID
+  Return: A cursor with one record
+
+  Name: ReadprogramTypes
+  Purpose: Read all the records in the table
+  Parameters: None
+  Return: A cursor with multiple records
+
+  Name: UpdateprogramTypeByID
+  Purpose: Update the record in the table with the specified ID
+  Parameters: ID and updated values
+  Return: None
+
+  Name: DeleteprogramTypeByID
+  Purpose: Delete the record in the table with the specified ID
+  Parameters: ID
+  Return: None
+
+  Name: DeleteprogramTypeAll
+  Purpose: Delete all the records in the table
+  Parameters: None
+  Return: None
+
+  Name: CountprogramType
+  Purpose: Count the number of records in the table
+  Parameters: None
+  Return: Cursor with one row and one column
+*/
 
 CREATE PROC CreateProgramType(
   @ProgramTypeID int output,
@@ -63,7 +103,7 @@ GO
 CREATE PROC CountProgramType
 AS
 BEGIN
-	SELECT * FROM ProgramType
+	SELECT COUNT(*) FROM ProgramType
 END
 GO
 
@@ -83,7 +123,7 @@ END
 GO
 
 
-/* Executing Stored Procedures */
+/* Testing Stored Procedures 
 
 DECLARE @ProgramTypeID int;
 
@@ -107,3 +147,5 @@ EXEC ReadProgramTypeByID @ProgramTypeID
 
 EXEC CountProgramType
 GO
+
+*/

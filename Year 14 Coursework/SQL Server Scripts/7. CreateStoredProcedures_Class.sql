@@ -1,3 +1,6 @@
+/*This script creates all the stored procedures for the class table*/
+
+/*Specifies which database is being used*/
 USE [Dogs]
 GO
 SET ANSI_NULLS ON
@@ -5,6 +8,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
+/*Drop all stored procedures*/
 DROP PROC ReadClass;
 DROP PROC DeleteClassAll;
 DROP PROC CountClass;
@@ -14,6 +18,42 @@ DROP PROC ReadClassByID;
 DROP PROC CreateClass;
 GO
 
+/*Stored Procedures:
+  Name: Createclass
+  Purpose: new record in table 
+  Parameters: data required to create new record 
+  Return: ID of new record
+  
+  Name: ReadclassByID
+  Purpose: Read the record in the table with the specified ID
+  Parameters: ID
+  Return: A cursor with one record
+
+  Name: Readclasss
+  Purpose: Read all the records in the table
+  Parameters: None
+  Return: A cursor with multiple records
+
+  Name: UpdateclassByID
+  Purpose: Update the record in the table with the specified ID
+  Parameters: ID and updated values
+  Return: None
+
+  Name: DeleteclassByID
+  Purpose: Delete the record in the table with the specified ID
+  Parameters: ID
+  Return: None
+
+  Name: DeleteclassAll
+  Purpose: Delete all the records in the table
+  Parameters: None
+  Return: None
+
+  Name: Countclass
+  Purpose: Count the number of records in the table
+  Parameters: None
+  Return: Cursor with one row and one column
+*/
 
 CREATE PROC CreateClass(
   @ClassID int output,
@@ -76,7 +116,7 @@ GO
 CREATE PROC CountClass
 AS
 BEGIN
-	SELECT * FROM Class
+	SELECT COUNT(*) FROM Class
 END
 GO
 
@@ -97,7 +137,7 @@ END
 GO
 
 
-/* Executing Stored Procedures */
+/* Testing Stored Procedures 
 
 DECLARE @ClassID int;
 DECLARE @ClassDate Date
@@ -127,3 +167,6 @@ GO
 
 EXEC CountClass
 GO
+
+*/
+

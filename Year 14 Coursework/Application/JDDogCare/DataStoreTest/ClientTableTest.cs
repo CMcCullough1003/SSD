@@ -44,6 +44,7 @@ namespace DataStoreTest
             clientModel.name = "Bob";
             clientModel.phone = "07561 101169";
             clientModel.email = "bob@gmail.com";
+            //If created will be greater than 0, but we don't know exactly what it will be because deleting all records doesnt set the ID counter back to 0
             int notCreated = 0;
             ClientTable clientTable = new ClientTable();
 

@@ -1,3 +1,6 @@
+/*This script creates all the stored procedures for the waitingList table*/
+
+/*Specifies which database is being used*/
 USE [Dogs]
 GO
 SET ANSI_NULLS ON
@@ -5,6 +8,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
+/*Drop all stored procedures*/
 DROP PROC ReadWaitingList;
 DROP PROC DeleteWaitingListAll;
 DROP PROC CountWaitingList;
@@ -14,6 +18,42 @@ DROP PROC ReadWaitingListByID;
 DROP PROC CreateWaitingList;
 GO
 
+/*Stored Procedures:
+  Name: CreatewaitingList
+  Purpose: new record in table 
+  Parameters: data required to create new record 
+  Return: ID of new record
+  
+  Name: ReadwaitingListByID
+  Purpose: Read the record in the table with the specified ID
+  Parameters: ID
+  Return: A cursor with one record
+
+  Name: ReadwaitingLists
+  Purpose: Read all the records in the table
+  Parameters: None
+  Return: A cursor with multiple records
+
+  Name: UpdatewaitingListByID
+  Purpose: Update the record in the table with the specified ID
+  Parameters: ID and updated values
+  Return: None
+
+  Name: DeletewaitingListByID
+  Purpose: Delete the record in the table with the specified ID
+  Parameters: ID
+  Return: None
+
+  Name: DeletewaitingListAll
+  Purpose: Delete all the records in the table
+  Parameters: None
+  Return: None
+
+  Name: CountwaitingList
+  Purpose: Count the number of records in the table
+  Parameters: None
+  Return: Cursor with one row and one column
+*/
 
 CREATE PROC CreateWaitingList(
   @WaitingListID int output,
@@ -76,7 +116,7 @@ GO
 CREATE PROC CountWaitingList
 AS
 BEGIN
-	SELECT * FROM WaitingList
+	SELECT COUNT(*) FROM WaitingList
 END
 GO
 
@@ -96,7 +136,7 @@ BEGIN
 END
 GO
 
-/* Executing Stored Procedures */
+/* Testing Stored Procedures
 
 DECLARE @WaitingListID int;
 DECLARE @WLJoinDate Date
@@ -116,10 +156,12 @@ EXEC UpdateWaitingListByID @WaitingListID, 21, 4, 9, @WLJoinDate, 1
 
 EXEC ReadWaitingListByID @WaitingListID
 
-/* EXEC DeleteWaitingListByID @WaitingListID */
+EXEC DeleteWaitingListByID @WaitingListID
 
 EXEC ReadWaitingListByID @WaitingListID
 GO
 
 EXEC CountWaitingList
 GO
+
+*/

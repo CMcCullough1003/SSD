@@ -1,3 +1,6 @@
+/*This script creates all the tables for the dog training database*/
+
+/*Specifies which database is being used*/
 USE [Dogs]
 GO
 SET ANSI_NULLS ON
@@ -5,10 +8,13 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
+/*Drop all tables
+  Have to be dropped in this order because tables with foreign keys must be 
+  deleted before the table from which the foreign key comes from
+*/
 DROP TABLE WaitingList;
 DROP TABLE Payment;
 DROP TABLE Enrollment;
-DROP TABLE ClientDog;
 DROP TABLE Class;
 DROP TABLE Program;
 DROP TABLE ProgramCost;
@@ -17,6 +23,9 @@ DROP TABLE Staff;
 DROP TABLE Dog;
 DROP TABLE Client;
 
+/*Create all the tables
+  Have to be created in this order so that the tables that use foreign keys are later
+*/
 CREATE TABLE Client (
 	ClientID int IDENTITY(1,1) PRIMARY KEY,
 	Name varchar(100) CHECK (Len(Name) >= 3) NOT NULL,
@@ -27,6 +36,7 @@ CREATE TABLE Client (
 
 CREATE TABLE Dog (
 	DogID int IDENTITY(1,1) PRIMARY KEY,
+	ClientID int FOREIGN KEY REFERENCES Client(ClientID),
 	Name varchar(100) NOT NULL,
 	RegularQualificationAchieved bit DEFAULT 0 NOT NULL,
 	ExperienceForAdvancedProgram bit DEFAULT 0 NOT NULL,
@@ -66,12 +76,6 @@ CREATE TABLE Class (
 	StartTime time NOT NULL,
 	EndTime time NOT NULL
 )
-
-CREATE TABLE ClientDog (
-	ClientID int FOREIGN KEY REFERENCES Client(ClientID),
-	DogID int FOREIGN KEY REFERENCES Dog(DogID)
-)	
-
 
 CREATE TABLE Enrollment (
 	EnrollmentID int IDENTITY(1,1) PRIMARY KEY,

@@ -1,3 +1,6 @@
+/*This script creates all the stored procedures for the dog table*/
+
+/*Specifies which database is being used*/
 USE [Dogs]
 GO
 SET ANSI_NULLS ON
@@ -5,6 +8,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
+/*Drop all stored procedures*/
 DROP PROC ReadDogs;
 DROP PROC DeleteDogAll;
 DROP PROC CountDog;
@@ -14,17 +18,54 @@ DROP PROC ReadDogByID;
 DROP PROC CreateDog;
 GO
 
+/*Stored Procedures:
+  Name: Createdog
+  Purpose: new record in table 
+  Parameters: data required to create new record 
+  Return: ID of new record
+  
+  Name: ReaddogByID
+  Purpose: Read the record in the table with the specified ID
+  Parameters: ID
+  Return: A cursor with one record
+
+  Name: Readdogs
+  Purpose: Read all the records in the table
+  Parameters: None
+  Return: A cursor with multiple records
+
+  Name: UpdatedogByID
+  Purpose: Update the record in the table with the specified ID
+  Parameters: ID and updated values
+  Return: None
+
+  Name: DeletedogByID
+  Purpose: Delete the record in the table with the specified ID
+  Parameters: ID
+  Return: None
+
+  Name: DeletedogAll
+  Purpose: Delete all the records in the table
+  Parameters: None
+  Return: None
+
+  Name: Countdog
+  Purpose: Count the number of records in the table
+  Parameters: None
+  Return: Cursor with one row and one column
+*/
 
 CREATE PROC CreateDog(
   @DogID int output,
+  @ClientID int,
   @Name varchar(100),
   @RegularQualificationAchieved bit,
   @ExperienceForAdvancedProgram bit,
   @Experience text
 ) AS
 BEGIN
-    INSERT INTO Dog(Name, RegularQualificationAchieved, ExperienceForAdvancedProgram, Experience)
-    VALUES (@Name, @RegularQualificationAchieved, @ExperienceForAdvancedProgram, @Experience);
+    INSERT INTO Dog(ClientID, Name, RegularQualificationAchieved, ExperienceForAdvancedProgram, Experience)
+    VALUES (@ClientID, @Name, @RegularQualificationAchieved, @ExperienceForAdvancedProgram, @Experience);
 
     SET @DogID = SCOPE_IDENTITY();
 END
@@ -43,6 +84,7 @@ GO
 
 CREATE PROC UpdateDogByID(
 	@DogID int,
+	@ClientID int,
 	@Name varchar(100),
 	@RegularQualificationAchieved bit,
 	@ExperienceForAdvancedProgram bit,
@@ -51,6 +93,7 @@ CREATE PROC UpdateDogByID(
 BEGIN
 	UPDATE Dog
 	SET Name = @Name,
+		ClientID = @ClientID,
 		RegularQualificationAchieved = @RegularQualificationAchieved,
 		ExperienceForAdvancedProgram = @ExperienceForAdvancedProgram,
 		Experience = @Experience
@@ -72,7 +115,7 @@ GO
 CREATE PROC CountDog
 AS
 BEGIN
-	SELECT * FROM Dog
+	SELECT COUNT(*) FROM Dog
 END
 GO
 
@@ -93,7 +136,7 @@ END
 GO
 
 
-/* Executing Stored Procedures */
+/* Testing Stored Procedures 
 
 DECLARE @DogID int;
 
@@ -120,3 +163,5 @@ EXEC ReadDogByID @DogID
 
 SELECT * FROM Dog
 GO
+
+*/
