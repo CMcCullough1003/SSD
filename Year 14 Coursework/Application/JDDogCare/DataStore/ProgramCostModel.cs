@@ -9,6 +9,6 @@ namespace DataStore
         public int id = 0;
         public double depositAmount = 0.0;
         public double sessionCost = 0.0;
-        public int fullPaymentPercentageDiscount = 0;
+        public double fullPaymentPercentageDiscount = 0;
     }
 }

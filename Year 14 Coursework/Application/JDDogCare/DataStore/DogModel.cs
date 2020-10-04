@@ -9,8 +9,8 @@ namespace DataStore
         public int id = 0;
         public int clientID = 0;
         public string name = "";
-        public bool regularQualificationAchieved = false;
-        public bool experienceForAdvancedProgram = false;
-        public string experience = "";
+        public int age = 0;
+        public string breed = "";
+        public bool experienceOrQualification = false;
     }
 }

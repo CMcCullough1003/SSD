@@ -37,9 +37,9 @@ namespace DataStore
                 commandCreate.Parameters.Add("@DogID", SqlDbType.Int).Direction = ParameterDirection.Output; //Output parameter that will be returned from this function
                 commandCreate.Parameters.Add("@ClientID", SqlDbType.Int).Value = dogModel.clientID;
                 commandCreate.Parameters.Add("@Name", SqlDbType.VarChar).Value = dogModel.name;
-                commandCreate.Parameters.Add("@RegularQualificationAchieved", SqlDbType.Bit).Value = dogModel.regularQualificationAchieved;
-                commandCreate.Parameters.Add("@ExperienceForAdvancedProgram", SqlDbType.Bit).Value = dogModel.experienceForAdvancedProgram;
-                commandCreate.Parameters.Add("@Experience", SqlDbType.Text).Value = dogModel.experience;
+                commandCreate.Parameters.Add("@Age", SqlDbType.Int).Value = dogModel.age;
+                commandCreate.Parameters.Add("@Breed", SqlDbType.VarChar).Value = dogModel.breed;
+                commandCreate.Parameters.Add("@ExperienceOrQualification", SqlDbType.Bit).Value = dogModel.experienceOrQualification;
 
                 //Which connection to execute the command against
                 commandCreate.Connection = connection;
@@ -263,9 +263,9 @@ namespace DataStore
                 commandCreate.Parameters.Add("@DogID", SqlDbType.Int).Value = dogModel.id;
                 commandCreate.Parameters.Add("@ClientID", SqlDbType.Int).Value = dogModel.clientID;
                 commandCreate.Parameters.Add("@Name", SqlDbType.VarChar).Value = dogModel.name;
-                commandCreate.Parameters.Add("@RegularQualificationAchieved", SqlDbType.Bit).Value = dogModel.regularQualificationAchieved;
-                commandCreate.Parameters.Add("@ExperienceForAdvancedProgram", SqlDbType.Bit).Value = dogModel.experienceForAdvancedProgram;
-                commandCreate.Parameters.Add("@Experience", SqlDbType.Text).Value = dogModel.experience;
+                commandCreate.Parameters.Add("@Age", SqlDbType.Int).Value = dogModel.age;
+                commandCreate.Parameters.Add("@Breed", SqlDbType.VarChar).Value = dogModel.breed;
+                commandCreate.Parameters.Add("@ExperienceOrQualification", SqlDbType.Bit).Value = dogModel.experienceOrQualification;
 
                 //Which connection to execute the command against
                 commandCreate.Connection = connection;
@@ -373,9 +373,9 @@ namespace DataStore
             dogModel.id = dataReader.GetInt32(0);
             dogModel.clientID = dataReader.GetInt32(1);
             dogModel.name = dataReader.GetString(2);
-            dogModel.regularQualificationAchieved = dataReader.GetBoolean(3);
-            dogModel.experienceForAdvancedProgram = dataReader.GetBoolean(4);
-            dogModel.experience = dataReader.GetString(5);
+            dogModel.age = dataReader.GetInt32(3);
+            dogModel.breed = dataReader.GetString(4);
+            dogModel.experienceOrQualification = dataReader.GetBoolean(5);
 
             return dogModel;
         }
