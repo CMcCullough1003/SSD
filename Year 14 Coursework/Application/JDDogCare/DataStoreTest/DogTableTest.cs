@@ -20,11 +20,17 @@ namespace DataStoreTest
         private int clientId = 0;
 
         [TestInitialize]
-        public void deleteAll()
+        public void Setup()
         {
             new DataStoreTableHelper().clearAllTables();
 
             ClientModel clientModel = new ClientModel();
+            clientModel.name = "Bob";
+            clientModel.phone = "1234567890";
+            clientModel.email = "A@B.com";
+
+            ClientTable clientTable = new ClientTable();
+            clientId = clientTable.create(clientModel);
         }
 
         [TestMethod]
@@ -46,9 +52,11 @@ namespace DataStoreTest
         {
             //Assemble
             DogModel dogModel = new DogModel();
-            dogModel.name = "Bob";
-            dogModel.phone = "07561 101169";
-            dogModel.email = "bob@gmail.com";
+            dogModel.name = "Ted";
+            dogModel.clientID = clientId;
+            dogModel.age = 8;
+            dogModel.breed = "Shi Tzu";
+            dogModel.experienceOrQualification = false;
             //If created will be greater than 0, but we don't know exactly what it will be because deleting all records doesnt set the ID counter back to 0
             int notCreated = 0;
             DogTable dogTable = new DogTable();
@@ -65,9 +73,11 @@ namespace DataStoreTest
         {
             //Assemble
             DogModel dogModel = new DogModel();
-            dogModel.name = "Bob";
-            dogModel.phone = "07561 101169";
-            dogModel.email = "bob@gmail.com";
+            dogModel.name = "Ted";
+            dogModel.clientID = clientId;
+            dogModel.age = 8;
+            dogModel.breed = "Shi Tzu";
+            dogModel.experienceOrQualification = false;
             int expected = 1;
             DogTable dogTable = new DogTable();
 
@@ -84,9 +94,11 @@ namespace DataStoreTest
         {
             //Assemble
             DogModel dogModel = new DogModel();
-            dogModel.name = "Bob";
-            dogModel.phone = "07561 101169";
-            dogModel.email = "bob@gmail.com";
+            dogModel.name = "Ted";
+            dogModel.clientID = clientId;
+            dogModel.age = 8;
+            dogModel.breed = "Shi Tzu";
+            dogModel.experienceOrQualification = false;
             DogTable dogTable = new DogTable();
 
             //Act
@@ -95,8 +107,10 @@ namespace DataStoreTest
 
             //Assert
             Assert.AreEqual(dogModel.name, actual.name);
-            Assert.AreEqual(dogModel.phone, actual.phone);
-            Assert.AreEqual(dogModel.email, actual.email);
+            Assert.AreEqual(dogModel.clientID, actual.clientID);
+            Assert.AreEqual(dogModel.age, actual.age);
+            Assert.AreEqual(dogModel.breed, actual.breed);
+            Assert.AreEqual(dogModel.experienceOrQualification, actual.experienceOrQualification);
         }
 
         [TestMethod]
@@ -104,19 +118,25 @@ namespace DataStoreTest
         {
             //Assemble
             DogModel dogModel1 = new DogModel();
-            dogModel1.name = "Bob";
-            dogModel1.phone = "07561 101169";
-            dogModel1.email = "bob@gmail.com";
+            dogModel1.name = "Ted";
+            dogModel1.clientID = clientId;
+            dogModel1.age = 8;
+            dogModel1.breed = "Shi Tzu";
+            dogModel1.experienceOrQualification = false;
 
             DogModel dogModel2 = new DogModel();
-            dogModel2.name = "Bob2";
-            dogModel2.phone = "07561 101169";
-            dogModel2.email = "bob@gmail.com";
+            dogModel2.name = "Ted 2";
+            dogModel2.clientID = clientId;
+            dogModel2.age = 82;
+            dogModel2.breed = "Shi Tzu 2";
+            dogModel2.experienceOrQualification = true;
 
             DogModel dogModel3 = new DogModel();
-            dogModel3.name = "Bob3";
-            dogModel3.phone = "07561 101169";
-            dogModel3.email = "bob@gmail.com";
+            dogModel3.name = "Ted 3";
+            dogModel3.clientID = clientId;
+            dogModel3.age = 83;
+            dogModel3.breed = "Shi Tzu 3";
+            dogModel3.experienceOrQualification = false;
 
             DogTable dogTable = new DogTable();
             int expected = 3;
@@ -136,19 +156,25 @@ namespace DataStoreTest
         {
             //Assemble
             DogModel dogModel1 = new DogModel();
-            dogModel1.name = "name1";
-            dogModel1.phone = "07561 101169";
-            dogModel1.email = "email1@x.com";
+            dogModel1.name = "Ted";
+            dogModel1.clientID = clientId;
+            dogModel1.age = 8;
+            dogModel1.breed = "Shi Tzu";
+            dogModel1.experienceOrQualification = false;
 
             DogModel dogModel2 = new DogModel();
-            dogModel2.name = "name2";
-            dogModel2.phone = "07561 101170";
-            dogModel2.email = "email2@x.com";
+            dogModel2.name = "Ted 2";
+            dogModel2.clientID = clientId;
+            dogModel2.age = 82;
+            dogModel2.breed = "Shi Tzu 2";
+            dogModel2.experienceOrQualification = true;
 
             DogModel dogModel3 = new DogModel();
-            dogModel3.name = "name3";
-            dogModel3.phone = "07561 101171";
-            dogModel3.email = "email3@x.com";
+            dogModel3.name = "Ted 3";
+            dogModel3.clientID = clientId;
+            dogModel3.age = 83;
+            dogModel3.breed = "Shi Tzu 3";
+            dogModel3.experienceOrQualification = false;
 
             DogTable dogTable = new DogTable();
 
@@ -161,18 +187,24 @@ namespace DataStoreTest
             //Assert
             Assert.AreEqual(dogID1, dogID1);
             Assert.AreEqual(dogModel1.name, actual[0].name);
-            Assert.AreEqual(dogModel1.phone, actual[0].phone);
-            Assert.AreEqual(dogModel1.email, actual[0].email);
+            Assert.AreEqual(dogModel1.clientID, actual[0].clientID);
+            Assert.AreEqual(dogModel1.age, actual[0].age);
+            Assert.AreEqual(dogModel1.breed, actual[0].breed);
+            Assert.AreEqual(dogModel1.experienceOrQualification, actual[0].experienceOrQualification);
 
             Assert.AreEqual(dogID2, dogID2);
             Assert.AreEqual(dogModel2.name, actual[1].name);
-            Assert.AreEqual(dogModel2.phone, actual[1].phone);
-            Assert.AreEqual(dogModel2.email, actual[1].email);
+            Assert.AreEqual(dogModel2.clientID, actual[1].clientID);
+            Assert.AreEqual(dogModel2.age, actual[1].age);
+            Assert.AreEqual(dogModel2.breed, actual[1].breed);
+            Assert.AreEqual(dogModel2.experienceOrQualification, actual[1].experienceOrQualification);
 
             Assert.AreEqual(dogID3, dogID3);
             Assert.AreEqual(dogModel3.name, actual[2].name);
-            Assert.AreEqual(dogModel3.phone, actual[2].phone);
-            Assert.AreEqual(dogModel3.email, actual[2].email);
+            Assert.AreEqual(dogModel3.clientID, actual[2].clientID);
+            Assert.AreEqual(dogModel3.age, actual[2].age);
+            Assert.AreEqual(dogModel3.breed, actual[2].breed);
+            Assert.AreEqual(dogModel3.experienceOrQualification, actual[2].experienceOrQualification);
         }
 
         [TestMethod]
@@ -180,15 +212,19 @@ namespace DataStoreTest
         {
             //Assemble
             DogModel dogModel = new DogModel();
-            dogModel.name = "Bob";
-            dogModel.phone = "07561 101169";
-            dogModel.email = "bob@gmail.com";
+            dogModel.name = "Ted";
+            dogModel.clientID = clientId;
+            dogModel.age = 8;
+            dogModel.breed = "Shi Tzu";
+            dogModel.experienceOrQualification = false;
             DogTable dogTable = new DogTable();
             int dogID = dogTable.create(dogModel);
             dogModel.id = dogID;
-            dogModel.name = "Kate";
-            dogModel.phone = "07561 101170";
-            dogModel.email = "kate@gmail.com";
+            dogModel.clientID = clientId;
+            dogModel.name = "Coco";
+            dogModel.age = 17;
+            dogModel.breed = "Yorkshire Terrier";
+            dogModel.experienceOrQualification = true;
 
             //Act
             dogTable.update(dogModel);
@@ -196,8 +232,10 @@ namespace DataStoreTest
 
             //Assert
             Assert.AreEqual(dogModel.name, actual.name);
-            Assert.AreEqual(dogModel.phone, actual.phone);
-            Assert.AreEqual(dogModel.email, actual.email);
+            Assert.AreEqual(dogModel.clientID, actual.clientID);
+            Assert.AreEqual(dogModel.age, actual.age);
+            Assert.AreEqual(dogModel.breed, actual.breed);
+            Assert.AreEqual(dogModel.experienceOrQualification, actual.experienceOrQualification);
         }
 
         [TestMethod]
@@ -205,9 +243,11 @@ namespace DataStoreTest
         {
             //Assemble
             DogModel dogModel = new DogModel();
-            dogModel.name = "Bob";
-            dogModel.phone = "07561 101169";
-            dogModel.email = "bob@gmail.com";
+            dogModel.name = "Ted";
+            dogModel.clientID = clientId;
+            dogModel.age = 8;
+            dogModel.breed = "Shi Tzu";
+            dogModel.experienceOrQualification = false;
             int expected = 0;
             DogTable dogTable = new DogTable();
             int dogID = dogTable.create(dogModel);
@@ -233,165 +273,6 @@ namespace DataStoreTest
 
             //Assert
             Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod]
-        public void CreateNameConstraint_NameLengthTooShort_Exception()
-        {
-            //Assemble
-            DogTable dogTable = new DogTable();
-            DogModel dogModel = new DogModel();
-            dogModel.name = "Bo";
-            dogModel.phone = "07561 101169";
-            dogModel.email = "bob@gmail.com";
-            int expected = 1;
-            int counter = 0;
-
-            //Act
-            try
-            {
-                int id = dogTable.create(dogModel);
-            }
-            catch (Exception ex)
-            {
-                counter++;
-            }
-
-            //Assert
-            Assert.AreEqual(expected, counter);
-        }
-
-        [TestMethod]
-        public void CreateNameConstraint_NameLengthOk_NoException()
-        {
-            //Assemble
-            DogTable dogTable = new DogTable();
-            DogModel dogModel = new DogModel();
-            dogModel.name = "Bob";
-            dogModel.phone = "07561 101169";
-            dogModel.email = "bob@gmail.com";
-            int expected = 1;
-            int counter = 0;
-
-            //Act
-            try
-            {
-                int id = dogTable.create(dogModel);
-                counter++;
-            }
-            catch (Exception ex)
-            {
-
-            }
-
-            //Assert
-            Assert.AreEqual(expected, counter);
-        }
-
-        [TestMethod]
-        public void CreatePhoneConstraint_PhoneLengthTooShort_Exception()
-        {
-            //Assemble
-            DogTable dogTable = new DogTable();
-            DogModel dogModel = new DogModel();
-            dogModel.name = "Bob";
-            dogModel.phone = "123456789";
-            dogModel.email = "bob@gmail.com";
-            int expected = 1;
-            int counter = 0;
-
-            //Act
-            try
-            {
-                int id = dogTable.create(dogModel);
-            }
-            catch (Exception ex)
-            {
-                counter++;
-            }
-
-            //Assert
-            Assert.AreEqual(expected, counter);
-        }
-
-        [TestMethod]
-        public void CreatePhoneConstraint_PhoneLengthOk_NoException()
-        {
-            //Assemble
-            DogTable dogTable = new DogTable();
-            DogModel dogModel = new DogModel();
-            dogModel.name = "Bob";
-            dogModel.phone = "1234567890";
-            dogModel.email = "bob@gmail.com";
-            int expected = 1;
-            int counter = 0;
-
-            //Act
-            try
-            {
-                int id = dogTable.create(dogModel);
-                counter++;
-            }
-            catch (Exception ex)
-            {
-
-            }
-
-            //Assert
-            Assert.AreEqual(expected, counter);
-        }
-
-        [TestMethod]
-        public void CreateEmailConstraint_EmailLengthTooShort_Exception()
-        {
-            //Assemble
-            DogTable dogTable = new DogTable();
-            DogModel dogModel = new DogModel();
-            dogModel.name = "Bob";
-            dogModel.phone = "1234567890";
-            dogModel.email = "a@b.co";
-            int expected = 1;
-            int counter = 0;
-
-            //Act
-            try
-            {
-                int id = dogTable.create(dogModel);
-            }
-            catch (Exception ex)
-            {
-                counter++;
-            }
-
-            //Assert
-            Assert.AreEqual(expected, counter);
-        }
-
-        [TestMethod]
-        public void CreateEmailConstraint_EmailLengthOk_NoException()
-        {
-            //Assemble
-            DogTable dogTable = new DogTable();
-            DogModel dogModel = new DogModel();
-            dogModel.name = "Bob";
-            dogModel.phone = "1234567890";
-            dogModel.email = "a@b.com";
-            int expected = 1;
-            int counter = 0;
-
-            //Act
-            try
-            {
-                int id = dogTable.create(dogModel);
-                counter++;
-            }
-            catch (Exception ex)
-            {
-
-            }
-
-            //Assert
-            Assert.AreEqual(expected, counter);
         }
     }
 }
