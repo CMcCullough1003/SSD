@@ -84,7 +84,7 @@ CREATE PROC UpdateProgramCostByID(
 	@ProgramCostID int,
 	@DepositAmount float,
 	@SessionCost float,
-	@FullPaymentPercentageDiscount int
+	@FullPaymentPercentageDiscount float
 ) AS
 BEGIN
 	UPDATE ProgramCost

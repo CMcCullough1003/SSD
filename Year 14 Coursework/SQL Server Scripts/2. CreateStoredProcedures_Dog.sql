@@ -59,13 +59,13 @@ CREATE PROC CreateDog(
   @DogID int output,
   @ClientID int,
   @Name varchar(100),
-  @RegularQualificationAchieved bit,
-  @ExperienceForAdvancedProgram bit,
-  @Experience text
+  @Age int,
+  @Breed varchar(100),
+  @ExperienceOrQualification bit
 ) AS
 BEGIN
-    INSERT INTO Dog(ClientID, Name, RegularQualificationAchieved, ExperienceForAdvancedProgram, Experience)
-    VALUES (@ClientID, @Name, @RegularQualificationAchieved, @ExperienceForAdvancedProgram, @Experience);
+    INSERT INTO Dog(ClientID, Name, Age, Breed, ExperienceOrQualification)
+    VALUES (@ClientID, @Name, @Age, @Breed, @ExperienceOrQualification);
 
     SET @DogID = SCOPE_IDENTITY();
 END
@@ -86,17 +86,17 @@ CREATE PROC UpdateDogByID(
 	@DogID int,
 	@ClientID int,
 	@Name varchar(100),
-	@RegularQualificationAchieved bit,
-	@ExperienceForAdvancedProgram bit,
-	@Experience text
+	@Age int,
+    @Breed varchar(100),
+    @ExperienceOrQualification bit
 ) AS
 BEGIN
 	UPDATE Dog
-	SET Name = @Name,
-		ClientID = @ClientID,
-		RegularQualificationAchieved = @RegularQualificationAchieved,
-		ExperienceForAdvancedProgram = @ExperienceForAdvancedProgram,
-		Experience = @Experience
+	SET ClientID = @ClientID, 
+		Name = @Name,
+		Age = @Age,
+		Breed = @Breed,
+		ExperienceOrQualification = @ExperienceOrQualification
 	WHERE DogID = @DogID
 END
 GO
@@ -142,10 +142,11 @@ DECLARE @DogID int;
 
 EXEC CreateDog
   @DogID output,
-  'Ted',
   1,
-  0,
-  'None'
+  'Ted',
+  8,
+  'Dum dum',
+  0
 
 SELECT @DogID 
 
@@ -153,7 +154,7 @@ EXEC ReadDogByID @DogID
 
 EXEC ReadDogs
 
-EXEC UpdateDogByID @DogID, 'Thor', 1, 1, 'Hammers'
+EXEC UpdateDogByID @DogID, 1, 'Thor', 8, 'Dumber', 1
 
 EXEC ReadDogByID @DogID
 

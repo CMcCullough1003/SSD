@@ -38,9 +38,9 @@ CREATE TABLE Dog (
 	DogID int IDENTITY(1,1) PRIMARY KEY,
 	ClientID int FOREIGN KEY REFERENCES Client(ClientID),
 	Name varchar(100) NOT NULL,
-	RegularQualificationAchieved bit DEFAULT 0 NOT NULL,
-	ExperienceForAdvancedProgram bit DEFAULT 0 NOT NULL,
-	Experience text DEFAULT '' NOT NULL
+	Age int NOT NULL,
+	Breed varchar(100) NOT NULL,
+	ExperienceOrQualification bit DEFAULT 0 NOT NULL
 )
 
 CREATE TABLE Staff (
@@ -57,7 +57,7 @@ CREATE TABLE ProgramCost (
 	ProgramCostID int IDENTITY(1,1) PRIMARY KEY,
 	DepositAmount float CHECK (DepositAmount >= 20.0 AND DepositAmount <= 100.0) NOT NULL,
 	SessionCost float CHECK (SessionCost >= 20.0 AND SessionCost <= 100.0) NOT NULL,
-	FullPaymentPercentageDiscount float CHECK (FullPaymentPercentageDiscount >= 0 AND FullPaymentPercentageDiscount <= 100) NOT NULL
+	FullPaymentPercentageDiscount float CHECK (FullPaymentPercentageDiscount >= 0.0 AND FullPaymentPercentageDiscount <= 100.0) NOT NULL
 ) 
 
 CREATE TABLE Program (
