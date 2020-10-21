@@ -9,8 +9,8 @@ namespace DataStore
         public int id = 0;
         public int programId = 0;
         public int staffId = 0;
-        public string classDate = "";
-        public string startTime = "";
-        public string endTime = "";
+        public DateTime classDate = DateTime.MinValue;
+        public TimeSpan startTime = TimeSpan.MinValue;
+        public TimeSpan endTime = TimeSpan.MinValue;
     }
 }

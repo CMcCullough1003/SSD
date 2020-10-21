@@ -34,7 +34,8 @@ namespace DataStore
                 //Set up the stored procedure and the parameters
                 SqlCommand commandCreate = new SqlCommand("CreateClass");
                 commandCreate.CommandType = System.Data.CommandType.StoredProcedure;
-                commandCreate.Parameters.Add("@ClassID", SqlDbType.Int).Direction = ParameterDirection.Output; //Output parameter that will be returned from this function
+                commandCreate.Parameters.Add("@ClassID", SqlDbType.Int).Direction = ParameterDirection.Output; //Output parameter that will be returned from this function   
+                commandCreate.Parameters.Add("@ProgramID", SqlDbType.Int).Value = classModel.programId;
                 commandCreate.Parameters.Add("@StaffID", SqlDbType.Int).Value = classModel.staffId;
                 commandCreate.Parameters.Add("@ClassDate", SqlDbType.Date).Value = classModel.classDate;
                 commandCreate.Parameters.Add("@StartTime", SqlDbType.Time).Value = classModel.startTime;
@@ -141,7 +142,7 @@ namespace DataStore
                 SqlConnection connection = dataStoreHelper.createConnection();
 
                 //Set up the stored procedure and the parameters
-                SqlCommand commandRead = new SqlCommand("ReadClasss");
+                SqlCommand commandRead = new SqlCommand("ReadClass");
                 commandRead.CommandType = System.Data.CommandType.StoredProcedure;
 
                 //Which connection to execute the command against
@@ -259,7 +260,8 @@ namespace DataStore
                 //Set up the stored procedure and the parameters
                 SqlCommand commandCreate = new SqlCommand("UpdateClassByID");
                 commandCreate.CommandType = System.Data.CommandType.StoredProcedure;
-                commandCreate.Parameters.Add("@ClassID", SqlDbType.Int).Value = classModel.id;
+                commandCreate.Parameters.Add("@ClassID", SqlDbType.Int).Value = classModel.id;  
+                commandCreate.Parameters.Add("@ProgramID", SqlDbType.Int).Value = classModel.programId;
                 commandCreate.Parameters.Add("@StaffID", SqlDbType.Int).Value = classModel.staffId;
                 commandCreate.Parameters.Add("@ClassDate", SqlDbType.Date).Value = classModel.classDate;
                 commandCreate.Parameters.Add("@StartTime", SqlDbType.Time).Value = classModel.startTime;
@@ -372,9 +374,9 @@ namespace DataStore
             classModel.id = dataReader.GetInt32(0);
             classModel.programId = dataReader.GetInt32(1);
             classModel.staffId = dataReader.GetInt32(2);
-            classModel.classDate = dataReader.GetString(3);
-            classModel.startTime = dataReader.GetString(4);
-            classModel.endTime = dataReader.GetString(5);
+            classModel.classDate = dataReader.GetDateTime(3);
+            classModel.startTime = dataReader.GetTimeSpan(4);
+            classModel.endTime = dataReader.GetTimeSpan(5);
 
             return classModel;
         }
