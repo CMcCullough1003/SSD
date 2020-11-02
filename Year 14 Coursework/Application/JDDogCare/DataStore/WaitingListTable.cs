@@ -36,10 +36,10 @@ namespace DataStore
                 commandCreate.CommandType = System.Data.CommandType.StoredProcedure;
                 commandCreate.Parameters.Add("@WaitingListID", SqlDbType.Int).Direction = ParameterDirection.Output; //Output parameter that will be returned from this function
                 commandCreate.Parameters.Add("@ClientID", SqlDbType.Int).Value = waitingListModel.clientId;
-                commandCreate.Parameters.Add("@DogID", SqlDbType.Float).Value = waitingListModel.dogId;
-                commandCreate.Parameters.Add("@ProgramTypeID", SqlDbType.Date).Value = waitingListModel.programTypeId;
-                commandCreate.Parameters.Add("@JoinDate", SqlDbType.Int).Value = waitingListModel.joinDate;
-                commandCreate.Parameters.Add("@InviteIssued", SqlDbType.Date).Value = waitingListModel.inviteIssued;
+                commandCreate.Parameters.Add("@DogID", SqlDbType.Int).Value = waitingListModel.dogId;
+                commandCreate.Parameters.Add("@ProgramTypeID", SqlDbType.Int).Value = waitingListModel.programTypeId;
+                commandCreate.Parameters.Add("@JoinDate", SqlDbType.DateTime).Value = waitingListModel.joinDate;
+                commandCreate.Parameters.Add("@InviteIssued", SqlDbType.Bit).Value = waitingListModel.inviteIssued;
 
                 //Which connection to execute the command against
                 commandCreate.Connection = connection;
@@ -262,10 +262,10 @@ namespace DataStore
                 commandCreate.CommandType = System.Data.CommandType.StoredProcedure;
                 commandCreate.Parameters.Add("@WaitingListID", SqlDbType.Int).Value = waitingListModel.id;
                 commandCreate.Parameters.Add("@ClientID", SqlDbType.Int).Value = waitingListModel.clientId;
-                commandCreate.Parameters.Add("@DogID", SqlDbType.Float).Value = waitingListModel.dogId;
-                commandCreate.Parameters.Add("@ProgramTypeID", SqlDbType.Date).Value = waitingListModel.programTypeId;
-                commandCreate.Parameters.Add("@JoinDate", SqlDbType.Int).Value = waitingListModel.joinDate;
-                commandCreate.Parameters.Add("@InviteIssued", SqlDbType.Date).Value = waitingListModel.inviteIssued;
+                commandCreate.Parameters.Add("@DogID", SqlDbType.Int).Value = waitingListModel.dogId;
+                commandCreate.Parameters.Add("@ProgramTypeID", SqlDbType.Int).Value = waitingListModel.programTypeId;
+                commandCreate.Parameters.Add("@JoinDate", SqlDbType.DateTime).Value = waitingListModel.joinDate;
+                commandCreate.Parameters.Add("@InviteIssued", SqlDbType.Bit).Value = waitingListModel.inviteIssued;
 
                 //Which connection to execute the command against
                 commandCreate.Connection = connection;
