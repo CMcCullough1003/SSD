@@ -105,10 +105,10 @@ BEGIN
 END
 GO
 
-CREATE PROC CountClient
+CREATE PROC CountClients
 AS
 BEGIN
-	SELECT * FROM Client
+	SELECT Count(*) FROM Client
 END
 GO
 

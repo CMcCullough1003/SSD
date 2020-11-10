@@ -33,6 +33,26 @@ namespace DataStore
                 return "Description must be either regular or advanced";
             }
 
+            if (exceptionMessage.Contains("CK__ProgramCo__Depos"))
+            {
+                return "Deposit must be between £20 and £100";
+            }
+
+            if (exceptionMessage.Contains("CK__ProgramCo__Sessi"))
+            {
+                return "Session cost must be between £20 and £100";
+            }
+
+            if (exceptionMessage.Contains("CK__ProgramCo__FullP"))
+            {
+                return "Percentage discount must be between 0% and 100%";
+            }
+
+            if (exceptionMessage.Contains("CK__DogSpaceMax__FullP"))
+            {
+                return "Percentage discount must be between 0% and 100%";
+            }
+
             return "Oops! Something has gone wrong. Please contact the system administrator";
 
         }

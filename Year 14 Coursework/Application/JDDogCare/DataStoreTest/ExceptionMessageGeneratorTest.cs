@@ -99,6 +99,51 @@ namespace DataStoreTest
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void MessageGenerator_ProgramCostDeposit_ProgramCostMessage()
+        {
+            //Assemble
+            string expected = "Deposit must be between £20 and £100";
+            ExceptionMessageGenerator exceptionMessageGenerator = new ExceptionMessageGenerator();
+            string exceptionMessage = "shshshshshshCK__ProgramCo__Deposdhdhdhdhdhdh";
+
+            //Act
+            string actual = exceptionMessageGenerator.generateMessage(exceptionMessage);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void MessageGenerator_ProgramCostSessionCost_ProgramCostMessage()
+        {
+            //Assemble
+            string expected = "Session cost must be between £20 and £100";
+            ExceptionMessageGenerator exceptionMessageGenerator = new ExceptionMessageGenerator();
+            string exceptionMessage = "shshshshshshCK__ProgramCo__Sessidhdhdhdhdhdh";
+
+            //Act
+            string actual = exceptionMessageGenerator.generateMessage(exceptionMessage);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void MessageGenerator_ProgramCostFullPaymentPercentageDiscount_ProgramCostMessage()
+        {
+            //Assemble
+            string expected = "Percentage discount must be between 0% and 100%";
+            ExceptionMessageGenerator exceptionMessageGenerator = new ExceptionMessageGenerator();
+            string exceptionMessage = "shshshshshshCK__ProgramCo__FullPdhdhdhdhdhdh";
+
+            //Act
+            string actual = exceptionMessageGenerator.generateMessage(exceptionMessage);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
 
