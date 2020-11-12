@@ -15,11 +15,87 @@ namespace DogCare
         [STAThread]
         static void Main()
         {
+
+            //clear all the records in all the tables
+            new DataStoreTableHelper().clearAllTables();
+
+            //check the tables are empty
             consoleTableCounts();
+
+            //add all the records
+            populateDatabase();
+
+            //check the tables have records
+            consoleTableCounts();
+
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+        }
+
+        private static void populateDatabase() {
+
+            //adding some records to it will be easier to create and update the screens
+
+
+            //add Staff records
+            StaffTable staffTable = new StaffTable();
+
+            StaffModel staffModelBob = new StaffModel();
+            staffModelBob.name = "Bob";
+            int staffIdBob = staffTable.create(staffModelBob);
+
+            StaffModel staffModelKate = new StaffModel();
+            staffModelKate.name = "Kate";
+            int staffIdKate = staffTable.create(staffModelKate);
+
+
+            //add ProgramType records
+            ProgramTypeTable programTypeTable = new ProgramTypeTable();
+
+            ProgramTypeModel programTypeModelRegular = new ProgramTypeModel();
+            programTypeModelRegular.description = "Regular";
+            int programTypeIdRegular = programTypeTable.create(programTypeModelRegular);
+
+            ProgramTypeModel programTypeModelAdvanced = new ProgramTypeModel();
+            programTypeModelAdvanced.description = "Advanced";
+            int programTypeIdAdvanced = programTypeTable.create(programTypeModelAdvanced);
+
+
+            //add ProgramCost records
+            ProgramCostTable programCostTable = new ProgramCostTable();
+
+            ProgramCostModel programCostModel1 = new ProgramCostModel();
+            programCostModel1.depositAmount = 50.0;
+            programCostModel1.fullPaymentPercentageDiscount = 25.0;
+            programCostModel1.sessionCost = 35.0;
+            int programCostId1 = programCostTable.create(programCostModel1);
+
+            ProgramCostModel programCostModel2 = new ProgramCostModel();
+            programCostModel2.depositAmount = 40.0;
+            programCostModel2.fullPaymentPercentageDiscount = 15.0;
+            programCostModel2.sessionCost = 20.0;
+            int programCostId2 = programCostTable.create(programCostModel2);
+
+
+            //add Program records
+            ProgramTable programTable = new ProgramTable();
+
+            ProgramModel programModel1 = new ProgramModel();
+            programModel1.programTypeId = programTypeIdAdvanced;
+            programModel1.programCostId = programCostId1;
+            programModel1.noOfClasses = 10;
+            programModel1.dogSpacesMaximum = 5;
+            int programId1 = programTable.create(programModel1);
+
+            ProgramModel programModel2 = new ProgramModel();
+            programModel2.programTypeId = programTypeIdRegular;
+            programModel2.programCostId = programCostId2;
+            programModel2.noOfClasses = 7;
+            programModel2.dogSpacesMaximum = 15;
+            int programId2 = programTable.create(programModel2);
+
         }
 
         private static void consoleTableCounts() {
