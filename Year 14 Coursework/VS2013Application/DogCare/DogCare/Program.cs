@@ -16,28 +16,23 @@ namespace DogCare
         static void Main()
         {
 
+            //add all the records
+            populateDatabase();
+
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new FormStaff());
+        }
+        
+        private static void populateDatabase() {
+
             //clear all the records in all the tables
             new DataStoreTableHelper().clearAllTables();
 
             //check the tables are empty
             consoleTableCounts();
 
-            //add all the records
-            populateDatabase();
-
-            //check the tables have records
-            consoleTableCounts();
-
-
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
-        }
-
-        private static void populateDatabase() {
-
-            //adding some records to it will be easier to create and update the screens
-
+            //Adding some records to it will be easier to create and update the screens
 
             //add Staff records
             StaffTable staffTable = new StaffTable();
@@ -96,6 +91,11 @@ namespace DogCare
             programModel2.dogSpacesMaximum = 15;
             int programId2 = programTable.create(programModel2);
 
+
+
+
+            //check the tables have records
+            consoleTableCounts();
         }
 
         private static void consoleTableCounts() {

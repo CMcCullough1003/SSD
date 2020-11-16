@@ -8,6 +8,7 @@ namespace DataStore
 {
     public class DataStoreTableHelper
     {
+
         /*
           Purpose: 
           Delete all records from the database
