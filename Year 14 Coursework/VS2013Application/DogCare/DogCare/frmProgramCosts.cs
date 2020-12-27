@@ -11,12 +11,12 @@ using DataStore;
 
 namespace DogCare
 {
-    public partial class frmProgramCost : Form
+    public partial class frmProgramCosts : Form
     {
         //Populated when an item on list is slected or when creating new record
         private ProgramCostModel selectedProgramCost = new ProgramCostModel();
 
-        public frmProgramCost()
+        public frmProgramCosts()
         {
             InitializeComponent();
             RefreshList();
@@ -34,7 +34,7 @@ namespace DogCare
             foreach (var person in programCost)
             {
                 //create an array that will hold all the fields in a row
-                var row = new string[] { person.id.ToString(), person.depositAmount.ToString(), person.sessionCost.ToString(), person.fullPaymentPercentageDiscount.ToString() };
+                var row = new string[] { person.id.ToString(), person.offerName, person.depositAmount.ToString(), person.sessionCost.ToString(), person.fullPaymentPercentageDiscount.ToString() };
                 var lvi = new ListViewItem(row);
 
                 //Save the model in the tag property so we can use it if row is selected
@@ -55,6 +55,7 @@ namespace DogCare
 
             //fill up the input fields
             lblIDReadOnly.Text = selectedProgramCost.id.ToString();
+            txtOffer.Text = selectedProgramCost.offerName;
             txtDepositAmount.Text = selectedProgramCost.depositAmount.ToString();
             txtSessionCost.Text = selectedProgramCost.sessionCost.ToString();
             txtPercentageDiscount.Text = selectedProgramCost.depositAmount.ToString();
@@ -64,6 +65,7 @@ namespace DogCare
         {
             //set all the input fields to blank
             lblIDReadOnly.Text = "";
+            txtOffer.Text = "";
             txtDepositAmount.Text = "";
             txtSessionCost.Text = "";
             txtPercentageDiscount.Text = "";
@@ -78,9 +80,27 @@ namespace DogCare
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            InputCheckMessageBox inputCheckMessageBox = new InputCheckMessageBox();
+
+            if (inputCheckMessageBox.checkInputIsDouble(txtDepositAmount.Text, lblDepositAmount.Text) == false)
+            {
+                return;
+            }
+
+            if (inputCheckMessageBox.checkInputIsDouble(txtSessionCost.Text, lblSessionCost.Text) == false)
+            {
+                return;
+            }
+
+            if (inputCheckMessageBox.checkInputIsDouble(txtPercentageDiscount.Text, lblPercentageDiscount.Text) == false)
+            {
+                return;
+            }
+
             try
             {
                 //fill up the model with all the input fields 
+                selectedProgramCost.offerName = txtOffer.Text;
                 selectedProgramCost.depositAmount = Convert.ToDouble(txtDepositAmount.Text);
                 selectedProgramCost.sessionCost = Convert.ToDouble(txtSessionCost.Text);
                 selectedProgramCost.fullPaymentPercentageDiscount = Convert.ToDouble(txtPercentageDiscount.Text);
@@ -156,36 +176,6 @@ namespace DogCare
             catch (Exception ex)
             {
                 String message = new ExceptionMessageGenerator().generateMessage(ex.Message);
-            }
-        }
-
-        private void lsvProgramCost_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            try
-            {
-                //get the details of the ListView row - make sure to cast it
-                selectedProgramCost = (ProgramCostModel)lsvProgramCost.SelectedItems[0].Tag;
-
-                //fill the input fields
-                PopulateInputs();
-            }
-            catch (Exception ex)
-            {
-                String message = new ExceptionMessageGenerator().generateMessage(ex.Message);
-            }
-        }
-
-        private Boolean checkImputIsDouble(int number, string fieldName)
-        {
-            try
-            {
-                Convert.ToDouble(number);
-                return true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(fieldName + " must be a number.");
-                return false;
             }
         }
     }

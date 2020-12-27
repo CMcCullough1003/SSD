@@ -80,7 +80,7 @@ namespace DogCare
         public void moveToFrmProgramCost()
         {
             this.Hide();
-            Form frmProgramCost = new frmProgramCost();
+            Form frmProgramCost = new frmProgramCosts();
             frmProgramCost.Show();
         }
 

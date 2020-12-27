@@ -209,7 +209,7 @@ namespace DogCare
             //Delete the reord from the table and update the ListView
             try
             {
-                new ProgramTable().delete(selectedClass.id);
+                new ClassTable().delete(selectedClass.id);
 
                 //reset everything
                 ClearInputs();
