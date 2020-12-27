@@ -7,6 +7,7 @@ namespace DataStore
     public class ProgramModel
     {
         public int id = 0;
+        public string name = "";
         public int programTypeId = 0;
         public int programCostId = 0;
         public int dogSpacesMaximum = 0;

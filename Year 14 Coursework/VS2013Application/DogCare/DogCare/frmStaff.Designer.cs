@@ -1,6 +1,6 @@
 ﻿namespace DogCare
 {
-    partial class FormStaff
+    partial class frmStaff
     {
         /// <summary>
         /// Required designer variable.
@@ -141,7 +141,7 @@
             this.txtStaffName.Size = new System.Drawing.Size(164, 22);
             this.txtStaffName.TabIndex = 8;
             // 
-            // FormStaff
+            // frmStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -155,7 +155,8 @@
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.lvStaff);
-            this.Name = "FormStaff";
+            this.Name = "frmStaff";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();

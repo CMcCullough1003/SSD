@@ -21,7 +21,7 @@ namespace DogCare
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormStaff());
+            Application.Run(new frmClass());
         }
         
         private static void populateDatabase() {
@@ -33,6 +33,21 @@ namespace DogCare
             consoleTableCounts();
 
             //Adding some records to it will be easier to create and update the screens
+
+            //add Client records
+            ClientTable clientTable = new ClientTable();
+
+            ClientModel clientModelBob = new ClientModel();
+            clientModelBob.name = "Bob";
+            clientModelBob.phone = "1234567890";
+            clientModelBob.email = "bob@gmail.com";
+            int clientIdBob = clientTable.create(clientModelBob);
+
+            ClientModel clientModelKate = new ClientModel();
+            clientModelKate.name = "Kate";
+            clientModelKate.phone = "1234567890";
+            clientModelKate.email = "kate@gmail.com";
+            int clientIdKate = clientTable.create(clientModelKate);
 
             //add Staff records
             StaffTable staffTable = new StaffTable();
@@ -62,12 +77,14 @@ namespace DogCare
             ProgramCostTable programCostTable = new ProgramCostTable();
 
             ProgramCostModel programCostModel1 = new ProgramCostModel();
+            programCostModel1.offerName = "Summer Bonanza";
             programCostModel1.depositAmount = 50.0;
             programCostModel1.fullPaymentPercentageDiscount = 25.0;
             programCostModel1.sessionCost = 35.0;
             int programCostId1 = programCostTable.create(programCostModel1);
 
             ProgramCostModel programCostModel2 = new ProgramCostModel();
+            programCostModel2.offerName = "Winter Sale";
             programCostModel2.depositAmount = 40.0;
             programCostModel2.fullPaymentPercentageDiscount = 15.0;
             programCostModel2.sessionCost = 20.0;
@@ -78,6 +95,7 @@ namespace DogCare
             ProgramTable programTable = new ProgramTable();
 
             ProgramModel programModel1 = new ProgramModel();
+            programModel1.name = "Advanced - Summer Saver";
             programModel1.programTypeId = programTypeIdAdvanced;
             programModel1.programCostId = programCostId1;
             programModel1.noOfClasses = 10;
@@ -85,6 +103,7 @@ namespace DogCare
             int programId1 = programTable.create(programModel1);
 
             ProgramModel programModel2 = new ProgramModel();
+            programModel2.name = "Regular - Summer Saver";
             programModel2.programTypeId = programTypeIdRegular;
             programModel2.programCostId = programCostId2;
             programModel2.noOfClasses = 7;

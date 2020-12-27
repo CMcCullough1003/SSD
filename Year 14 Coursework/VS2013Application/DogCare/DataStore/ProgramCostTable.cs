@@ -35,6 +35,7 @@ namespace DataStore
                 SqlCommand commandCreate = new SqlCommand("CreateProgramCost");
                 commandCreate.CommandType = System.Data.CommandType.StoredProcedure;
                 commandCreate.Parameters.Add("@ProgramCostID", SqlDbType.Int).Direction = ParameterDirection.Output; //Output parameter that will be returned from this function
+                commandCreate.Parameters.Add("@OfferName", SqlDbType.Text).Value = programCostModel.offerName;
                 commandCreate.Parameters.Add("@DepositAmount", SqlDbType.Float).Value = programCostModel.depositAmount;
                 commandCreate.Parameters.Add("@SessionCost", SqlDbType.Float).Value = programCostModel.sessionCost;
                 commandCreate.Parameters.Add("@FullPaymentPercentageDiscount", SqlDbType.Float).Value = programCostModel.fullPaymentPercentageDiscount;
@@ -259,6 +260,7 @@ namespace DataStore
                 SqlCommand commandCreate = new SqlCommand("UpdateProgramCostByID");
                 commandCreate.CommandType = System.Data.CommandType.StoredProcedure;
                 commandCreate.Parameters.Add("@ProgramCostID", SqlDbType.Int).Value = programCostModel.id;
+                commandCreate.Parameters.Add("@OfferName", SqlDbType.Text).Value = programCostModel.offerName;
                 commandCreate.Parameters.Add("@DepositAmount", SqlDbType.Float).Value = programCostModel.depositAmount;
                 commandCreate.Parameters.Add("@SessionCost", SqlDbType.Float).Value = programCostModel.sessionCost;
                 commandCreate.Parameters.Add("@FullPaymentPercentageDiscount", SqlDbType.Float).Value = programCostModel.fullPaymentPercentageDiscount;
@@ -367,9 +369,10 @@ namespace DataStore
             ProgramCostModel programCostModel = new ProgramCostModel();
 
             programCostModel.id = dataReader.GetInt32(0);
-            programCostModel.depositAmount = dataReader.GetDouble(1);
-            programCostModel.sessionCost = dataReader.GetDouble(2);
-            programCostModel.fullPaymentPercentageDiscount = dataReader.GetDouble(3);
+            programCostModel.offerName = dataReader.GetString(1);
+            programCostModel.depositAmount = dataReader.GetDouble(2);
+            programCostModel.sessionCost = dataReader.GetDouble(3);
+            programCostModel.fullPaymentPercentageDiscount = dataReader.GetDouble(4);
 
 
             return programCostModel;

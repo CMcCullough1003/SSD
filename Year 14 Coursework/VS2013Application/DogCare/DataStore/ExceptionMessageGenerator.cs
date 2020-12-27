@@ -53,8 +53,17 @@ namespace DataStore
                 return "Percentage discount must be between 0% and 100%";
             }
 
-            return "Oops! Something has gone wrong. Please contact the system administrator";
+            if (exceptionMessage.Contains("CK__Class__Times"))
+            {
+                return "End time must be later than start time";
+            }
 
+            if (exceptionMessage.Contains("CK__Class__ClassDate"))
+            {
+                return "Date must not be in the past";
+            }
+
+            return "Oops! Something has gone wrong. Please contact the system administrator\n\n" + exceptionMessage;
         }
     }
 }

@@ -44,31 +44,93 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormStaff.cs">
+    <Compile Include="..\..\..\..\..\OneDrive\Desktop\frmProgramCost.cs">
+      <SubType>Form</SubType>
+      <Link>frmProgramCost.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\OneDrive\Desktop\frmProgramCost.Designer.cs">
+      <DependentUpon>frmProgramCost.cs</DependentUpon>
+      <Link>frmProgramCost.Designer.cs</Link>
+    </Compile>
+    <Compile Include="ForeignKeyHelper.cs" />
+    <Compile Include="frmClass.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormStaff.Designer.cs">
-      <DependentUpon>FormStaff.cs</DependentUpon>
+    <Compile Include="frmClass.Designer.cs">
+      <DependentUpon>frmClass.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="frmDog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="frmDog.Designer.cs">
+      <DependentUpon>frmDog.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormStart.cs">
+    <Compile Include="frmProgram.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormStart.Designer.cs">
-      <DependentUpon>FormStart.cs</DependentUpon>
+    <Compile Include="frmProgram.Designer.cs">
+      <DependentUpon>frmProgram.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmProgramType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProgramType.Designer.cs">
+      <DependentUpon>frmProgramType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTraining.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTraining.Designer.cs">
+      <DependentUpon>frmTraining.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStaff.Designer.cs">
+      <DependentUpon>frmStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClient.Designer.cs">
+      <DependentUpon>frmClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFrontPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFrontPage.Designer.cs">
+      <DependentUpon>frmFrontPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InputCheckMessageBox.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormStaff.resx">
-      <DependentUpon>FormStaff.cs</DependentUpon>
+    <EmbeddedResource Include="..\..\..\..\..\OneDrive\Desktop\frmProgramCost.resx">
+      <DependentUpon>frmProgramCost.cs</DependentUpon>
+      <Link>frmProgramCost.resx</Link>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="frmClass.resx">
+      <DependentUpon>frmClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDog.resx">
+      <DependentUpon>frmDog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProgram.resx">
+      <DependentUpon>frmProgram.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProgramType.resx">
+      <DependentUpon>frmProgramType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTraining.resx">
+      <DependentUpon>frmTraining.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStaff.resx">
+      <DependentUpon>frmStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClient.resx">
+      <DependentUpon>frmClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFrontPage.resx">
+      <DependentUpon>frmFrontPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -78,6 +140,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -97,6 +160,12 @@
       <Project>{a9692c57-0b96-4b94-83a3-e2db1e1cd103}</Project>
       <Name>DataStore</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dog-puppy-on-garden-royalty-free-image-1586966191.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cb9080f7-61e4-46ce-a43e-e3c11c3252c6_1140x641.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

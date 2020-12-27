@@ -11,12 +11,12 @@ using DataStore;
 
 namespace DogCare
 {
-    public partial class FormStaff : Form
+    public partial class frmStaff : Form
     {
         //Populated when an item on list is slected or when creating new record
         private StaffModel selectedStaff = new StaffModel();
 
-        public FormStaff()
+        public frmStaff()
         {
             InitializeComponent();
             RefreshList();
@@ -55,7 +55,6 @@ namespace DogCare
                 PopulateInputs();
             }catch( Exception ex){
                 String message = new ExceptionMessageGenerator().generateMessage(ex.Message);
-
             }
         }
 
@@ -145,7 +144,6 @@ namespace DogCare
             catch (Exception ex) {
                 new ExceptionMessageGenerator().generateMessage(ex.Message);
             }
-
         }
     }
 }

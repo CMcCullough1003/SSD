@@ -26,6 +26,21 @@ namespace DataStoreTest
         }
 
         [TestMethod]
+        public void MessageGenerator_PopulatedMessage_StandardMessage()
+        {
+            //Assemble
+            string expected = "Oops! Something has gone wrong. Please contact the system administrator\n\nabc";
+            ExceptionMessageGenerator exceptionMessageGenerator = new ExceptionMessageGenerator();
+            string exceptionMessage = "abc";
+
+            //Act
+            string actual = exceptionMessageGenerator.generateMessage(exceptionMessage);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
         public void MessageGenerator_ClientName_ClientMessage()
         {
             //Assemble

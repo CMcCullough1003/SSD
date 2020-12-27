@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 
@@ -26,7 +28,10 @@ namespace DataStore
             //These are the details for connecting your app to the database server running on your computer
             //"Data Source=.\SQLEXPRESS". SQLEXPRESS indicates the type of database server. The ".\" means the database server is running on the same computer as the app
             //"Initial Catalog=SchoolBuilders". This is the name of the database we want to use 
+            //HOME:
             string connectionDetails = @"Data Source=.\SQLEXPRESS;Initial Catalog=Dogs;Integrated Security=True";
+            //SCHOOL:
+            //string connectionDetails = @"server=10.1.21.19,49172;initial catalog=McCulloughC - A2CW; integrated security=True";
 
             //Create an object that can make a connection to the database server running on your computer. 
             //Think of this as the bit of string
