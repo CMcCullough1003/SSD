@@ -18,8 +18,7 @@ namespace DataStoreTest
     {
         private int dogId = 0;
         private int clientId = 0;
-        private int programTypeId = 0;
-        private int programeCostId = 0;
+        private int programeVarietyId = 0;
         private int programId = 0;
 
         [TestInitialize]
@@ -45,23 +44,17 @@ namespace DataStoreTest
             DogTable dogTable = new DogTable();
             dogId = dogTable.create(dogModel);
 
-            ProgramTypeModel programTypeModel = new ProgramTypeModel();
-            programTypeModel.description = "Regular";
+            ProgramVarietyModel programeVarietyModel = new ProgramVarietyModel();
+            programeVarietyModel.depositAmount = 20.0;
+            programeVarietyModel.sessionCost = 20.0;
+            programeVarietyModel.fullPaymentPercentageDiscount = 20;
+            programeVarietyModel.name = "Regular";
 
-            ProgramTypeTable programTypeTable = new ProgramTypeTable();
-            programTypeId = programTypeTable.create(programTypeModel);
-
-            ProgramCostModel programeCostModel = new ProgramCostModel();
-            programeCostModel.depositAmount = 20.0;
-            programeCostModel.sessionCost = 20.0;
-            programeCostModel.fullPaymentPercentageDiscount = 20;
-
-            ProgramCostTable programCostTable = new ProgramCostTable();
-            programeCostId = programCostTable.create(programeCostModel);
+            ProgramVarietyTable programVarietyTable = new ProgramVarietyTable();
+            programeVarietyId = programVarietyTable.create(programeVarietyModel);
 
             ProgramModel programModel = new ProgramModel();
-            programModel.programTypeId = programTypeId;
-            programModel.programCostId = programeCostId;
+            programModel.programVarietyId = programeVarietyId;
             programModel.dogSpacesMaximum = 50;
             programModel.noOfClasses = 50;
 
@@ -92,6 +85,8 @@ namespace DataStoreTest
             enrollmentModel.clientId = clientId;
             enrollmentModel.dogId = dogId;
             enrollmentModel.programId = programId;
+            enrollmentModel.name = "Advanced";
+            enrollmentModel.paymentMethod = 1;
             //If created will be greater than 0, but we don't know exactly what it will be because deleting all records doesnt set the ID counter back to 0
             int notCreated = 0;
             EnrollmentTable enrollmentTable = new EnrollmentTable();
@@ -112,6 +107,8 @@ namespace DataStoreTest
             enrollmentModel.clientId = clientId;
             enrollmentModel.dogId = dogId;
             enrollmentModel.programId = programId;
+            enrollmentModel.paymentMethod = 1;
+            enrollmentModel.name = "Advanced";
             int expected = 1;
             EnrollmentTable enrollmentTable = new EnrollmentTable();
 
@@ -132,6 +129,8 @@ namespace DataStoreTest
             enrollmentModel.clientId = clientId;
             enrollmentModel.dogId = dogId;
             enrollmentModel.programId = programId;
+            enrollmentModel.paymentMethod = 2;
+            enrollmentModel.name = "Advanced";
             EnrollmentTable enrollmentTable = new EnrollmentTable();
 
             //Act
@@ -143,6 +142,8 @@ namespace DataStoreTest
             Assert.AreEqual(enrollmentModel.clientId, actual.clientId);
             Assert.AreEqual(enrollmentModel.dogId, actual.dogId);
             Assert.AreEqual(enrollmentModel.programId, actual.programId);
+            Assert.AreEqual(enrollmentModel.name, actual.name);
+
         }
         
         [TestMethod]
@@ -155,6 +156,9 @@ namespace DataStoreTest
             enrollmentModel1.clientId = clientId;
             enrollmentModel1.dogId = dogId;
             enrollmentModel1.programId = programId;
+            enrollmentModel1.paymentMethod = 1;
+            enrollmentModel1.name = "Advanced";
+
 
             EnrollmentModel enrollmentModel2 = new EnrollmentModel();
             enrollmentModel2.programId = programId;
@@ -162,6 +166,9 @@ namespace DataStoreTest
             enrollmentModel2.clientId = clientId;
             enrollmentModel2.dogId = dogId;
             enrollmentModel2.programId = programId;
+            enrollmentModel2.paymentMethod = 2; 
+            enrollmentModel2.name = "Advanced";
+
 
             EnrollmentModel enrollmentModel3 = new EnrollmentModel();
             enrollmentModel3.programId = programId;
@@ -169,6 +176,9 @@ namespace DataStoreTest
             enrollmentModel3.clientId = clientId;
             enrollmentModel3.dogId = dogId;
             enrollmentModel3.programId = programId;
+            enrollmentModel3.paymentMethod = 1;
+            enrollmentModel3.name = "Regular";
+
 
             EnrollmentTable enrollmentTable = new EnrollmentTable();
             int expected = 3;
@@ -193,6 +203,9 @@ namespace DataStoreTest
             enrollmentModel1.clientId = clientId;
             enrollmentModel1.dogId = dogId;
             enrollmentModel1.programId = programId;
+            enrollmentModel1.paymentMethod = 1;
+            enrollmentModel1.name = "Advanced";
+
 
             EnrollmentModel enrollmentModel2 = new EnrollmentModel();
             enrollmentModel2.programId = programId;
@@ -200,6 +213,9 @@ namespace DataStoreTest
             enrollmentModel2.clientId = clientId;
             enrollmentModel2.dogId = dogId;
             enrollmentModel2.programId = programId;
+            enrollmentModel2.paymentMethod = 2;          
+            enrollmentModel2.name = "Advanced";
+
 
             EnrollmentModel enrollmentModel3 = new EnrollmentModel();
             enrollmentModel3.programId = programId;
@@ -207,6 +223,9 @@ namespace DataStoreTest
             enrollmentModel3.clientId = clientId;
             enrollmentModel3.dogId = dogId;
             enrollmentModel3.programId = programId;
+            enrollmentModel3.paymentMethod = 1;
+            enrollmentModel3.name = "Regular";
+
 
             EnrollmentTable enrollmentTable = new EnrollmentTable();
 
@@ -222,18 +241,24 @@ namespace DataStoreTest
             Assert.AreEqual(enrollmentModel1.clientId, actual[0].clientId);
             Assert.AreEqual(enrollmentModel1.dogId, actual[0].dogId);
             Assert.AreEqual(enrollmentModel1.programId, actual[0].programId);
+            Assert.AreEqual(enrollmentModel1.paymentMethod, actual[0].paymentMethod);
+            Assert.AreEqual(enrollmentModel1.name, actual[0].name);
 
             Assert.AreEqual(enrollmentID2, enrollmentID2);
             Assert.AreEqual(enrollmentModel2.programId, actual[1].programId);
             Assert.AreEqual(enrollmentModel2.clientId, actual[1].clientId);
             Assert.AreEqual(enrollmentModel2.dogId, actual[1].dogId);
             Assert.AreEqual(enrollmentModel2.programId, actual[1].programId);
+            Assert.AreEqual(enrollmentModel2.paymentMethod, actual[1].paymentMethod);
+            Assert.AreEqual(enrollmentModel2.name, actual[1].name);
 
             Assert.AreEqual(enrollmentID3, enrollmentID3);
             Assert.AreEqual(enrollmentModel3.programId, actual[2].programId);
             Assert.AreEqual(enrollmentModel3.clientId, actual[2].clientId);
             Assert.AreEqual(enrollmentModel3.dogId, actual[2].dogId);
             Assert.AreEqual(enrollmentModel3.programId, actual[2].programId);
+            Assert.AreEqual(enrollmentModel3.paymentMethod, actual[2].paymentMethod);
+            Assert.AreEqual(enrollmentModel3.name, actual[2].name);
         }
 
         [TestMethod]
@@ -245,6 +270,8 @@ namespace DataStoreTest
             enrollmentModel.clientId = clientId;
             enrollmentModel.dogId = dogId;
             enrollmentModel.programId = programId;
+            enrollmentModel.paymentMethod = 1;
+            enrollmentModel.name = "Advanced";
             EnrollmentTable enrollmentTable = new EnrollmentTable();
             int enrollmentID = enrollmentTable.create(enrollmentModel);
             enrollmentModel.id = enrollmentID;
@@ -252,6 +279,8 @@ namespace DataStoreTest
             enrollmentModel.clientId = clientId;
             enrollmentModel.dogId = dogId;
             enrollmentModel.programId = programId;
+            enrollmentModel.paymentMethod = 2;
+            enrollmentModel.name = "Regular";
 
             //Act
             enrollmentTable.update(enrollmentModel);
@@ -273,6 +302,8 @@ namespace DataStoreTest
             enrollmentModel.clientId = clientId;
             enrollmentModel.dogId = dogId;
             enrollmentModel.programId = programId;
+            enrollmentModel.name = "Regular";
+            enrollmentModel.paymentMethod = 1;
             int expected = 0;
             EnrollmentTable enrollmentTable = new EnrollmentTable();
             int enrollmentID = enrollmentTable.create(enrollmentModel);

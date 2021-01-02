@@ -80,13 +80,13 @@ namespace DogCare
             txtName.Text = selectedDog.name;
             txtAge.Text = selectedDog.age.ToString();
             txtBreed.Text = selectedDog.breed;
-            if (rbtnYes.Checked)
+            if (selectedDog.experienceOrQualification == true)
             {
-                selectedDog.experienceOrQualification = true;
+                rbtnYes.Checked = true;
             }
-            if (rbtnNo.Checked)
+            if (selectedDog.experienceOrQualification == false)
             {
-                selectedDog.experienceOrQualification = false;
+                rbtnNo.Checked = true;
             }
         }
 
@@ -114,6 +114,12 @@ namespace DogCare
             if (cbxClient.Text == PLEASE_SELECT)
             {
                 MessageBox.Show("Please select a client's name", "Missing input");
+                return;
+            }
+
+            if (rbtnYes.Checked == false && rbtnNo.Checked == false)
+            {
+                MessageBox.Show("Please select a level of experience", "Missing input");
                 return;
             }
 

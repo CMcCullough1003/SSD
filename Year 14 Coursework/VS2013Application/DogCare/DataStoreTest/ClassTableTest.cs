@@ -26,26 +26,20 @@ namespace DataStoreTest
         {
             new DataStoreTableHelper().clearAllTables();
 
-            ProgramTypeModel programTypeModel = new ProgramTypeModel();
-            programTypeModel.description = "Regular";
+            ProgramVarietyModel programeVarietyModel = new ProgramVarietyModel();
+            programeVarietyModel.depositAmount = 20.0;
+            programeVarietyModel.sessionCost = 20.0;
+            programeVarietyModel.fullPaymentPercentageDiscount = 20;
+            programeVarietyModel.name = "Regular";
 
-            ProgramTypeTable programTypeTable = new ProgramTypeTable();
-            programTypeId = programTypeTable.create(programTypeModel);
-
-
-            ProgramCostModel programeCostModel = new ProgramCostModel();
-            programeCostModel.depositAmount = 20.0;
-            programeCostModel.sessionCost = 20.0;
-            programeCostModel.fullPaymentPercentageDiscount = 20;
-
-            ProgramCostTable programCostTable = new ProgramCostTable();
-            programeCostId = programCostTable.create(programeCostModel);
+            ProgramVarietyTable programVarietyTable = new ProgramVarietyTable();
+            programeCostId = programVarietyTable.create(programeVarietyModel);
 
             ProgramModel programModel = new ProgramModel();
-            programModel.programTypeId = programTypeId;
-            programModel.programCostId = programeCostId;
+            programModel.programVarietyId = programeCostId;
             programModel.dogSpacesMaximum = 50;
             programModel.noOfClasses = 50;
+
 
             ProgramTable programTable = new ProgramTable();
             programId = programTable.create(programModel);
@@ -80,7 +74,7 @@ namespace DataStoreTest
             classModel.staffId = staffId;
             classModel.classDate = new DateTime(2021, 01, 01);
             classModel.startTime = new TimeSpan(2, 31, 0);
-            classModel.endTime = new TimeSpan(2, 31, 0); 
+            classModel.endTime = new TimeSpan(2, 32, 0); 
             //If created will be greater than 0, but we don't know exactly what it will be because deleting all records doesnt set the ID counter back to 0
             int notCreated = 0;
             ClassTable classTable = new ClassTable();

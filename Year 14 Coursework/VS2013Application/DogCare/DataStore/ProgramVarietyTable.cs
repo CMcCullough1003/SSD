@@ -6,14 +6,14 @@ using System.Data;
 
 namespace DataStore
 {
-    public class ProgramCostTable
+    public class ProgramVarietyTable
     {
         /*
            Purpose: 
            Creates a new record in the programCost table
 
            Parameters: 
-           ProgramCostModel will be populated, although programCostID will have a defualt value of 0
+           ProgramVarietyModel will be populated, although programCostID will have a defualt value of 0
 
            Return:
            programCostID of the record created
@@ -21,7 +21,7 @@ namespace DataStore
            Exceptions:
            Logs any exception thrown within the stored procedure and rethrows
        */
-        public int create(ProgramCostModel programCostModel)
+        public int create(ProgramVarietyModel programCostModel)
         {
             int programCostID = 0;
             try
@@ -32,10 +32,10 @@ namespace DataStore
                 SqlConnection connection = dataStoreHelper.createConnection();
 
                 //Set up the stored procedure and the parameters
-                SqlCommand commandCreate = new SqlCommand("CreateProgramCost");
+                SqlCommand commandCreate = new SqlCommand("CreateProgramVariety");
                 commandCreate.CommandType = System.Data.CommandType.StoredProcedure;
-                commandCreate.Parameters.Add("@ProgramCostID", SqlDbType.Int).Direction = ParameterDirection.Output; //Output parameter that will be returned from this function
-                commandCreate.Parameters.Add("@OfferName", SqlDbType.Text).Value = programCostModel.offerName;
+                commandCreate.Parameters.Add("@ProgramVarietyID", SqlDbType.Int).Direction = ParameterDirection.Output; //Output parameter that will be returned from this function
+                commandCreate.Parameters.Add("@Name", SqlDbType.Text).Value = programCostModel.name;
                 commandCreate.Parameters.Add("@DepositAmount", SqlDbType.Float).Value = programCostModel.depositAmount;
                 commandCreate.Parameters.Add("@SessionCost", SqlDbType.Float).Value = programCostModel.sessionCost;
                 commandCreate.Parameters.Add("@FullPaymentPercentageDiscount", SqlDbType.Float).Value = programCostModel.fullPaymentPercentageDiscount;
@@ -47,7 +47,7 @@ namespace DataStore
                 commandCreate.ExecuteNonQuery(); //Used for creating new records
 
                 //Handle return values
-                programCostID = Convert.ToInt32(commandCreate.Parameters["@ProgramCostID"].Value); //Convert the output value from the SP into an int
+                programCostID = Convert.ToInt32(commandCreate.Parameters["@ProgramVarietyID"].Value); //Convert the output value from the SP into an int
 
                 //Close connection to database
                 dataStoreHelper.closeConnection(connection);
@@ -76,9 +76,9 @@ namespace DataStore
             Exceptions:
             Logs any exception thrown within the stored procedure and rethrows
         */
-        public ProgramCostModel read(int programCostID)
+        public ProgramVarietyModel read(int programCostID)
         {
-            ProgramCostModel programCostModel = new ProgramCostModel();
+            ProgramVarietyModel programCostModel = new ProgramVarietyModel();
 
             try
             {
@@ -88,9 +88,9 @@ namespace DataStore
                 SqlConnection connection = dataStoreHelper.createConnection();
 
                 //Set up the stored procedure and the parameters
-                SqlCommand commandRead = new SqlCommand("ReadProgramCostByID");
+                SqlCommand commandRead = new SqlCommand("ReadProgramVarietyByID");
                 commandRead.CommandType = System.Data.CommandType.StoredProcedure;
-                commandRead.Parameters.Add("@ProgramCostID", SqlDbType.Int).Value = programCostID;
+                commandRead.Parameters.Add("@ProgramVarietyID", SqlDbType.Int).Value = programCostID;
 
                 //Which connection to execute the command against
                 commandRead.Connection = connection;
@@ -129,9 +129,9 @@ namespace DataStore
             Exceptions:
             Logs any exception thrown within the stored procedure and rethrows
         */
-        public List<ProgramCostModel> readAll()
+        public List<ProgramVarietyModel> readAll()
         {
-            List<ProgramCostModel> programCosts = new List<ProgramCostModel>();
+            List<ProgramVarietyModel> programCosts = new List<ProgramVarietyModel>();
 
             try
             {
@@ -141,7 +141,7 @@ namespace DataStore
                 SqlConnection connection = dataStoreHelper.createConnection();
 
                 //Set up the stored procedure and the parameters
-                SqlCommand commandRead = new SqlCommand("ReadProgramCost");
+                SqlCommand commandRead = new SqlCommand("ReadProgramVariety");
                 commandRead.CommandType = System.Data.CommandType.StoredProcedure;
 
                 //Which connection to execute the command against
@@ -154,7 +154,7 @@ namespace DataStore
                 while (dataReader.Read()) //Expecting multiple records - Read moves to the next record - Get values from the columns
                 {
                     //Create a new programCost model for every record in the data reader
-                    ProgramCostModel programCostModel = new ProgramCostModel();
+                    ProgramVarietyModel programCostModel = new ProgramVarietyModel();
 
                     //Copy information from the data reader into the new data model
                     programCostModel = convertCursorRecordToModel(dataReader);
@@ -203,7 +203,7 @@ namespace DataStore
                 SqlConnection connection = dataStoreHelper.createConnection();
 
                 //Set up the stored procedure and the parameters
-                SqlCommand commandRead = new SqlCommand("CountProgramCost");
+                SqlCommand commandRead = new SqlCommand("CountProgramVariety");
                 commandRead.CommandType = System.Data.CommandType.StoredProcedure;
 
                 //Which connection to execute the command against
@@ -247,7 +247,7 @@ namespace DataStore
             Exceptions:
             Logs any exception thrown within the stored procedure and rethrows
         */
-        public void update(ProgramCostModel programCostModel)
+        public void update(ProgramVarietyModel programCostModel)
         {
             try
             {
@@ -257,10 +257,10 @@ namespace DataStore
                 SqlConnection connection = dataStoreHelper.createConnection();
 
                 //Set up the stored procedure and the parameters
-                SqlCommand commandCreate = new SqlCommand("UpdateProgramCostByID");
+                SqlCommand commandCreate = new SqlCommand("UpdateProgramVarietyByID");
                 commandCreate.CommandType = System.Data.CommandType.StoredProcedure;
-                commandCreate.Parameters.Add("@ProgramCostID", SqlDbType.Int).Value = programCostModel.id;
-                commandCreate.Parameters.Add("@OfferName", SqlDbType.Text).Value = programCostModel.offerName;
+                commandCreate.Parameters.Add("@ProgramVarietyID", SqlDbType.Int).Value = programCostModel.id;
+                commandCreate.Parameters.Add("@Name", SqlDbType.Text).Value = programCostModel.name;
                 commandCreate.Parameters.Add("@DepositAmount", SqlDbType.Float).Value = programCostModel.depositAmount;
                 commandCreate.Parameters.Add("@SessionCost", SqlDbType.Float).Value = programCostModel.sessionCost;
                 commandCreate.Parameters.Add("@FullPaymentPercentageDiscount", SqlDbType.Float).Value = programCostModel.fullPaymentPercentageDiscount;
@@ -306,9 +306,9 @@ namespace DataStore
                 SqlConnection connection = dataStoreHelper.createConnection();
 
                 //Set up the stored procedure and the parameters
-                SqlCommand commandCreate = new SqlCommand("DeleteProgramCostByID");
+                SqlCommand commandCreate = new SqlCommand("DeleteProgramVarietyByID");
                 commandCreate.CommandType = System.Data.CommandType.StoredProcedure;
-                commandCreate.Parameters.Add("@ProgramCostID", SqlDbType.Int).Value = programCostID;
+                commandCreate.Parameters.Add("@ProgramVarietyID", SqlDbType.Int).Value = programCostID;
 
                 //Which connection to execute the command against
                 commandCreate.Connection = connection;
@@ -348,7 +348,7 @@ namespace DataStore
                 DataStoreConnectionHelper dataStoreHelper = new DataStoreConnectionHelper();
                 SqlConnection connection = dataStoreHelper.createConnection();
 
-                SqlCommand commandCreate = new SqlCommand("DeleteProgramCostAll");
+                SqlCommand commandCreate = new SqlCommand("DeleteProgramVarietyAll");
                 commandCreate.CommandType = System.Data.CommandType.StoredProcedure;
 
                 commandCreate.Connection = connection;
@@ -364,18 +364,18 @@ namespace DataStore
             }
         }
 
-        private ProgramCostModel convertCursorRecordToModel(SqlDataReader dataReader)
+        private ProgramVarietyModel convertCursorRecordToModel(SqlDataReader dataReader)
         {
-            ProgramCostModel programCostModel = new ProgramCostModel();
+            ProgramVarietyModel programVarietyModel = new ProgramVarietyModel();
 
-            programCostModel.id = dataReader.GetInt32(0);
-            programCostModel.offerName = dataReader.GetString(1);
-            programCostModel.depositAmount = dataReader.GetDouble(2);
-            programCostModel.sessionCost = dataReader.GetDouble(3);
-            programCostModel.fullPaymentPercentageDiscount = dataReader.GetDouble(4);
+            programVarietyModel.id = dataReader.GetInt32(0);
+            programVarietyModel.name = dataReader.GetString(1);
+            programVarietyModel.depositAmount = dataReader.GetDouble(2);
+            programVarietyModel.sessionCost = dataReader.GetDouble(3);
+            programVarietyModel.fullPaymentPercentageDiscount = dataReader.GetDouble(4);
 
 
-            return programCostModel;
+            return programVarietyModel;
         }
     }
 }

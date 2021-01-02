@@ -31,10 +31,6 @@
             this.cbxStaff = new System.Windows.Forms.ComboBox();
             this.lblStaff = new System.Windows.Forms.Label();
             this.cbxProgram = new System.Windows.Forms.ComboBox();
-            this.txtStartTime = new System.Windows.Forms.TextBox();
-            this.lblStartTime = new System.Windows.Forms.Label();
-            this.txtDate = new System.Windows.Forms.TextBox();
-            this.lblDate = new System.Windows.Forms.Label();
             this.lblProgram = new System.Windows.Forms.Label();
             this.lblIDReadOnly = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
@@ -47,10 +43,14 @@
             this.chProgram = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chStaff = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chClassDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chStartTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chEndTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chStartTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txtEndTime = new System.Windows.Forms.TextBox();
+            this.txtDate = new System.Windows.Forms.TextBox();
+            this.lblStartTime = new System.Windows.Forms.Label();
+            this.txtStartTime = new System.Windows.Forms.TextBox();
             this.lblEndTime = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cbxStaff
@@ -80,40 +80,6 @@
             this.cbxProgram.Size = new System.Drawing.Size(164, 24);
             this.cbxProgram.TabIndex = 69;
             this.cbxProgram.Text = "Please select";
-            // 
-            // txtStartTime
-            // 
-            this.txtStartTime.Location = new System.Drawing.Point(523, 381);
-            this.txtStartTime.Name = "txtStartTime";
-            this.txtStartTime.Size = new System.Drawing.Size(164, 22);
-            this.txtStartTime.TabIndex = 68;
-            // 
-            // lblStartTime
-            // 
-            this.lblStartTime.AutoSize = true;
-            this.lblStartTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStartTime.Location = new System.Drawing.Point(520, 361);
-            this.lblStartTime.Name = "lblStartTime";
-            this.lblStartTime.Size = new System.Drawing.Size(78, 17);
-            this.lblStartTime.TabIndex = 67;
-            this.lblStartTime.Text = "Start time";
-            // 
-            // txtDate
-            // 
-            this.txtDate.Location = new System.Drawing.Point(523, 324);
-            this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(164, 22);
-            this.txtDate.TabIndex = 66;
-            // 
-            // lblDate
-            // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(520, 304);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(42, 17);
-            this.lblDate.TabIndex = 65;
-            this.lblDate.Text = "Date";
             // 
             // lblProgram
             // 
@@ -220,13 +186,13 @@
             // 
             this.chClassDate.Text = "Date";
             // 
-            // chStartTime
-            // 
-            this.chStartTime.Text = "Start time";
-            // 
             // chEndTime
             // 
             this.chEndTime.Text = "End time";
+            // 
+            // chStartTime
+            // 
+            this.chStartTime.Text = "Start time";
             // 
             // txtEndTime
             // 
@@ -234,6 +200,30 @@
             this.txtEndTime.Name = "txtEndTime";
             this.txtEndTime.Size = new System.Drawing.Size(164, 22);
             this.txtEndTime.TabIndex = 73;
+            // 
+            // txtDate
+            // 
+            this.txtDate.Location = new System.Drawing.Point(523, 324);
+            this.txtDate.Name = "txtDate";
+            this.txtDate.Size = new System.Drawing.Size(164, 22);
+            this.txtDate.TabIndex = 66;
+            // 
+            // lblStartTime
+            // 
+            this.lblStartTime.AutoSize = true;
+            this.lblStartTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStartTime.Location = new System.Drawing.Point(520, 361);
+            this.lblStartTime.Name = "lblStartTime";
+            this.lblStartTime.Size = new System.Drawing.Size(78, 17);
+            this.lblStartTime.TabIndex = 67;
+            this.lblStartTime.Text = "Start time";
+            // 
+            // txtStartTime
+            // 
+            this.txtStartTime.Location = new System.Drawing.Point(523, 381);
+            this.txtStartTime.Name = "txtStartTime";
+            this.txtStartTime.Size = new System.Drawing.Size(164, 22);
+            this.txtStartTime.TabIndex = 68;
             // 
             // lblEndTime
             // 
@@ -244,6 +234,16 @@
             this.lblEndTime.Size = new System.Drawing.Size(71, 17);
             this.lblEndTime.TabIndex = 72;
             this.lblEndTime.Text = "End time";
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.Location = new System.Drawing.Point(520, 304);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(42, 17);
+            this.lblDate.TabIndex = 65;
+            this.lblDate.Text = "Date";
             // 
             // frmClass
             // 
@@ -280,10 +280,6 @@
         private System.Windows.Forms.ComboBox cbxStaff;
         private System.Windows.Forms.Label lblStaff;
         private System.Windows.Forms.ComboBox cbxProgram;
-        private System.Windows.Forms.TextBox txtStartTime;
-        private System.Windows.Forms.Label lblStartTime;
-        private System.Windows.Forms.TextBox txtDate;
-        private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lblProgram;
         private System.Windows.Forms.Label lblIDReadOnly;
         private System.Windows.Forms.Label lblID;
@@ -299,6 +295,10 @@
         private System.Windows.Forms.ColumnHeader chStartTime;
         private System.Windows.Forms.ColumnHeader chEndTime;
         private System.Windows.Forms.TextBox txtEndTime;
+        private System.Windows.Forms.TextBox txtDate;
+        private System.Windows.Forms.Label lblStartTime;
+        private System.Windows.Forms.TextBox txtStartTime;
         private System.Windows.Forms.Label lblEndTime;
+        private System.Windows.Forms.Label lblDate;
     }
 }

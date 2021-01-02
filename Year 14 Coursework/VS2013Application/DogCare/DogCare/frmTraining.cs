@@ -34,17 +34,36 @@ namespace DogCare
 
         private void btnProgramType_Click(object sender, EventArgs e)
         {
-            moveToFrmProgramType();
         }
 
         private void btnProgramCost_Click(object sender, EventArgs e)
         {
-            moveToFrmProgramCost();
+            moveToFrmProgramVariety();
         }
 
         private void btnDog_Click(object sender, EventArgs e)
         {
             moveToFrmDog();
+        }
+
+        private void btnClass_Click(object sender, EventArgs e)
+        {
+            moveToFrmClass();
+        }
+
+        private void btnEnrollment_Click(object sender, EventArgs e)
+        {
+            moveToFrmEnrollment();
+        }
+
+        private void btnPayment_Click(object sender, EventArgs e)
+        {
+            moveToFrmPayment();
+        }
+
+        private void btnProgram_Click(object sender, EventArgs e)
+        {
+            moveToFrmProgram();
         }
 
         //-----------------------------------------------------------------------------------------------------
@@ -70,18 +89,11 @@ namespace DogCare
             frmCustomer.Show();
         }
 
-        public void moveToFrmProgramType()
+        public void moveToFrmProgramVariety()
         {
             this.Hide();
-            Form frmProgramType = new frmProgramType();
-            frmProgramType.Show();
-        }
-
-        public void moveToFrmProgramCost()
-        {
-            this.Hide();
-            Form frmProgramCost = new frmProgramCosts();
-            frmProgramCost.Show();
+            Form frmProgramVariety = new frmProgramVariety();
+            frmProgramVariety.Show();
         }
 
         public void moveToFrmDog()
@@ -89,6 +101,34 @@ namespace DogCare
             this.Hide();
             Form frmDog = new frmDog();
             frmDog.Show();
+        }
+
+        public void moveToFrmClass()
+        {
+            this.Hide();
+            Form frmClass = new frmClass();
+            frmClass.Show();
+        }
+
+        public void moveToFrmEnrollment()
+        {
+            this.Hide();
+            Form frmEnrollment = new frmEnrollment();
+            frmEnrollment.Show();
+        }
+
+        public void moveToFrmPayment()
+        {
+            this.Hide();
+            Form frmPayment = new frmPayment();
+            frmPayment.Show();
+        }
+
+        public void moveToFrmProgram()
+        {
+            this.Hide();
+            Form frmProgram = new frmProgram();
+            frmProgram.Show();
         }
     }
 }

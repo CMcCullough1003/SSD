@@ -56,9 +56,8 @@
     <Compile Include="EnrollmentTableTest.cs" />
     <Compile Include="ExceptionMessageGeneratorTest.cs" />
     <Compile Include="PaymentTableTest.cs" />
-    <Compile Include="ProgramCostTableTest.cs" />
+    <Compile Include="ProgramVarietyTableTest.cs" />
     <Compile Include="ProgramTableTest.cs" />
-    <Compile Include="ProgramTypeTableTest.cs" />
     <Compile Include="StaffTableTest.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

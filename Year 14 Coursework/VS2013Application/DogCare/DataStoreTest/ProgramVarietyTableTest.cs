@@ -14,7 +14,7 @@ namespace DataStoreTest
     */
 
     [TestClass]
-    public class ProgramCostTableTest
+    public class ProgramVarietyTableTest
     {
         [TestInitialize]
         public void deleteAll()
@@ -27,7 +27,7 @@ namespace DataStoreTest
         {
             //Assemble
             int expected = 0;
-            ProgramCostTable programCostTable = new ProgramCostTable();
+            ProgramVarietyTable programCostTable = new ProgramVarietyTable();
 
             //Act
             int actual = programCostTable.count();
@@ -37,16 +37,17 @@ namespace DataStoreTest
         }
 
         [TestMethod]
-        public void Create_ValidData_ProgramCostIDReturned()
+        public void Create_ValidData_ProgramVarietyIDReturned()
         {
             //Assemble
-            ProgramCostModel programCostModel = new ProgramCostModel();
+            ProgramVarietyModel programCostModel = new ProgramVarietyModel();
             programCostModel.depositAmount = 49.0;
             programCostModel.sessionCost = 50.0;
             programCostModel.fullPaymentPercentageDiscount = 51.0;
+            programCostModel.name = "Advanced";
             //If created will be greater than 0, but we don't know exactly what it will be because deleting all records doesnt set the ID counter back to 0
             int notCreated = 0;
-            ProgramCostTable programCostTable = new ProgramCostTable();
+            ProgramVarietyTable programCostTable = new ProgramVarietyTable();
 
             //Act
             int actual = programCostTable.create(programCostModel);
@@ -59,12 +60,13 @@ namespace DataStoreTest
         public void Count_Created1Record_1()
         {
             //Assemble
-            ProgramCostModel programCostModel = new ProgramCostModel();
+            ProgramVarietyModel programCostModel = new ProgramVarietyModel();
             programCostModel.depositAmount = 49.0;
             programCostModel.sessionCost = 50.0;
             programCostModel.fullPaymentPercentageDiscount = 51.0;
+            programCostModel.name = "Advanced";
             int expected = 1;
-            ProgramCostTable programCostTable = new ProgramCostTable();
+            ProgramVarietyTable programCostTable = new ProgramVarietyTable();
 
             //Act
             int programCostID = programCostTable.create(programCostModel);
@@ -78,15 +80,16 @@ namespace DataStoreTest
         public void Read_CreatedAndRead1Record_CorrectValues()
         {
             //Assemble
-            ProgramCostModel programCostModel = new ProgramCostModel();
+            ProgramVarietyModel programCostModel = new ProgramVarietyModel();
             programCostModel.depositAmount = 49.0;
             programCostModel.sessionCost = 50.0;
             programCostModel.fullPaymentPercentageDiscount = 51.0;
-            ProgramCostTable programCostTable = new ProgramCostTable();
+            programCostModel.name = "Advanced";
+            ProgramVarietyTable programCostTable = new ProgramVarietyTable();
 
             //Act
             int programCostID = programCostTable.create(programCostModel);
-            ProgramCostModel actual = programCostTable.read(programCostID);
+            ProgramVarietyModel actual = programCostTable.read(programCostID);
 
             //Assert
             Assert.AreEqual(programCostModel.depositAmount, actual.depositAmount);
@@ -98,29 +101,32 @@ namespace DataStoreTest
         public void ReadAll_Create3Records_CountIs3()
         {
             //Assemble
-            ProgramCostModel programCostModel1 = new ProgramCostModel();
+            ProgramVarietyModel programCostModel1 = new ProgramVarietyModel();
             programCostModel1.depositAmount = 49.1;
             programCostModel1.sessionCost = 50.1;
             programCostModel1.fullPaymentPercentageDiscount = 51.1;
+            programCostModel1.name = "Advanced";
 
-            ProgramCostModel programCostModel2 = new ProgramCostModel();
+            ProgramVarietyModel programCostModel2 = new ProgramVarietyModel();
             programCostModel2.depositAmount = 49.2;
             programCostModel2.sessionCost = 50.2;
             programCostModel2.fullPaymentPercentageDiscount = 51.2;
+            programCostModel2.name = "Advanced";
 
-            ProgramCostModel programCostModel3 = new ProgramCostModel();
+            ProgramVarietyModel programCostModel3 = new ProgramVarietyModel();
             programCostModel3.depositAmount = 49.3;
             programCostModel3.sessionCost = 50.3;
             programCostModel3.fullPaymentPercentageDiscount = 51.3;
+            programCostModel3.name = "Advanced";
 
-            ProgramCostTable programCostTable = new ProgramCostTable();
+            ProgramVarietyTable programCostTable = new ProgramVarietyTable();
             int expected = 3;
 
             //Act
             int programCostID1 = programCostTable.create(programCostModel1);
             int programCostID2 = programCostTable.create(programCostModel2);
             int programCostID3 = programCostTable.create(programCostModel3);
-            List<ProgramCostModel> actual = programCostTable.readAll();
+            List<ProgramVarietyModel> actual = programCostTable.readAll();
 
             //Assert
             Assert.AreEqual(expected, actual.Count);
@@ -130,56 +136,64 @@ namespace DataStoreTest
         public void ReadAll_Create3Records_3DifferentRecords()
         {
             //Assemble
-            ProgramCostModel programCostModel1 = new ProgramCostModel();
+            ProgramVarietyModel programCostModel1 = new ProgramVarietyModel();
             programCostModel1.depositAmount = 49.1;
             programCostModel1.sessionCost = 50.1;
             programCostModel1.fullPaymentPercentageDiscount = 51.1;
+            programCostModel1.name = "Advanced";
 
-            ProgramCostModel programCostModel2 = new ProgramCostModel();
+            ProgramVarietyModel programCostModel2 = new ProgramVarietyModel();
             programCostModel2.depositAmount = 49.2;
             programCostModel2.sessionCost = 50.2;
             programCostModel2.fullPaymentPercentageDiscount = 51.2;
+            programCostModel2.name = "Regular";
 
-            ProgramCostModel programCostModel3 = new ProgramCostModel();
+            ProgramVarietyModel programCostModel3 = new ProgramVarietyModel();
             programCostModel3.depositAmount = 49.3;
             programCostModel3.sessionCost = 50.3;
             programCostModel3.fullPaymentPercentageDiscount = 51.3;
+            programCostModel3.name = "Advanced";
 
-            ProgramCostTable programCostTable = new ProgramCostTable();
+            ProgramVarietyTable programCostTable = new ProgramVarietyTable();
 
             //Act
             int programCostID1 = programCostTable.create(programCostModel1);
             int programCostID2 = programCostTable.create(programCostModel2);
             int programCostID3 = programCostTable.create(programCostModel3);
-            List<ProgramCostModel> actual = programCostTable.readAll();
+            List<ProgramVarietyModel> actual = programCostTable.readAll();
 
             //Assert
             Assert.AreEqual(programCostID1, programCostID1);
             Assert.AreEqual(programCostModel1.depositAmount, actual[0].depositAmount);
             Assert.AreEqual(programCostModel1.sessionCost, actual[0].sessionCost);
             Assert.AreEqual(programCostModel1.fullPaymentPercentageDiscount, actual[0].fullPaymentPercentageDiscount);
+            Assert.AreEqual(programCostModel1.name, actual[0].name);
 
             Assert.AreEqual(programCostID2, programCostID2);
             Assert.AreEqual(programCostModel2.depositAmount, actual[1].depositAmount);
             Assert.AreEqual(programCostModel2.sessionCost, actual[1].sessionCost);
             Assert.AreEqual(programCostModel2.fullPaymentPercentageDiscount, actual[1].fullPaymentPercentageDiscount);
+            Assert.AreEqual(programCostModel2.name, actual[1].name);
 
             Assert.AreEqual(programCostID3, programCostID3);
             Assert.AreEqual(programCostModel3.depositAmount, actual[2].depositAmount);
             Assert.AreEqual(programCostModel3.sessionCost, actual[2].sessionCost);
             Assert.AreEqual(programCostModel3.fullPaymentPercentageDiscount, actual[2].fullPaymentPercentageDiscount);
+            Assert.AreEqual(programCostModel3.name, actual[2].name);
+
         }
 
         [TestMethod]
         public void Update_CreatedUpdateAndRead1Record_UpdatedValues()
         {
             //Assemble
-            ProgramCostModel programCostModel = new ProgramCostModel();
+            ProgramVarietyModel programCostModel = new ProgramVarietyModel();
             programCostModel.depositAmount = 49.0;
             programCostModel.sessionCost = 50.0;
             programCostModel.fullPaymentPercentageDiscount = 51.0;
+            programCostModel.name = "Regular";
 
-            ProgramCostTable programCostTable = new ProgramCostTable();
+            ProgramVarietyTable programCostTable = new ProgramVarietyTable();
             int programCostID = programCostTable.create(programCostModel);
 
             programCostModel.id = programCostID;
@@ -189,7 +203,7 @@ namespace DataStoreTest
 
             //Act
             programCostTable.update(programCostModel);
-            ProgramCostModel actual = programCostTable.read(programCostID);
+            ProgramVarietyModel actual = programCostTable.read(programCostID);
 
             //Assert
             Assert.AreEqual(programCostModel.depositAmount, actual.depositAmount);
@@ -201,12 +215,13 @@ namespace DataStoreTest
         public void Delete_CreatedDeleteAndCount1Record_0()
         {
             //Assemble
-            ProgramCostModel programCostModel = new ProgramCostModel();
+            ProgramVarietyModel programCostModel = new ProgramVarietyModel();
             programCostModel.depositAmount = 49.0;
             programCostModel.sessionCost = 50.0;
             programCostModel.fullPaymentPercentageDiscount = 51.0;
+            programCostModel.name = "Regular";
             int expected = 0;
-            ProgramCostTable programCostTable = new ProgramCostTable();
+            ProgramVarietyTable programCostTable = new ProgramVarietyTable();
             int programCostID = programCostTable.create(programCostModel);
 
             //Act
@@ -221,7 +236,7 @@ namespace DataStoreTest
         public void Delete_NonExistantId_0()
         {
             //Assemble
-            ProgramCostTable programCostTable = new ProgramCostTable();
+            ProgramVarietyTable programCostTable = new ProgramVarietyTable();
             int expected = 0;
 
             //Act
@@ -236,11 +251,12 @@ namespace DataStoreTest
         public void CreateDepositAmountConstraint_OutsideLowerBoundry_Exception()
         {
             //Assemble
-            ProgramCostTable programCostTable = new ProgramCostTable();
-            ProgramCostModel programCostModel = new ProgramCostModel();
+            ProgramVarietyTable programCostTable = new ProgramVarietyTable();
+            ProgramVarietyModel programCostModel = new ProgramVarietyModel();
             programCostModel.depositAmount = 19.0;
             programCostModel.sessionCost = 50.0;
             programCostModel.fullPaymentPercentageDiscount = 51.0;
+            programCostModel.name = "Regular";
             int expected = 1;
             int counter = 0;
 
@@ -262,11 +278,12 @@ namespace DataStoreTest
         public void CreateDepositAmountConstraint_OnLowerBoundry_NoException()
         {
             //Assemble
-            ProgramCostTable programCostTable = new ProgramCostTable();
-            ProgramCostModel programCostModel = new ProgramCostModel();
+            ProgramVarietyTable programCostTable = new ProgramVarietyTable();
+            ProgramVarietyModel programCostModel = new ProgramVarietyModel();
             programCostModel.depositAmount = 20.0;
             programCostModel.sessionCost = 50.0;
             programCostModel.fullPaymentPercentageDiscount = 51.0;
+            programCostModel.name = "Regular";
             int expected = 0;
             int counter = 0;
 
@@ -288,11 +305,12 @@ namespace DataStoreTest
         public void CreateDepositAmountConstraint_OutsideUpperBoundry_Exception()
         {
             //Assemble
-            ProgramCostTable programCostTable = new ProgramCostTable();
-            ProgramCostModel programCostModel = new ProgramCostModel();
+            ProgramVarietyTable programCostTable = new ProgramVarietyTable();
+            ProgramVarietyModel programCostModel = new ProgramVarietyModel();
             programCostModel.depositAmount = 101.0;
             programCostModel.sessionCost = 50.0;
             programCostModel.fullPaymentPercentageDiscount = 51.0;
+            programCostModel.name = "Regular";
             int expected = 1;
             int counter = 0;
 
@@ -314,11 +332,12 @@ namespace DataStoreTest
         public void CreateDepositAmountConstraint_OnUpperBoundry_NoException()
         {
             //Assemble
-            ProgramCostTable programCostTable = new ProgramCostTable();
-            ProgramCostModel programCostModel = new ProgramCostModel();
+            ProgramVarietyTable programCostTable = new ProgramVarietyTable();
+            ProgramVarietyModel programCostModel = new ProgramVarietyModel();
             programCostModel.depositAmount = 100.0;
             programCostModel.sessionCost = 50.0;
             programCostModel.fullPaymentPercentageDiscount = 51.0;
+            programCostModel.name = "Regular";
             int expected = 0;
             int counter = 0;
 
@@ -342,11 +361,12 @@ namespace DataStoreTest
         public void CreateSessionCostConstraint_OutsideLowerBoundry_Exception()
         {
             //Assemble
-            ProgramCostTable programCostTable = new ProgramCostTable();
-            ProgramCostModel programCostModel = new ProgramCostModel();
+            ProgramVarietyTable programCostTable = new ProgramVarietyTable();
+            ProgramVarietyModel programCostModel = new ProgramVarietyModel();
             programCostModel.depositAmount = 50.0;
             programCostModel.sessionCost = 19.0;
             programCostModel.fullPaymentPercentageDiscount = 51.0;
+            programCostModel.name = "Regular";
             int expected = 1;
             int counter = 0;
 
@@ -368,11 +388,12 @@ namespace DataStoreTest
         public void CreateSessionCostConstraint_OnLowerBoundry_NoException()
         {
             //Assemble
-            ProgramCostTable programCostTable = new ProgramCostTable();
-            ProgramCostModel programCostModel = new ProgramCostModel();
+            ProgramVarietyTable programCostTable = new ProgramVarietyTable();
+            ProgramVarietyModel programCostModel = new ProgramVarietyModel();
             programCostModel.depositAmount = 50.0;
             programCostModel.sessionCost = 20.0;
             programCostModel.fullPaymentPercentageDiscount = 51.0;
+            programCostModel.name = "Regular";
             int expected = 0;
             int counter = 0;
 
@@ -394,11 +415,12 @@ namespace DataStoreTest
         public void CreateSessionCostConstraint_OutsideUpperBoundry_Exception()
         {
             //Assemble
-            ProgramCostTable programCostTable = new ProgramCostTable();
-            ProgramCostModel programCostModel = new ProgramCostModel();
+            ProgramVarietyTable programCostTable = new ProgramVarietyTable();
+            ProgramVarietyModel programCostModel = new ProgramVarietyModel();
             programCostModel.depositAmount = 50.0;
             programCostModel.sessionCost = 101.0;
             programCostModel.fullPaymentPercentageDiscount = 51.0;
+            programCostModel.name = "Regular";
             int expected = 1;
             int counter = 0;
 
@@ -420,11 +442,12 @@ namespace DataStoreTest
         public void CreateSessionCostConstraint_OnUpperBoundry_NoException()
         {
             //Assemble
-            ProgramCostTable programCostTable = new ProgramCostTable();
-            ProgramCostModel programCostModel = new ProgramCostModel();
+            ProgramVarietyTable programCostTable = new ProgramVarietyTable();
+            ProgramVarietyModel programCostModel = new ProgramVarietyModel();
             programCostModel.depositAmount = 50.0;
             programCostModel.sessionCost = 100.0;
             programCostModel.fullPaymentPercentageDiscount = 51.0;
+            programCostModel.name = "Regular";
             int expected = 0;
             int counter = 0;
 
@@ -448,11 +471,12 @@ namespace DataStoreTest
         public void CreateFullPaymentPercentageDiscountConstraint_OutsideLowerBoundry_Exception()
         {
             //Assemble
-            ProgramCostTable programCostTable = new ProgramCostTable();
-            ProgramCostModel programCostModel = new ProgramCostModel();
+            ProgramVarietyTable programCostTable = new ProgramVarietyTable();
+            ProgramVarietyModel programCostModel = new ProgramVarietyModel();
             programCostModel.depositAmount = 50.0;
             programCostModel.sessionCost = 50.0;
             programCostModel.fullPaymentPercentageDiscount = -1.0;
+            programCostModel.name = "Regular";
             int expected = 1;
             int counter = 0;
 
@@ -474,11 +498,12 @@ namespace DataStoreTest
         public void CreateFullPaymentPercentageDiscountConstraint_OnLowerBoundry_NoException()
         {
             //Assemble
-            ProgramCostTable programCostTable = new ProgramCostTable();
-            ProgramCostModel programCostModel = new ProgramCostModel();
+            ProgramVarietyTable programCostTable = new ProgramVarietyTable();
+            ProgramVarietyModel programCostModel = new ProgramVarietyModel();
             programCostModel.depositAmount = 50.0;
             programCostModel.sessionCost = 50.0;
             programCostModel.fullPaymentPercentageDiscount = 0.0;
+            programCostModel.name = "Regular";
             int expected = 0;
             int counter = 0;
 
@@ -500,11 +525,12 @@ namespace DataStoreTest
         public void CreateFullPaymentPercentageDiscountConstraint_OutsideUpperBoundry_Exception()
         {
             //Assemble
-            ProgramCostTable programCostTable = new ProgramCostTable();
-            ProgramCostModel programCostModel = new ProgramCostModel();
+            ProgramVarietyTable programCostTable = new ProgramVarietyTable();
+            ProgramVarietyModel programCostModel = new ProgramVarietyModel();
             programCostModel.depositAmount = 50.0;
             programCostModel.sessionCost = 50.0;
             programCostModel.fullPaymentPercentageDiscount = 101.0;
+            programCostModel.name = "Regular";
             int expected = 1;
             int counter = 0;
 
@@ -526,11 +552,12 @@ namespace DataStoreTest
         public void CreateFullPaymentPercentageDiscountConstraint_OnUpperBoundry_NoException()
         {
             //Assemble
-            ProgramCostTable programCostTable = new ProgramCostTable();
-            ProgramCostModel programCostModel = new ProgramCostModel();
+            ProgramVarietyTable programCostTable = new ProgramVarietyTable();
+            ProgramVarietyModel programCostModel = new ProgramVarietyModel();
             programCostModel.depositAmount = 50.0;
             programCostModel.sessionCost = 50.0;
             programCostModel.fullPaymentPercentageDiscount = 100.0;
+            programCostModel.name = "Regular";
             int expected = 0;
             int counter = 0;
 

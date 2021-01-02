@@ -35,9 +35,13 @@ namespace DataStore
                 SqlCommand commandCreate = new SqlCommand("CreateEnrollment");
                 commandCreate.CommandType = System.Data.CommandType.StoredProcedure;
                 commandCreate.Parameters.Add("@EnrollmentID", SqlDbType.Int).Direction = ParameterDirection.Output; //Output parameter that will be returned from this function
+                commandCreate.Parameters.Add("@Name", SqlDbType.Text).Value = enrollmentModel.name;
                 commandCreate.Parameters.Add("@ClientID", SqlDbType.Int).Value = enrollmentModel.clientId;
                 commandCreate.Parameters.Add("@DogID", SqlDbType.Int).Value = enrollmentModel.dogId;
                 commandCreate.Parameters.Add("@ProgramID", SqlDbType.Int).Value = enrollmentModel.programId;
+                commandCreate.Parameters.Add("@PaymentMethod", SqlDbType.Int).Value = enrollmentModel.paymentMethod;
+                commandCreate.Parameters.Add("@JoinDate", SqlDbType.Date).Value = enrollmentModel.joinDate;
+                commandCreate.Parameters.Add("@InviteIssued", SqlDbType.Bit).Value = enrollmentModel.inviteIssued;
 
                 //Which connection to execute the command against
                 commandCreate.Connection = connection;
@@ -259,9 +263,13 @@ namespace DataStore
                 SqlCommand commandCreate = new SqlCommand("UpdateEnrollmentByID");
                 commandCreate.CommandType = System.Data.CommandType.StoredProcedure;
                 commandCreate.Parameters.Add("@EnrollmentID", SqlDbType.Int).Value = enrollmentModel.id;
+                commandCreate.Parameters.Add("@Name", SqlDbType.Text).Value = enrollmentModel.name;
                 commandCreate.Parameters.Add("@ClientID", SqlDbType.Int).Value = enrollmentModel.clientId;
                 commandCreate.Parameters.Add("@DogID", SqlDbType.Int).Value = enrollmentModel.dogId;
                 commandCreate.Parameters.Add("@ProgramID", SqlDbType.Int).Value = enrollmentModel.programId;
+                commandCreate.Parameters.Add("@PaymentMethod", SqlDbType.Int).Value = enrollmentModel.paymentMethod;
+                commandCreate.Parameters.Add("@JoinDate", SqlDbType.Date).Value = enrollmentModel.joinDate;
+                commandCreate.Parameters.Add("@InviteIssued", SqlDbType.Bit).Value = enrollmentModel.inviteIssued;
 
                 //Which connection to execute the command against
                 commandCreate.Connection = connection;
@@ -367,9 +375,13 @@ namespace DataStore
             EnrollmentModel enrollmentModel = new EnrollmentModel();
 
             enrollmentModel.id = dataReader.GetInt32(0);
-            enrollmentModel.clientId = dataReader.GetInt32(1);
-            enrollmentModel.dogId = dataReader.GetInt32(2);
-            enrollmentModel.programId = dataReader.GetInt32(3);
+            enrollmentModel.name = dataReader.GetString(1);
+            enrollmentModel.clientId = dataReader.GetInt32(2);
+            enrollmentModel.dogId = dataReader.GetInt32(3);
+            enrollmentModel.programId = dataReader.GetInt32(4);
+            enrollmentModel.paymentMethod = dataReader.GetInt32(5);
+            enrollmentModel.joinDate = dataReader.GetDateTime(6);
+            enrollmentModel.inviteIssued = dataReader.GetBoolean(7);
 
             return enrollmentModel;
         }

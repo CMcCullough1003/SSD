@@ -18,7 +18,7 @@ namespace DataStoreTest
     {
         private int dogId = 0;
         private int clientId = 0;
-        private int programTypeId = 0;
+        private int programVarietyId = 0;
 
         [TestInitialize]
         public void Setup()
@@ -43,11 +43,14 @@ namespace DataStoreTest
             DogTable dogTable = new DogTable();
             dogId = dogTable.create(dogModel);
 
-            ProgramTypeModel programTypeModel = new ProgramTypeModel();
-            programTypeModel.description = "Regular";
+            ProgramVarietyModel programVarietyModel = new ProgramVarietyModel();
+            programVarietyModel.depositAmount = 20.00;
+            programVarietyModel.fullPaymentPercentageDiscount = 15.00;
+            programVarietyModel.sessionCost = 30.00;
+            programVarietyModel.name = "Advanced";
 
-            ProgramTypeTable programTypeTable = new ProgramTypeTable();
-            programTypeId = programTypeTable.create(programTypeModel);
+            ProgramVarietyTable programVarietyTable = new ProgramVarietyTable();
+            programVarietyId = programVarietyTable.create(programVarietyModel);
         }
 
         [TestMethod]
@@ -71,7 +74,7 @@ namespace DataStoreTest
             WaitingListModel waitingListModel = new WaitingListModel();
             waitingListModel.clientId = clientId;
             waitingListModel.dogId = dogId;
-            waitingListModel.programTypeId = programTypeId;
+            waitingListModel.programVarietyId = programVarietyId;
             waitingListModel.joinDate = new DateTime(2003, 01, 06);
             waitingListModel.inviteIssued = false;
             //If created will be greater than 0, but we don't know exactly what it will be because deleting all records doesnt set the ID counter back to 0
@@ -92,7 +95,7 @@ namespace DataStoreTest
             WaitingListModel waitingListModel = new WaitingListModel();
             waitingListModel.clientId = clientId;
             waitingListModel.dogId = dogId;
-            waitingListModel.programTypeId = programTypeId;
+            waitingListModel.programVarietyId = programVarietyId;
             waitingListModel.joinDate = new DateTime(2003, 01, 06);
             waitingListModel.inviteIssued = false;
             int expected = 1;
@@ -113,7 +116,7 @@ namespace DataStoreTest
             WaitingListModel waitingListModel = new WaitingListModel();
             waitingListModel.clientId = clientId;
             waitingListModel.dogId = dogId;
-            waitingListModel.programTypeId = programTypeId;
+            waitingListModel.programVarietyId = programVarietyId;
             waitingListModel.joinDate = new DateTime(2003, 01, 06);
             waitingListModel.inviteIssued = false;
             WaitingListTable waitingListTable = new WaitingListTable();
@@ -124,7 +127,7 @@ namespace DataStoreTest
 
             //Assert
             Assert.AreEqual(waitingListModel.dogId, actual.dogId);
-            Assert.AreEqual(waitingListModel.programTypeId, actual.programTypeId);
+            Assert.AreEqual(waitingListModel.programVarietyId, actual.programVarietyId);
             Assert.AreEqual(waitingListModel.joinDate, actual.joinDate);
             Assert.AreEqual(waitingListModel.inviteIssued, actual.inviteIssued);
         }
@@ -136,21 +139,21 @@ namespace DataStoreTest
             WaitingListModel waitingListModel1 = new WaitingListModel();
             waitingListModel1.clientId = clientId;
             waitingListModel1.dogId = dogId;
-            waitingListModel1.programTypeId = programTypeId;
+            waitingListModel1.programVarietyId = programVarietyId;
             waitingListModel1.joinDate = new DateTime(2003, 01, 06);
             waitingListModel1.inviteIssued = false;
 
             WaitingListModel waitingListModel2 = new WaitingListModel();
             waitingListModel2.clientId = clientId;
             waitingListModel2.dogId = dogId;
-            waitingListModel2.programTypeId = programTypeId;
+            waitingListModel2.programVarietyId = programVarietyId;
             waitingListModel2.joinDate = new DateTime(2003, 01, 06);
             waitingListModel2.inviteIssued = false;
 
             WaitingListModel waitingListModel3 = new WaitingListModel();
             waitingListModel3.clientId = clientId;
             waitingListModel3.dogId = dogId;
-            waitingListModel3.programTypeId = programTypeId;
+            waitingListModel3.programVarietyId = programVarietyId;
             waitingListModel3.joinDate = new DateTime(2003, 01, 06);
             waitingListModel3.inviteIssued = false;
 
@@ -174,21 +177,21 @@ namespace DataStoreTest
             WaitingListModel waitingListModel1 = new WaitingListModel();
             waitingListModel1.clientId = clientId;
             waitingListModel1.dogId = dogId;
-            waitingListModel1.programTypeId = programTypeId;
+            waitingListModel1.programVarietyId = programVarietyId;
             waitingListModel1.joinDate = new DateTime(2003, 01, 06);
             waitingListModel1.inviteIssued = false;
 
             WaitingListModel waitingListModel2 = new WaitingListModel();
             waitingListModel2.clientId = clientId;
             waitingListModel2.dogId = dogId;
-            waitingListModel2.programTypeId = programTypeId;
+            waitingListModel2.programVarietyId = programVarietyId;
             waitingListModel2.joinDate = new DateTime(2003, 01, 06);
             waitingListModel2.inviteIssued = false;
 
             WaitingListModel waitingListModel3 = new WaitingListModel();
             waitingListModel3.clientId = clientId;
             waitingListModel3.dogId = dogId;
-            waitingListModel3.programTypeId = programTypeId;
+            waitingListModel3.programVarietyId = programVarietyId;
             waitingListModel3.joinDate = new DateTime(2003, 01, 06);
             waitingListModel3.inviteIssued = false;
 
@@ -203,19 +206,19 @@ namespace DataStoreTest
             //Assert
             Assert.AreEqual(waitingListID1, waitingListID1);
             Assert.AreEqual(waitingListModel1.dogId, actual[0].dogId);
-            Assert.AreEqual(waitingListModel1.programTypeId, actual[0].programTypeId);
+            Assert.AreEqual(waitingListModel1.programVarietyId, actual[0].programVarietyId);
             Assert.AreEqual(waitingListModel1.joinDate, actual[0].joinDate);
             Assert.AreEqual(waitingListModel1.inviteIssued, actual[0].inviteIssued);
 
             Assert.AreEqual(waitingListID2, waitingListID2);
             Assert.AreEqual(waitingListModel2.dogId, actual[1].dogId);
-            Assert.AreEqual(waitingListModel2.programTypeId, actual[1].programTypeId);
+            Assert.AreEqual(waitingListModel2.programVarietyId, actual[1].programVarietyId);
             Assert.AreEqual(waitingListModel2.joinDate, actual[1].joinDate);
             Assert.AreEqual(waitingListModel2.inviteIssued, actual[1].inviteIssued);
 
             Assert.AreEqual(waitingListID3, waitingListID3);
             Assert.AreEqual(waitingListModel3.dogId, actual[2].dogId);
-            Assert.AreEqual(waitingListModel3.programTypeId, actual[2].programTypeId);
+            Assert.AreEqual(waitingListModel3.programVarietyId, actual[2].programVarietyId);
             Assert.AreEqual(waitingListModel3.joinDate, actual[2].joinDate);
             Assert.AreEqual(waitingListModel3.inviteIssued, actual[2].inviteIssued);
         }
@@ -227,7 +230,7 @@ namespace DataStoreTest
             WaitingListModel waitingListModel = new WaitingListModel();
             waitingListModel.clientId = clientId;
             waitingListModel.dogId = dogId;
-            waitingListModel.programTypeId = programTypeId;
+            waitingListModel.programVarietyId = programVarietyId;
             waitingListModel.joinDate = new DateTime(2003, 01, 06);
             waitingListModel.inviteIssued = false;
             WaitingListTable waitingListTable = new WaitingListTable();
@@ -235,7 +238,7 @@ namespace DataStoreTest
             waitingListModel.id = waitingListID;
             waitingListModel.clientId = clientId;
             waitingListModel.dogId = dogId;
-            waitingListModel.programTypeId = programTypeId;
+            waitingListModel.programVarietyId = programVarietyId;
             waitingListModel.joinDate = new DateTime(2003, 01, 06);
             waitingListModel.inviteIssued = false;
 
@@ -246,7 +249,7 @@ namespace DataStoreTest
             //Assert
             Assert.AreEqual(waitingListModel.clientId, actual.clientId);
             Assert.AreEqual(waitingListModel.dogId, actual.dogId);
-            Assert.AreEqual(waitingListModel.programTypeId, actual.programTypeId);
+            Assert.AreEqual(waitingListModel.programVarietyId, actual.programVarietyId);
             Assert.AreEqual(waitingListModel.joinDate, actual.joinDate);
             Assert.AreEqual(waitingListModel.inviteIssued, actual.inviteIssued);
         }
@@ -258,7 +261,7 @@ namespace DataStoreTest
             WaitingListModel waitingListModel = new WaitingListModel();
             waitingListModel.clientId = clientId;
             waitingListModel.dogId = dogId;
-            waitingListModel.programTypeId = programTypeId;
+            waitingListModel.programVarietyId = programVarietyId;
             waitingListModel.joinDate = new DateTime(2003, 01, 06);
             waitingListModel.inviteIssued = false;
             int expected = 0;

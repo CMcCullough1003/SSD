@@ -57,14 +57,14 @@ GO
 
 CREATE PROC CreateProgram(
   @ProgramID int output,
-  @ProgramTypeID int,
-  @ProgramCostID int,
+  @Name text,
+  @ProgramVarietyID int,
   @DogSpacesMaximum int,
   @NoOfClasses int
 ) AS
 BEGIN
-    INSERT INTO Program(ProgramTypeID, ProgramCostID, DogSpacesMaximum, NoOfClasses)
-    VALUES (@ProgramTypeID, @ProgramCostID, @DogSpacesMaximum, @NoOfClasses);
+    INSERT INTO Program(Name, ProgramVarietyID, DogSpacesMaximum, NoOfClasses)
+    VALUES (@Name, @ProgramVarietyID, @DogSpacesMaximum, @NoOfClasses);
 
     SET @ProgramID = SCOPE_IDENTITY();
 END
@@ -83,15 +83,15 @@ GO
 
 CREATE PROC UpdateProgramByID(
 	@ProgramID int,
-	@ProgramTypeID int,
-	@ProgramCostID int,
+	@Name text,
+	@ProgramVarietyID int,
 	@DogSpacesMaximum int,
 	@NoOfClasses int
 ) AS
 BEGIN
 	UPDATE Program
-	SET ProgramTypeID = @ProgramTypeID,
-		ProgramCostID = @ProgramCostID,
+	SET Name = @Name,
+		ProgramVarietyID = @ProgramVarietyID,
 		DogSpacesMaximum = @DogSpacesMaximum,
 		NoOfClasses = @NoOfClasses
 

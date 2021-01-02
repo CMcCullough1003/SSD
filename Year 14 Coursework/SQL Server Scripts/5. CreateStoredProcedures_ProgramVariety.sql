@@ -57,13 +57,14 @@ GO
 
 CREATE PROC CreateProgramCost(
   @ProgramCostID int output,
+  @Name text,
   @DepositAmount float,
   @SessionCost float,
   @FullPaymentPercentageDiscount float
 ) AS
 BEGIN
-    INSERT INTO ProgramCost(DepositAmount, SessionCost, FullPaymentPercentageDiscount)
-    VALUES (@DepositAmount, @SessionCost, @FullPaymentPercentageDiscount);
+    INSERT INTO ProgramCost(Name, DepositAmount, SessionCost, FullPaymentPercentageDiscount)
+    VALUES (@Name, @DepositAmount, @SessionCost, @FullPaymentPercentageDiscount);
 
     SET @ProgramCostID = SCOPE_IDENTITY();
 END
@@ -82,13 +83,15 @@ GO
 
 CREATE PROC UpdateProgramCostByID(
 	@ProgramCostID int,
+	@Name text,
 	@DepositAmount float,
 	@SessionCost float,
 	@FullPaymentPercentageDiscount float
 ) AS
 BEGIN
 	UPDATE ProgramCost
-	SET DepositAmount = @DepositAmount,
+	SET Name = @Name,
+		DepositAmount = @DepositAmount,
 		SessionCost = @SessionCost,
 		FullPaymentPercentageDiscount = @FullPaymentPercentageDiscount
 

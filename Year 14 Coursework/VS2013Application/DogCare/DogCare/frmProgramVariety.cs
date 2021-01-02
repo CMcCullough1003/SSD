@@ -11,12 +11,13 @@ using DataStore;
 
 namespace DogCare
 {
-    public partial class frmProgramCosts : Form
+    public partial class frmProgramVariety : Form
     {
         //Populated when an item on list is slected or when creating new record
-        private ProgramCostModel selectedProgramCost = new ProgramCostModel();
+        private ProgramVarietyModel selectedProgramVariety = new ProgramVarietyModel();
+        private const string PLEASE_SELECT = "Please select";
 
-        public frmProgramCosts()
+        public frmProgramVariety()
         {
             InitializeComponent();
             RefreshList();
@@ -25,47 +26,55 @@ namespace DogCare
         private void RefreshList()
         {
             //clear all the items from the ListView
-            lsvProgramCost.Items.Clear(); // make sure it is not just lvXXX.Clear()
+            lsvProgramVariety.Items.Clear(); // make sure it is not just lvXXX.Clear()
 
             //read all the records from the table
-            List<ProgramCostModel> programCost = new ProgramCostTable().readAll();
+            List<ProgramVarietyModel> programCost = new ProgramVarietyTable().readAll();
 
             //loop through all the records
             foreach (var person in programCost)
             {
                 //create an array that will hold all the fields in a row
-                var row = new string[] { person.id.ToString(), person.offerName, person.depositAmount.ToString(), person.sessionCost.ToString(), person.fullPaymentPercentageDiscount.ToString() };
+                var row = new string[] { person.id.ToString(), person.name, person.depositAmount.ToString(), person.sessionCost.ToString(), person.fullPaymentPercentageDiscount.ToString() };
                 var lvi = new ListViewItem(row);
 
                 //Save the model in the tag property so we can use it if row is selected
                 lvi.Tag = person;
 
                 //add new row to the ListView
-                lsvProgramCost.Items.Add(lvi);
+                lsvProgramVariety.Items.Add(lvi);
             }
         }
 
         private void PopulateInputs()
         {
             //If this is 0 then there is nothing to show. The model is blank
-            if (selectedProgramCost.id == 0)
+            if (selectedProgramVariety.id == 0)
             {
                 return;
             }
 
             //fill up the input fields
-            lblIDReadOnly.Text = selectedProgramCost.id.ToString();
-            txtOffer.Text = selectedProgramCost.offerName;
-            txtDepositAmount.Text = selectedProgramCost.depositAmount.ToString();
-            txtSessionCost.Text = selectedProgramCost.sessionCost.ToString();
-            txtPercentageDiscount.Text = selectedProgramCost.depositAmount.ToString();
+            lblIDReadOnly.Text = selectedProgramVariety.id.ToString();
+            if (selectedProgramVariety.name == ProgramVarietyConstants.REGULAR)
+            {
+                rbtnRegular.Checked = true;
+            }
+            if (selectedProgramVariety.name== ProgramVarietyConstants.ADVANCED)
+            {
+                rbtnAdvanced.Checked = true;
+            }
+            txtDepositAmount.Text = selectedProgramVariety.depositAmount.ToString();
+            txtSessionCost.Text = selectedProgramVariety.sessionCost.ToString();
+            txtPercentageDiscount.Text = selectedProgramVariety.depositAmount.ToString();
         }
 
         private void ClearInputs()
         {
             //set all the input fields to blank
             lblIDReadOnly.Text = "";
-            txtOffer.Text = "";
+            rbtnRegular.Checked = false;
+            rbtnAdvanced.Checked = false;
             txtDepositAmount.Text = "";
             txtSessionCost.Text = "";
             txtPercentageDiscount.Text = "";
@@ -74,13 +83,19 @@ namespace DogCare
         private void btnNew_Click(object sender, EventArgs e)
         {
             //make sure the model has no old information in it
-            selectedProgramCost = new ProgramCostModel();
+            selectedProgramVariety = new ProgramVarietyModel();
             ClearInputs();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             InputCheckMessageBox inputCheckMessageBox = new InputCheckMessageBox();
+
+            if (rbtnRegular.Checked == false && rbtnAdvanced.Checked == false)
+            {
+                MessageBox.Show("Please select a variety", "Missing input");
+                return;
+            }
 
             if (inputCheckMessageBox.checkInputIsDouble(txtDepositAmount.Text, lblDepositAmount.Text) == false)
             {
@@ -100,25 +115,32 @@ namespace DogCare
             try
             {
                 //fill up the model with all the input fields 
-                selectedProgramCost.offerName = txtOffer.Text;
-                selectedProgramCost.depositAmount = Convert.ToDouble(txtDepositAmount.Text);
-                selectedProgramCost.sessionCost = Convert.ToDouble(txtSessionCost.Text);
-                selectedProgramCost.fullPaymentPercentageDiscount = Convert.ToDouble(txtPercentageDiscount.Text);
+                if (rbtnRegular.Checked)
+                {
+                    selectedProgramVariety.name = ProgramVarietyConstants.REGULAR;
+                }
+                if (rbtnAdvanced.Checked)
+                {
+                    selectedProgramVariety.name = ProgramVarietyConstants.ADVANCED;
+                }
+                selectedProgramVariety.depositAmount = Convert.ToDouble(txtDepositAmount.Text);
+                selectedProgramVariety.sessionCost = Convert.ToDouble(txtSessionCost.Text);
+                selectedProgramVariety.fullPaymentPercentageDiscount = Convert.ToDouble(txtPercentageDiscount.Text);
 
                 //The id will be 0 if New button was clicked
-                if (selectedProgramCost.id == 0)
+                if (selectedProgramVariety.id == 0)
                 {
-                    new ProgramCostTable().create(selectedProgramCost);
+                    new ProgramVarietyTable().create(selectedProgramVariety);
                 }
                 else
                 {
-                    new ProgramCostTable().update(selectedProgramCost);
+                    new ProgramVarietyTable().update(selectedProgramVariety);
                 }
 
                 //reset everything
                 ClearInputs();
                 RefreshList();
-                selectedProgramCost = new ProgramCostModel();
+                selectedProgramVariety = new ProgramVarietyModel();
             }
             catch (Exception ex)
             {
@@ -130,7 +152,7 @@ namespace DogCare
         private void btnDelete_Click(object sender, EventArgs e)
         {
             //If this is 0 then there is nothing to show. The model is blank
-            if (selectedProgramCost.id == 0)
+            if (selectedProgramVariety.id == 0)
             {
                 return;
             }
@@ -150,12 +172,12 @@ namespace DogCare
             //Delete the reord from the table and update the ListView
             try
             {
-                new ProgramCostTable().delete(selectedProgramCost.id);
+                new ProgramVarietyTable().delete(selectedProgramVariety.id);
 
                 //reset everything
                 ClearInputs();
                 RefreshList();
-                selectedProgramCost = new ProgramCostModel();
+                selectedProgramVariety = new ProgramVarietyModel();
             }
             catch (Exception ex)
             {
@@ -168,7 +190,7 @@ namespace DogCare
             try
             {
                 //get the details of the ListView row - make sure to cast it
-                selectedProgramCost = (ProgramCostModel)lsvProgramCost.SelectedItems[0].Tag;
+                selectedProgramVariety = (ProgramVarietyModel)lsvProgramVariety.SelectedItems[0].Tag;
 
                 //fill the input fields
                 PopulateInputs();

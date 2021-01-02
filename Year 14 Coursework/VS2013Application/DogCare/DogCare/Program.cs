@@ -21,7 +21,7 @@ namespace DogCare
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmClass());
+            Application.Run(new frmTraining());
         }
         
         private static void populateDatabase() {
@@ -49,6 +49,23 @@ namespace DogCare
             clientModelKate.email = "kate@gmail.com";
             int clientIdKate = clientTable.create(clientModelKate);
 
+            //add Dog records
+            DogTable dogTable = new DogTable();
+
+            DogModel dogModelBoxer = new DogModel();
+            dogModelBoxer.name = "Boxer";
+            dogModelBoxer.clientID = clientIdBob;
+            dogModelBoxer.age = 7;
+            dogModelBoxer.breed = "Bulldog";
+            int dogIdBoxer = dogTable.create(dogModelBoxer);
+
+            DogModel dogModelTed = new DogModel();
+            dogModelTed.name = "Ted";
+            dogModelTed.clientID = clientIdKate;
+            dogModelTed.age = 7;
+            dogModelTed.breed = "Shi Tzu";
+            int dogIdTed = dogTable.create(dogModelTed);
+
             //add Staff records
             StaffTable staffTable = new StaffTable();
 
@@ -61,56 +78,64 @@ namespace DogCare
             int staffIdKate = staffTable.create(staffModelKate);
 
 
-            //add ProgramType records
-            ProgramTypeTable programTypeTable = new ProgramTypeTable();
-
-            ProgramTypeModel programTypeModelRegular = new ProgramTypeModel();
-            programTypeModelRegular.description = "Regular";
-            int programTypeIdRegular = programTypeTable.create(programTypeModelRegular);
-
-            ProgramTypeModel programTypeModelAdvanced = new ProgramTypeModel();
-            programTypeModelAdvanced.description = "Advanced";
-            int programTypeIdAdvanced = programTypeTable.create(programTypeModelAdvanced);
-
-
             //add ProgramCost records
-            ProgramCostTable programCostTable = new ProgramCostTable();
+            ProgramVarietyTable programVarietyTable = new ProgramVarietyTable();
 
-            ProgramCostModel programCostModel1 = new ProgramCostModel();
-            programCostModel1.offerName = "Summer Bonanza";
-            programCostModel1.depositAmount = 50.0;
-            programCostModel1.fullPaymentPercentageDiscount = 25.0;
-            programCostModel1.sessionCost = 35.0;
-            int programCostId1 = programCostTable.create(programCostModel1);
+            ProgramVarietyModel programVarietyAdvanced = new ProgramVarietyModel();
+            programVarietyAdvanced.name = "Advanced";
+            programVarietyAdvanced.depositAmount = 50.0;
+            programVarietyAdvanced.fullPaymentPercentageDiscount = 25.0;
+            programVarietyAdvanced.sessionCost = 35.0;
+            int programCostId1 = programVarietyTable.create(programVarietyAdvanced);
 
-            ProgramCostModel programCostModel2 = new ProgramCostModel();
-            programCostModel2.offerName = "Winter Sale";
-            programCostModel2.depositAmount = 40.0;
-            programCostModel2.fullPaymentPercentageDiscount = 15.0;
-            programCostModel2.sessionCost = 20.0;
-            int programCostId2 = programCostTable.create(programCostModel2);
+            ProgramVarietyModel programVarietyRegular = new ProgramVarietyModel();
+            programVarietyRegular.name = "Regular";
+            programVarietyRegular.depositAmount = 40.0;
+            programVarietyRegular.fullPaymentPercentageDiscount = 15.0;
+            programVarietyRegular.sessionCost = 20.0;
+            int programCostId2 = programVarietyTable.create(programVarietyRegular);
 
 
             //add Program records
             ProgramTable programTable = new ProgramTable();
 
             ProgramModel programModel1 = new ProgramModel();
-            programModel1.name = "Advanced - Summer Saver";
-            programModel1.programTypeId = programTypeIdAdvanced;
-            programModel1.programCostId = programCostId1;
+            programModel1.name = programVarietyAdvanced.name ;
+            programModel1.programVarietyId = programCostId1;
             programModel1.noOfClasses = 10;
             programModel1.dogSpacesMaximum = 5;
             int programId1 = programTable.create(programModel1);
 
             ProgramModel programModel2 = new ProgramModel();
-            programModel2.name = "Regular - Summer Saver";
-            programModel2.programTypeId = programTypeIdRegular;
-            programModel2.programCostId = programCostId2;
+            programModel2.name = programVarietyRegular.name;
+            programModel2.programVarietyId = programCostId2;
             programModel2.noOfClasses = 7;
             programModel2.dogSpacesMaximum = 15;
             int programId2 = programTable.create(programModel2);
 
+            //add Enrollment records
+            EnrollmentTable enrollmentTable = new EnrollmentTable();
 
+            EnrollmentModel enrollmentModel1 = new EnrollmentModel();
+            enrollmentModel1.name = dogModelBoxer.name + " (owned by " + clientModelBob.name + ") in " + programModel1.name;
+            enrollmentModel1.clientId = clientIdBob;
+            enrollmentModel1.dogId = dogIdBoxer;
+            enrollmentModel1.programId = programId1;
+            enrollmentModel1.paymentMethod = PaymentConstants.PAYMENT_IN_FULL;
+            enrollmentModel1.joinDate = DateTime.Now;
+            enrollmentModel1.inviteIssued = false;
+            int enrollmentId1 = enrollmentTable.create(enrollmentModel1);
+
+
+            EnrollmentModel enrollmentModel2 = new EnrollmentModel();
+            enrollmentModel2.name = dogModelTed.name + " (owned by " + clientModelKate.name + ") in " + programModel2.name;
+            enrollmentModel2.clientId = clientIdKate;
+            enrollmentModel2.dogId = dogIdTed;
+            enrollmentModel2.programId = programId2;
+            enrollmentModel2.paymentMethod = PaymentConstants.PAYMENT_PER_CLASS;
+            enrollmentModel2.joinDate = DateTime.Now;
+            enrollmentModel2.inviteIssued = true;
+            int enrollmentId2 = enrollmentTable.create(enrollmentModel2);
 
 
             //check the tables have records
@@ -137,14 +162,11 @@ namespace DogCare
             Int32 paymentCount = new PaymentTable().count();
             Console.WriteLine("paymentCount = " + paymentCount);
 
-            Int32 programCostCount = new ProgramCostTable().count();
+            Int32 programCostCount = new ProgramVarietyTable().count();
             Console.WriteLine("programCostCount = " + programCostCount);
 
             Int32 programCount = new ProgramTable().count();
             Console.WriteLine("programCount = " + programCount);
-
-            Int32 programTypeCount = new ProgramTypeTable().count();
-            Console.WriteLine("programTypeCount = " + programTypeCount);
 
             Int32 staffCount = new StaffTable().count();
             Console.WriteLine("staffCount = " + staffCount);

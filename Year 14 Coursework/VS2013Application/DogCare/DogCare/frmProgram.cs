@@ -15,41 +15,27 @@ namespace DogCare
     {
         //Populated when an item on list is slected or when creating new record
         private ProgramModel selectedProgram = new ProgramModel();
-        List<ProgramTypeModel> programTypeList = new List<ProgramTypeModel>();
-        List<ProgramCostModel> programCostList = new List<ProgramCostModel>();
+        List<ProgramVarietyModel> programVarietyList = new List<ProgramVarietyModel>();
         private const string PLEASE_SELECT = "Please select";
 
         public frmProgram()
         {
             InitializeComponent();
-            fetchProgramTypes();
-            fetchProgramCosts();
+            fetchProgramVarieties();
             RefreshList();
         }
 
-        private void fetchProgramTypes()
+
+        private void fetchProgramVarieties()
         {
-            programTypeList = new ProgramTypeTable().readAll();
+            programVarietyList = new ProgramVarietyTable().readAll();
 
-            cbxProgramType.DisplayMember = "Text";
-            cbxProgramType.ValueMember = "Value";
+            cbxProgramVariety.DisplayMember = "Text";
+            cbxProgramVariety.ValueMember = "Value";
 
-            foreach (var programType in programTypeList)
+            foreach (var programCost in programVarietyList)
             {
-                cbxProgramType.Items.Add(new { Text = programType.description, Value = programType.id });
-            }
-        }
-
-        private void fetchProgramCosts()
-        {
-            programCostList = new ProgramCostTable().readAll();
-
-            cbxProgramCost.DisplayMember = "Text";
-            cbxProgramCost.ValueMember = "Value";
-
-            foreach (var programCost in programCostList)
-            {
-                cbxProgramCost.Items.Add(new { Text = programCost.offerName, Value = programCost.id });
+                cbxProgramVariety.Items.Add(new { Text = programCost.name, Value = programCost.id });
             }
         }
 
@@ -64,14 +50,12 @@ namespace DogCare
             //loop through all the records
             foreach (var program in programs)
             {
-                var programTypeIndex = new ForeignKeyHelper().findIndexOfProgramTypeID(programTypeList, program.programTypeId);
-                var programTypeDescription = programTypeList[programTypeIndex].description;
 
-                var programCostIndex = new ForeignKeyHelper().findIndexOfProgramCostID(programCostList, program.programCostId);
-                var programCostOffer = programCostList[programCostIndex].offerName;
+                var programVarietyIndex = new ForeignKeyHelper().findIndexOfProgramVarietyID(programVarietyList, program.programVarietyId);
+                var programVarietyName = programVarietyList[programVarietyIndex].name;
 
                 //create an array that will hold all the fields in a row
-                var row = new string[] { program.id.ToString(), program.name, programTypeDescription, programCostOffer, program.dogSpacesMaximum.ToString(), program.noOfClasses.ToString() };
+                var row = new string[] { program.id.ToString(), programVarietyName, program.dogSpacesMaximum.ToString(), program.noOfClasses.ToString() };
                 var lvi = new ListViewItem(row);
 
                 //Save the model in the tag property so we can use it if row is selected
@@ -90,17 +74,12 @@ namespace DogCare
                 return;
             }
 
-            cbxProgramType.Text = PLEASE_SELECT;
-            cbxProgramType.SelectedIndex = -1;
-            cbxProgramType.SelectedIndex = new ForeignKeyHelper().findIndexOfProgramTypeID(programTypeList, selectedProgram.programTypeId);
-
-            cbxProgramCost.Text = PLEASE_SELECT;
-            cbxProgramCost.SelectedIndex = -1;
-            cbxProgramCost.SelectedIndex = new ForeignKeyHelper().findIndexOfProgramCostID(programCostList, selectedProgram.programCostId);
+            cbxProgramVariety.Text = PLEASE_SELECT;
+            cbxProgramVariety.SelectedIndex = -1;
+            cbxProgramVariety.SelectedIndex = new ForeignKeyHelper().findIndexOfProgramVarietyID(programVarietyList, selectedProgram.programVarietyId);
 
             //fill up the input fields
             lblIDReadOnly.Text = selectedProgram.id.ToString();
-            txtName.Text = selectedProgram.name;
             txtMaximumSpaces.Text = selectedProgram.dogSpacesMaximum.ToString();
             txtNumberOfClasses.Text = selectedProgram.noOfClasses.ToString();
         }
@@ -109,9 +88,8 @@ namespace DogCare
         {
             //set all the input fields to blank
             lblIDReadOnly.Text = "";
-            txtName.Text = "";
-            cbxProgramType.Text = PLEASE_SELECT;
-            cbxProgramCost.Text = PLEASE_SELECT;
+            lblNameReadOnly.Text = "";
+            cbxProgramVariety.Text = PLEASE_SELECT;
             txtMaximumSpaces.Text = "";
             txtNumberOfClasses.Text = "";
         }
@@ -125,15 +103,10 @@ namespace DogCare
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (cbxProgramType.Text == PLEASE_SELECT)
-            {
-                MessageBox.Show("Please select a program type", "Missing input");
-                return;
-            }
 
-            if (cbxProgramCost.Text == PLEASE_SELECT)
+            if (cbxProgramVariety.Text == PLEASE_SELECT)
             {
-                MessageBox.Show("Please select a program cost", "Missing input");
+                MessageBox.Show("Please select a program variety", "Missing input");
                 return;
             }
 
@@ -150,9 +123,8 @@ namespace DogCare
             try
             {
                 //fill up the model with all the input fields
-                selectedProgram.programTypeId = (cbxProgramType.SelectedItem as dynamic).Value;
-                selectedProgram.programCostId = (cbxProgramCost.SelectedItem as dynamic).Value;
-                selectedProgram.name = txtName.Text;
+                selectedProgram.programVarietyId = (cbxProgramVariety.SelectedItem as dynamic).Value;
+                selectedProgram.name = lblNameReadOnly.Text;
                 selectedProgram.dogSpacesMaximum = Convert.ToInt32(txtMaximumSpaces.Text);
                 selectedProgram.noOfClasses = Convert.ToInt32(txtNumberOfClasses.Text);
 

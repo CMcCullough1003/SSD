@@ -28,12 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cbxProgramType = new System.Windows.Forms.ComboBox();
             this.txtNumberOfClasses = new System.Windows.Forms.TextBox();
             this.lblNumberOfClasses = new System.Windows.Forms.Label();
             this.txtMaximumSpaces = new System.Windows.Forms.TextBox();
             this.lblMaximumSpaces = new System.Windows.Forms.Label();
-            this.lblProgramType = new System.Windows.Forms.Label();
             this.lblIDReadOnly = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -42,25 +40,15 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.lsvProgram = new System.Windows.Forms.ListView();
             this.chID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chProgramType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chProgramCost = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chProgramVariety = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chMaximumSpaces = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chNumberOfClasses = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cbxProgramCost = new System.Windows.Forms.ComboBox();
-            this.lblProgramCost = new System.Windows.Forms.Label();
+            this.cbxProgramVariety = new System.Windows.Forms.ComboBox();
+            this.lblProgramVariety = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.chName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.txtName = new System.Windows.Forms.TextBox();
+            this.lblNameReadOnly = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // cbxProgramType
-            // 
-            this.cbxProgramType.FormattingEnabled = true;
-            this.cbxProgramType.Location = new System.Drawing.Point(570, 287);
-            this.cbxProgramType.Name = "cbxProgramType";
-            this.cbxProgramType.Size = new System.Drawing.Size(164, 24);
-            this.cbxProgramType.TabIndex = 52;
-            this.cbxProgramType.Text = "Please select";
             // 
             // txtNumberOfClasses
             // 
@@ -95,16 +83,6 @@
             this.lblMaximumSpaces.Size = new System.Drawing.Size(129, 17);
             this.lblMaximumSpaces.TabIndex = 47;
             this.lblMaximumSpaces.Text = "Maximum spaces";
-            // 
-            // lblProgramType
-            // 
-            this.lblProgramType.AutoSize = true;
-            this.lblProgramType.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProgramType.Location = new System.Drawing.Point(567, 267);
-            this.lblProgramType.Name = "lblProgramType";
-            this.lblProgramType.Size = new System.Drawing.Size(105, 17);
-            this.lblProgramType.TabIndex = 44;
-            this.lblProgramType.Text = "Program type";
             // 
             // lblIDReadOnly
             // 
@@ -169,8 +147,7 @@
             this.lsvProgram.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chID,
             this.chName,
-            this.chProgramType,
-            this.chProgramCost,
+            this.chProgramVariety,
             this.chMaximumSpaces,
             this.chNumberOfClasses});
             this.lsvProgram.FullRowSelect = true;
@@ -188,14 +165,13 @@
             this.chID.Text = "Program ID";
             this.chID.Width = 80;
             // 
-            // chProgramType
+            // chName
             // 
-            this.chProgramType.Text = "Program Type";
-            this.chProgramType.Width = 76;
+            this.chName.Text = "Name";
             // 
-            // chProgramCost
+            // chProgramVariety
             // 
-            this.chProgramCost.Text = "ProgramCost";
+            this.chProgramVariety.Text = "ProgramVariety";
             // 
             // chMaximumSpaces
             // 
@@ -205,24 +181,24 @@
             // 
             this.chNumberOfClasses.Text = "No. of Classes";
             // 
-            // cbxProgramCost
+            // cbxProgramVariety
             // 
-            this.cbxProgramCost.FormattingEnabled = true;
-            this.cbxProgramCost.Location = new System.Drawing.Point(570, 343);
-            this.cbxProgramCost.Name = "cbxProgramCost";
-            this.cbxProgramCost.Size = new System.Drawing.Size(164, 24);
-            this.cbxProgramCost.TabIndex = 56;
-            this.cbxProgramCost.Text = "Please select";
+            this.cbxProgramVariety.FormattingEnabled = true;
+            this.cbxProgramVariety.Location = new System.Drawing.Point(570, 343);
+            this.cbxProgramVariety.Name = "cbxProgramVariety";
+            this.cbxProgramVariety.Size = new System.Drawing.Size(164, 24);
+            this.cbxProgramVariety.TabIndex = 56;
+            this.cbxProgramVariety.Text = "Please select";
             // 
-            // lblProgramCost
+            // lblProgramVariety
             // 
-            this.lblProgramCost.AutoSize = true;
-            this.lblProgramCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProgramCost.Location = new System.Drawing.Point(567, 323);
-            this.lblProgramCost.Name = "lblProgramCost";
-            this.lblProgramCost.Size = new System.Drawing.Size(104, 17);
-            this.lblProgramCost.TabIndex = 55;
-            this.lblProgramCost.Text = "Program cost";
+            this.lblProgramVariety.AutoSize = true;
+            this.lblProgramVariety.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProgramVariety.Location = new System.Drawing.Point(567, 323);
+            this.lblProgramVariety.Name = "lblProgramVariety";
+            this.lblProgramVariety.Size = new System.Drawing.Size(123, 17);
+            this.lblProgramVariety.TabIndex = 55;
+            this.lblProgramVariety.Text = "Program variety";
             // 
             // lblName
             // 
@@ -234,32 +210,28 @@
             this.lblName.TabIndex = 57;
             this.lblName.Text = "Name";
             // 
-            // chName
+            // lblNameReadOnly
             // 
-            this.chName.Text = "Name";
-            // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(570, 223);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(164, 22);
-            this.txtName.TabIndex = 58;
+            this.lblNameReadOnly.AutoSize = true;
+            this.lblNameReadOnly.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNameReadOnly.Location = new System.Drawing.Point(567, 230);
+            this.lblNameReadOnly.Name = "lblNameReadOnly";
+            this.lblNameReadOnly.Size = new System.Drawing.Size(0, 17);
+            this.lblNameReadOnly.TabIndex = 58;
             // 
             // frmProgram
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(968, 655);
-            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.lblNameReadOnly);
             this.Controls.Add(this.lblName);
-            this.Controls.Add(this.cbxProgramCost);
-            this.Controls.Add(this.lblProgramCost);
-            this.Controls.Add(this.cbxProgramType);
+            this.Controls.Add(this.cbxProgramVariety);
+            this.Controls.Add(this.lblProgramVariety);
             this.Controls.Add(this.txtNumberOfClasses);
             this.Controls.Add(this.lblNumberOfClasses);
             this.Controls.Add(this.txtMaximumSpaces);
             this.Controls.Add(this.lblMaximumSpaces);
-            this.Controls.Add(this.lblProgramType);
             this.Controls.Add(this.lblIDReadOnly);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.btnDelete);
@@ -277,12 +249,10 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox cbxProgramType;
         private System.Windows.Forms.TextBox txtNumberOfClasses;
         private System.Windows.Forms.Label lblNumberOfClasses;
         private System.Windows.Forms.TextBox txtMaximumSpaces;
         private System.Windows.Forms.Label lblMaximumSpaces;
-        private System.Windows.Forms.Label lblProgramType;
         private System.Windows.Forms.Label lblIDReadOnly;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Button btnDelete;
@@ -291,14 +261,13 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.ListView lsvProgram;
         private System.Windows.Forms.ColumnHeader chID;
-        private System.Windows.Forms.ColumnHeader chProgramType;
-        private System.Windows.Forms.ColumnHeader chProgramCost;
+        private System.Windows.Forms.ColumnHeader chProgramVariety;
         private System.Windows.Forms.ColumnHeader chMaximumSpaces;
         private System.Windows.Forms.ColumnHeader chNumberOfClasses;
-        private System.Windows.Forms.ComboBox cbxProgramCost;
-        private System.Windows.Forms.Label lblProgramCost;
+        private System.Windows.Forms.ComboBox cbxProgramVariety;
+        private System.Windows.Forms.Label lblProgramVariety;
         private System.Windows.Forms.ColumnHeader chName;
         private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.Label lblNameReadOnly;
     }
 }

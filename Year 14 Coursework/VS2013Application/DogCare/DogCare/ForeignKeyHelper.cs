@@ -21,11 +21,11 @@ namespace DogCare
             return -1;
         }
 
-        internal int findIndexOfProgramTypeID(List<ProgramTypeModel> programTypes, int programTypeId)
+        public int findIndexOfDogID(List<DogModel> dogs, int dogID)
         {
-            for (int i = 0; i < programTypes.Count; i++)
+            for (int i = 0; i < dogs.Count; i++)
             {
-                if (programTypeId == programTypes[i].id)
+                if (dogID == dogs[i].id)
                 {
                     return i;
                 }
@@ -33,7 +33,7 @@ namespace DogCare
             return -1;
         }
 
-        internal int findIndexOfProgramCostID(List<ProgramCostModel> programCosts, int programCostId)
+        internal int findIndexOfProgramVarietyID(List<ProgramVarietyModel> programCosts, int programCostId)
         {
             for (int i = 0; i < programCosts.Count; i++)
             {
@@ -62,6 +62,18 @@ namespace DogCare
             for (int i = 0; i < staff.Count; i++)
             {
                 if (staffId == staff[i].id)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        internal int findIndexOfEnrollmentID(List<EnrollmentModel> enrollment, int enrollmentId)
+        {
+            for (int i = 0; i < enrollment.Count; i++)
+            {
+                if (enrollmentId == enrollment[i].id)
                 {
                     return i;
                 }

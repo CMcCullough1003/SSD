@@ -29,8 +29,7 @@ namespace DataStore
             new EnrollmentTable().deleteAll();
             new ClassTable().deleteAll();
             new ProgramTable().deleteAll();
-            new ProgramCostTable().deleteAll();
-            new ProgramTypeTable().deleteAll();
+            new ProgramVarietyTable().deleteAll();
             new StaffTable().deleteAll();
             new DogTable().deleteAll();
             new ClientTable().deleteAll();

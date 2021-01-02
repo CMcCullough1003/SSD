@@ -19,8 +19,7 @@ namespace DataStoreTest
         private int enrollmentId = 0;
         private int dogId = 0;
         private int clientId = 0;
-        private int programTypeId = 0;
-        private int programeCostId = 0;
+        private int programVarietyId = 0;
         private int programId = 0;
 
         [TestInitialize]
@@ -46,23 +45,17 @@ namespace DataStoreTest
             DogTable dogTable = new DogTable();
             dogId = dogTable.create(dogModel);
 
-            ProgramTypeModel programTypeModel = new ProgramTypeModel();
-            programTypeModel.description = "Regular";
+            ProgramVarietyModel programeVarietyModel = new ProgramVarietyModel();
+            programeVarietyModel.depositAmount = 20.0;
+            programeVarietyModel.sessionCost = 20.0;
+            programeVarietyModel.fullPaymentPercentageDiscount = 20;
+            programeVarietyModel.name = "Regular";
 
-            ProgramTypeTable programTypeTable = new ProgramTypeTable();
-            programTypeId = programTypeTable.create(programTypeModel);
-
-            ProgramCostModel programeCostModel = new ProgramCostModel();
-            programeCostModel.depositAmount = 20.0;
-            programeCostModel.sessionCost = 20.0;
-            programeCostModel.fullPaymentPercentageDiscount = 20;
-
-            ProgramCostTable programCostTable = new ProgramCostTable();
-            programeCostId = programCostTable.create(programeCostModel);
+            ProgramVarietyTable programVarietyTable = new ProgramVarietyTable();
+            programVarietyId = programVarietyTable.create(programeVarietyModel);
 
             ProgramModel programModel = new ProgramModel();
-            programModel.programTypeId = programTypeId;
-            programModel.programCostId = programeCostId;
+            programModel.programVarietyId = programVarietyId;
             programModel.dogSpacesMaximum = 50;
             programModel.noOfClasses = 50;
 
@@ -70,9 +63,11 @@ namespace DataStoreTest
             programId = programTable.create(programModel);
 
             EnrollmentModel enrollmentModel = new EnrollmentModel();
+            enrollmentModel.name = "A";
             enrollmentModel.clientId = clientId;
             enrollmentModel.dogId = dogId;
             enrollmentModel.programId = programId;
+            enrollmentModel.paymentMethod = 1;
 
             EnrollmentTable enrollmentTable = new EnrollmentTable();
             enrollmentId = enrollmentTable.create(enrollmentModel);

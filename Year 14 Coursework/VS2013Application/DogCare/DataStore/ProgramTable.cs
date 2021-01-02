@@ -36,8 +36,7 @@ namespace DataStore
                 commandCreate.CommandType = System.Data.CommandType.StoredProcedure;
                 commandCreate.Parameters.Add("@ProgramID", SqlDbType.Int).Direction = ParameterDirection.Output; //Output parameter that will be returned from this function
                 commandCreate.Parameters.Add("@name", SqlDbType.Text).Value = programModel.name;
-                commandCreate.Parameters.Add("@programTypeID", SqlDbType.Int).Value = programModel.programTypeId;
-                commandCreate.Parameters.Add("@programCostID", SqlDbType.Int).Value = programModel.programCostId;
+                commandCreate.Parameters.Add("@programVarietyID", SqlDbType.Int).Value = programModel.programVarietyId;
                 commandCreate.Parameters.Add("@dogSpacesMaximum", SqlDbType.Int).Value = programModel.dogSpacesMaximum;
                 commandCreate.Parameters.Add("@noOfClasses", SqlDbType.Int).Value = programModel.noOfClasses;
 
@@ -262,8 +261,7 @@ namespace DataStore
                 commandCreate.CommandType = System.Data.CommandType.StoredProcedure;
                 commandCreate.Parameters.Add("@ProgramID", SqlDbType.Int).Value = programModel.id;
                 commandCreate.Parameters.Add("@name", SqlDbType.Text).Value = programModel.name;
-                commandCreate.Parameters.Add("@programTypeID", SqlDbType.Int).Value = programModel.programTypeId;
-                commandCreate.Parameters.Add("@programCostID", SqlDbType.Int).Value = programModel.programCostId;
+                commandCreate.Parameters.Add("@programVarietyID", SqlDbType.Int).Value = programModel.programVarietyId;
                 commandCreate.Parameters.Add("@dogSpacesMaximum", SqlDbType.Int).Value = programModel.dogSpacesMaximum;
                 commandCreate.Parameters.Add("@noOfClasses", SqlDbType.Int).Value = programModel.noOfClasses;
 
@@ -372,10 +370,9 @@ namespace DataStore
 
             programModel.id = dataReader.GetInt32(0);
             programModel.name = dataReader.GetString(1);
-            programModel.programTypeId = dataReader.GetInt32(2);
-            programModel.programCostId = dataReader.GetInt32(3);
-            programModel.dogSpacesMaximum = dataReader.GetInt32(4);
-            programModel.noOfClasses = dataReader.GetInt32(5);
+            programModel.programVarietyId = dataReader.GetInt32(2);
+            programModel.dogSpacesMaximum = dataReader.GetInt32(3);
+            programModel.noOfClasses = dataReader.GetInt32(4);
 
             return programModel;
         }

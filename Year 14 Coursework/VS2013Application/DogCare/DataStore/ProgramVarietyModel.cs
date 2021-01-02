@@ -4,10 +4,10 @@ using System.Text;
 
 namespace DataStore
 {
-    public class ProgramCostModel
+    public class ProgramVarietyModel
     {
         public int id = 0;
-        public string offerName = "";
+        public string name = "";
         public double depositAmount = 0.0;
         public double sessionCost = 0.0;
         public double fullPaymentPercentageDiscount = 0;

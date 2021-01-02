@@ -17,28 +17,21 @@ namespace DataStoreTest
     public class ProgramTableTest
     {
 
-        private int programTypeId = 0;
-        private int programCostId = 0;
+        private int programVarietyId = 0;
 
         [TestInitialize]
         public void Setup()
         {
             new DataStoreTableHelper().clearAllTables();
 
-            ProgramTypeModel programTypeModel = new ProgramTypeModel();
-            programTypeModel.description = "Regular";
+            ProgramVarietyModel programeVarietyModel = new ProgramVarietyModel();
+            programeVarietyModel.depositAmount = 20.0;
+            programeVarietyModel.sessionCost = 20.0;
+            programeVarietyModel.fullPaymentPercentageDiscount = 20;
+            programeVarietyModel.name = "Advanced";
 
-            ProgramTypeTable programTypeTable = new ProgramTypeTable();
-            programTypeId = programTypeTable.create(programTypeModel);
-
-
-            ProgramCostModel programeCostModel = new ProgramCostModel();
-            programeCostModel.depositAmount = 20.0;
-            programeCostModel.sessionCost = 20.0;
-            programeCostModel.fullPaymentPercentageDiscount = 20;
-
-            ProgramCostTable programCostTable = new ProgramCostTable();
-            programCostId = programCostTable.create(programeCostModel);
+            ProgramVarietyTable programVarietyTable = new ProgramVarietyTable();
+            programVarietyId = programVarietyTable.create(programeVarietyModel);
         }
 
         [TestMethod]
@@ -60,8 +53,7 @@ namespace DataStoreTest
         {
             //Assemble
            ProgramModel programModel = new ProgramModel();
-            programModel.programTypeId = programTypeId;
-            programModel.programCostId = programCostId;
+            programModel.programVarietyId = programVarietyId;
             programModel.dogSpacesMaximum = 10;
             programModel.noOfClasses = 6;
             //If created will be greater than 0, but we don't know exactly what it will be because deleting all records doesnt set the ID counter back to 0
@@ -81,8 +73,7 @@ namespace DataStoreTest
         {
             //Assemble
             ProgramModel programModel = new ProgramModel();
-            programModel.programTypeId = programTypeId;
-            programModel.programCostId = programCostId;
+            programModel.programVarietyId = programVarietyId;
             programModel.dogSpacesMaximum = 10;
             programModel.noOfClasses = 6;
             int expected = 1;
@@ -101,8 +92,7 @@ namespace DataStoreTest
         {
             //Assemble
             ProgramModel programModel = new ProgramModel();
-            programModel.programTypeId = programTypeId;
-            programModel.programCostId = programCostId;
+            programModel.programVarietyId = programVarietyId;
             programModel.dogSpacesMaximum = 10;
             programModel.noOfClasses = 6;
             ProgramTable programTable = new ProgramTable();
@@ -112,8 +102,7 @@ namespace DataStoreTest
             ProgramModel actual = programTable.read(programID);
 
             //Assert
-            Assert.AreEqual(programModel.programTypeId, actual.programTypeId);
-            Assert.AreEqual(programModel.programCostId, actual.programCostId);
+            Assert.AreEqual(programModel.programVarietyId, actual.programVarietyId);
             Assert.AreEqual(programModel.dogSpacesMaximum, actual.dogSpacesMaximum);
             Assert.AreEqual(programModel.noOfClasses, actual.noOfClasses);
         }
@@ -123,20 +112,17 @@ namespace DataStoreTest
         {
            //Assemble
             ProgramModel programModel1 = new ProgramModel();
-            programModel1.programTypeId = programTypeId;
-            programModel1.programCostId = programCostId;
+            programModel1.programVarietyId = programVarietyId;
             programModel1.dogSpacesMaximum = 10;
             programModel1.noOfClasses = 6;
 
             ProgramModel programModel2 = new ProgramModel();
-            programModel2.programTypeId = programTypeId;
-            programModel2.programCostId = programCostId;
+            programModel2.programVarietyId = programVarietyId;
             programModel2.dogSpacesMaximum = 10;
             programModel2.noOfClasses = 6;
 
             ProgramModel programModel3 = new ProgramModel();
-            programModel3.programTypeId = programTypeId;
-            programModel3.programCostId = programCostId;
+            programModel3.programVarietyId = programVarietyId;
             programModel3.dogSpacesMaximum = 10;
             programModel3.noOfClasses = 6;
 
@@ -158,20 +144,17 @@ namespace DataStoreTest
         {
             //Assemble
             ProgramModel programModel1 = new ProgramModel();
-            programModel1.programTypeId = programTypeId;
-            programModel1.programCostId = programCostId;
+            programModel1.programVarietyId = programVarietyId;
             programModel1.dogSpacesMaximum = 10;
             programModel1.noOfClasses = 6;
 
             ProgramModel programModel2 = new ProgramModel();
-            programModel2.programTypeId = programTypeId;
-            programModel2.programCostId = programCostId;
+            programModel2.programVarietyId = programVarietyId;
             programModel2.dogSpacesMaximum = 10;
             programModel2.noOfClasses = 6;
 
             ProgramModel programModel3 = new ProgramModel();
-            programModel3.programTypeId = programTypeId;
-            programModel3.programCostId = programCostId;
+            programModel3.programVarietyId = programVarietyId;
             programModel3.dogSpacesMaximum = 10;
             programModel3.noOfClasses = 6;
 
@@ -185,20 +168,17 @@ namespace DataStoreTest
 
            //Assert
            Assert.AreEqual(programID1, actual[0].id);
-           Assert.AreEqual(programModel1.programTypeId, actual[0].programTypeId);
-           Assert.AreEqual(programModel1.programCostId, actual[0].programCostId);
+           Assert.AreEqual(programModel1.programVarietyId, actual[0].programVarietyId);
            Assert.AreEqual(programModel1.dogSpacesMaximum, actual[0].dogSpacesMaximum);
            Assert.AreEqual(programModel1.noOfClasses, actual[0].noOfClasses);
 
             Assert.AreEqual(programID2, actual[1].id);
-            Assert.AreEqual(programModel2.programTypeId, actual[1].programTypeId);
-            Assert.AreEqual(programModel2.programCostId, actual[1].programCostId);
+            Assert.AreEqual(programModel2.programVarietyId, actual[1].programVarietyId);
             Assert.AreEqual(programModel2.dogSpacesMaximum, actual[1].dogSpacesMaximum);
             Assert.AreEqual(programModel2.noOfClasses, actual[1].noOfClasses);
 
             Assert.AreEqual(programID3, actual[2].id);
-            Assert.AreEqual(programModel3.programTypeId, actual[2].programTypeId);
-            Assert.AreEqual(programModel3.programCostId, actual[2].programCostId);
+            Assert.AreEqual(programModel3.programVarietyId, actual[2].programVarietyId);
             Assert.AreEqual(programModel3.dogSpacesMaximum, actual[2].dogSpacesMaximum);
             Assert.AreEqual(programModel3.noOfClasses, actual[2].noOfClasses);
         }
@@ -208,15 +188,13 @@ namespace DataStoreTest
         {
             //Assemble
             ProgramModel programModel = new ProgramModel();
-            programModel.programTypeId = programTypeId;
-            programModel.programCostId = programCostId;
+            programModel.programVarietyId = programVarietyId;
             programModel.dogSpacesMaximum = 10;
             programModel.noOfClasses = 6;
             ProgramTable programTable = new ProgramTable();
             int programID = programTable.create(programModel);
             programModel.id = programID;
-            programModel.programTypeId = programTypeId;
-            programModel.programCostId = programCostId;
+            programModel.programVarietyId = programVarietyId;
             programModel.dogSpacesMaximum = 12;
             programModel.noOfClasses = 7;
 
@@ -225,8 +203,7 @@ namespace DataStoreTest
             ProgramModel actual = programTable.read(programID);
 
             //Assert
-            Assert.AreEqual(programModel.programTypeId, actual.programTypeId);
-            Assert.AreEqual(programModel.programCostId, actual.programCostId);
+            Assert.AreEqual(programModel.programVarietyId, actual.programVarietyId);
             Assert.AreEqual(programModel.dogSpacesMaximum, actual.dogSpacesMaximum);
             Assert.AreEqual(programModel.noOfClasses, actual.noOfClasses);
         }
@@ -236,8 +213,7 @@ namespace DataStoreTest
         {
                 //Assemble
                 ProgramModel programModel = new ProgramModel();
-                programModel.programTypeId = programTypeId;
-                programModel.programCostId = programCostId;
+                programModel.programVarietyId = programVarietyId;
                 programModel.dogSpacesMaximum = 12;
                 programModel.noOfClasses = 7;
                 int expected = 0;

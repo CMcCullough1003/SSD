@@ -37,7 +37,7 @@ namespace DataStore
                 commandCreate.Parameters.Add("@WaitingListID", SqlDbType.Int).Direction = ParameterDirection.Output; //Output parameter that will be returned from this function
                 commandCreate.Parameters.Add("@ClientID", SqlDbType.Int).Value = waitingListModel.clientId;
                 commandCreate.Parameters.Add("@DogID", SqlDbType.Int).Value = waitingListModel.dogId;
-                commandCreate.Parameters.Add("@ProgramTypeID", SqlDbType.Int).Value = waitingListModel.programTypeId;
+                commandCreate.Parameters.Add("@ProgramVarietyID", SqlDbType.Int).Value = waitingListModel.programVarietyId;
                 commandCreate.Parameters.Add("@JoinDate", SqlDbType.DateTime).Value = waitingListModel.joinDate;
                 commandCreate.Parameters.Add("@InviteIssued", SqlDbType.Bit).Value = waitingListModel.inviteIssued;
 
@@ -263,7 +263,7 @@ namespace DataStore
                 commandCreate.Parameters.Add("@WaitingListID", SqlDbType.Int).Value = waitingListModel.id;
                 commandCreate.Parameters.Add("@ClientID", SqlDbType.Int).Value = waitingListModel.clientId;
                 commandCreate.Parameters.Add("@DogID", SqlDbType.Int).Value = waitingListModel.dogId;
-                commandCreate.Parameters.Add("@ProgramTypeID", SqlDbType.Int).Value = waitingListModel.programTypeId;
+                commandCreate.Parameters.Add("@ProgramVarietyID", SqlDbType.Int).Value = waitingListModel.programVarietyId;
                 commandCreate.Parameters.Add("@JoinDate", SqlDbType.DateTime).Value = waitingListModel.joinDate;
                 commandCreate.Parameters.Add("@InviteIssued", SqlDbType.Bit).Value = waitingListModel.inviteIssued;
 
@@ -373,7 +373,7 @@ namespace DataStore
             waitingListModel.id = dataReader.GetInt32(0);
             waitingListModel.clientId = dataReader.GetInt32(1);
             waitingListModel.dogId = dataReader.GetInt32(2);
-            waitingListModel.programTypeId = dataReader.GetInt32(3);
+            waitingListModel.programVarietyId = dataReader.GetInt32(3);
             waitingListModel.joinDate = dataReader.GetDateTime(4);
             waitingListModel.inviteIssued = dataReader.GetBoolean(5);
 

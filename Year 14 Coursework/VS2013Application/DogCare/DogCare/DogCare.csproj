@@ -57,23 +57,23 @@
     <Compile Include="frmDog.Designer.cs">
       <DependentUpon>frmDog.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEnrollment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEnrollment.Designer.cs">
+      <DependentUpon>frmEnrollment.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmProgram.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmProgram.Designer.cs">
       <DependentUpon>frmProgram.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmProgramCosts.cs">
+    <Compile Include="frmProgramVariety.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmProgramCosts.Designer.cs">
-      <DependentUpon>frmProgramCosts.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmProgramType.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmProgramType.Designer.cs">
-      <DependentUpon>frmProgramType.cs</DependentUpon>
+    <Compile Include="frmProgramVariety.Designer.cs">
+      <DependentUpon>frmProgramVariety.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTraining.cs">
       <SubType>Form</SubType>
@@ -100,7 +100,16 @@
       <DependentUpon>frmFrontPage.cs</DependentUpon>
     </Compile>
     <Compile Include="InputCheckMessageBox.cs" />
+    <Compile Include="frmPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPayment.Designer.cs">
+      <DependentUpon>frmPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentConstants.cs" />
+    <Compile Include="PaymentTypeConstants.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="ProgramVarietyConstants.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmClass.resx">
       <DependentUpon>frmClass.cs</DependentUpon>
@@ -108,14 +117,14 @@
     <EmbeddedResource Include="frmDog.resx">
       <DependentUpon>frmDog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEnrollment.resx">
+      <DependentUpon>frmEnrollment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmProgram.resx">
       <DependentUpon>frmProgram.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmProgramCosts.resx">
-      <DependentUpon>frmProgramCosts.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmProgramType.resx">
-      <DependentUpon>frmProgramType.cs</DependentUpon>
+    <EmbeddedResource Include="frmProgramVariety.resx">
+      <DependentUpon>frmProgramVariety.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTraining.resx">
       <DependentUpon>frmTraining.cs</DependentUpon>
@@ -128,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmFrontPage.resx">
       <DependentUpon>frmFrontPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPayment.resx">
+      <DependentUpon>frmPayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -59,13 +59,13 @@ CREATE PROC CreateWaitingList(
   @WaitingListID int output,
   @ClientID int,
   @DogID int,
-  @ProgramTypeID int,
+  @ProgramVarietyID int,
   @JoinDate dateTime,
   @InviteIssued bit
 ) AS
 BEGIN
-    INSERT INTO WaitingList(ClientID, DogID, ProgramTypeID, JoinDate, InviteIssued)
-    VALUES (@ClientID, @DogID, @ProgramTypeID, @JoinDate, @InviteIssued);
+    INSERT INTO WaitingList(ClientID, DogID, ProgramVarietyID, JoinDate, InviteIssued)
+    VALUES (@ClientID, @DogID, @ProgramVarietyID, @JoinDate, @InviteIssued);
 
     SET @WaitingListID = SCOPE_IDENTITY();
 END
@@ -86,7 +86,7 @@ CREATE PROC UpdateWaitingListByID(
 	@WaitingListID int,
 	@ClientID int,
 	@DogID int,
-	@ProgramTypeID int,
+	@ProgramVarietyID int,
 	@JoinDate dateTime,
 	@InviteIssued bit
 ) AS
@@ -94,7 +94,7 @@ BEGIN
 	UPDATE WaitingList
 	SET ClientID = @ClientID,
 		DogID = @DogID,
-		ProgramTypeID = @ProgramTypeID,
+		ProgramVarietyID = @ProgramVarietyID,
 		JoinDate = @JoinDate,
 		InviteIssued = @InviteIssued
 

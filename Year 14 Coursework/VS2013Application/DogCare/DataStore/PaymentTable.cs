@@ -36,6 +36,7 @@ namespace DataStore
                 commandCreate.CommandType = System.Data.CommandType.StoredProcedure;
                 commandCreate.Parameters.Add("@PaymentID", SqlDbType.Int).Direction = ParameterDirection.Output; //Output parameter that will be returned from this function
                 commandCreate.Parameters.Add("@EnrollmentID", SqlDbType.Int).Value = paymentModel.enrollmentId;
+                commandCreate.Parameters.Add("@PaymentType", SqlDbType.Text).Value = paymentModel.paymentType;
                 commandCreate.Parameters.Add("@PaymentAmountDue", SqlDbType.Float).Value = paymentModel.paymentAmountDue;
                 commandCreate.Parameters.Add("@PaymentAmountDueDate", SqlDbType.Date).Value = paymentModel.paymentAmountDueDate;
                 commandCreate.Parameters.Add("@PaymentRecieved", SqlDbType.Int).Value = paymentModel.paymentRecieved;
@@ -263,6 +264,7 @@ namespace DataStore
                 commandCreate.CommandType = System.Data.CommandType.StoredProcedure;
                 commandCreate.Parameters.Add("@PaymentID", SqlDbType.Int).Value = paymentModel.id;
                 commandCreate.Parameters.Add("@EnrollmentID", SqlDbType.Int).Value = paymentModel.enrollmentId;
+                commandCreate.Parameters.Add("@PaymentType", SqlDbType.Text).Value = paymentModel.paymentType;
                 commandCreate.Parameters.Add("@PaymentAmountDue", SqlDbType.Float).Value = paymentModel.paymentAmountDue;
                 commandCreate.Parameters.Add("@PaymentAmountDueDate", SqlDbType.Date).Value = paymentModel.paymentAmountDueDate;
                 commandCreate.Parameters.Add("@PaymentRecieved", SqlDbType.Bit).Value = paymentModel.paymentRecieved;
@@ -374,11 +376,12 @@ namespace DataStore
 
             paymentModel.id = dataReader.GetInt32(0);
             paymentModel.enrollmentId = dataReader.GetInt32(1);
-            paymentModel.paymentAmountDue = dataReader.GetDouble(2);
-            paymentModel.paymentAmountDueDate = dataReader.GetDateTime(3);
-            paymentModel.paymentRecieved = dataReader.GetBoolean(4);
-            paymentModel.paymentRecievedDate = dataReader.GetDateTime(5);
-            paymentModel.recieptIssued = dataReader.GetBoolean(6);
+            paymentModel.paymentType = dataReader.GetString(2);
+            paymentModel.paymentAmountDue = dataReader.GetDouble(3);
+            paymentModel.paymentAmountDueDate = dataReader.GetDateTime(4);
+            paymentModel.paymentRecieved = dataReader.GetBoolean(5);
+            paymentModel.paymentRecievedDate = dataReader.GetDateTime(6);
+            paymentModel.recieptIssued = dataReader.GetBoolean(7);
 
             return paymentModel;
         }

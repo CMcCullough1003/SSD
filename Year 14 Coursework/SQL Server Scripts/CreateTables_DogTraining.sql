@@ -17,8 +17,7 @@ DROP TABLE Payment;
 DROP TABLE Enrollment;
 DROP TABLE Class;
 DROP TABLE Program;
-DROP TABLE ProgramCost;
-DROP TABLE ProgramType;
+DROP TABLE ProgramVariety;
 DROP TABLE Staff;
 DROP TABLE Dog;
 DROP TABLE Client;
@@ -48,13 +47,9 @@ CREATE TABLE Staff (
 	Name varchar(100) CHECK (Len(Name) >= 3) NOT NULL
 ) 
 
-CREATE TABLE ProgramType (
-	ProgramTypeID int IDENTITY(1,1) PRIMARY KEY,
-	Description varchar(20) CHECK (Description in ('Regular','Advanced')) NOT NULL
-)
-
-CREATE TABLE ProgramCost (
-	ProgramCostID int IDENTITY(1,1) PRIMARY KEY,
+CREATE TABLE ProgramVariety (
+	ProgramVarietyID int IDENTITY(1,1) PRIMARY KEY,
+	Name varchar(20) CHECK (Name in ('Regular','Advanced')) NOT NULL,
 	DepositAmount float CHECK (DepositAmount >= 20.0 AND DepositAmount <= 100.0) NOT NULL,
 	SessionCost float CHECK (SessionCost >= 20.0 AND SessionCost <= 100.0) NOT NULL,
 	FullPaymentPercentageDiscount float CHECK (FullPaymentPercentageDiscount >= 0.0 AND FullPaymentPercentageDiscount <= 100.0) NOT NULL
@@ -62,8 +57,9 @@ CREATE TABLE ProgramCost (
 
 CREATE TABLE Program (
 	ProgramID int IDENTITY(1,1) PRIMARY KEY,
-	ProgramTypeID int FOREIGN KEY REFERENCES ProgramType(ProgramTypeID),
-	ProgramCostID int FOREIGN KEY REFERENCES ProgramCost(ProgramCostID),
+	Name text NOT NULL,
+	/*ProgramTypeID int FOREIGN KEY REFERENCES ProgramType(ProgramTypeID),*/
+	ProgramVarietyID int FOREIGN KEY REFERENCES ProgramVariety(ProgramVarietyID),
 	DogSpacesMaximum int CHECK (DogSpacesMaximum >= 1 AND DogSpacesMaximum <= 100) NOT NULL,
 	NoOfClasses int CHECK (NoOfClasses >= 1 AND NoOfClasses <= 100) NOT NULL
 )
@@ -74,14 +70,17 @@ CREATE TABLE Class (
 	StaffID int FOREIGN KEY REFERENCES Staff(StaffID),
 	ClassDate date CHECK (ClassDate >= GetDate()) NOT NULL,
 	StartTime time NOT NULL,
-	EndTime time NOT NULL
+	EndTime time NOT NULL,
+	CONSTRAINT CK__Class__Times CHECK (EndTime > StartTime)
 )
 
 CREATE TABLE Enrollment (
 	EnrollmentID int IDENTITY(1,1) PRIMARY KEY,
+	Name text NOT NULL,
 	ClientID int FOREIGN KEY REFERENCES Client(ClientID),
 	DogID int FOREIGN KEY REFERENCES Dog(DogID),
-	ProgramID int FOREIGN KEY REFERENCES Program(ProgramID)
+	ProgramID int FOREIGN KEY REFERENCES Program(ProgramID),
+	PaymentMethod int CHECK (PaymentMethod >=1 AND PaymentMethod <= 2) NOT NULL 
 )
 
 CREATE TABLE Payment (
@@ -98,7 +97,7 @@ CREATE TABLE WaitingList (
 	WaitingListID int IDENTITY(1,1) PRIMARY KEY,
 	ClientID int FOREIGN KEY REFERENCES Client(ClientID),
 	DogID int FOREIGN KEY REFERENCES Dog(DogID),
-	ProgramTypeID int FOREIGN KEY REFERENCES ProgramType(ProgramTypeID),
+	ProgramVarietyID int FOREIGN KEY REFERENCES ProgramVariety(ProgramVarietyID),
 	JoinDate dateTime DEFAULT GetDate() NOT NULL,
 	InviteIssued bit DEFAULT 0 NOT NULL
 )

@@ -10,23 +10,10 @@ namespace DataStoreTest
     [TestClass]
     public class ExceptionMessageGeneratorTest
     {
-        [TestMethod]
-        public void MessageGenerator_BlankString_StandardMessage()
-        {
-            //Assemble
-            string expected = "Oops! Something has gone wrong. Please contact the system administrator";
-            ExceptionMessageGenerator exceptionMessageGenerator = new ExceptionMessageGenerator();
-            string exceptionMessage = "";
 
-            //Act
-            string actual = exceptionMessageGenerator.generateMessage(exceptionMessage);
-
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
 
         [TestMethod]
-        public void MessageGenerator_PopulatedMessage_StandardMessage()
+        public void MessageGenerator_PopulatedMessage_SimpleMessage()
         {
             //Assemble
             string expected = "Oops! Something has gone wrong. Please contact the system administrator\n\nabc";
