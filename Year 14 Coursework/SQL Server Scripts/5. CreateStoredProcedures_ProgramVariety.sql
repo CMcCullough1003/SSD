@@ -1,4 +1,4 @@
-/*This script creates all the stored procedures for the programCost table*/
+/*This script creates all the stored procedures for the ProgramVariety table*/
 
 /*Specifies which database is being used*/
 USE [Dogs]
@@ -9,153 +9,153 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 /*Drop all stored procedures*/
-DROP PROC ReadProgramCost
-DROP PROC DeleteProgramCostAll;
-DROP PROC CountProgramCost;
-DROP PROC DeleteProgramCostByID;
-DROP PROC UpdateProgramCostByID;
-DROP PROC ReadProgramCostByID;
-DROP PROC CreateProgramCost;
+DROP PROC ReadProgramVariety
+DROP PROC DeleteProgramVarietyAll;
+DROP PROC CountProgramVariety;
+DROP PROC DeleteProgramVarietyByID;
+DROP PROC UpdateProgramVarietyByID;
+DROP PROC ReadProgramVarietyByID;
+DROP PROC CreateProgramVariety;
 GO
 
 /*Stored Procedures:
-  Name: CreateprogramCost
+  Name: CreateProgramVariety
   Purpose: new record in table 
   Parameters: data required to create new record 
   Return: ID of new record
   
-  Name: ReadprogramCostByID
+  Name: ReadProgramVarietyByID
   Purpose: Read the record in the table with the specified ID
   Parameters: ID
   Return: A cursor with one record
 
-  Name: ReadprogramCosts
+  Name: ReadProgramVarietys
   Purpose: Read all the records in the table
   Parameters: None
   Return: A cursor with multiple records
 
-  Name: UpdateprogramCostByID
+  Name: UpdateProgramVarietyByID
   Purpose: Update the record in the table with the specified ID
   Parameters: ID and updated values
   Return: None
 
-  Name: DeleteprogramCostByID
+  Name: DeleteProgramVarietyByID
   Purpose: Delete the record in the table with the specified ID
   Parameters: ID
   Return: None
 
-  Name: DeleteprogramCostAll
+  Name: DeleteProgramVarietyAll
   Purpose: Delete all the records in the table
   Parameters: None
   Return: None
 
-  Name: CountprogramCost
+  Name: CountProgramVariety
   Purpose: Count the number of records in the table
   Parameters: None
   Return: Cursor with one row and one column
 */
 
-CREATE PROC CreateProgramCost(
-  @ProgramCostID int output,
+CREATE PROC CreateProgramVariety(
+  @ProgramVarietyID int output,
   @Name text,
   @DepositAmount float,
   @SessionCost float,
   @FullPaymentPercentageDiscount float
 ) AS
 BEGIN
-    INSERT INTO ProgramCost(Name, DepositAmount, SessionCost, FullPaymentPercentageDiscount)
+    INSERT INTO ProgramVariety(Name, DepositAmount, SessionCost, FullPaymentPercentageDiscount)
     VALUES (@Name, @DepositAmount, @SessionCost, @FullPaymentPercentageDiscount);
 
-    SET @ProgramCostID = SCOPE_IDENTITY();
+    SET @ProgramVarietyID = SCOPE_IDENTITY();
 END
 GO
 
 
-CREATE PROC ReadProgramCostByID(
-  @ProgramCostID int
+CREATE PROC ReadProgramVarietyByID(
+  @ProgramVarietyID int
 ) AS
 BEGIN
-	SELECT * FROM ProgramCost
-	WHERE ProgramCostID = @ProgramCostID
+	SELECT * FROM ProgramVariety
+	WHERE ProgramVarietyID = @ProgramVarietyID
 END
 GO
 
 
-CREATE PROC UpdateProgramCostByID(
-	@ProgramCostID int,
+CREATE PROC UpdateProgramVarietyByID(
+	@ProgramVarietyID int,
 	@Name text,
 	@DepositAmount float,
 	@SessionCost float,
 	@FullPaymentPercentageDiscount float
 ) AS
 BEGIN
-	UPDATE ProgramCost
+	UPDATE ProgramVariety
 	SET Name = @Name,
 		DepositAmount = @DepositAmount,
 		SessionCost = @SessionCost,
 		FullPaymentPercentageDiscount = @FullPaymentPercentageDiscount
 
-	WHERE ProgramCostID = @ProgramCostID
+	WHERE ProgramVarietyID = @ProgramVarietyID
 END
 GO
 
 
-CREATE PROC DeleteProgramCostByID (
-	@ProgramCostID int
+CREATE PROC DeleteProgramVarietyByID (
+	@ProgramVarietyID int
 ) AS
 BEGIN
-	DELETE FROM ProgramCost
-	WHERE ProgramCostID = @ProgramCostID
+	DELETE FROM ProgramVariety
+	WHERE ProgramVarietyID = @ProgramVarietyID
 END
 GO
 
 
-CREATE PROC CountProgramCost
+CREATE PROC CountProgramVariety
 AS
 BEGIN
-	SELECT COUNT(*) FROM ProgramCost
+	SELECT COUNT(*) FROM ProgramVariety
 END
 GO
 
 
-CREATE PROC DeleteProgramCostAll 
+CREATE PROC DeleteProgramVarietyAll 
 AS
 BEGIN
-	DELETE FROM ProgramCost
+	DELETE FROM ProgramVariety
 END
 GO
 
-CREATE PROC ReadProgramCost
+CREATE PROC ReadProgramVariety
 AS
 BEGIN
-	Select * FROM ProgramCost
+	Select * FROM ProgramVariety
 END
 GO
 
 
 /* Testing Stored Procedures 
 
-DECLARE @ProgramCostID int;
+DECLARE @ProgramVarietyID int;
 
-EXEC CreateProgramCost
-  @ProgramCostID output, 
+EXEC CreateProgramVariety
+  @ProgramVarietyID output, 
   99, 25, 10
 
-SELECT @ProgramCostID 
+SELECT @ProgramVarietyID 
 
-EXEC ReadProgramCostByID @ProgramCostID
+EXEC ReadProgramVarietyByID @ProgramVarietyID
 
-EXEC ReadProgramCost
+EXEC ReadProgramVariety
 
-EXEC UpdateProgramCostByID @ProgramCostID, 80, 30, 30
+EXEC UpdateProgramVarietyByID @ProgramVarietyID, 80, 30, 30
 
-EXEC ReadProgramCostByID @ProgramCostID
+EXEC ReadProgramVarietyByID @ProgramVarietyID
 
-EXEC DeleteProgramCostByID @ProgramCostID
+EXEC DeleteProgramVarietyByID @ProgramVarietyID
 
-EXEC ReadProgramCostByID @ProgramCostID
+EXEC ReadProgramVarietyByID @ProgramVarietyID
 
-EXEC CountProgramCost
+EXEC CountProgramVariety
 GO
 
 */

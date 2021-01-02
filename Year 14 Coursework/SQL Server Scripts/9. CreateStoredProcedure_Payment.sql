@@ -58,6 +58,7 @@ GO
 CREATE PROC CreatePayment(
   @PaymentID int output,
   @EnrollmentID int,
+  @PaymentType text,
   @PaymentAmountDue float,
   @PaymentAmountDueDate date,
   @PaymentRecieved bit,
@@ -65,8 +66,8 @@ CREATE PROC CreatePayment(
   @RecieptIssued bit
 ) AS
 BEGIN
-    INSERT INTO Payment(EnrollmentID, PaymentAmountDue, PaymentAmountDueDate, PaymentRecieved, PaymentRecievedDate, RecieptIssued)
-    VALUES (@EnrollmentID, @PaymentAmountDue, @PaymentAmountDueDate, @PaymentRecieved, @PaymentRecievedDate, @RecieptIssued);
+    INSERT INTO Payment(EnrollmentID, PaymentType, PaymentAmountDue, PaymentAmountDueDate, PaymentRecieved, PaymentRecievedDate, RecieptIssued)
+    VALUES (@EnrollmentID, @PaymentType, @PaymentAmountDue, @PaymentAmountDueDate, @PaymentRecieved, @PaymentRecievedDate, @RecieptIssued);
 
     SET @PaymentID = SCOPE_IDENTITY();
 END
@@ -85,6 +86,7 @@ GO
 
 CREATE PROC UpdatePaymentByID(
 	@PaymentID int,
+	@PaymentType text,
 	@EnrollmentID int,
 	@PaymentAmountDue float,
 	@PaymentAmountDueDate date,
@@ -95,6 +97,7 @@ CREATE PROC UpdatePaymentByID(
 BEGIN
 	UPDATE Payment
 	SET EnrollmentID = @EnrollmentID,
+		PaymentType = @PaymentType,
 		PaymentAmountDue = @PaymentAmountDue,
 		PaymentAmountDueDate = @PaymentAmountDueDate,
 		PaymentRecieved = @PaymentRecieved,

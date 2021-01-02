@@ -80,12 +80,15 @@ CREATE TABLE Enrollment (
 	ClientID int FOREIGN KEY REFERENCES Client(ClientID),
 	DogID int FOREIGN KEY REFERENCES Dog(DogID),
 	ProgramID int FOREIGN KEY REFERENCES Program(ProgramID),
-	PaymentMethod int CHECK (PaymentMethod >=1 AND PaymentMethod <= 2) NOT NULL 
+	PaymentMethod int CHECK (PaymentMethod >=1 AND PaymentMethod <= 2) NOT NULL,
+	JoinDate dateTime DEFAULT GetDate() NOT NULL,
+	InviteIssued bit DEFAULT 0 NOT NULL
 )
 
 CREATE TABLE Payment (
 	PaymentID int IDENTITY(1,1) PRIMARY KEY,
 	EnrollmentID int FOREIGN KEY REFERENCES Enrollment(EnrollmentID),
+	PaymentType text NOT NULL,
 	PaymentAmountDue float CHECK (PaymentAmountDue >= 0.0) NOT NULL,
 	PaymentAmountDueDate date NOT NULL,
 	PaymentRecieved bit DEFAULT 0 NOT NULL,

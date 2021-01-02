@@ -57,14 +57,17 @@ GO
 
 CREATE PROC CreateEnrollment(
   @EnrollmentID int output,
+  @Name text, 
   @ClientID int,
   @DogID int,
   @ProgramID int,
-  @PaymentMethod int
+  @PaymentMethod int,
+  @JoinDate dateTime,
+  @InviteIssued bit
 ) AS
 BEGIN
-    INSERT INTO Enrollment(ClientID, DogID, ProgramID, PaymentMethod)
-    VALUES (@ClientID, @DogID, @ProgramID, @PaymentMethod);
+    INSERT INTO Enrollment(ClientID, Name, DogID, ProgramID, PaymentMethod, JoinDate, InviteIssued)
+    VALUES (@ClientID, @Name, @DogID, @ProgramID, @PaymentMethod, @JoinDate, @InviteIssued);
 
     SET @EnrollmentID = SCOPE_IDENTITY();
 END
@@ -83,17 +86,23 @@ GO
 
 CREATE PROC UpdateEnrollmentByID(
 	@EnrollmentID int,
+	@Name text,
 	@ClientID int,
 	@DogID int,
 	@ProgramID int,
-	@PaymentMethod int
+	@PaymentMethod int,
+	@JoinDate dateTime,
+	@InviteIssued bit
 ) AS
 BEGIN
 	UPDATE Enrollment
 	SET ClientID = @ClientID,
+		Name = @Name,
 		DogID = @DogID,
 		ProgramID = @ProgramID,
-		PaymentMethod = @PaymentMethod
+		PaymentMethod = @PaymentMethod,
+		JoinDate = @JoinDate,
+		InviteIssued = @InviteIssued
 
 	WHERE EnrollmentID = @EnrollmentID
 END
