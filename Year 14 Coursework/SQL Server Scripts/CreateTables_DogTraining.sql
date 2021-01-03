@@ -27,10 +27,12 @@ DROP TABLE Client;
 */
 CREATE TABLE Client (
 	ClientID int IDENTITY(1,1) PRIMARY KEY,
-	Name varchar(100) CHECK (Len(Name) >= 3) NOT NULL,
+	Forename varchar(100) CHECK (Len(Forename) >= 3) NOT NULL,
+	Surname varchar(100) CHECK (Len(Surname) >= 3) NOT NULL,
 	Phone varchar(20) CHECK (Len(Phone) >= 10),
 	Email varchar(50) CHECK (Len(Email) >= 7),
-	CHECK (Phone IS NOT NULL OR Email IS NOT NULL)
+	CHECK (Phone IS NOT NULL OR Email IS NOT NULL),
+	DisplayName AS Forename + ' ' + Surname
 )
 
 CREATE TABLE Dog (

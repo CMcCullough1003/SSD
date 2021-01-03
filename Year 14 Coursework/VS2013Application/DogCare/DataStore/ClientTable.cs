@@ -35,7 +35,8 @@ namespace DataStore
                 SqlCommand commandCreate = new SqlCommand("CreateClient");
                 commandCreate.CommandType = System.Data.CommandType.StoredProcedure;
                 commandCreate.Parameters.Add("@ClientID", SqlDbType.Int).Direction = ParameterDirection.Output; //Output parameter that will be returned from this function
-                commandCreate.Parameters.Add("@Name", SqlDbType.VarChar).Value = clientModel.name;
+                commandCreate.Parameters.Add("@Forename", SqlDbType.VarChar).Value = clientModel.forename;
+                commandCreate.Parameters.Add("@Surname", SqlDbType.VarChar).Value = clientModel.surname;
                 commandCreate.Parameters.Add("@Phone", SqlDbType.VarChar).Value = clientModel.phone;
                 commandCreate.Parameters.Add("@Email", SqlDbType.VarChar).Value = clientModel.email;
 
@@ -258,7 +259,8 @@ namespace DataStore
                 SqlCommand commandCreate = new SqlCommand("UpdateClientByID");
                 commandCreate.CommandType = System.Data.CommandType.StoredProcedure;
                 commandCreate.Parameters.Add("@ClientID", SqlDbType.Int).Value = clientModel.id;
-                commandCreate.Parameters.Add("@Name", SqlDbType.VarChar).Value = clientModel.name;
+                commandCreate.Parameters.Add("@Forename", SqlDbType.VarChar).Value = clientModel.forename;
+                commandCreate.Parameters.Add("@Surname", SqlDbType.VarChar).Value = clientModel.surname;
                 commandCreate.Parameters.Add("@Phone", SqlDbType.VarChar).Value = clientModel.phone;
                 commandCreate.Parameters.Add("@Email", SqlDbType.VarChar).Value = clientModel.email;
 
@@ -373,9 +375,11 @@ namespace DataStore
             ClientModel clientModel = new ClientModel();
 
             clientModel.id = dataReader.GetInt32(0);
-            clientModel.name = dataReader.GetString(1);
-            clientModel.phone = dataReader.GetString(2);
-            clientModel.email = dataReader.GetString(3);
+            clientModel.forename = dataReader.GetString(1);
+            clientModel.surname = dataReader.GetString(2);
+            clientModel.phone = dataReader.GetString(3);
+            clientModel.email = dataReader.GetString(4);
+            clientModel.displayName = dataReader.GetString(5);
 
             return clientModel;
         }

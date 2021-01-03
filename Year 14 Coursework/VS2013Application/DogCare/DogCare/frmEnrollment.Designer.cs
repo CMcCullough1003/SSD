@@ -46,6 +46,8 @@
             this.chDog = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chProgram = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chPaymentMethod = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chJoinDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chInviteIssued = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cbxProgram = new System.Windows.Forms.ComboBox();
             this.lblName = new System.Windows.Forms.Label();
             this.lblNameReadOnly = new System.Windows.Forms.Label();
@@ -55,17 +57,15 @@
             this.lblJoinDateReadOnly = new System.Windows.Forms.Label();
             this.lblJoinDate = new System.Windows.Forms.Label();
             this.gbxInviteIssued = new System.Windows.Forms.GroupBox();
-            this.rbtnNo = new System.Windows.Forms.RadioButton();
-            this.rbtnYes = new System.Windows.Forms.RadioButton();
-            this.chJoinDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chInviteIssued = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.rbtnInviteIssuedNo = new System.Windows.Forms.RadioButton();
+            this.rbtnInviteIssuedYes = new System.Windows.Forms.RadioButton();
             this.gbxInviteIssued.SuspendLayout();
             this.SuspendLayout();
             // 
             // cbxDog
             // 
             this.cbxDog.FormattingEnabled = true;
-            this.cbxDog.Location = new System.Drawing.Point(569, 374);
+            this.cbxDog.Location = new System.Drawing.Point(571, 246);
             this.cbxDog.Name = "cbxDog";
             this.cbxDog.Size = new System.Drawing.Size(164, 24);
             this.cbxDog.TabIndex = 88;
@@ -75,7 +75,7 @@
             // 
             this.lblDog.AutoSize = true;
             this.lblDog.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDog.Location = new System.Drawing.Point(566, 354);
+            this.lblDog.Location = new System.Drawing.Point(568, 226);
             this.lblDog.Name = "lblDog";
             this.lblDog.Size = new System.Drawing.Size(37, 17);
             this.lblDog.TabIndex = 87;
@@ -84,7 +84,7 @@
             // cbxClient
             // 
             this.cbxClient.FormattingEnabled = true;
-            this.cbxClient.Location = new System.Drawing.Point(569, 318);
+            this.cbxClient.Location = new System.Drawing.Point(571, 190);
             this.cbxClient.Name = "cbxClient";
             this.cbxClient.Size = new System.Drawing.Size(164, 24);
             this.cbxClient.TabIndex = 86;
@@ -94,7 +94,7 @@
             // 
             this.lblProgram.AutoSize = true;
             this.lblProgram.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProgram.Location = new System.Drawing.Point(566, 408);
+            this.lblProgram.Location = new System.Drawing.Point(568, 280);
             this.lblProgram.Name = "lblProgram";
             this.lblProgram.Size = new System.Drawing.Size(69, 17);
             this.lblProgram.TabIndex = 82;
@@ -104,7 +104,7 @@
             // 
             this.lblClient.AutoSize = true;
             this.lblClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClient.Location = new System.Drawing.Point(566, 298);
+            this.lblClient.Location = new System.Drawing.Point(568, 170);
             this.lblClient.Name = "lblClient";
             this.lblClient.Size = new System.Drawing.Size(49, 17);
             this.lblClient.TabIndex = 81;
@@ -113,7 +113,7 @@
             // lblIDReadOnly
             // 
             this.lblIDReadOnly.AutoSize = true;
-            this.lblIDReadOnly.Location = new System.Drawing.Point(566, 176);
+            this.lblIDReadOnly.Location = new System.Drawing.Point(568, 82);
             this.lblIDReadOnly.Name = "lblIDReadOnly";
             this.lblIDReadOnly.Size = new System.Drawing.Size(0, 17);
             this.lblIDReadOnly.TabIndex = 80;
@@ -122,7 +122,7 @@
             // 
             this.lblID.AutoSize = true;
             this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblID.Location = new System.Drawing.Point(566, 150);
+            this.lblID.Location = new System.Drawing.Point(566, 52);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(105, 17);
             this.lblID.TabIndex = 79;
@@ -215,10 +215,18 @@
             // 
             this.chPaymentMethod.Text = "Payment method";
             // 
+            // chJoinDate
+            // 
+            this.chJoinDate.Text = "Join Date";
+            // 
+            // chInviteIssued
+            // 
+            this.chInviteIssued.Text = "Invite Issued";
+            // 
             // cbxProgram
             // 
             this.cbxProgram.FormattingEnabled = true;
-            this.cbxProgram.Location = new System.Drawing.Point(569, 428);
+            this.cbxProgram.Location = new System.Drawing.Point(571, 300);
             this.cbxProgram.Name = "cbxProgram";
             this.cbxProgram.Size = new System.Drawing.Size(164, 24);
             this.cbxProgram.TabIndex = 89;
@@ -228,7 +236,7 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(566, 238);
+            this.lblName.Location = new System.Drawing.Point(568, 110);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(49, 17);
             this.lblName.TabIndex = 103;
@@ -237,7 +245,7 @@
             // lblNameReadOnly
             // 
             this.lblNameReadOnly.AutoSize = true;
-            this.lblNameReadOnly.Location = new System.Drawing.Point(571, 265);
+            this.lblNameReadOnly.Location = new System.Drawing.Point(573, 137);
             this.lblNameReadOnly.Name = "lblNameReadOnly";
             this.lblNameReadOnly.Size = new System.Drawing.Size(0, 17);
             this.lblNameReadOnly.TabIndex = 104;
@@ -245,7 +253,7 @@
             // rbtnPayInFull
             // 
             this.rbtnPayInFull.AutoSize = true;
-            this.rbtnPayInFull.Location = new System.Drawing.Point(569, 484);
+            this.rbtnPayInFull.Location = new System.Drawing.Point(571, 360);
             this.rbtnPayInFull.Name = "rbtnPayInFull";
             this.rbtnPayInFull.Size = new System.Drawing.Size(90, 21);
             this.rbtnPayInFull.TabIndex = 105;
@@ -256,7 +264,7 @@
             // rbtnPayPerClass
             // 
             this.rbtnPayPerClass.AutoSize = true;
-            this.rbtnPayPerClass.Location = new System.Drawing.Point(674, 484);
+            this.rbtnPayPerClass.Location = new System.Drawing.Point(676, 360);
             this.rbtnPayPerClass.Name = "rbtnPayPerClass";
             this.rbtnPayPerClass.Size = new System.Drawing.Size(114, 21);
             this.rbtnPayPerClass.TabIndex = 106;
@@ -268,7 +276,7 @@
             // 
             this.lblPaymentMethod.AutoSize = true;
             this.lblPaymentMethod.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPaymentMethod.Location = new System.Drawing.Point(566, 464);
+            this.lblPaymentMethod.Location = new System.Drawing.Point(568, 340);
             this.lblPaymentMethod.Name = "lblPaymentMethod";
             this.lblPaymentMethod.Size = new System.Drawing.Size(128, 17);
             this.lblPaymentMethod.TabIndex = 107;
@@ -277,7 +285,7 @@
             // lblJoinDateReadOnly
             // 
             this.lblJoinDateReadOnly.AutoSize = true;
-            this.lblJoinDateReadOnly.Location = new System.Drawing.Point(764, 264);
+            this.lblJoinDateReadOnly.Location = new System.Drawing.Point(573, 424);
             this.lblJoinDateReadOnly.Name = "lblJoinDateReadOnly";
             this.lblJoinDateReadOnly.Size = new System.Drawing.Size(0, 17);
             this.lblJoinDateReadOnly.TabIndex = 109;
@@ -286,7 +294,7 @@
             // 
             this.lblJoinDate.AutoSize = true;
             this.lblJoinDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblJoinDate.Location = new System.Drawing.Point(764, 238);
+            this.lblJoinDate.Location = new System.Drawing.Point(573, 398);
             this.lblJoinDate.Name = "lblJoinDate";
             this.lblJoinDate.Size = new System.Drawing.Size(72, 17);
             this.lblJoinDate.TabIndex = 108;
@@ -294,47 +302,39 @@
             // 
             // gbxInviteIssued
             // 
-            this.gbxInviteIssued.Controls.Add(this.rbtnNo);
-            this.gbxInviteIssued.Controls.Add(this.rbtnYes);
+            this.gbxInviteIssued.Controls.Add(this.rbtnInviteIssuedNo);
+            this.gbxInviteIssued.Controls.Add(this.rbtnInviteIssuedYes);
             this.gbxInviteIssued.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbxInviteIssued.Location = new System.Drawing.Point(767, 298);
+            this.gbxInviteIssued.Location = new System.Drawing.Point(569, 450);
             this.gbxInviteIssued.Name = "gbxInviteIssued";
             this.gbxInviteIssued.Size = new System.Drawing.Size(155, 55);
             this.gbxInviteIssued.TabIndex = 110;
             this.gbxInviteIssued.TabStop = false;
             this.gbxInviteIssued.Text = "InviteIssued";
             // 
-            // rbtnNo
+            // rbtnInviteIssuedNo
             // 
-            this.rbtnNo.AutoSize = true;
-            this.rbtnNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnNo.Location = new System.Drawing.Point(87, 23);
-            this.rbtnNo.Name = "rbtnNo";
-            this.rbtnNo.Size = new System.Drawing.Size(47, 21);
-            this.rbtnNo.TabIndex = 108;
-            this.rbtnNo.TabStop = true;
-            this.rbtnNo.Text = "No";
-            this.rbtnNo.UseVisualStyleBackColor = true;
+            this.rbtnInviteIssuedNo.AutoSize = true;
+            this.rbtnInviteIssuedNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnInviteIssuedNo.Location = new System.Drawing.Point(87, 23);
+            this.rbtnInviteIssuedNo.Name = "rbtnInviteIssuedNo";
+            this.rbtnInviteIssuedNo.Size = new System.Drawing.Size(47, 21);
+            this.rbtnInviteIssuedNo.TabIndex = 108;
+            this.rbtnInviteIssuedNo.TabStop = true;
+            this.rbtnInviteIssuedNo.Text = "No";
+            this.rbtnInviteIssuedNo.UseVisualStyleBackColor = true;
             // 
-            // rbtnYes
+            // rbtnInviteIssuedYes
             // 
-            this.rbtnYes.AutoSize = true;
-            this.rbtnYes.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnYes.Location = new System.Drawing.Point(16, 23);
-            this.rbtnYes.Name = "rbtnYes";
-            this.rbtnYes.Size = new System.Drawing.Size(53, 21);
-            this.rbtnYes.TabIndex = 107;
-            this.rbtnYes.TabStop = true;
-            this.rbtnYes.Text = "Yes";
-            this.rbtnYes.UseVisualStyleBackColor = true;
-            // 
-            // chJoinDate
-            // 
-            this.chJoinDate.Text = "Join Date";
-            // 
-            // chInviteIssued
-            // 
-            this.chInviteIssued.Text = "Invite Issued";
+            this.rbtnInviteIssuedYes.AutoSize = true;
+            this.rbtnInviteIssuedYes.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnInviteIssuedYes.Location = new System.Drawing.Point(16, 23);
+            this.rbtnInviteIssuedYes.Name = "rbtnInviteIssuedYes";
+            this.rbtnInviteIssuedYes.Size = new System.Drawing.Size(53, 21);
+            this.rbtnInviteIssuedYes.TabIndex = 107;
+            this.rbtnInviteIssuedYes.TabStop = true;
+            this.rbtnInviteIssuedYes.Text = "Yes";
+            this.rbtnInviteIssuedYes.UseVisualStyleBackColor = true;
             // 
             // frmEnrollment
             // 
@@ -400,8 +400,8 @@
         private System.Windows.Forms.Label lblJoinDateReadOnly;
         private System.Windows.Forms.Label lblJoinDate;
         private System.Windows.Forms.GroupBox gbxInviteIssued;
-        private System.Windows.Forms.RadioButton rbtnNo;
-        private System.Windows.Forms.RadioButton rbtnYes;
+        private System.Windows.Forms.RadioButton rbtnInviteIssuedNo;
+        private System.Windows.Forms.RadioButton rbtnInviteIssuedYes;
         private System.Windows.Forms.ColumnHeader chJoinDate;
         private System.Windows.Forms.ColumnHeader chInviteIssued;
     }

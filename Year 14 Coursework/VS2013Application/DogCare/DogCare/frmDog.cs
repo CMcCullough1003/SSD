@@ -34,7 +34,7 @@ namespace DogCare
 
             foreach (var client in clientList)
             {
-                cbxClient.Items.Add(new { Text = client.name, Value = client.id });
+                cbxClient.Items.Add(new { Text = client.displayName, Value = client.id });
             }
         }
 
@@ -50,7 +50,7 @@ namespace DogCare
             foreach (var dog in dogList)
             {
                 var clientIndex = new ForeignKeyHelper().findIndexOfClientID(clientList,dog.clientID);
-                var clientName = clientList[clientIndex].name;
+                var clientName = clientList[clientIndex].displayName;
                 //create an array that will hold all the fields in a row
                 var row = new string[] { dog.id.ToString(), dog.clientID.ToString(), clientName, dog.name, dog.age.ToString(), dog.breed, dog.experienceOrQualification.ToString() };
                 var lvi = new ListViewItem(row);

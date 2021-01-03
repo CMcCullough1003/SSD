@@ -55,7 +55,7 @@ namespace DogCare
                 var programVarietyName = programVarietyList[programVarietyIndex].name;
 
                 //create an array that will hold all the fields in a row
-                var row = new string[] { program.id.ToString(), programVarietyName };
+                var row = new string[] { program.id.ToString(), program.name, programVarietyName };
                 var lvi = new ListViewItem(row);
 
                 //Save the model in the tag property so we can use it if row is selected
@@ -64,6 +64,7 @@ namespace DogCare
                 //add new row to the ListView
                 lsvProgram.Items.Add(lvi);
             }
+            lsvProgram.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
         private void PopulateInputs()
@@ -80,13 +81,14 @@ namespace DogCare
 
             //fill up the input fields
             lblIDReadOnly.Text = selectedProgram.id.ToString();
+            txtName.Text = selectedProgram.name;
         }
 
         private void ClearInputs()
         {
             //set all the input fields to blank
             lblIDReadOnly.Text = "";
-            lblNameReadOnly.Text = "";
+            txtName.Text = "";
             cbxProgramVariety.Text = PLEASE_SELECT;
         }
 
@@ -108,9 +110,10 @@ namespace DogCare
 
             try
             {
+            
                 //fill up the model with all the input fields
                 selectedProgram.programVarietyId = (cbxProgramVariety.SelectedItem as dynamic).Value;
-                selectedProgram.name = lblNameReadOnly.Text;
+                selectedProgram.name = txtName.Text;
 
 
                 //The id will be 0 if New button was clicked

@@ -11,7 +11,6 @@ namespace DataStoreTest
     public class ExceptionMessageGeneratorTest
     {
 
-
         [TestMethod]
         public void MessageGenerator_PopulatedMessage_SimpleMessage()
         {

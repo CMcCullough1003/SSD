@@ -34,7 +34,7 @@ namespace DogCare
             foreach (var client in clientList)
             {
                 //create an array that will hold all the fields in a row
-                var row = new string[] { client.id.ToString(), client.name, client.phone, client.email };
+                var row = new string[] { client.id.ToString(), client.displayName, client.phone, client.email };
                 var lsvi = new ListViewItem(row);
 
                 //Save the model in the tag property so we can use it if row is selected
@@ -57,7 +57,8 @@ namespace DogCare
 
             //fill up the input fields
             lblClientIDRead.Text = selectedClient.id.ToString();
-            txbName.Text = selectedClient.name;
+            txbForename.Text = selectedClient.forename;
+            txbSurname.Text = selectedClient.surname;
             txbPhone.Text = selectedClient.phone;
             txbEmail.Text = selectedClient.email;
         }
@@ -66,7 +67,8 @@ namespace DogCare
         {
             //set all the input fields to blank
             lblClientIDRead.Text = "New client";
-            txbName.Text = "";
+            txbForename.Text = "";
+            txbSurname.Text = "";
             txbPhone.Text = "";
             txbEmail.Text = "";
         }
@@ -83,7 +85,8 @@ namespace DogCare
             try
             {
                 //fill up the model with all the input fields 
-                selectedClient.name = txbName.Text;
+                selectedClient.forename = txbForename.Text;
+                selectedClient.surname = txbSurname.Text;
                 selectedClient.phone = txbPhone.Text;
                 selectedClient.email = txbEmail.Text;
 

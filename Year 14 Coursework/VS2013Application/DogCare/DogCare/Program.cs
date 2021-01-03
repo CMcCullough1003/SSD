@@ -38,15 +38,19 @@ namespace DogCare
             ClientTable clientTable = new ClientTable();
 
             ClientModel clientModelBob = new ClientModel();
-            clientModelBob.name = "Bob";
+            clientModelBob.forename = "Bob";
+            clientModelBob.surname = "White";
             clientModelBob.phone = "1234567890";
             clientModelBob.email = "bob@gmail.com";
+            clientModelBob.displayName = clientModelBob.forename + " " + clientModelBob.surname;
             int clientIdBob = clientTable.create(clientModelBob);
 
             ClientModel clientModelKate = new ClientModel();
-            clientModelKate.name = "Kate";
+            clientModelKate.forename = "Kate";
+            clientModelKate.surname = "Black";
             clientModelKate.phone = "1234567890";
             clientModelKate.email = "kate@gmail.com";
+            clientModelKate.displayName = clientModelKate.forename + " " + clientModelKate.surname;
             int clientIdKate = clientTable.create(clientModelKate);
 
             //add Dog records
@@ -78,7 +82,7 @@ namespace DogCare
             int staffIdKate = staffTable.create(staffModelKate);
 
 
-            //add ProgramCost records
+            //add ProgramVariety records
             ProgramVarietyTable programVarietyTable = new ProgramVarietyTable();
 
             ProgramVarietyModel programVarietyAdvanced = new ProgramVarietyModel();
@@ -105,20 +109,25 @@ namespace DogCare
             ProgramTable programTable = new ProgramTable();
 
             ProgramModel programModel1 = new ProgramModel();
-            programModel1.name = programVarietyAdvanced.name ;
-            programModel1.programVarietyId = programCostId1;
+            programModel1.name = "Regular AM" ;
+            programModel1.programVarietyId = programCostId2;
             int programId1 = programTable.create(programModel1);
 
             ProgramModel programModel2 = new ProgramModel();
-            programModel2.name = programVarietyRegular.name;
+            programModel2.name = "Regular PM";
             programModel2.programVarietyId = programCostId2;
             int programId2 = programTable.create(programModel2);
+
+            ProgramModel programModel3 = new ProgramModel();
+            programModel3.name = "Advanced";
+            programModel3.programVarietyId = programCostId1;
+            int programId3 = programTable.create(programModel3);
 
             //add Enrollment records
             EnrollmentTable enrollmentTable = new EnrollmentTable();
 
             EnrollmentModel enrollmentModel1 = new EnrollmentModel();
-            enrollmentModel1.name = dogModelBoxer.name + " (owned by " + clientModelBob.name + ") in " + programModel1.name;
+            enrollmentModel1.name = dogModelBoxer.name + " (owned by " + clientModelBob.displayName + ") in " + programModel1.name;
             enrollmentModel1.clientId = clientIdBob;
             enrollmentModel1.dogId = dogIdBoxer;
             enrollmentModel1.programId = programId1;
@@ -129,7 +138,7 @@ namespace DogCare
 
 
             EnrollmentModel enrollmentModel2 = new EnrollmentModel();
-            enrollmentModel2.name = dogModelTed.name + " (owned by " + clientModelKate.name + ") in " + programModel2.name;
+            enrollmentModel2.name = dogModelTed.name + " (owned by " + clientModelKate.displayName + ") in " + programModel2.name;
             enrollmentModel2.clientId = clientIdKate;
             enrollmentModel2.dogId = dogIdTed;
             enrollmentModel2.programId = programId2;

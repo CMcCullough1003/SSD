@@ -57,13 +57,14 @@ GO
 
 CREATE PROC CreateClient(
   @ClientID int output,
-  @Name varchar(100),
+  @Forename varchar(100),
+  @Surname varchar(100),
   @Phone varchar(20),
   @Email varchar(50)
 ) AS
 BEGIN
-    INSERT INTO Client(Name, Phone, Email)
-    VALUES (@Name, @Phone, @Email);
+    INSERT INTO Client(Forename, Surname, Phone, Email)
+    VALUES (@Forename, @Surname, @Phone, @Email);
 
     SET @ClientID = SCOPE_IDENTITY();
 END
@@ -82,13 +83,15 @@ GO
 
 CREATE PROC UpdateClientByID(
 	@ClientID int,
-	@Name varchar(100),
+	@Forename varchar(100),
+	@Surname varchar(100),
 	@Phone varchar(20),
 	@Email varchar(50)
 ) AS
 BEGIN
 	UPDATE Client
-	SET Name = @Name,
+	SET Forename = @Forename,
+		Surname = @Surname,
 		Phone = @Phone,
 		Email = @Email
 	WHERE ClientID = @ClientID

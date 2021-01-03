@@ -41,7 +41,7 @@
             this.cbxProgramVariety = new System.Windows.Forms.ComboBox();
             this.lblProgramVariety = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.lblNameReadOnly = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblIDReadOnly
@@ -134,7 +134,7 @@
             // cbxProgramVariety
             // 
             this.cbxProgramVariety.FormattingEnabled = true;
-            this.cbxProgramVariety.Location = new System.Drawing.Point(570, 343);
+            this.cbxProgramVariety.Location = new System.Drawing.Point(570, 289);
             this.cbxProgramVariety.Name = "cbxProgramVariety";
             this.cbxProgramVariety.Size = new System.Drawing.Size(164, 24);
             this.cbxProgramVariety.TabIndex = 56;
@@ -144,7 +144,7 @@
             // 
             this.lblProgramVariety.AutoSize = true;
             this.lblProgramVariety.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProgramVariety.Location = new System.Drawing.Point(567, 323);
+            this.lblProgramVariety.Location = new System.Drawing.Point(567, 269);
             this.lblProgramVariety.Name = "lblProgramVariety";
             this.lblProgramVariety.Size = new System.Drawing.Size(123, 17);
             this.lblProgramVariety.TabIndex = 55;
@@ -160,21 +160,19 @@
             this.lblName.TabIndex = 57;
             this.lblName.Text = "Name";
             // 
-            // lblNameReadOnly
+            // txtName
             // 
-            this.lblNameReadOnly.AutoSize = true;
-            this.lblNameReadOnly.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameReadOnly.Location = new System.Drawing.Point(567, 230);
-            this.lblNameReadOnly.Name = "lblNameReadOnly";
-            this.lblNameReadOnly.Size = new System.Drawing.Size(0, 17);
-            this.lblNameReadOnly.TabIndex = 58;
+            this.txtName.Location = new System.Drawing.Point(570, 223);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(164, 22);
+            this.txtName.TabIndex = 101;
             // 
             // frmProgram
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(968, 655);
-            this.Controls.Add(this.lblNameReadOnly);
+            this.Controls.Add(this.txtName);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.cbxProgramVariety);
             this.Controls.Add(this.lblProgramVariety);
@@ -208,6 +206,6 @@
         private System.Windows.Forms.Label lblProgramVariety;
         private System.Windows.Forms.ColumnHeader chName;
         private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.Label lblNameReadOnly;
+        private System.Windows.Forms.TextBox txtName;
     }
 }
