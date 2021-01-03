@@ -28,10 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtNumberOfClasses = new System.Windows.Forms.TextBox();
-            this.lblNumberOfClasses = new System.Windows.Forms.Label();
-            this.txtMaximumSpaces = new System.Windows.Forms.TextBox();
-            this.lblMaximumSpaces = new System.Windows.Forms.Label();
             this.lblIDReadOnly = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -42,47 +38,11 @@
             this.chID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chProgramVariety = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chMaximumSpaces = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chNumberOfClasses = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cbxProgramVariety = new System.Windows.Forms.ComboBox();
             this.lblProgramVariety = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.lblNameReadOnly = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // txtNumberOfClasses
-            // 
-            this.txtNumberOfClasses.Location = new System.Drawing.Point(570, 454);
-            this.txtNumberOfClasses.Name = "txtNumberOfClasses";
-            this.txtNumberOfClasses.Size = new System.Drawing.Size(164, 22);
-            this.txtNumberOfClasses.TabIndex = 50;
-            // 
-            // lblNumberOfClasses
-            // 
-            this.lblNumberOfClasses.AutoSize = true;
-            this.lblNumberOfClasses.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumberOfClasses.Location = new System.Drawing.Point(567, 434);
-            this.lblNumberOfClasses.Name = "lblNumberOfClasses";
-            this.lblNumberOfClasses.Size = new System.Drawing.Size(111, 17);
-            this.lblNumberOfClasses.TabIndex = 49;
-            this.lblNumberOfClasses.Text = "No. of classes";
-            // 
-            // txtMaximumSpaces
-            // 
-            this.txtMaximumSpaces.Location = new System.Drawing.Point(570, 397);
-            this.txtMaximumSpaces.Name = "txtMaximumSpaces";
-            this.txtMaximumSpaces.Size = new System.Drawing.Size(164, 22);
-            this.txtMaximumSpaces.TabIndex = 48;
-            // 
-            // lblMaximumSpaces
-            // 
-            this.lblMaximumSpaces.AutoSize = true;
-            this.lblMaximumSpaces.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaximumSpaces.Location = new System.Drawing.Point(567, 377);
-            this.lblMaximumSpaces.Name = "lblMaximumSpaces";
-            this.lblMaximumSpaces.Size = new System.Drawing.Size(129, 17);
-            this.lblMaximumSpaces.TabIndex = 47;
-            this.lblMaximumSpaces.Text = "Maximum spaces";
             // 
             // lblIDReadOnly
             // 
@@ -147,9 +107,7 @@
             this.lsvProgram.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chID,
             this.chName,
-            this.chProgramVariety,
-            this.chMaximumSpaces,
-            this.chNumberOfClasses});
+            this.chProgramVariety});
             this.lsvProgram.FullRowSelect = true;
             this.lsvProgram.GridLines = true;
             this.lsvProgram.Location = new System.Drawing.Point(92, 147);
@@ -172,14 +130,6 @@
             // chProgramVariety
             // 
             this.chProgramVariety.Text = "ProgramVariety";
-            // 
-            // chMaximumSpaces
-            // 
-            this.chMaximumSpaces.Text = "Maximum Spaces";
-            // 
-            // chNumberOfClasses
-            // 
-            this.chNumberOfClasses.Text = "No. of Classes";
             // 
             // cbxProgramVariety
             // 
@@ -228,10 +178,6 @@
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.cbxProgramVariety);
             this.Controls.Add(this.lblProgramVariety);
-            this.Controls.Add(this.txtNumberOfClasses);
-            this.Controls.Add(this.lblNumberOfClasses);
-            this.Controls.Add(this.txtMaximumSpaces);
-            this.Controls.Add(this.lblMaximumSpaces);
             this.Controls.Add(this.lblIDReadOnly);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.btnDelete);
@@ -249,10 +195,6 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtNumberOfClasses;
-        private System.Windows.Forms.Label lblNumberOfClasses;
-        private System.Windows.Forms.TextBox txtMaximumSpaces;
-        private System.Windows.Forms.Label lblMaximumSpaces;
         private System.Windows.Forms.Label lblIDReadOnly;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Button btnDelete;
@@ -262,8 +204,6 @@
         private System.Windows.Forms.ListView lsvProgram;
         private System.Windows.Forms.ColumnHeader chID;
         private System.Windows.Forms.ColumnHeader chProgramVariety;
-        private System.Windows.Forms.ColumnHeader chMaximumSpaces;
-        private System.Windows.Forms.ColumnHeader chNumberOfClasses;
         private System.Windows.Forms.ComboBox cbxProgramVariety;
         private System.Windows.Forms.Label lblProgramVariety;
         private System.Windows.Forms.ColumnHeader chName;

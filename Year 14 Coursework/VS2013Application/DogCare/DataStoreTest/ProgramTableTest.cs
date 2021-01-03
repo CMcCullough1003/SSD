@@ -29,6 +29,8 @@ namespace DataStoreTest
             programeVarietyModel.sessionCost = 20.0;
             programeVarietyModel.fullPaymentPercentageDiscount = 20;
             programeVarietyModel.name = "Advanced";
+            programeVarietyModel.dogSpacesMaximum = 10;
+            programeVarietyModel.noOfClasses = 10;
 
             ProgramVarietyTable programVarietyTable = new ProgramVarietyTable();
             programVarietyId = programVarietyTable.create(programeVarietyModel);
@@ -54,8 +56,7 @@ namespace DataStoreTest
             //Assemble
            ProgramModel programModel = new ProgramModel();
             programModel.programVarietyId = programVarietyId;
-            programModel.dogSpacesMaximum = 10;
-            programModel.noOfClasses = 6;
+
             //If created will be greater than 0, but we don't know exactly what it will be because deleting all records doesnt set the ID counter back to 0
             int notCreated = 0;
             ProgramTable programTable = new ProgramTable();
@@ -74,8 +75,7 @@ namespace DataStoreTest
             //Assemble
             ProgramModel programModel = new ProgramModel();
             programModel.programVarietyId = programVarietyId;
-            programModel.dogSpacesMaximum = 10;
-            programModel.noOfClasses = 6;
+
             int expected = 1;
             ProgramTable programTable = new ProgramTable();
 
@@ -93,8 +93,6 @@ namespace DataStoreTest
             //Assemble
             ProgramModel programModel = new ProgramModel();
             programModel.programVarietyId = programVarietyId;
-            programModel.dogSpacesMaximum = 10;
-            programModel.noOfClasses = 6;
             ProgramTable programTable = new ProgramTable();
 
             //Act
@@ -103,8 +101,7 @@ namespace DataStoreTest
 
             //Assert
             Assert.AreEqual(programModel.programVarietyId, actual.programVarietyId);
-            Assert.AreEqual(programModel.dogSpacesMaximum, actual.dogSpacesMaximum);
-            Assert.AreEqual(programModel.noOfClasses, actual.noOfClasses);
+
         }
 
         [TestMethod]
@@ -113,18 +110,15 @@ namespace DataStoreTest
            //Assemble
             ProgramModel programModel1 = new ProgramModel();
             programModel1.programVarietyId = programVarietyId;
-            programModel1.dogSpacesMaximum = 10;
-            programModel1.noOfClasses = 6;
+
 
             ProgramModel programModel2 = new ProgramModel();
             programModel2.programVarietyId = programVarietyId;
-            programModel2.dogSpacesMaximum = 10;
-            programModel2.noOfClasses = 6;
+
 
             ProgramModel programModel3 = new ProgramModel();
             programModel3.programVarietyId = programVarietyId;
-            programModel3.dogSpacesMaximum = 10;
-            programModel3.noOfClasses = 6;
+
 
             ProgramTable programTable = new ProgramTable();
            int expected = 3;
@@ -145,18 +139,15 @@ namespace DataStoreTest
             //Assemble
             ProgramModel programModel1 = new ProgramModel();
             programModel1.programVarietyId = programVarietyId;
-            programModel1.dogSpacesMaximum = 10;
-            programModel1.noOfClasses = 6;
+
 
             ProgramModel programModel2 = new ProgramModel();
             programModel2.programVarietyId = programVarietyId;
-            programModel2.dogSpacesMaximum = 10;
-            programModel2.noOfClasses = 6;
+
 
             ProgramModel programModel3 = new ProgramModel();
             programModel3.programVarietyId = programVarietyId;
-            programModel3.dogSpacesMaximum = 10;
-            programModel3.noOfClasses = 6;
+
 
             ProgramTable programTable = new ProgramTable();
 
@@ -169,18 +160,13 @@ namespace DataStoreTest
            //Assert
            Assert.AreEqual(programID1, actual[0].id);
            Assert.AreEqual(programModel1.programVarietyId, actual[0].programVarietyId);
-           Assert.AreEqual(programModel1.dogSpacesMaximum, actual[0].dogSpacesMaximum);
-           Assert.AreEqual(programModel1.noOfClasses, actual[0].noOfClasses);
 
             Assert.AreEqual(programID2, actual[1].id);
             Assert.AreEqual(programModel2.programVarietyId, actual[1].programVarietyId);
-            Assert.AreEqual(programModel2.dogSpacesMaximum, actual[1].dogSpacesMaximum);
-            Assert.AreEqual(programModel2.noOfClasses, actual[1].noOfClasses);
 
             Assert.AreEqual(programID3, actual[2].id);
             Assert.AreEqual(programModel3.programVarietyId, actual[2].programVarietyId);
-            Assert.AreEqual(programModel3.dogSpacesMaximum, actual[2].dogSpacesMaximum);
-            Assert.AreEqual(programModel3.noOfClasses, actual[2].noOfClasses);
+
         }
 
         [TestMethod]
@@ -189,14 +175,12 @@ namespace DataStoreTest
             //Assemble
             ProgramModel programModel = new ProgramModel();
             programModel.programVarietyId = programVarietyId;
-            programModel.dogSpacesMaximum = 10;
-            programModel.noOfClasses = 6;
+
             ProgramTable programTable = new ProgramTable();
             int programID = programTable.create(programModel);
             programModel.id = programID;
             programModel.programVarietyId = programVarietyId;
-            programModel.dogSpacesMaximum = 12;
-            programModel.noOfClasses = 7;
+
 
             //Act
             programTable.update(programModel);
@@ -204,8 +188,7 @@ namespace DataStoreTest
 
             //Assert
             Assert.AreEqual(programModel.programVarietyId, actual.programVarietyId);
-            Assert.AreEqual(programModel.dogSpacesMaximum, actual.dogSpacesMaximum);
-            Assert.AreEqual(programModel.noOfClasses, actual.noOfClasses);
+
         }
 
         [TestMethod]
@@ -214,8 +197,7 @@ namespace DataStoreTest
                 //Assemble
                 ProgramModel programModel = new ProgramModel();
                 programModel.programVarietyId = programVarietyId;
-                programModel.dogSpacesMaximum = 12;
-                programModel.noOfClasses = 7;
+
                 int expected = 0;
                 ProgramTable programTable = new ProgramTable();
                 int programID = programTable.create(programModel);

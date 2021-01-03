@@ -11,5 +11,7 @@ namespace DataStore
         public double depositAmount = 0.0;
         public double sessionCost = 0.0;
         public double fullPaymentPercentageDiscount = 0;
+        public int dogSpacesMaximum = 0;
+        public int noOfClasses = 0;
     }
 }

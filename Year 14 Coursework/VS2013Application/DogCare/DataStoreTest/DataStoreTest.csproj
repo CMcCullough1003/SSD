@@ -61,7 +61,6 @@
     <Compile Include="StaffTableTest.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WaitingListTableTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataStore\DataStore.csproj">

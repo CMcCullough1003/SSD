@@ -44,10 +44,10 @@ namespace DogCare
             lsvDog.Items.Clear(); // make sure it is not just lvXXX.Clear()
 
             //read all the records from the table
-            List<DogModel> dogs = new DogTable().readAll();
+            List<DogModel> dogList = new DogTable().readAll();
 
             //loop through all the records
-            foreach (var dog in dogs)
+            foreach (var dog in dogList)
             {
                 var clientIndex = new ForeignKeyHelper().findIndexOfClientID(clientList,dog.clientID);
                 var clientName = clientList[clientIndex].name;
@@ -61,6 +61,8 @@ namespace DogCare
                 //add new row to the ListView
                 lsvDog.Items.Add(lvi);
             }
+            lsvDog.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+
         }
 
         private void PopulateInputs()

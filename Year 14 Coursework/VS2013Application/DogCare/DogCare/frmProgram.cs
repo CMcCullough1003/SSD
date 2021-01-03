@@ -55,7 +55,7 @@ namespace DogCare
                 var programVarietyName = programVarietyList[programVarietyIndex].name;
 
                 //create an array that will hold all the fields in a row
-                var row = new string[] { program.id.ToString(), programVarietyName, program.dogSpacesMaximum.ToString(), program.noOfClasses.ToString() };
+                var row = new string[] { program.id.ToString(), programVarietyName };
                 var lvi = new ListViewItem(row);
 
                 //Save the model in the tag property so we can use it if row is selected
@@ -80,8 +80,6 @@ namespace DogCare
 
             //fill up the input fields
             lblIDReadOnly.Text = selectedProgram.id.ToString();
-            txtMaximumSpaces.Text = selectedProgram.dogSpacesMaximum.ToString();
-            txtNumberOfClasses.Text = selectedProgram.noOfClasses.ToString();
         }
 
         private void ClearInputs()
@@ -90,8 +88,6 @@ namespace DogCare
             lblIDReadOnly.Text = "";
             lblNameReadOnly.Text = "";
             cbxProgramVariety.Text = PLEASE_SELECT;
-            txtMaximumSpaces.Text = "";
-            txtNumberOfClasses.Text = "";
         }
 
         private void btnNew_Click(object sender, EventArgs e)
@@ -110,23 +106,11 @@ namespace DogCare
                 return;
             }
 
-            if (new InputCheckMessageBox().checkInputIsInt(txtMaximumSpaces.Text, lblMaximumSpaces.Text) == false)
-            {
-                return;
-            }
-
-            if (new InputCheckMessageBox().checkInputIsInt(txtNumberOfClasses.Text, lblNumberOfClasses.Text) == false)
-            {
-                return;
-            }
-
             try
             {
                 //fill up the model with all the input fields
                 selectedProgram.programVarietyId = (cbxProgramVariety.SelectedItem as dynamic).Value;
                 selectedProgram.name = lblNameReadOnly.Text;
-                selectedProgram.dogSpacesMaximum = Convert.ToInt32(txtMaximumSpaces.Text);
-                selectedProgram.noOfClasses = Convert.ToInt32(txtNumberOfClasses.Text);
 
 
                 //The id will be 0 if New button was clicked

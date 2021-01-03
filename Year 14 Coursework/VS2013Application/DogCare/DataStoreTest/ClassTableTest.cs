@@ -31,15 +31,14 @@ namespace DataStoreTest
             programeVarietyModel.sessionCost = 20.0;
             programeVarietyModel.fullPaymentPercentageDiscount = 20;
             programeVarietyModel.name = "Regular";
+            programeVarietyModel.dogSpacesMaximum = 50;
+            programeVarietyModel.noOfClasses = 50;
 
             ProgramVarietyTable programVarietyTable = new ProgramVarietyTable();
             programeCostId = programVarietyTable.create(programeVarietyModel);
 
             ProgramModel programModel = new ProgramModel();
             programModel.programVarietyId = programeCostId;
-            programModel.dogSpacesMaximum = 50;
-            programModel.noOfClasses = 50;
-
 
             ProgramTable programTable = new ProgramTable();
             programId = programTable.create(programModel);
@@ -72,7 +71,7 @@ namespace DataStoreTest
             ClassModel classModel = new ClassModel();
             classModel.programId = programId;
             classModel.staffId = staffId;
-            classModel.classDate = new DateTime(2021, 01, 01);
+            classModel.classDate = new DateTime(2021, 10, 01);
             classModel.startTime = new TimeSpan(2, 31, 0);
             classModel.endTime = new TimeSpan(2, 32, 0); 
             //If created will be greater than 0, but we don't know exactly what it will be because deleting all records doesnt set the ID counter back to 0
@@ -94,7 +93,7 @@ namespace DataStoreTest
             ClassModel classModel = new ClassModel();
             classModel.programId = programId;
             classModel.staffId = staffId;
-            classModel.classDate = new DateTime(2021, 01, 02);
+            classModel.classDate = new DateTime(2021, 10, 05);
             classModel.startTime = new TimeSpan(2, 32, 0);
             classModel.endTime = new TimeSpan(3, 32, 0);
             int expected = 1;
@@ -116,7 +115,7 @@ namespace DataStoreTest
             ClassModel classModel = new ClassModel();
             classModel.programId = programId;
             classModel.staffId = staffId;
-            classModel.classDate = new DateTime(2021, 01, 03);
+            classModel.classDate = new DateTime(2021, 10, 03);
             classModel.startTime = new TimeSpan(2, 33, 0);
             classModel.endTime = new TimeSpan(3, 33, 0);
             ClassTable classTable = new ClassTable();
@@ -141,21 +140,21 @@ namespace DataStoreTest
             ClassModel classModel1 = new ClassModel();
             classModel1.programId = programId;
             classModel1.staffId = staffId;
-            classModel1.classDate = new DateTime(2021, 01, 01);
+            classModel1.classDate = new DateTime(2021, 10, 01);
             classModel1.startTime = new TimeSpan(2, 31, 0);
             classModel1.endTime = new TimeSpan(3, 31, 0);
 
             ClassModel classModel2 = new ClassModel();
             classModel2.programId = programId;
             classModel2.staffId = staffId;
-            classModel2.classDate = new DateTime(2021, 01, 02);
+            classModel2.classDate = new DateTime(2021,10, 02);
             classModel2.startTime = new TimeSpan(2, 32, 0);
             classModel2.endTime = new TimeSpan(3, 32, 0);
 
             ClassModel classModel3 = new ClassModel();
             classModel3.programId = programId;
             classModel3.staffId = staffId;
-            classModel3.classDate = new DateTime(2021, 01, 03);
+            classModel3.classDate = new DateTime(2021, 10, 03);
             classModel3.startTime = new TimeSpan(2, 33, 0);
             classModel3.endTime = new TimeSpan(3, 33, 0);
 
@@ -179,21 +178,21 @@ namespace DataStoreTest
             ClassModel classModel1 = new ClassModel();
             classModel1.programId = programId;
             classModel1.staffId = staffId;
-            classModel1.classDate = new DateTime(2021, 01, 01);
+            classModel1.classDate = new DateTime(2021, 10, 01);
             classModel1.startTime = new TimeSpan(2, 31, 0);
             classModel1.endTime = new TimeSpan(3, 31, 0);
 
             ClassModel classModel2 = new ClassModel();
             classModel2.programId = programId;
             classModel2.staffId = staffId;
-            classModel2.classDate = new DateTime(2021, 01, 02);
+            classModel2.classDate = new DateTime(2021, 10, 02);
             classModel2.startTime = new TimeSpan(2, 32, 0);
             classModel2.endTime = new TimeSpan(3, 32, 0);
 
             ClassModel classModel3 = new ClassModel();
             classModel3.programId = programId;
             classModel3.staffId = staffId;
-            classModel3.classDate = new DateTime(2021, 01, 03);
+            classModel3.classDate = new DateTime(2021, 10, 03);
             classModel3.startTime = new TimeSpan(2, 33, 0);
             classModel3.endTime = new TimeSpan(3, 33, 0);
 
@@ -235,7 +234,7 @@ namespace DataStoreTest
             ClassModel classModel = new ClassModel();
             classModel.programId = programId;
             classModel.staffId = staffId;
-            classModel.classDate = new DateTime(2021, 01, 03);
+            classModel.classDate = new DateTime(2021, 10, 03);
             classModel.startTime = new TimeSpan(2, 33, 0);
             classModel.endTime = new TimeSpan(3, 33, 0);
             ClassTable classTable = new ClassTable();
@@ -243,7 +242,7 @@ namespace DataStoreTest
             classModel.id = classID;
             classModel.programId = programId;
             classModel.staffId = staffId;
-            classModel.classDate = new DateTime(2021, 01, 03);
+            classModel.classDate = new DateTime(2021, 10, 03);
             classModel.startTime = new TimeSpan(2, 33, 0);
             classModel.endTime = new TimeSpan(3, 33, 0);
 
@@ -266,7 +265,7 @@ namespace DataStoreTest
             ClassModel classModel = new ClassModel();
             classModel.programId = programId;
             classModel.staffId = staffId;
-            classModel.classDate = new DateTime(2021, 01, 03);
+            classModel.classDate = new DateTime(2021, 10, 03);
             classModel.startTime = new TimeSpan(2, 33, 0);
             classModel.endTime = new TimeSpan(3, 33, 0);
             int expected = 0;

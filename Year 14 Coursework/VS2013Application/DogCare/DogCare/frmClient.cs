@@ -28,21 +28,23 @@ namespace DogCare
             lsvClient.Items.Clear(); // make sure it is not just lvXXX.Clear()
 
             //read all the records from the table
-            List<ClientModel> client = new ClientTable().readAll();
+            List<ClientModel> clientList = new ClientTable().readAll();
 
             //loop through all the records
-            foreach (var person in client)
+            foreach (var client in clientList)
             {
                 //create an array that will hold all the fields in a row
-                var row = new string[] { person.id.ToString(), person.name, person.phone, person.email };
+                var row = new string[] { client.id.ToString(), client.name, client.phone, client.email };
                 var lsvi = new ListViewItem(row);
 
                 //Save the model in the tag property so we can use it if row is selected
-                lsvi.Tag = person;
+                lsvi.Tag = client;
 
                 //add new row to the ListView
                 lsvClient.Items.Add(lsvi);
             }
+            lsvClient.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+
         }
 
         private void PopulateInputs()

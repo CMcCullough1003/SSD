@@ -60,11 +60,13 @@ CREATE PROC CreateProgramVariety(
   @Name text,
   @DepositAmount float,
   @SessionCost float,
-  @FullPaymentPercentageDiscount float
+  @FullPaymentPercentageDiscount float,
+  @DogSpacesMaximum int,
+  @NoOfClasses int
 ) AS
 BEGIN
-    INSERT INTO ProgramVariety(Name, DepositAmount, SessionCost, FullPaymentPercentageDiscount)
-    VALUES (@Name, @DepositAmount, @SessionCost, @FullPaymentPercentageDiscount);
+    INSERT INTO ProgramVariety(Name, DepositAmount, SessionCost, FullPaymentPercentageDiscount, DogSpacesMaximum, NoOfClasses)
+    VALUES (@Name, @DepositAmount, @SessionCost, @FullPaymentPercentageDiscount, @DogSpacesMaximum, @NoOfClasses);
 
     SET @ProgramVarietyID = SCOPE_IDENTITY();
 END
@@ -86,14 +88,18 @@ CREATE PROC UpdateProgramVarietyByID(
 	@Name text,
 	@DepositAmount float,
 	@SessionCost float,
-	@FullPaymentPercentageDiscount float
+	@FullPaymentPercentageDiscount float,
+	@DogSpacesMaximum int,
+	@NoOfClasses int
 ) AS
 BEGIN
 	UPDATE ProgramVariety
 	SET Name = @Name,
 		DepositAmount = @DepositAmount,
 		SessionCost = @SessionCost,
-		FullPaymentPercentageDiscount = @FullPaymentPercentageDiscount
+		FullPaymentPercentageDiscount = @FullPaymentPercentageDiscount,
+		DogSpacesMaximum = @DogSpacesMaximum,
+		NoOfClasses = @NoOfClasses
 
 	WHERE ProgramVarietyID = @ProgramVarietyID
 END

@@ -24,7 +24,6 @@ namespace DataStore
       */
         public void clearAllTables()
         {
-            new WaitingListTable().deleteAll();
             new PaymentTable().deleteAll();
             new EnrollmentTable().deleteAll();
             new ClassTable().deleteAll();

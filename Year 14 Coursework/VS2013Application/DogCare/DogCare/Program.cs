@@ -83,16 +83,21 @@ namespace DogCare
 
             ProgramVarietyModel programVarietyAdvanced = new ProgramVarietyModel();
             programVarietyAdvanced.name = "Advanced";
-            programVarietyAdvanced.depositAmount = 50.0;
-            programVarietyAdvanced.fullPaymentPercentageDiscount = 25.0;
-            programVarietyAdvanced.sessionCost = 35.0;
+            programVarietyAdvanced.depositAmount = 30.0;
+            programVarietyAdvanced.fullPaymentPercentageDiscount = 0.0;
+            programVarietyAdvanced.sessionCost = 30.0;
+            programVarietyAdvanced.noOfClasses = 8;
+            programVarietyAdvanced.dogSpacesMaximum = 8;
             int programCostId1 = programVarietyTable.create(programVarietyAdvanced);
+
 
             ProgramVarietyModel programVarietyRegular = new ProgramVarietyModel();
             programVarietyRegular.name = "Regular";
-            programVarietyRegular.depositAmount = 40.0;
-            programVarietyRegular.fullPaymentPercentageDiscount = 15.0;
-            programVarietyRegular.sessionCost = 20.0;
+            programVarietyRegular.depositAmount = 20.0;
+            programVarietyRegular.fullPaymentPercentageDiscount = 10.0;
+            programVarietyRegular.sessionCost = 25.0;
+            programVarietyRegular.noOfClasses = 6;
+            programVarietyRegular.dogSpacesMaximum = 10;
             int programCostId2 = programVarietyTable.create(programVarietyRegular);
 
 
@@ -102,15 +107,11 @@ namespace DogCare
             ProgramModel programModel1 = new ProgramModel();
             programModel1.name = programVarietyAdvanced.name ;
             programModel1.programVarietyId = programCostId1;
-            programModel1.noOfClasses = 10;
-            programModel1.dogSpacesMaximum = 5;
             int programId1 = programTable.create(programModel1);
 
             ProgramModel programModel2 = new ProgramModel();
             programModel2.name = programVarietyRegular.name;
             programModel2.programVarietyId = programCostId2;
-            programModel2.noOfClasses = 7;
-            programModel2.dogSpacesMaximum = 15;
             int programId2 = programTable.create(programModel2);
 
             //add Enrollment records
@@ -170,9 +171,6 @@ namespace DogCare
 
             Int32 staffCount = new StaffTable().count();
             Console.WriteLine("staffCount = " + staffCount);
-
-            Int32 waitingListCount = new WaitingListTable().count();
-            Console.WriteLine("waitingListCount = " + waitingListCount);
 
             Console.WriteLine("==============================");
 

@@ -13,6 +13,16 @@ namespace DataStore
                 return "Name must be at least 3 characters";
             }
 
+            if (exceptionMessage.Contains("CK__ProgramVa__NoOfC"))
+            {
+                return "Number of classes should be between 1 and 100";
+            }
+
+            if (exceptionMessage.Contains("CK__ProgramVa__DogSp"))
+            {
+                return "Number of dogs should be between 1 and 100";
+            }
+
             if (exceptionMessage.Contains("CK__Client__Phone"))
             {
                 return "Phone must be at least 10 characters";

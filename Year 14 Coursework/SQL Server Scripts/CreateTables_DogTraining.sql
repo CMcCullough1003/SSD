@@ -52,16 +52,16 @@ CREATE TABLE ProgramVariety (
 	Name varchar(20) CHECK (Name in ('Regular','Advanced')) NOT NULL,
 	DepositAmount float CHECK (DepositAmount >= 20.0 AND DepositAmount <= 100.0) NOT NULL,
 	SessionCost float CHECK (SessionCost >= 20.0 AND SessionCost <= 100.0) NOT NULL,
-	FullPaymentPercentageDiscount float CHECK (FullPaymentPercentageDiscount >= 0.0 AND FullPaymentPercentageDiscount <= 100.0) NOT NULL
+	FullPaymentPercentageDiscount float CHECK (FullPaymentPercentageDiscount >= 0.0 AND FullPaymentPercentageDiscount <= 100.0) NOT NULL,
+	DogSpacesMaximum int CHECK (DogSpacesMaximum >= 1 AND DogSpacesMaximum <= 100) NOT NULL,
+	NoOfClasses int CHECK (NoOfClasses >= 1 AND NoOfClasses <= 100) NOT NULL
 ) 
 
 CREATE TABLE Program (
 	ProgramID int IDENTITY(1,1) PRIMARY KEY,
 	Name text NOT NULL,
 	/*ProgramTypeID int FOREIGN KEY REFERENCES ProgramType(ProgramTypeID),*/
-	ProgramVarietyID int FOREIGN KEY REFERENCES ProgramVariety(ProgramVarietyID),
-	DogSpacesMaximum int CHECK (DogSpacesMaximum >= 1 AND DogSpacesMaximum <= 100) NOT NULL,
-	NoOfClasses int CHECK (NoOfClasses >= 1 AND NoOfClasses <= 100) NOT NULL
+	ProgramVarietyID int FOREIGN KEY REFERENCES ProgramVariety(ProgramVarietyID)
 )
 
 CREATE TABLE Class (

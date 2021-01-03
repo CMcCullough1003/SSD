@@ -45,10 +45,10 @@ namespace DogCare
             lsvPayment.Items.Clear(); // make sure it is not just lvXXX.Clear()
 
             //read all the records from the table
-            List<PaymentModel> payments = new PaymentTable().readAll();
+            List<PaymentModel> paymentList = new PaymentTable().readAll();
 
             //loop through all the records
-            foreach (var payment in payments)
+            foreach (var payment in paymentList)
             {
                 var enrollmentIndex = new ForeignKeyHelper().findIndexOfEnrollmentID(enrollmentList, payment.enrollmentId);
                 var enrollmentName = enrollmentList[enrollmentIndex].name;
@@ -62,6 +62,8 @@ namespace DogCare
                 //add new row to the ListView
                 lsvPayment.Items.Add(lvi);
             }
+            lsvPayment.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+
         }
 
         private void PopulateInputs()

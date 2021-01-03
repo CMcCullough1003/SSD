@@ -81,6 +81,8 @@ namespace DogCare
                 //add new row to the ListView
                 lsvClass.Items.Add(lvi);
             }
+            lsvClass.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+
         }
 
         private void PopulateInputs()

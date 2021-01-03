@@ -29,21 +29,22 @@ namespace DogCare
             lsvProgramVariety.Items.Clear(); // make sure it is not just lvXXX.Clear()
 
             //read all the records from the table
-            List<ProgramVarietyModel> programCost = new ProgramVarietyTable().readAll();
+            List<ProgramVarietyModel> programVarietyList = new ProgramVarietyTable().readAll();
 
             //loop through all the records
-            foreach (var person in programCost)
+            foreach (var programVariety in programVarietyList)
             {
                 //create an array that will hold all the fields in a row
-                var row = new string[] { person.id.ToString(), person.name, person.depositAmount.ToString(), person.sessionCost.ToString(), person.fullPaymentPercentageDiscount.ToString() };
+                var row = new string[] { programVariety.id.ToString(), programVariety.name, programVariety.depositAmount.ToString(), programVariety.sessionCost.ToString(), programVariety.fullPaymentPercentageDiscount.ToString(), programVariety.dogSpacesMaximum.ToString(), programVariety.noOfClasses.ToString() };
                 var lvi = new ListViewItem(row);
 
                 //Save the model in the tag property so we can use it if row is selected
-                lvi.Tag = person;
+                lvi.Tag = programVariety;
 
                 //add new row to the ListView
                 lsvProgramVariety.Items.Add(lvi);
             }
+            lsvProgramVariety.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
         private void PopulateInputs()
@@ -66,7 +67,10 @@ namespace DogCare
             }
             txtDepositAmount.Text = selectedProgramVariety.depositAmount.ToString();
             txtSessionCost.Text = selectedProgramVariety.sessionCost.ToString();
-            txtPercentageDiscount.Text = selectedProgramVariety.depositAmount.ToString();
+            txtPercentageDiscount.Text = selectedProgramVariety.fullPaymentPercentageDiscount.ToString();
+            txtMaximumNumberOfDogs.Text = selectedProgramVariety.dogSpacesMaximum.ToString();
+            txtNumberOfClasses.Text = selectedProgramVariety.noOfClasses.ToString();
+
         }
 
         private void ClearInputs()
@@ -78,6 +82,8 @@ namespace DogCare
             txtDepositAmount.Text = "";
             txtSessionCost.Text = "";
             txtPercentageDiscount.Text = "";
+            txtNumberOfClasses.Text = "";
+            txtMaximumNumberOfDogs.Text = "";
         }
 
         private void btnNew_Click(object sender, EventArgs e)
@@ -112,6 +118,17 @@ namespace DogCare
                 return;
             }
 
+            if (inputCheckMessageBox.checkInputIsDouble( txtMaximumNumberOfDogs.Text, lblMaximumNumberOfDogs.Text ) == false)
+            {
+                return;
+            }
+
+            if (inputCheckMessageBox.checkInputIsDouble(txtNumberOfClasses.Text, lblNumberOfClasses.Text) == false)
+            {
+                return;
+            }
+
+
             try
             {
                 //fill up the model with all the input fields 
@@ -126,6 +143,8 @@ namespace DogCare
                 selectedProgramVariety.depositAmount = Convert.ToDouble(txtDepositAmount.Text);
                 selectedProgramVariety.sessionCost = Convert.ToDouble(txtSessionCost.Text);
                 selectedProgramVariety.fullPaymentPercentageDiscount = Convert.ToDouble(txtPercentageDiscount.Text);
+                selectedProgramVariety.dogSpacesMaximum = Convert.ToInt32( txtMaximumNumberOfDogs.Text );
+                selectedProgramVariety.noOfClasses = Convert.ToInt32(txtNumberOfClasses.Text);
 
                 //The id will be 0 if New button was clicked
                 if (selectedProgramVariety.id == 0)

@@ -146,6 +146,35 @@ namespace DataStoreTest
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void MessageGenerator_NumberOfClasses_ProgramCostMessage()
+        {
+            //Assemble
+            string expected = "Number of classes should be between 1 and 100";
+            ExceptionMessageGenerator exceptionMessageGenerator = new ExceptionMessageGenerator();
+            string exceptionMessage = "shshshshshshCK__ProgramVa__NoOfCdhdhdhdhdhdh";
+
+            //Act
+            string actual = exceptionMessageGenerator.generateMessage(exceptionMessage);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void MessageGenerator_NumberOfDogs_ProgramCostMessage()
+        {
+            //Assemble
+            string expected = "Number of dogs should be between 1 and 100";
+            ExceptionMessageGenerator exceptionMessageGenerator = new ExceptionMessageGenerator();
+            string exceptionMessage = "shshshshshshCK__ProgramVa__DogSpdhdhdhdhdhdh";
+
+            //Act
+            string actual = exceptionMessageGenerator.generateMessage(exceptionMessage);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
-

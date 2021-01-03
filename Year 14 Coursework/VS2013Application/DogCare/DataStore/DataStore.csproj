@@ -66,8 +66,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StaffModel.cs" />
     <Compile Include="StaffTable.cs" />
-    <Compile Include="WaitingListModel.cs" />
-    <Compile Include="WaitingListTable.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

@@ -37,8 +37,6 @@ namespace DataStore
                 commandCreate.Parameters.Add("@ProgramID", SqlDbType.Int).Direction = ParameterDirection.Output; //Output parameter that will be returned from this function
                 commandCreate.Parameters.Add("@name", SqlDbType.Text).Value = programModel.name;
                 commandCreate.Parameters.Add("@programVarietyID", SqlDbType.Int).Value = programModel.programVarietyId;
-                commandCreate.Parameters.Add("@dogSpacesMaximum", SqlDbType.Int).Value = programModel.dogSpacesMaximum;
-                commandCreate.Parameters.Add("@noOfClasses", SqlDbType.Int).Value = programModel.noOfClasses;
 
                 //Which connection to execute the command against
                 commandCreate.Connection = connection;
@@ -262,8 +260,6 @@ namespace DataStore
                 commandCreate.Parameters.Add("@ProgramID", SqlDbType.Int).Value = programModel.id;
                 commandCreate.Parameters.Add("@name", SqlDbType.Text).Value = programModel.name;
                 commandCreate.Parameters.Add("@programVarietyID", SqlDbType.Int).Value = programModel.programVarietyId;
-                commandCreate.Parameters.Add("@dogSpacesMaximum", SqlDbType.Int).Value = programModel.dogSpacesMaximum;
-                commandCreate.Parameters.Add("@noOfClasses", SqlDbType.Int).Value = programModel.noOfClasses;
 
                 //Which connection to execute the command against
                 commandCreate.Connection = connection;
@@ -371,8 +367,6 @@ namespace DataStore
             programModel.id = dataReader.GetInt32(0);
             programModel.name = dataReader.GetString(1);
             programModel.programVarietyId = dataReader.GetInt32(2);
-            programModel.dogSpacesMaximum = dataReader.GetInt32(3);
-            programModel.noOfClasses = dataReader.GetInt32(4);
 
             return programModel;
         }

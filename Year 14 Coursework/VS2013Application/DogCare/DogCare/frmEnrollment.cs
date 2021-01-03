@@ -83,10 +83,10 @@ namespace DogCare
             lsvEnrollment.Items.Clear(); // make sure it is not just lvXXX.Clear()
 
             //read all the records from the table
-            List<EnrollmentModel> enrollments = new EnrollmentTable().readAll();
+            List<EnrollmentModel> enrollmentList = new EnrollmentTable().readAll();
 
             //loop through all the records
-            foreach (var enrollment in enrollments)
+            foreach (var enrollment in enrollmentList)
             {
                 var programIndex = new ForeignKeyHelper().findIndexOfProgramID(programList, enrollment.programId);
                 var programDescription = programList[programIndex].name;
@@ -109,6 +109,8 @@ namespace DogCare
                 //add new row to the ListView
                 lsvEnrollment.Items.Add(lvi);
             }
+            lsvEnrollment.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+
         }
 
         private void PopulateInputs()

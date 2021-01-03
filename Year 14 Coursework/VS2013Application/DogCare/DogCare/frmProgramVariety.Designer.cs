@@ -43,19 +43,25 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.lsvProgramVariety = new System.Windows.Forms.ListView();
             this.chID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chOffer = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chVariety = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chDepositAmount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chSessionCost = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chPercentageDiscount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.rbtnAdvanced = new System.Windows.Forms.RadioButton();
             this.rbtnRegular = new System.Windows.Forms.RadioButton();
+            this.txtMaximumNumberOfDogs = new System.Windows.Forms.TextBox();
+            this.lblMaximumNumberOfDogs = new System.Windows.Forms.Label();
+            this.txtNumberOfClasses = new System.Windows.Forms.TextBox();
+            this.lblNumberOfClasses = new System.Windows.Forms.Label();
+            this.chMaxDogs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chNumberOfClasses = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // lblVariety
             // 
             this.lblVariety.AutoSize = true;
             this.lblVariety.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVariety.Location = new System.Drawing.Point(590, 200);
+            this.lblVariety.Location = new System.Drawing.Point(590, 167);
             this.lblVariety.Name = "lblVariety";
             this.lblVariety.Size = new System.Drawing.Size(59, 17);
             this.lblVariety.TabIndex = 46;
@@ -63,7 +69,7 @@
             // 
             // txtPercentageDiscount
             // 
-            this.txtPercentageDiscount.Location = new System.Drawing.Point(593, 388);
+            this.txtPercentageDiscount.Location = new System.Drawing.Point(593, 355);
             this.txtPercentageDiscount.Name = "txtPercentageDiscount";
             this.txtPercentageDiscount.Size = new System.Drawing.Size(164, 22);
             this.txtPercentageDiscount.TabIndex = 45;
@@ -72,15 +78,15 @@
             // 
             this.lblPercentageDiscount.AutoSize = true;
             this.lblPercentageDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPercentageDiscount.Location = new System.Drawing.Point(590, 368);
+            this.lblPercentageDiscount.Location = new System.Drawing.Point(590, 335);
             this.lblPercentageDiscount.Name = "lblPercentageDiscount";
-            this.lblPercentageDiscount.Size = new System.Drawing.Size(159, 17);
+            this.lblPercentageDiscount.Size = new System.Drawing.Size(187, 17);
             this.lblPercentageDiscount.TabIndex = 44;
-            this.lblPercentageDiscount.Text = "Percentage Discount";
+            this.lblPercentageDiscount.Text = "Full Payment % Discount";
             // 
             // txtSessionCost
             // 
-            this.txtSessionCost.Location = new System.Drawing.Point(593, 330);
+            this.txtSessionCost.Location = new System.Drawing.Point(593, 297);
             this.txtSessionCost.Name = "txtSessionCost";
             this.txtSessionCost.Size = new System.Drawing.Size(164, 22);
             this.txtSessionCost.TabIndex = 43;
@@ -89,7 +95,7 @@
             // 
             this.lblSessionCost.AutoSize = true;
             this.lblSessionCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSessionCost.Location = new System.Drawing.Point(590, 310);
+            this.lblSessionCost.Location = new System.Drawing.Point(590, 277);
             this.lblSessionCost.Name = "lblSessionCost";
             this.lblSessionCost.Size = new System.Drawing.Size(102, 17);
             this.lblSessionCost.TabIndex = 42;
@@ -97,7 +103,7 @@
             // 
             // txtDepositAmount
             // 
-            this.txtDepositAmount.Location = new System.Drawing.Point(593, 277);
+            this.txtDepositAmount.Location = new System.Drawing.Point(593, 244);
             this.txtDepositAmount.Name = "txtDepositAmount";
             this.txtDepositAmount.Size = new System.Drawing.Size(164, 22);
             this.txtDepositAmount.TabIndex = 41;
@@ -106,7 +112,7 @@
             // 
             this.lblDepositAmount.AutoSize = true;
             this.lblDepositAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDepositAmount.Location = new System.Drawing.Point(590, 257);
+            this.lblDepositAmount.Location = new System.Drawing.Point(590, 224);
             this.lblDepositAmount.Name = "lblDepositAmount";
             this.lblDepositAmount.Size = new System.Drawing.Size(122, 17);
             this.lblDepositAmount.TabIndex = 40;
@@ -115,7 +121,7 @@
             // lblIDReadOnly
             // 
             this.lblIDReadOnly.AutoSize = true;
-            this.lblIDReadOnly.Location = new System.Drawing.Point(590, 160);
+            this.lblIDReadOnly.Location = new System.Drawing.Point(590, 143);
             this.lblIDReadOnly.Name = "lblIDReadOnly";
             this.lblIDReadOnly.Size = new System.Drawing.Size(0, 17);
             this.lblIDReadOnly.TabIndex = 39;
@@ -124,7 +130,7 @@
             // 
             this.lblID.AutoSize = true;
             this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblID.Location = new System.Drawing.Point(590, 134);
+            this.lblID.Location = new System.Drawing.Point(587, 117);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(140, 17);
             this.lblID.TabIndex = 38;
@@ -142,7 +148,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(593, 510);
+            this.btnSave.Location = new System.Drawing.Point(589, 510);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(123, 29);
             this.btnSave.TabIndex = 36;
@@ -174,10 +180,12 @@
             // 
             this.lsvProgramVariety.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chID,
-            this.chOffer,
+            this.chVariety,
             this.chDepositAmount,
             this.chSessionCost,
-            this.chPercentageDiscount});
+            this.chPercentageDiscount,
+            this.chMaxDogs,
+            this.chNumberOfClasses});
             this.lsvProgramVariety.FullRowSelect = true;
             this.lsvProgramVariety.GridLines = true;
             this.lsvProgramVariety.Location = new System.Drawing.Point(115, 134);
@@ -193,9 +201,9 @@
             this.chID.Text = "ProgramCost ID";
             this.chID.Width = 80;
             // 
-            // chOffer
+            // chVariety
             // 
-            this.chOffer.Text = "Offer";
+            this.chVariety.Text = "Variety";
             // 
             // chDepositAmount
             // 
@@ -208,12 +216,12 @@
             // 
             // chPercentageDiscount
             // 
-            this.chPercentageDiscount.Text = "PercentageDiscount";
+            this.chPercentageDiscount.Text = "Full Payment % Discount";
             // 
             // rbtnAdvanced
             // 
             this.rbtnAdvanced.AutoSize = true;
-            this.rbtnAdvanced.Location = new System.Drawing.Point(678, 220);
+            this.rbtnAdvanced.Location = new System.Drawing.Point(678, 187);
             this.rbtnAdvanced.Name = "rbtnAdvanced";
             this.rbtnAdvanced.Size = new System.Drawing.Size(92, 21);
             this.rbtnAdvanced.TabIndex = 113;
@@ -224,7 +232,7 @@
             // rbtnRegular
             // 
             this.rbtnRegular.AutoSize = true;
-            this.rbtnRegular.Location = new System.Drawing.Point(593, 220);
+            this.rbtnRegular.Location = new System.Drawing.Point(593, 187);
             this.rbtnRegular.Name = "rbtnRegular";
             this.rbtnRegular.Size = new System.Drawing.Size(79, 21);
             this.rbtnRegular.TabIndex = 112;
@@ -232,11 +240,57 @@
             this.rbtnRegular.Text = "Regular";
             this.rbtnRegular.UseVisualStyleBackColor = true;
             // 
+            // txtMaximumNumberOfDogs
+            // 
+            this.txtMaximumNumberOfDogs.Location = new System.Drawing.Point(593, 462);
+            this.txtMaximumNumberOfDogs.Name = "txtMaximumNumberOfDogs";
+            this.txtMaximumNumberOfDogs.Size = new System.Drawing.Size(164, 22);
+            this.txtMaximumNumberOfDogs.TabIndex = 117;
+            // 
+            // lblMaximumNumberOfDogs
+            // 
+            this.lblMaximumNumberOfDogs.AutoSize = true;
+            this.lblMaximumNumberOfDogs.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaximumNumberOfDogs.Location = new System.Drawing.Point(590, 442);
+            this.lblMaximumNumberOfDogs.Name = "lblMaximumNumberOfDogs";
+            this.lblMaximumNumberOfDogs.Size = new System.Drawing.Size(195, 17);
+            this.lblMaximumNumberOfDogs.TabIndex = 116;
+            this.lblMaximumNumberOfDogs.Text = "Maximum Number of Dogs";
+            // 
+            // txtNumberOfClasses
+            // 
+            this.txtNumberOfClasses.Location = new System.Drawing.Point(593, 404);
+            this.txtNumberOfClasses.Name = "txtNumberOfClasses";
+            this.txtNumberOfClasses.Size = new System.Drawing.Size(164, 22);
+            this.txtNumberOfClasses.TabIndex = 115;
+            // 
+            // lblNumberOfClasses
+            // 
+            this.lblNumberOfClasses.AutoSize = true;
+            this.lblNumberOfClasses.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumberOfClasses.Location = new System.Drawing.Point(590, 384);
+            this.lblNumberOfClasses.Name = "lblNumberOfClasses";
+            this.lblNumberOfClasses.Size = new System.Drawing.Size(144, 17);
+            this.lblNumberOfClasses.TabIndex = 114;
+            this.lblNumberOfClasses.Text = "Number of Classes";
+            // 
+            // chMaxDogs
+            // 
+            this.chMaxDogs.Text = "Max. Dogs";
+            // 
+            // chNumberOfClasses
+            // 
+            this.chNumberOfClasses.Text = "Number of Classes";
+            // 
             // frmProgramVariety
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1015, 628);
+            this.Controls.Add(this.txtMaximumNumberOfDogs);
+            this.Controls.Add(this.lblMaximumNumberOfDogs);
+            this.Controls.Add(this.txtNumberOfClasses);
+            this.Controls.Add(this.lblNumberOfClasses);
             this.Controls.Add(this.rbtnAdvanced);
             this.Controls.Add(this.rbtnRegular);
             this.Controls.Add(this.lblVariety);
@@ -277,11 +331,17 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.ListView lsvProgramVariety;
         private System.Windows.Forms.ColumnHeader chID;
-        private System.Windows.Forms.ColumnHeader chOffer;
+        private System.Windows.Forms.ColumnHeader chVariety;
         private System.Windows.Forms.ColumnHeader chDepositAmount;
         private System.Windows.Forms.ColumnHeader chSessionCost;
         private System.Windows.Forms.ColumnHeader chPercentageDiscount;
         private System.Windows.Forms.RadioButton rbtnAdvanced;
         private System.Windows.Forms.RadioButton rbtnRegular;
+        private System.Windows.Forms.TextBox txtMaximumNumberOfDogs;
+        private System.Windows.Forms.Label lblMaximumNumberOfDogs;
+        private System.Windows.Forms.TextBox txtNumberOfClasses;
+        private System.Windows.Forms.Label lblNumberOfClasses;
+        private System.Windows.Forms.ColumnHeader chMaxDogs;
+        private System.Windows.Forms.ColumnHeader chNumberOfClasses;
     }
 }

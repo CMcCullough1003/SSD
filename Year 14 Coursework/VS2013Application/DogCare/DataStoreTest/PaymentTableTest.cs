@@ -50,14 +50,15 @@ namespace DataStoreTest
             programeVarietyModel.sessionCost = 20.0;
             programeVarietyModel.fullPaymentPercentageDiscount = 20;
             programeVarietyModel.name = "Regular";
+            programeVarietyModel.dogSpacesMaximum = 50;
+            programeVarietyModel.noOfClasses = 50;
 
             ProgramVarietyTable programVarietyTable = new ProgramVarietyTable();
             programVarietyId = programVarietyTable.create(programeVarietyModel);
 
             ProgramModel programModel = new ProgramModel();
             programModel.programVarietyId = programVarietyId;
-            programModel.dogSpacesMaximum = 50;
-            programModel.noOfClasses = 50;
+
 
             ProgramTable programTable = new ProgramTable();
             programId = programTable.create(programModel);
@@ -68,6 +69,8 @@ namespace DataStoreTest
             enrollmentModel.dogId = dogId;
             enrollmentModel.programId = programId;
             enrollmentModel.paymentMethod = 1;
+            enrollmentModel.joinDate = new DateTime(2021, 01, 03);
+            enrollmentModel.inviteIssued = true;
 
             EnrollmentTable enrollmentTable = new EnrollmentTable();
             enrollmentId = enrollmentTable.create(enrollmentModel);

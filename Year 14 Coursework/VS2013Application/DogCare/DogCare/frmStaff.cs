@@ -28,10 +28,10 @@ namespace DogCare
             lvStaff.Items.Clear(); // make sure it is not just lvXXX.Clear()
 
             //read all the records from the table
-            List<StaffModel> staff = new StaffTable().readAll();
+            List<StaffModel> staffList = new StaffTable().readAll();
             
             //loop through all the records
-            foreach (var person in staff)
+            foreach (var person in staffList)
             {
                 //create an array that will hold all the fields in a row
                 var row = new string[] { person.id.ToString(), person.name };
@@ -43,6 +43,8 @@ namespace DogCare
                 //add new row to the ListView
                 lvStaff.Items.Add(lvi);
             }
+            lvStaff.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+
         }
 
         private void lvStaff_SelectedIndexChanged(object sender, EventArgs e)

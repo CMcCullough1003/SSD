@@ -21,7 +21,7 @@ namespace DataStore
            Exceptions:
            Logs any exception thrown within the stored procedure and rethrows
        */
-        public int create(ProgramVarietyModel programCostModel)
+        public int create(ProgramVarietyModel programVarietyModel)
         {
             int programCostID = 0;
             try
@@ -35,10 +35,12 @@ namespace DataStore
                 SqlCommand commandCreate = new SqlCommand("CreateProgramVariety");
                 commandCreate.CommandType = System.Data.CommandType.StoredProcedure;
                 commandCreate.Parameters.Add("@ProgramVarietyID", SqlDbType.Int).Direction = ParameterDirection.Output; //Output parameter that will be returned from this function
-                commandCreate.Parameters.Add("@Name", SqlDbType.Text).Value = programCostModel.name;
-                commandCreate.Parameters.Add("@DepositAmount", SqlDbType.Float).Value = programCostModel.depositAmount;
-                commandCreate.Parameters.Add("@SessionCost", SqlDbType.Float).Value = programCostModel.sessionCost;
-                commandCreate.Parameters.Add("@FullPaymentPercentageDiscount", SqlDbType.Float).Value = programCostModel.fullPaymentPercentageDiscount;
+                commandCreate.Parameters.Add("@Name", SqlDbType.Text).Value = programVarietyModel.name;
+                commandCreate.Parameters.Add("@DepositAmount", SqlDbType.Float).Value = programVarietyModel.depositAmount;
+                commandCreate.Parameters.Add("@SessionCost", SqlDbType.Float).Value = programVarietyModel.sessionCost;
+                commandCreate.Parameters.Add("@FullPaymentPercentageDiscount", SqlDbType.Float).Value = programVarietyModel.fullPaymentPercentageDiscount;
+                commandCreate.Parameters.Add("@DogSpacesMaximum", SqlDbType.Int).Value = programVarietyModel.dogSpacesMaximum;
+                commandCreate.Parameters.Add("@NoOfClasses", SqlDbType.Int).Value = programVarietyModel.noOfClasses;
 
                 //Which connection to execute the command against
                 commandCreate.Connection = connection;
@@ -247,7 +249,7 @@ namespace DataStore
             Exceptions:
             Logs any exception thrown within the stored procedure and rethrows
         */
-        public void update(ProgramVarietyModel programCostModel)
+        public void update(ProgramVarietyModel programVarietyModel)
         {
             try
             {
@@ -259,11 +261,13 @@ namespace DataStore
                 //Set up the stored procedure and the parameters
                 SqlCommand commandCreate = new SqlCommand("UpdateProgramVarietyByID");
                 commandCreate.CommandType = System.Data.CommandType.StoredProcedure;
-                commandCreate.Parameters.Add("@ProgramVarietyID", SqlDbType.Int).Value = programCostModel.id;
-                commandCreate.Parameters.Add("@Name", SqlDbType.Text).Value = programCostModel.name;
-                commandCreate.Parameters.Add("@DepositAmount", SqlDbType.Float).Value = programCostModel.depositAmount;
-                commandCreate.Parameters.Add("@SessionCost", SqlDbType.Float).Value = programCostModel.sessionCost;
-                commandCreate.Parameters.Add("@FullPaymentPercentageDiscount", SqlDbType.Float).Value = programCostModel.fullPaymentPercentageDiscount;
+                commandCreate.Parameters.Add("@ProgramVarietyID", SqlDbType.Int).Value = programVarietyModel.id;
+                commandCreate.Parameters.Add("@Name", SqlDbType.Text).Value = programVarietyModel.name;
+                commandCreate.Parameters.Add("@DepositAmount", SqlDbType.Float).Value = programVarietyModel.depositAmount;
+                commandCreate.Parameters.Add("@SessionCost", SqlDbType.Float).Value = programVarietyModel.sessionCost;
+                commandCreate.Parameters.Add("@FullPaymentPercentageDiscount", SqlDbType.Float).Value = programVarietyModel.fullPaymentPercentageDiscount;
+                commandCreate.Parameters.Add("@DogSpacesMaximum", SqlDbType.Int).Value = programVarietyModel.dogSpacesMaximum;
+                commandCreate.Parameters.Add("@NoOfClasses", SqlDbType.Int).Value = programVarietyModel.noOfClasses;
 
                 //Which connection to execute the command against
                 commandCreate.Connection = connection;
@@ -373,6 +377,8 @@ namespace DataStore
             programVarietyModel.depositAmount = dataReader.GetDouble(2);
             programVarietyModel.sessionCost = dataReader.GetDouble(3);
             programVarietyModel.fullPaymentPercentageDiscount = dataReader.GetDouble(4);
+            programVarietyModel.dogSpacesMaximum = dataReader.GetInt32(5);
+            programVarietyModel.noOfClasses = dataReader.GetInt32(6);
 
 
             return programVarietyModel;

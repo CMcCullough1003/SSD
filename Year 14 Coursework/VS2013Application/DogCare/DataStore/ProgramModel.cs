@@ -9,7 +9,5 @@ namespace DataStore
         public int id = 0;
         public string name = "";
         public int programVarietyId = 0;
-        public int dogSpacesMaximum = 0;
-        public int noOfClasses = 0;
     }
 }
