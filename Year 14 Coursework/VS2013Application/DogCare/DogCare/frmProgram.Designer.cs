@@ -42,6 +42,7 @@
             this.lblProgramVariety = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
+            this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblIDReadOnly
@@ -167,11 +168,22 @@
             this.txtName.Size = new System.Drawing.Size(164, 22);
             this.txtName.TabIndex = 101;
             // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(758, 103);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(123, 29);
+            this.btnBack.TabIndex = 102;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // frmProgram
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(968, 655);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.cbxProgramVariety);
@@ -207,5 +219,6 @@
         private System.Windows.Forms.ColumnHeader chName;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.Button btnBack;
     }
 }

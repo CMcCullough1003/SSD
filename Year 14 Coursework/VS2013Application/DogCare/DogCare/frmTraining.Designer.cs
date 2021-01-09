@@ -51,7 +51,14 @@
             this.btnProgramVariety = new System.Windows.Forms.Button();
             this.btnClient = new System.Windows.Forms.Button();
             this.btnStaff = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.btnSchedule = new System.Windows.Forms.Button();
+            this.btnOtstandingBalances = new System.Windows.Forms.Button();
+            this.btnAvailableSpaces = new System.Windows.Forms.Button();
             this.mstCustomer.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -135,6 +142,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnSchedule);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(20, 109);
             this.groupBox1.Name = "groupBox1";
@@ -145,6 +153,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnOtstandingBalances);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(20, 255);
             this.groupBox2.Name = "groupBox2";
@@ -155,6 +164,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnAvailableSpaces);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(20, 403);
             this.groupBox3.Name = "groupBox3";
@@ -233,7 +243,7 @@
             this.btnWaitingList.Name = "btnWaitingList";
             this.btnWaitingList.Size = new System.Drawing.Size(154, 46);
             this.btnWaitingList.TabIndex = 5;
-            this.btnWaitingList.Text = "WaitingList";
+            this.btnWaitingList.Text = "Waiting List";
             this.btnWaitingList.UseVisualStyleBackColor = true;
             // 
             // btnDog
@@ -280,11 +290,53 @@
             this.btnStaff.UseVisualStyleBackColor = true;
             this.btnStaff.Click += new System.EventHandler(this.btnStaff_Click);
             // 
+            // btnBack
+            // 
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(608, 50);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(154, 46);
+            this.btnBack.TabIndex = 10;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click_1);
+            // 
+            // btnSchedule
+            // 
+            this.btnSchedule.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSchedule.Location = new System.Drawing.Point(19, 78);
+            this.btnSchedule.Name = "btnSchedule";
+            this.btnSchedule.Size = new System.Drawing.Size(154, 46);
+            this.btnSchedule.TabIndex = 10;
+            this.btnSchedule.Text = "Schedule";
+            this.btnSchedule.UseVisualStyleBackColor = true;
+            // 
+            // btnOtstandingBalances
+            // 
+            this.btnOtstandingBalances.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOtstandingBalances.Location = new System.Drawing.Point(19, 74);
+            this.btnOtstandingBalances.Name = "btnOtstandingBalances";
+            this.btnOtstandingBalances.Size = new System.Drawing.Size(154, 53);
+            this.btnOtstandingBalances.TabIndex = 11;
+            this.btnOtstandingBalances.Text = "Outstanding balances";
+            this.btnOtstandingBalances.UseVisualStyleBackColor = true;
+            // 
+            // btnAvailableSpaces
+            // 
+            this.btnAvailableSpaces.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAvailableSpaces.Location = new System.Drawing.Point(19, 64);
+            this.btnAvailableSpaces.Name = "btnAvailableSpaces";
+            this.btnAvailableSpaces.Size = new System.Drawing.Size(154, 53);
+            this.btnAvailableSpaces.TabIndex = 12;
+            this.btnAvailableSpaces.Text = "Available spaces";
+            this.btnAvailableSpaces.UseVisualStyleBackColor = true;
+            // 
             // frmTraining
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(786, 871);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -297,6 +349,9 @@
             this.Text = "JD Dog Care";
             this.mstCustomer.ResumeLayout(false);
             this.mstCustomer.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -328,5 +383,9 @@
         private System.Windows.Forms.Button btnClass;
         private System.Windows.Forms.Button btnProgram;
         private System.Windows.Forms.Button btnWaitingList;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnSchedule;
+        private System.Windows.Forms.Button btnOtstandingBalances;
+        private System.Windows.Forms.Button btnAvailableSpaces;
     }
 }

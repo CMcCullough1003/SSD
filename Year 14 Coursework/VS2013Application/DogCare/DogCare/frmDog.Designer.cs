@@ -38,6 +38,7 @@
             this.lsvDog = new System.Windows.Forms.ListView();
             this.chID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chClientID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chClientName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chAge = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chBreed = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -52,7 +53,7 @@
             this.cbxClient = new System.Windows.Forms.ComboBox();
             this.lblExperience = new System.Windows.Forms.Label();
             this.rbtnNo = new System.Windows.Forms.RadioButton();
-            this.chClientName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblClient
@@ -152,6 +153,10 @@
             // 
             this.chClientID.Text = "Client ID";
             this.chClientID.Width = 76;
+            // 
+            // chClientName
+            // 
+            this.chClientName.Text = "Client Name";
             // 
             // chName
             // 
@@ -261,15 +266,22 @@
             this.rbtnNo.Text = "No";
             this.rbtnNo.UseVisualStyleBackColor = true;
             // 
-            // chClientName
+            // btnBack
             // 
-            this.chClientName.Text = "Client Name";
+            this.btnBack.Location = new System.Drawing.Point(803, 141);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(123, 29);
+            this.btnBack.TabIndex = 37;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // frmDog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1059, 731);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.rbtnNo);
             this.Controls.Add(this.lblExperience);
             this.Controls.Add(this.cbxClient);
@@ -323,5 +335,6 @@
         private System.Windows.Forms.ColumnHeader chBreed;
         private System.Windows.Forms.ColumnHeader chExperience;
         private System.Windows.Forms.ColumnHeader chClientName;
+        private System.Windows.Forms.Button btnBack;
     }
 }

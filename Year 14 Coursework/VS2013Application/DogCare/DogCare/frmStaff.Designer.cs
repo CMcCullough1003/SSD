@@ -39,6 +39,7 @@
             this.lblStaffIDReadOnly = new System.Windows.Forms.Label();
             this.lblStaffName = new System.Windows.Forms.Label();
             this.txtStaffName = new System.Windows.Forms.TextBox();
+            this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lvStaff
@@ -141,11 +142,22 @@
             this.txtStaffName.Size = new System.Drawing.Size(164, 22);
             this.txtStaffName.TabIndex = 8;
             // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(689, 9);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(123, 29);
+            this.btnBack.TabIndex = 9;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // frmStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(875, 511);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.txtStaffName);
             this.Controls.Add(this.lblStaffName);
             this.Controls.Add(this.lblStaffIDReadOnly);
@@ -176,6 +188,7 @@
         private System.Windows.Forms.Label lblStaffIDReadOnly;
         private System.Windows.Forms.Label lblStaffName;
         private System.Windows.Forms.TextBox txtStaffName;
+        private System.Windows.Forms.Button btnBack;
 
 
     }

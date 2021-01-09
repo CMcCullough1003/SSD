@@ -58,6 +58,7 @@
             this.rbtnRecieptIssuedYes = new System.Windows.Forms.RadioButton();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.lblPaymentType = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
             this.gbxRecieptIssued.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -327,11 +328,22 @@
             this.lblPaymentType.TabIndex = 115;
             this.lblPaymentType.Text = "Payment type";
             // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(712, 81);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(123, 29);
+            this.btnBack.TabIndex = 117;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // frmPayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(946, 610);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.lblPaymentType);
             this.Controls.Add(this.rbtnPaymentRecievedNo);
@@ -394,5 +406,6 @@
         private System.Windows.Forms.RadioButton rbtnRecieptIssuedYes;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label lblPaymentType;
+        private System.Windows.Forms.Button btnBack;
     }
 }

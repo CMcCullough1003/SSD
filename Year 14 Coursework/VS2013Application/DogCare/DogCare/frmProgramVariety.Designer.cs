@@ -47,14 +47,15 @@
             this.chDepositAmount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chSessionCost = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chPercentageDiscount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chMaxDogs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chNumberOfClasses = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.rbtnAdvanced = new System.Windows.Forms.RadioButton();
             this.rbtnRegular = new System.Windows.Forms.RadioButton();
             this.txtMaximumNumberOfDogs = new System.Windows.Forms.TextBox();
             this.lblMaximumNumberOfDogs = new System.Windows.Forms.Label();
             this.txtNumberOfClasses = new System.Windows.Forms.TextBox();
             this.lblNumberOfClasses = new System.Windows.Forms.Label();
-            this.chMaxDogs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chNumberOfClasses = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblVariety
@@ -218,6 +219,14 @@
             // 
             this.chPercentageDiscount.Text = "Full Payment % Discount";
             // 
+            // chMaxDogs
+            // 
+            this.chMaxDogs.Text = "Max. Dogs";
+            // 
+            // chNumberOfClasses
+            // 
+            this.chNumberOfClasses.Text = "Number of Classes";
+            // 
             // rbtnAdvanced
             // 
             this.rbtnAdvanced.AutoSize = true;
@@ -274,19 +283,22 @@
             this.lblNumberOfClasses.TabIndex = 114;
             this.lblNumberOfClasses.Text = "Number of Classes";
             // 
-            // chMaxDogs
+            // btnBack
             // 
-            this.chMaxDogs.Text = "Max. Dogs";
-            // 
-            // chNumberOfClasses
-            // 
-            this.chNumberOfClasses.Text = "Number of Classes";
+            this.btnBack.Location = new System.Drawing.Point(781, 90);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(123, 29);
+            this.btnBack.TabIndex = 118;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // frmProgramVariety
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1015, 628);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.txtMaximumNumberOfDogs);
             this.Controls.Add(this.lblMaximumNumberOfDogs);
             this.Controls.Add(this.txtNumberOfClasses);
@@ -343,5 +355,6 @@
         private System.Windows.Forms.Label lblNumberOfClasses;
         private System.Windows.Forms.ColumnHeader chMaxDogs;
         private System.Windows.Forms.ColumnHeader chNumberOfClasses;
+        private System.Windows.Forms.Button btnBack;
     }
 }

@@ -62,7 +62,6 @@ CREATE TABLE ProgramVariety (
 CREATE TABLE Program (
 	ProgramID int IDENTITY(1,1) PRIMARY KEY,
 	Name text NOT NULL,
-	/*ProgramTypeID int FOREIGN KEY REFERENCES ProgramType(ProgramTypeID),*/
 	ProgramVarietyID int FOREIGN KEY REFERENCES ProgramVariety(ProgramVarietyID)
 )
 

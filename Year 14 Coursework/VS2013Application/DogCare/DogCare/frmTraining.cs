@@ -130,5 +130,10 @@ namespace DogCare
             Form frmProgram = new frmProgram();
             frmProgram.Show();
         }
+
+        private void btnBack_Click_1(object sender, EventArgs e)
+        {
+            moveToFrontPage();
+        }
     }
 }

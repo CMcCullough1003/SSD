@@ -59,6 +59,7 @@
             this.gbxInviteIssued = new System.Windows.Forms.GroupBox();
             this.rbtnInviteIssuedNo = new System.Windows.Forms.RadioButton();
             this.rbtnInviteIssuedYes = new System.Windows.Forms.RadioButton();
+            this.btnBack = new System.Windows.Forms.Button();
             this.gbxInviteIssued.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -336,11 +337,22 @@
             this.rbtnInviteIssuedYes.Text = "Yes";
             this.rbtnInviteIssuedYes.UseVisualStyleBackColor = true;
             // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(757, 106);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(123, 29);
+            this.btnBack.TabIndex = 111;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // frmEnrollment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1106, 661);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.gbxInviteIssued);
             this.Controls.Add(this.lblJoinDateReadOnly);
             this.Controls.Add(this.lblJoinDate);
@@ -404,5 +416,6 @@
         private System.Windows.Forms.RadioButton rbtnInviteIssuedYes;
         private System.Windows.Forms.ColumnHeader chJoinDate;
         private System.Windows.Forms.ColumnHeader chInviteIssued;
+        private System.Windows.Forms.Button btnBack;
     }
 }

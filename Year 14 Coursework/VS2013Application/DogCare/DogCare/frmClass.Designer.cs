@@ -43,14 +43,15 @@
             this.chProgram = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chStaff = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chClassDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chEndTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chStartTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chEndTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txtEndTime = new System.Windows.Forms.TextBox();
             this.txtDate = new System.Windows.Forms.TextBox();
             this.lblStartTime = new System.Windows.Forms.Label();
             this.txtStartTime = new System.Windows.Forms.TextBox();
             this.lblEndTime = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cbxStaff
@@ -186,13 +187,13 @@
             // 
             this.chClassDate.Text = "Date";
             // 
-            // chEndTime
-            // 
-            this.chEndTime.Text = "End time";
-            // 
             // chStartTime
             // 
             this.chStartTime.Text = "Start time";
+            // 
+            // chEndTime
+            // 
+            this.chEndTime.Text = "End time";
             // 
             // txtEndTime
             // 
@@ -245,11 +246,22 @@
             this.lblDate.TabIndex = 65;
             this.lblDate.Text = "Date";
             // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(711, 81);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(123, 29);
+            this.btnBack.TabIndex = 74;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // frmClass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(874, 611);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.txtEndTime);
             this.Controls.Add(this.lblEndTime);
             this.Controls.Add(this.cbxStaff);
@@ -300,5 +312,6 @@
         private System.Windows.Forms.TextBox txtStartTime;
         private System.Windows.Forms.Label lblEndTime;
         private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.Button btnBack;
     }
 }

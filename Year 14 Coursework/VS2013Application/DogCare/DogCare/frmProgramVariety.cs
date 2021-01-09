@@ -219,5 +219,17 @@ namespace DogCare
                 String message = new ExceptionMessageGenerator().generateMessage(ex.Message);
             }
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            moveToTrainingForm();
+        }
+
+        public void moveToTrainingForm()
+        {
+            this.Hide();
+            Form MoveToTrainingForm = new frmTraining();
+            MoveToTrainingForm.Show();
+        }
     }
 }

@@ -16,8 +16,17 @@ namespace DogCare
         static void Main()
         {
 
+            //clear all the records in all the tables
+            new DataStoreTableHelper().clearAllTables();
+
+            //check the tables are empty
+            consoleTableCounts();
+
             //add all the records
-            populateDatabase();
+            new Populate().populateDatabase();
+
+            //check the tables are empty
+            consoleTableCounts();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
