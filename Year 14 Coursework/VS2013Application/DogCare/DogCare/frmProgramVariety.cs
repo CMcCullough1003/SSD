@@ -21,6 +21,19 @@ namespace DogCare
         {
             InitializeComponent();
             RefreshList();
+            populateNumberOfClasses();
+        }
+
+        public void populateNumberOfClasses()
+        {
+            cbxNumberOfClasses.DisplayMember = "Text";
+            cbxNumberOfClasses.ValueMember = "Value";
+
+            cbxNumberOfClasses.Items.Add(new { Text = 6, Value = 6 });
+            cbxNumberOfClasses.Items.Add(new { Text = 8, Value = 8 });
+            cbxNumberOfClasses.Items.Add(new { Text = 10, Value = 10 });
+
+            cbxNumberOfClasses.Text = PLEASE_SELECT;
         }
 
         private void RefreshList()
@@ -69,7 +82,7 @@ namespace DogCare
             txtSessionCost.Text = selectedProgramVariety.sessionCost.ToString();
             txtPercentageDiscount.Text = selectedProgramVariety.fullPaymentPercentageDiscount.ToString();
             txtMaximumNumberOfDogs.Text = selectedProgramVariety.dogSpacesMaximum.ToString();
-            txtNumberOfClasses.Text = selectedProgramVariety.noOfClasses.ToString();
+            cbxNumberOfClasses.Text = selectedProgramVariety.noOfClasses.ToString();
 
         }
 
@@ -82,7 +95,7 @@ namespace DogCare
             txtDepositAmount.Text = "";
             txtSessionCost.Text = "";
             txtPercentageDiscount.Text = "";
-            txtNumberOfClasses.Text = "";
+            cbxNumberOfClasses.Text = PLEASE_SELECT;
             txtMaximumNumberOfDogs.Text = "";
         }
 
@@ -123,7 +136,7 @@ namespace DogCare
                 return;
             }
 
-            if (inputCheckMessageBox.checkInputIsDouble(txtNumberOfClasses.Text, lblNumberOfClasses.Text) == false)
+            if (inputCheckMessageBox.checkInputIsDouble(cbxNumberOfClasses.Text, lblNumberOfClasses.Text) == false)
             {
                 return;
             }
@@ -144,7 +157,7 @@ namespace DogCare
                 selectedProgramVariety.sessionCost = Convert.ToDouble(txtSessionCost.Text);
                 selectedProgramVariety.fullPaymentPercentageDiscount = Convert.ToDouble(txtPercentageDiscount.Text);
                 selectedProgramVariety.dogSpacesMaximum = Convert.ToInt32( txtMaximumNumberOfDogs.Text );
-                selectedProgramVariety.noOfClasses = Convert.ToInt32(txtNumberOfClasses.Text);
+                selectedProgramVariety.noOfClasses = Convert.ToInt32(cbxNumberOfClasses.Text);
 
                 //The id will be 0 if New button was clicked
                 if (selectedProgramVariety.id == 0)
@@ -227,9 +240,9 @@ namespace DogCare
 
         public void moveToTrainingForm()
         {
-            this.Hide();
             Form MoveToTrainingForm = new frmTraining();
             MoveToTrainingForm.Show();
+            this.Close();
         }
     }
 }

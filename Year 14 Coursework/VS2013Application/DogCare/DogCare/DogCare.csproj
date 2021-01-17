@@ -75,11 +75,29 @@
     <Compile Include="frmProgramVariety.Designer.cs">
       <DependentUpon>frmProgramVariety.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSchedule.cs">
+    <Compile Include="frmReportBilling.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSchedule.Designer.cs">
-      <DependentUpon>frmSchedule.cs</DependentUpon>
+    <Compile Include="frmReportBilling.Designer.cs">
+      <DependentUpon>frmReportBilling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportEnrollment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportEnrollment.Designer.cs">
+      <DependentUpon>frmReportEnrollment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportProgram.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportProgram.Designer.cs">
+      <DependentUpon>frmReportProgram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportSchedule.Designer.cs">
+      <DependentUpon>frmReportSchedule.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTraining.cs">
       <SubType>Form</SubType>
@@ -133,8 +151,17 @@
     <EmbeddedResource Include="frmProgramVariety.resx">
       <DependentUpon>frmProgramVariety.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSchedule.resx">
-      <DependentUpon>frmSchedule.cs</DependentUpon>
+    <EmbeddedResource Include="frmReportBilling.resx">
+      <DependentUpon>frmReportBilling.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportEnrollment.resx">
+      <DependentUpon>frmReportEnrollment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportProgram.resx">
+      <DependentUpon>frmReportProgram.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportSchedule.resx">
+      <DependentUpon>frmReportSchedule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTraining.resx">
       <DependentUpon>frmTraining.cs</DependentUpon>
@@ -185,6 +212,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cb9080f7-61e4-46ce-a43e-e3c11c3252c6_1140x641.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dog-moustache.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

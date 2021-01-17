@@ -328,17 +328,17 @@ namespace DogCare
             ProgramTable programTable = new ProgramTable();
 
             programModelRegular1 = new ProgramModel();
-            programModelRegular1.name = "Regular 1" ;
+            programModelRegular1.name = "Morning Madness (Regular)" ;
             programModelRegular1.programVarietyId = programVarietyIdRegular ;
             programIdRegular1 = programTable.create(programModelRegular1); 
 
             programModelRegular2 = new ProgramModel();
-            programModelRegular2.name = "Regular 2" ;
+            programModelRegular2.name = "Afternoon Adventures (Regular)" ;
             programModelRegular2.programVarietyId = programVarietyIdRegular;
             programIdRegular2 = programTable.create(programModelRegular2);
 
             programModelAdvanced1 = new ProgramModel();
-            programModelAdvanced1.name = "Advanced 1" ;
+            programModelAdvanced1.name = "Super Skills (Advanced)" ;
             programModelAdvanced1.programVarietyId = programVarietyIdAdvanced;
             programIdAdvanced1 = programTable.create(programModelAdvanced1);  
         }
@@ -544,7 +544,7 @@ namespace DogCare
             EnrollmentModel enrollmentModel = new EnrollmentModel();
             enrollmentModel.name = dogModelOdin.name + " (owned by " + clientModelJames.displayName + ") in " + programModelRegular1.name;
             enrollmentModel.clientId = clientIdJames;
-            enrollmentModel.dogId = dogIdOdin;
+            enrollmentModel.dogId = dogIdHela;
             enrollmentModel.programId = programIdRegular1;
             enrollmentModel.paymentMethod = PaymentConstants.PAYMENT_PER_CLASS;
             enrollmentModel.joinDate = DateTime.Now.AddDays(-19);
@@ -671,7 +671,7 @@ namespace DogCare
             EnrollmentModel enrollmentModel = new EnrollmentModel();
             enrollmentModel.name = dogModelHeimdall.name + " (owned by " + clientModelMark.displayName + ") in " + programModelAdvanced1.name;
             enrollmentModel.clientId = clientIdJames;
-            enrollmentModel.dogId = dogIdLoki;
+            enrollmentModel.dogId = dogIdHeimdall;
             enrollmentModel.programId = programIdAdvanced1;
             enrollmentModel.paymentMethod = PaymentConstants.PAYMENT_PER_CLASS;
             enrollmentModel.joinDate = DateTime.Now.AddDays(-2);

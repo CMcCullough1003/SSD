@@ -73,6 +73,16 @@ namespace DogCare.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dog_moustache {
+            get {
+                object obj = ResourceManager.GetObject("dog-moustache", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dog_puppy_on_garden_royalty_free_image_1586966191 {
             get {
                 object obj = ResourceManager.GetObject("dog-puppy-on-garden-royalty-free-image-1586966191", resourceCulture);

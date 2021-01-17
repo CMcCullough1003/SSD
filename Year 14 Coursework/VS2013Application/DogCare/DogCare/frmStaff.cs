@@ -155,9 +155,9 @@ namespace DogCare
 
         public void moveToTrainingForm()
         {
-            this.Hide();
             Form MoveToTrainingForm = new frmTraining();
             MoveToTrainingForm.Show();
+            this.Close();
         }
     }
 }

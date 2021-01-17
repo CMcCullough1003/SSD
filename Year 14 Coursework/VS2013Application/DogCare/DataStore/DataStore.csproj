@@ -64,6 +64,10 @@
     <Compile Include="ProgramModel.cs" />
     <Compile Include="ProgramTable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportAttendeesModel.cs" />
+    <Compile Include="ReportBillingModel.cs" />
+    <Compile Include="ReportEnrollmentModel.cs" />
+    <Compile Include="ReportProgramModel.cs" />
     <Compile Include="Reports.cs" />
     <Compile Include="ReportScheduleModel.cs" />
     <Compile Include="StaffModel.cs" />

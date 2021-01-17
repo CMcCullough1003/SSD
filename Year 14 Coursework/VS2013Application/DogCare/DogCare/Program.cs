@@ -30,7 +30,7 @@ namespace DogCare
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmTraining());
+            Application.Run(new frmFrontPage());
         }
         
         private static void populateDatabase() {

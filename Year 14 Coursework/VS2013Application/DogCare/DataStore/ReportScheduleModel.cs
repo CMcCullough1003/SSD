@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataStore
 {
-    class ReportScheduleModel
+    public class ReportScheduleModel
     {
         public int classId = 0;
         public DateTime classDate = DateTime.MinValue;

@@ -53,9 +53,9 @@
             this.rbtnRegular = new System.Windows.Forms.RadioButton();
             this.txtMaximumNumberOfDogs = new System.Windows.Forms.TextBox();
             this.lblMaximumNumberOfDogs = new System.Windows.Forms.Label();
-            this.txtNumberOfClasses = new System.Windows.Forms.TextBox();
             this.lblNumberOfClasses = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
+            this.cbxNumberOfClasses = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblVariety
@@ -266,13 +266,6 @@
             this.lblMaximumNumberOfDogs.TabIndex = 116;
             this.lblMaximumNumberOfDogs.Text = "Maximum Number of Dogs";
             // 
-            // txtNumberOfClasses
-            // 
-            this.txtNumberOfClasses.Location = new System.Drawing.Point(593, 404);
-            this.txtNumberOfClasses.Name = "txtNumberOfClasses";
-            this.txtNumberOfClasses.Size = new System.Drawing.Size(164, 22);
-            this.txtNumberOfClasses.TabIndex = 115;
-            // 
             // lblNumberOfClasses
             // 
             this.lblNumberOfClasses.AutoSize = true;
@@ -293,15 +286,23 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // cbxNumberOfClasses
+            // 
+            this.cbxNumberOfClasses.FormattingEnabled = true;
+            this.cbxNumberOfClasses.Location = new System.Drawing.Point(593, 404);
+            this.cbxNumberOfClasses.Name = "cbxNumberOfClasses";
+            this.cbxNumberOfClasses.Size = new System.Drawing.Size(164, 24);
+            this.cbxNumberOfClasses.TabIndex = 119;
+            // 
             // frmProgramVariety
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1015, 628);
+            this.Controls.Add(this.cbxNumberOfClasses);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.txtMaximumNumberOfDogs);
             this.Controls.Add(this.lblMaximumNumberOfDogs);
-            this.Controls.Add(this.txtNumberOfClasses);
             this.Controls.Add(this.lblNumberOfClasses);
             this.Controls.Add(this.rbtnAdvanced);
             this.Controls.Add(this.rbtnRegular);
@@ -320,6 +321,7 @@
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.lsvProgramVariety);
             this.Name = "frmProgramVariety";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmProgramCosts";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -351,10 +353,10 @@
         private System.Windows.Forms.RadioButton rbtnRegular;
         private System.Windows.Forms.TextBox txtMaximumNumberOfDogs;
         private System.Windows.Forms.Label lblMaximumNumberOfDogs;
-        private System.Windows.Forms.TextBox txtNumberOfClasses;
         private System.Windows.Forms.Label lblNumberOfClasses;
         private System.Windows.Forms.ColumnHeader chMaxDogs;
         private System.Windows.Forms.ColumnHeader chNumberOfClasses;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.ComboBox cbxNumberOfClasses;
     }
 }

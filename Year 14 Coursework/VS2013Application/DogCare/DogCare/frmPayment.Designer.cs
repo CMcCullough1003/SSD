@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cbxEnrollment = new System.Windows.Forms.ComboBox();
             this.lblEnrollment = new System.Windows.Forms.Label();
             this.lblIDReadOnly = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
@@ -44,10 +43,8 @@
             this.chPaymentRecieved = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chPaymentRecievedDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chRecieptIssued = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.txtPayment = new System.Windows.Forms.TextBox();
             this.lblPaymentDue = new System.Windows.Forms.Label();
             this.lblDueDate = new System.Windows.Forms.Label();
-            this.txtDueDate = new System.Windows.Forms.TextBox();
             this.lblPaymentRecieved = new System.Windows.Forms.Label();
             this.lblPaymentRecievedDate = new System.Windows.Forms.Label();
             this.txtPaymentRecievedDate = new System.Windows.Forms.TextBox();
@@ -56,20 +53,15 @@
             this.gbxRecieptIssued = new System.Windows.Forms.GroupBox();
             this.rbtnRecieptIssuedNo = new System.Windows.Forms.RadioButton();
             this.rbtnRecieptIssuedYes = new System.Windows.Forms.RadioButton();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.lblPaymentType = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
+            this.chPaymentType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lblDueDateReadOnly = new System.Windows.Forms.Label();
+            this.lblEnrollmentReadOnly = new System.Windows.Forms.Label();
+            this.lblPaymentTypeReadOnly = new System.Windows.Forms.Label();
+            this.lblPaymentReadOnly = new System.Windows.Forms.Label();
             this.gbxRecieptIssued.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // cbxEnrollment
-            // 
-            this.cbxEnrollment.FormattingEnabled = true;
-            this.cbxEnrollment.Location = new System.Drawing.Point(524, 195);
-            this.cbxEnrollment.Name = "cbxEnrollment";
-            this.cbxEnrollment.Size = new System.Drawing.Size(164, 24);
-            this.cbxEnrollment.TabIndex = 99;
-            this.cbxEnrollment.Text = "Please select";
             // 
             // lblEnrollment
             // 
@@ -145,6 +137,7 @@
             this.chID,
             this.chEnrollment,
             this.chPayment,
+            this.chPaymentType,
             this.chDueDate,
             this.chPaymentRecieved,
             this.chPaymentRecievedDate,
@@ -189,13 +182,6 @@
             // 
             this.chRecieptIssued.Text = "RecieptIssued";
             // 
-            // txtPayment
-            // 
-            this.txtPayment.Location = new System.Drawing.Point(524, 256);
-            this.txtPayment.Name = "txtPayment";
-            this.txtPayment.Size = new System.Drawing.Size(164, 22);
-            this.txtPayment.TabIndex = 100;
-            // 
             // lblPaymentDue
             // 
             this.lblPaymentDue.AutoSize = true;
@@ -215,13 +201,6 @@
             this.lblDueDate.Size = new System.Drawing.Size(74, 17);
             this.lblDueDate.TabIndex = 103;
             this.lblDueDate.Text = "Due date";
-            // 
-            // txtDueDate
-            // 
-            this.txtDueDate.Location = new System.Drawing.Point(524, 307);
-            this.txtDueDate.Name = "txtDueDate";
-            this.txtDueDate.Size = new System.Drawing.Size(164, 22);
-            this.txtDueDate.TabIndex = 102;
             // 
             // lblPaymentRecieved
             // 
@@ -309,15 +288,6 @@
             this.rbtnRecieptIssuedYes.Text = "Yes";
             this.rbtnRecieptIssuedYes.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(712, 195);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(164, 24);
-            this.comboBox1.TabIndex = 116;
-            this.comboBox1.Text = "Please select";
-            // 
             // lblPaymentType
             // 
             this.lblPaymentType.AutoSize = true;
@@ -338,13 +308,56 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // chPaymentType
+            // 
+            this.chPaymentType.Text = "Payment type";
+            // 
+            // lblDueDateReadOnly
+            // 
+            this.lblDueDateReadOnly.AutoSize = true;
+            this.lblDueDateReadOnly.Location = new System.Drawing.Point(526, 312);
+            this.lblDueDateReadOnly.Name = "lblDueDateReadOnly";
+            this.lblDueDateReadOnly.Size = new System.Drawing.Size(46, 17);
+            this.lblDueDateReadOnly.TabIndex = 118;
+            this.lblDueDateReadOnly.Text = "label1";
+            // 
+            // lblEnrollmentReadOnly
+            // 
+            this.lblEnrollmentReadOnly.AutoSize = true;
+            this.lblEnrollmentReadOnly.Location = new System.Drawing.Point(521, 203);
+            this.lblEnrollmentReadOnly.Name = "lblEnrollmentReadOnly";
+            this.lblEnrollmentReadOnly.Size = new System.Drawing.Size(46, 17);
+            this.lblEnrollmentReadOnly.TabIndex = 119;
+            this.lblEnrollmentReadOnly.Text = "label1";
+            // 
+            // lblPaymentTypeReadOnly
+            // 
+            this.lblPaymentTypeReadOnly.AutoSize = true;
+            this.lblPaymentTypeReadOnly.Location = new System.Drawing.Point(709, 203);
+            this.lblPaymentTypeReadOnly.Name = "lblPaymentTypeReadOnly";
+            this.lblPaymentTypeReadOnly.Size = new System.Drawing.Size(46, 17);
+            this.lblPaymentTypeReadOnly.TabIndex = 120;
+            this.lblPaymentTypeReadOnly.Text = "label1";
+            // 
+            // lblPaymentReadOnly
+            // 
+            this.lblPaymentReadOnly.AutoSize = true;
+            this.lblPaymentReadOnly.Location = new System.Drawing.Point(521, 260);
+            this.lblPaymentReadOnly.Name = "lblPaymentReadOnly";
+            this.lblPaymentReadOnly.Size = new System.Drawing.Size(46, 17);
+            this.lblPaymentReadOnly.TabIndex = 121;
+            this.lblPaymentReadOnly.Text = "label1";
+            // 
             // frmPayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(946, 610);
+            this.Controls.Add(this.lblPaymentReadOnly);
+            this.Controls.Add(this.lblPaymentTypeReadOnly);
+            this.Controls.Add(this.lblEnrollmentReadOnly);
+            this.Controls.Add(this.lblDueDateReadOnly);
             this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.lblPaymentType);
             this.Controls.Add(this.rbtnPaymentRecievedNo);
             this.Controls.Add(this.rbtnPaymentRecievedYes);
@@ -352,10 +365,7 @@
             this.Controls.Add(this.txtPaymentRecievedDate);
             this.Controls.Add(this.lblPaymentRecieved);
             this.Controls.Add(this.lblDueDate);
-            this.Controls.Add(this.txtDueDate);
             this.Controls.Add(this.lblPaymentDue);
-            this.Controls.Add(this.txtPayment);
-            this.Controls.Add(this.cbxEnrollment);
             this.Controls.Add(this.lblEnrollment);
             this.Controls.Add(this.lblIDReadOnly);
             this.Controls.Add(this.lblID);
@@ -366,6 +376,7 @@
             this.Controls.Add(this.lsvPayment);
             this.Controls.Add(this.gbxRecieptIssued);
             this.Name = "frmPayment";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Payment";
             this.gbxRecieptIssued.ResumeLayout(false);
             this.gbxRecieptIssued.PerformLayout();
@@ -376,7 +387,6 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox cbxEnrollment;
         private System.Windows.Forms.Label lblEnrollment;
         private System.Windows.Forms.Label lblIDReadOnly;
         private System.Windows.Forms.Label lblID;
@@ -389,10 +399,8 @@
         private System.Windows.Forms.ColumnHeader chEnrollment;
         private System.Windows.Forms.ColumnHeader chPayment;
         private System.Windows.Forms.ColumnHeader chDueDate;
-        private System.Windows.Forms.TextBox txtPayment;
         private System.Windows.Forms.Label lblPaymentDue;
         private System.Windows.Forms.Label lblDueDate;
-        private System.Windows.Forms.TextBox txtDueDate;
         private System.Windows.Forms.Label lblPaymentRecieved;
         private System.Windows.Forms.Label lblPaymentRecievedDate;
         private System.Windows.Forms.TextBox txtPaymentRecievedDate;
@@ -404,8 +412,12 @@
         private System.Windows.Forms.GroupBox gbxRecieptIssued;
         private System.Windows.Forms.RadioButton rbtnRecieptIssuedNo;
         private System.Windows.Forms.RadioButton rbtnRecieptIssuedYes;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label lblPaymentType;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.ColumnHeader chPaymentType;
+        private System.Windows.Forms.Label lblDueDateReadOnly;
+        private System.Windows.Forms.Label lblEnrollmentReadOnly;
+        private System.Windows.Forms.Label lblPaymentTypeReadOnly;
+        private System.Windows.Forms.Label lblPaymentReadOnly;
     }
 }

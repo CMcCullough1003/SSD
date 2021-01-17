@@ -22,22 +22,9 @@ namespace DogCare
         public frmPayment()
         {
             InitializeComponent();
-            fetchEnrollments();
             RefreshList();
         }
 
-        private void fetchEnrollments()
-        {
-            enrollmentList = new EnrollmentTable().readAll();
-
-            cbxEnrollment.DisplayMember = "Text";
-            cbxEnrollment.ValueMember = "Value";
-
-            foreach (var enrollment in enrollmentList)
-            {
-                cbxEnrollment.Items.Add(new { Text = enrollment.name, Value = enrollment.id });
-            }
-        }
 
         private void RefreshList()
         {
@@ -46,6 +33,8 @@ namespace DogCare
 
             //read all the records from the table
             List<PaymentModel> paymentList = new PaymentTable().readAll();
+            List<EnrollmentModel> enrollmentList = new EnrollmentTable().readAll();
+
 
             //loop through all the records
             foreach (var payment in paymentList)
@@ -53,7 +42,7 @@ namespace DogCare
                 var enrollmentIndex = new ForeignKeyHelper().findIndexOfEnrollmentID(enrollmentList, payment.enrollmentId);
                 var enrollmentName = enrollmentList[enrollmentIndex].name;
                 //create an array that will hold all the fields in a row
-                var row = new string[] { payment.id.ToString(), enrollmentName, payment.paymentAmountDue.ToString(), payment.paymentAmountDueDate.ToString(), payment.paymentRecieved.ToString(), payment.paymentRecievedDate.ToString(), payment.recieptIssued.ToString() };
+                var row = new string[] { payment.id.ToString(), enrollmentName, payment.paymentAmountDue.ToString(), payment.paymentType, payment.paymentAmountDueDate.ToString(), payment.paymentRecieved.ToString(), payment.paymentRecievedDate.ToString(), payment.recieptIssued.ToString() };
                 var lvi = new ListViewItem(row);
 
                 //Save the model in the tag property so we can use it if row is selected
@@ -74,14 +63,11 @@ namespace DogCare
                 return;
             }
 
-            cbxEnrollment.Text = PLEASE_SELECT;
-            cbxEnrollment.SelectedIndex = -1;
-            cbxEnrollment.SelectedIndex = new ForeignKeyHelper().findIndexOfEnrollmentID(enrollmentList, selectedPayment.enrollmentId);
-
             //fill up the input fields
             lblIDReadOnly.Text = selectedPayment.id.ToString();
-            txtPayment.Text = selectedPayment.paymentAmountDue.ToString();
-            txtDueDate.Text = selectedPayment.paymentAmountDueDate.ToString();
+            lblPaymentReadOnly.Text = selectedPayment.paymentAmountDue.ToString();
+            lblPaymentTypeReadOnly.Text = selectedPayment.paymentType;
+            lblDueDateReadOnly.Text = selectedPayment.paymentAmountDueDate.ToString();
             if (rbtnPaymentRecievedYes.Checked)
             {
                 selectedPayment.paymentRecieved = true;
@@ -105,9 +91,10 @@ namespace DogCare
         {
             //set all the input fields to blank
             lblIDReadOnly.Text = "";
-            cbxEnrollment.Text = PLEASE_SELECT;
-            txtPayment.Text = "";
-            txtDueDate.Text = "";
+            lblEnrollmentReadOnly.Text = "";
+            lblPaymentReadOnly.Text = "";
+            lblPaymentTypeReadOnly.Text = "";
+            lblDueDateReadOnly.Text = "";
             rbtnPaymentRecievedYes.Checked = false;
             rbtnPaymentRecievedNo.Checked = false;
             txtPaymentRecievedDate.Text = "";
@@ -124,22 +111,6 @@ namespace DogCare
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (cbxEnrollment.Text == PLEASE_SELECT)
-            {
-                MessageBox.Show("Please select an enrollment", "Missing input");
-                return;
-            }
-
-            if (new InputCheckMessageBox().checkInputIsDouble(txtPayment.Text, lblPayment.Text) == false)
-            {
-                return;
-            }
-
-            if (new InputCheckMessageBox().checkInputIsDateTime(txtDueDate.Text, lblDueDate.Text) == false)
-            {
-                return;
-            }
-
             if (new InputCheckMessageBox().checkInputIsDateTime(txtPaymentRecievedDate.Text, lblPaymentRecievedDate.Text) == false)
             {
                 return;
@@ -147,11 +118,6 @@ namespace DogCare
 
             try
             {
-                //fill up the model with all the input fields
-                selectedPayment.enrollmentId = (cbxEnrollment.SelectedItem as dynamic).Value;
-                //Convert.ToInt32(cbxEnrollment.SelectedItem);
-                selectedPayment.paymentAmountDue = Convert.ToDouble(txtPayment.Text);
-                selectedPayment.paymentAmountDueDate = Convert.ToDateTime(txtDueDate.Text);
                 if (rbtnPaymentRecievedYes.Checked)
                 {
                     selectedPayment.paymentRecieved = true;
@@ -174,7 +140,7 @@ namespace DogCare
                 //The id will be 0 if New button was clicked
                 if (selectedPayment.id == 0)
                 {
-                    new PaymentTable().create(selectedPayment);
+                    MessageBox.Show("Payment records are created automatically when you enroll", "Payment not created");
                 }
                 else
                 {
@@ -203,30 +169,8 @@ namespace DogCare
 
             //Don't let them delete it by accident
             DialogResult result = MessageBox.Show(
-                "Wow!! Wait...are you sure?",
-                "Important Question",
-                MessageBoxButtons.YesNo);
-
-            //Abort!!
-            if (result == DialogResult.No)
-            {
-                return;
-            }
-
-            //Delete the reord from the table and update the ListView
-            try
-            {
-                new PaymentTable().delete(selectedPayment.id);
-
-                //reset everything
-                ClearInputs();
-                RefreshList();
-                selectedPayment = new PaymentModel();
-            }
-            catch (Exception ex)
-            {
-                new ExceptionMessageGenerator().generateMessage(ex.Message);
-            }
+                "Sorry, you need to contact the administrator to delete payments",
+                "Important Announcement");
         }
 
         private void lsvPayment_SelectedIndexChanged(object sender, EventArgs e)
@@ -252,9 +196,9 @@ namespace DogCare
 
         public void moveToTrainingForm()
         {
-            this.Hide();
             Form MoveToTrainingForm = new frmTraining();
             MoveToTrainingForm.Show();
+            this.Close();
         }
     }
 }

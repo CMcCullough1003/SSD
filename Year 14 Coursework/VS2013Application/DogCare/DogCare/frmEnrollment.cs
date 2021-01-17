@@ -142,7 +142,7 @@ namespace DogCare
             }
             if (selectedEnrollment.paymentMethod == PaymentConstants.PAYMENT_PER_CLASS)
             {
-                rbtnPayPerClass.Checked = true;
+                rbtnPayByInstallments.Checked = true;
             }
             lblJoinDateReadOnly.Text = selectedEnrollment.joinDate.ToString();
 
@@ -171,7 +171,7 @@ namespace DogCare
             cbxClient.Enabled = false;
             cbxDog.Enabled = false;
             rbtnPayInFull.Enabled = false;
-            rbtnPayPerClass.Enabled = false;
+            rbtnPayByInstallments.Enabled = false;
 
             if (rbtnInviteIssuedYes.Checked == true)
             {
@@ -186,7 +186,7 @@ namespace DogCare
             cbxClient.Enabled = true;
             cbxDog.Enabled = true;
             rbtnPayInFull.Enabled = true;
-            rbtnPayPerClass.Enabled = true;
+            rbtnPayByInstallments.Enabled = true;
             rbtnInviteIssuedYes.Enabled = true;
             rbtnInviteIssuedNo.Enabled = true;
         }
@@ -200,7 +200,7 @@ namespace DogCare
             cbxClient.Text = PLEASE_SELECT;
             cbxDog.Text = PLEASE_SELECT;
             rbtnPayInFull.Checked = false;
-            rbtnPayPerClass.Checked = false;
+            rbtnPayByInstallments.Checked = false;
             lblJoinDateReadOnly.Text = "";
             rbtnInviteIssuedYes.Checked = false;
             rbtnInviteIssuedNo.Checked = false;
@@ -214,8 +214,36 @@ namespace DogCare
             ClearInputs();
         }
 
+        public Boolean IsProgramFullyEnrolled()
+        {
+            List<EnrollmentModel> enrollmentList = new EnrollmentTable().readAll();
+            var enrollmentForProgramList = enrollmentList.Where(enrollment => enrollment.programId == (cbxProgram.SelectedItem as dynamic).Value);
+            var enrollmentCountForProgram = enrollmentForProgramList.Count();
+
+            var programIndex = new ForeignKeyHelper().findIndexOfProgramID(programList, (cbxProgram.SelectedItem as dynamic).Value);
+            var programVarietyId = programList[programIndex].programVarietyId;
+
+            var programVarietyIndex = new ForeignKeyHelper().findIndexOfProgramVarietyID(programVarietyList, programVarietyId);
+            var dogSpacesMaximum = programVarietyList[programVarietyIndex].dogSpacesMaximum;
+
+            if (enrollmentCountForProgram == dogSpacesMaximum)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (IsProgramFullyEnrolled() == true)
+            {
+                MessageBox.Show("This program is fully enrolled already.\n\nPlease apply for a different program.", "Fully booked");
+                return;
+            }
+
             if (selectedEnrollment.id != 0 && selectedEnrollment.inviteIssued == true) 
             {
                 MessageBox.Show("Sorry, this record cannot be updated.\n\nPlease delete this enrollment record and create a new one.", "Cannot update record");
@@ -240,7 +268,7 @@ namespace DogCare
                 return;
             }
 
-            if (rbtnPayInFull.Checked == false && rbtnPayPerClass.Checked == false)
+            if (rbtnPayInFull.Checked == false && rbtnPayByInstallments.Checked == false)
             {
                 MessageBox.Show("Please select a payment method", "Missing input");
                 return;
@@ -263,7 +291,7 @@ namespace DogCare
                 {
                     selectedEnrollment.paymentMethod = 1;
                 }
-                if (rbtnPayPerClass.Checked)
+                if (rbtnPayByInstallments.Checked)
                 {
                     selectedEnrollment.paymentMethod = 2;
                 }
@@ -289,10 +317,11 @@ namespace DogCare
 
                 //The id will be 0 if New button was clicked
 
-
+                var newEnrollment = false;
                 if (selectedEnrollment.id == 0)
                 {
                     var enrollmentId = new EnrollmentTable().create(selectedEnrollment);
+                    newEnrollment = true;
                     selectedEnrollment.id = enrollmentId;
                     MessageBox.Show("Payment is now due.\n\nPlease process payment on the payment screen.", "Payment due");
                 }
@@ -301,7 +330,7 @@ namespace DogCare
                     new EnrollmentTable().update(selectedEnrollment);
                 }
 
-                createPayments();
+                createPayments(newEnrollment);
 
                 //reset everything
                 enableInputs();
@@ -316,7 +345,7 @@ namespace DogCare
             }
         }
 
-        private void createPayments()
+        private void createPayments(Boolean newEnrollment)
         {
             var programVarietyModel = fetchVariety();
             createPaymentDeposit(programVarietyModel);
@@ -327,13 +356,13 @@ namespace DogCare
                 return;
             }
 
-            if (selectedEnrollment.id == 0 && rbtnPayPerClass.Checked == true && rbtnInviteIssuedYes.Checked == true)
+            if (newEnrollment == true && rbtnPayByInstallments.Checked == true && rbtnInviteIssuedYes.Checked == true)
             {
                 createPaymentInstallments(programVarietyModel);
                 return;
             }
 
-            if (selectedEnrollment.id != 0 && selectedEnrollment.inviteIssued == false && rbtnInviteIssuedYes.Checked == true)
+            if (newEnrollment == false && selectedEnrollment.inviteIssued == false && rbtnInviteIssuedYes.Checked == true)
             {
                 createPaymentInstallments(programVarietyModel);
                 return;
@@ -376,12 +405,22 @@ namespace DogCare
             var installmentAmountTotal = totalCostOfClasses - programVarietyModel.depositAmount;
             var installmentAmount = Math.Round(installmentAmountTotal / numberOfInstallments, 2);
 
+            List<ClassModel> classes = new ClassTable().readAll();
+            List<ClassModel> programClassesList = new List<ClassModel>();
+            foreach (var thisClass in classes)
+            {
+                if(thisClass.programId == (cbxProgram.SelectedItem as dynamic).Value)
+                {
+                    programClassesList.Add(thisClass);
+                }
+            }
+
             for (int i = 1; i <= numberOfInstallments; i++)
             {
                 var paymentModel = new PaymentModel();
                 paymentModel.enrollmentId = selectedEnrollment.id;
                 paymentModel.paymentAmountDue = installmentAmount;
-                paymentModel.paymentAmountDueDate = DateTime.Now.AddDays(i * 14);
+                paymentModel.paymentAmountDueDate = programClassesList[(i * 2) - 1].classDate;
                 paymentModel.paymentRecieved = false;
                 paymentModel.paymentType = PaymentTypeConstants.INSTALLMENT;
                 paymentModel.recieptIssued = false;
@@ -468,9 +507,9 @@ namespace DogCare
 
         public void moveToTrainingForm()
         {
-            this.Hide();
             Form MoveToTrainingForm = new frmTraining();
             MoveToTrainingForm.Show();
+            this.Close();
         }
     }
 }
