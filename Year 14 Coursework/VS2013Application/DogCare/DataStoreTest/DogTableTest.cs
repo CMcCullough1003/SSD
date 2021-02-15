@@ -25,7 +25,7 @@ namespace DataStoreTest
             new DataStoreTableHelper().clearAllTables();
 
             ClientModel clientModel = new ClientModel();
-            clientModel.name = "Bob";
+            clientModel.displayName = "Barry Bonds";
             clientModel.phone = "1234567890";
             clientModel.email = "A@B.com";
 

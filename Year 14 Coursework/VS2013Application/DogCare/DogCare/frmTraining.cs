@@ -230,7 +230,7 @@ namespace DogCare
             List<ReportProgramModel> programList = new Reports().readReportProgram();
             if (billingList.Count > 0)
             {
-                lblIncompletePrograms.Text = "There have been " + programList.Count + " programs created without the required number of classes";
+                lblIncompletePrograms.Text = "There have been " + programList.Count + " programs created \nwithout the required number of classes";
             }
             else
             {

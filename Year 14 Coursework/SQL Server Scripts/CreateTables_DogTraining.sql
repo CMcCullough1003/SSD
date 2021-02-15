@@ -84,6 +84,7 @@ CREATE TABLE Enrollment (
 	PaymentMethod int CHECK (PaymentMethod >=1 AND PaymentMethod <= 2) NOT NULL,
 	JoinDate dateTime DEFAULT GetDate() NOT NULL,
 	InviteIssued bit DEFAULT 0 NOT NULL
+	CONSTRAINT CK__Enrollment__DuplicateEnrollment UNIQUE (DogID,ProgramID, ClientID)
 )
 
 CREATE TABLE Payment (

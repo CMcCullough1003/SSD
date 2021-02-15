@@ -73,6 +73,11 @@ namespace DataStore
                 return "Date must not be in the past";
             }
 
+            if (exceptionMessage.Contains("CK__Enrollment__DuplicateEnrollment"))
+            {
+                return "Could not enroll. This dog is already enrolled in this program";
+            }
+
             return "Oops! Something has gone wrong. Please contact the system administrator\n\n" + exceptionMessage;
         }
     }

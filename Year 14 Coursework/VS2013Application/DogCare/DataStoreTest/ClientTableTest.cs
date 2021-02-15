@@ -41,7 +41,7 @@ namespace DataStoreTest
         {
             //Assemble
             ClientModel clientModel = new ClientModel();
-            clientModel.name = "Bob";
+            clientModel.displayName = "Barry Bonds";
             clientModel.phone = "07561 101169";
             clientModel.email = "bob@gmail.com";
             //If created will be greater than 0, but we don't know exactly what it will be because deleting all records doesnt set the ID counter back to 0
@@ -60,7 +60,7 @@ namespace DataStoreTest
         {
             //Assemble
             ClientModel clientModel = new ClientModel();
-            clientModel.name = "Bob";
+            clientModel.displayName = "Barry Bonds";
             clientModel.phone = "07561 101169";
             clientModel.email = "bob@gmail.com";
             int expected = 1;
@@ -79,7 +79,7 @@ namespace DataStoreTest
         {
             //Assemble
             ClientModel clientModel = new ClientModel();
-            clientModel.name = "Bob";
+            clientModel.displayName = "Barry Bonds";
             clientModel.phone = "07561 101169";
             clientModel.email = "bob@gmail.com";
             ClientTable clientTable = new ClientTable();
@@ -89,7 +89,7 @@ namespace DataStoreTest
             ClientModel actual = clientTable.read(clientID);
 
             //Assert
-            Assert.AreEqual(clientModel.name, actual.name);
+            Assert.AreEqual(clientModel.displayName, actual.displayName);
             Assert.AreEqual(clientModel.phone, actual.phone);
             Assert.AreEqual(clientModel.email, actual.email);
         }
@@ -99,17 +99,17 @@ namespace DataStoreTest
         {
             //Assemble
             ClientModel clientModel1 = new ClientModel();
-            clientModel1.name = "Bob";
+            clientModel1.displayName = "Barry Bonds";
             clientModel1.phone = "07561 101169";
             clientModel1.email = "bob@gmail.com";
 
             ClientModel clientModel2 = new ClientModel();
-            clientModel2.name = "Bob2";
+            clientModel2.displayName = "Barry Bonds";
             clientModel2.phone = "07561 101169";
             clientModel2.email = "bob@gmail.com";
 
             ClientModel clientModel3 = new ClientModel();
-            clientModel3.name = "Bob3";
+            clientModel3.displayName = "Barry Bonds";
             clientModel3.phone = "07561 101169";
             clientModel3.email = "bob@gmail.com";
 
@@ -131,17 +131,17 @@ namespace DataStoreTest
         {
             //Assemble
             ClientModel clientModel1 = new ClientModel();
-            clientModel1.name = "name1";
+            clientModel1.displayName = "Barry Bonds";
             clientModel1.phone = "07561 101169";
             clientModel1.email = "email1@x.com";
 
             ClientModel clientModel2 = new ClientModel();
-            clientModel2.name = "name2";
+            clientModel2.displayName = "Barry Bonds";
             clientModel2.phone = "07561 101170";
             clientModel2.email = "email2@x.com";
 
             ClientModel clientModel3 = new ClientModel();
-            clientModel3.name = "name3";
+            clientModel3.displayName = "Barry Bonds";
             clientModel3.phone = "07561 101171";
             clientModel3.email = "email3@x.com";
 
@@ -155,17 +155,17 @@ namespace DataStoreTest
 
             //Assert
             Assert.AreEqual(clientID1, clientID1);
-            Assert.AreEqual(clientModel1.name, actual[0].name);
+            Assert.AreEqual(clientModel1.displayName, actual[0].displayName);
             Assert.AreEqual(clientModel1.phone, actual[0].phone);
             Assert.AreEqual(clientModel1.email, actual[0].email);
 
             Assert.AreEqual(clientID2, clientID2);
-            Assert.AreEqual(clientModel2.name, actual[1].name);
+            Assert.AreEqual(clientModel2.displayName, actual[1].displayName);
             Assert.AreEqual(clientModel2.phone, actual[1].phone);
             Assert.AreEqual(clientModel2.email, actual[1].email);
 
             Assert.AreEqual(clientID3, clientID3);
-            Assert.AreEqual(clientModel3.name, actual[2].name);
+            Assert.AreEqual(clientModel3.displayName, actual[2].displayName);
             Assert.AreEqual(clientModel3.phone, actual[2].phone);
             Assert.AreEqual(clientModel3.email, actual[2].email);
         }
@@ -175,13 +175,13 @@ namespace DataStoreTest
         {
             //Assemble
             ClientModel clientModel = new ClientModel();
-            clientModel.name = "Bob";
+            clientModel.displayName = "Barry Bonds";
             clientModel.phone = "07561 101169";
             clientModel.email = "bob@gmail.com";
             ClientTable clientTable = new ClientTable();
             int clientID = clientTable.create(clientModel);
             clientModel.id = clientID;
-            clientModel.name = "Kate";
+            clientModel.displayName = "Tim Jones";
             clientModel.phone = "07561 101170";
             clientModel.email = "kate@gmail.com";
 
@@ -190,7 +190,7 @@ namespace DataStoreTest
             ClientModel actual = clientTable.read(clientID);
 
             //Assert
-            Assert.AreEqual(clientModel.name, actual.name);
+            Assert.AreEqual(clientModel.displayName, actual.displayName);
             Assert.AreEqual(clientModel.phone, actual.phone);
             Assert.AreEqual(clientModel.email, actual.email);
         }
@@ -200,7 +200,7 @@ namespace DataStoreTest
         {
             //Assemble
             ClientModel clientModel = new ClientModel();
-            clientModel.name = "Bob";
+            clientModel.displayName = "Barry Bonds";
             clientModel.phone = "07561 101169";
             clientModel.email = "bob@gmail.com";
             int expected = 0;
@@ -236,7 +236,7 @@ namespace DataStoreTest
             //Assemble
             ClientTable clientTable = new ClientTable();
             ClientModel clientModel = new ClientModel();
-            clientModel.name = "Bo";
+            clientModel.displayName = "Ba";
             clientModel.phone = "07561 101169";
             clientModel.email = "bob@gmail.com";
             int expected = 1;
@@ -262,7 +262,7 @@ namespace DataStoreTest
             //Assemble
             ClientTable clientTable = new ClientTable();
             ClientModel clientModel = new ClientModel();
-            clientModel.name = "Bob";
+            clientModel.displayName = "Barry Bonds";
             clientModel.phone = "07561 101169";
             clientModel.email = "bob@gmail.com";
             int expected = 1;
@@ -289,7 +289,7 @@ namespace DataStoreTest
             //Assemble
             ClientTable clientTable = new ClientTable();
             ClientModel clientModel = new ClientModel();
-            clientModel.name = "Bob";
+            clientModel.displayName = "Barry Bonds";
             clientModel.phone = "123456789";
             clientModel.email = "bob@gmail.com";
             int expected = 1;
@@ -315,7 +315,7 @@ namespace DataStoreTest
             //Assemble
             ClientTable clientTable = new ClientTable();
             ClientModel clientModel = new ClientModel();
-            clientModel.name = "Bob";
+            clientModel.displayName = "Barry Bonds";
             clientModel.phone = "1234567890";
             clientModel.email = "bob@gmail.com";
             int expected = 1;
@@ -342,7 +342,7 @@ namespace DataStoreTest
             //Assemble
             ClientTable clientTable = new ClientTable();
             ClientModel clientModel = new ClientModel();
-            clientModel.name = "Bob";
+            clientModel.displayName = "Barry Bonds";
             clientModel.phone = "1234567890";
             clientModel.email = "a@b.co";
             int expected = 1;
@@ -368,7 +368,7 @@ namespace DataStoreTest
             //Assemble
             ClientTable clientTable = new ClientTable();
             ClientModel clientModel = new ClientModel();
-            clientModel.name = "Bob";
+            clientModel.displayName = "Barry Bonds";
             clientModel.phone = "1234567890";
             clientModel.email = "a@b.com";
             int expected = 1;

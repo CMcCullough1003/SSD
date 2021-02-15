@@ -56,7 +56,7 @@ namespace DogCare
             }
 
             //fill up the input fields
-            lblClientIDRead.Text = selectedClient.id.ToString();
+            lblClientIDReadOnly.Text = selectedClient.id.ToString();
             txbForename.Text = selectedClient.forename;
             txbSurname.Text = selectedClient.surname;
             txbPhone.Text = selectedClient.phone;
@@ -66,7 +66,7 @@ namespace DogCare
         private void ClearInputs()
         {
             //set all the input fields to blank
-            lblClientIDRead.Text = "New client";
+            lblClientIDReadOnly.Text = "New client";
             txbForename.Text = "";
             txbSurname.Text = "";
             txbPhone.Text = "";

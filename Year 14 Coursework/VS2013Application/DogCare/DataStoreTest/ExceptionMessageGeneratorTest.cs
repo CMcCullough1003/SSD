@@ -175,5 +175,20 @@ namespace DataStoreTest
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+                [TestMethod]
+        public void MessageGenerator_DuplicateEnrollment_EnrollmentMessage()
+        {
+            //Assemble
+            string expected = "Could not enroll. This dog is already enrolled in this program";
+            ExceptionMessageGenerator exceptionMessageGenerator = new ExceptionMessageGenerator();
+            string exceptionMessage = "CK__Enrollment__DuplicateEnrollment";
+
+            //Act
+            string actual = exceptionMessageGenerator.generateMessage(exceptionMessage);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

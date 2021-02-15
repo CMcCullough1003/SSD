@@ -22,7 +22,7 @@ namespace DogCare
         private void RefreshList()
         {
             //clear all the items from the ListView
-            lsvClasses.Items.Clear(); // make sure it is not just lvXXX.Clear()
+            lsvBilling.Items.Clear(); // make sure it is not just lvXXX.Clear()
 
             //read all the records from the table
             List<ReportBillingModel> billingList = new Reports().readReportBilling();
@@ -38,9 +38,9 @@ namespace DogCare
                 lsvi.Tag = thisClass;
 
                 //add new row to the ListView
-                lsvClasses.Items.Add(lsvi);
+                lsvBilling.Items.Add(lsvi);
             }
-            lsvClasses.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            lsvBilling.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
         private void lsvClasses_SelectedIndexChanged(object sender, EventArgs e)

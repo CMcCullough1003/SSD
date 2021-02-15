@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lsvClasses = new System.Windows.Forms.ListView();
+            this.lsvBilling = new System.Windows.Forms.ListView();
             this.chClientName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chPaymentType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chAmountDue = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -40,9 +40,9 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // lsvClasses
+            // lsvBilling
             // 
-            this.lsvClasses.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lsvBilling.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chClientName,
             this.chPaymentType,
             this.chAmountDue,
@@ -50,13 +50,13 @@
             this.chDaysOverdue,
             this.chPaymentRecieved,
             this.chProgramName});
-            this.lsvClasses.Location = new System.Drawing.Point(52, 156);
-            this.lsvClasses.Name = "lsvClasses";
-            this.lsvClasses.Size = new System.Drawing.Size(831, 515);
-            this.lsvClasses.TabIndex = 34;
-            this.lsvClasses.UseCompatibleStateImageBehavior = false;
-            this.lsvClasses.View = System.Windows.Forms.View.Details;
-            this.lsvClasses.SelectedIndexChanged += new System.EventHandler(this.lsvClasses_SelectedIndexChanged);
+            this.lsvBilling.Location = new System.Drawing.Point(52, 156);
+            this.lsvBilling.Name = "lsvBilling";
+            this.lsvBilling.Size = new System.Drawing.Size(831, 515);
+            this.lsvBilling.TabIndex = 34;
+            this.lsvBilling.UseCompatibleStateImageBehavior = false;
+            this.lsvBilling.View = System.Windows.Forms.View.Details;
+            this.lsvBilling.SelectedIndexChanged += new System.EventHandler(this.lsvClasses_SelectedIndexChanged);
             // 
             // chClientName
             // 
@@ -114,7 +114,7 @@
             this.ClientSize = new System.Drawing.Size(1180, 746);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.lsvClasses);
+            this.Controls.Add(this.lsvBilling);
             this.Name = "frmReportBilling";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmReportBilling";
@@ -125,7 +125,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ListView lsvClasses;
+        private System.Windows.Forms.ListView lsvBilling;
         private System.Windows.Forms.ColumnHeader chClientName;
         private System.Windows.Forms.ColumnHeader chPaymentType;
         private System.Windows.Forms.ColumnHeader chAmountDue;

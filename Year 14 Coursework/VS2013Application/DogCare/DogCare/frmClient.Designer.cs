@@ -54,7 +54,7 @@
             this.lblForename = new System.Windows.Forms.Label();
             this.lblCustomerID = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.lblClientIDRead = new System.Windows.Forms.Label();
+            this.lblClientIDReadOnly = new System.Windows.Forms.Label();
             this.txbSurname = new System.Windows.Forms.TextBox();
             this.lblSurname = new System.Windows.Forms.Label();
             this.mstCustomer.SuspendLayout();
@@ -306,16 +306,16 @@
             this.lblTitle.TabIndex = 16;
             this.lblTitle.Text = "Client";
             // 
-            // lblClientIDRead
+            // lblClientIDReadOnly
             // 
-            this.lblClientIDRead.AutoSize = true;
-            this.lblClientIDRead.BackColor = System.Drawing.Color.White;
-            this.lblClientIDRead.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClientIDRead.Location = new System.Drawing.Point(434, 188);
-            this.lblClientIDRead.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblClientIDRead.Name = "lblClientIDRead";
-            this.lblClientIDRead.Size = new System.Drawing.Size(0, 25);
-            this.lblClientIDRead.TabIndex = 49;
+            this.lblClientIDReadOnly.AutoSize = true;
+            this.lblClientIDReadOnly.BackColor = System.Drawing.Color.White;
+            this.lblClientIDReadOnly.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClientIDReadOnly.Location = new System.Drawing.Point(434, 188);
+            this.lblClientIDReadOnly.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblClientIDReadOnly.Name = "lblClientIDReadOnly";
+            this.lblClientIDReadOnly.Size = new System.Drawing.Size(0, 25);
+            this.lblClientIDReadOnly.TabIndex = 49;
             // 
             // txbSurname
             // 
@@ -346,7 +346,7 @@
             this.ClientSize = new System.Drawing.Size(1285, 732);
             this.Controls.Add(this.txbSurname);
             this.Controls.Add(this.lblSurname);
-            this.Controls.Add(this.lblClientIDRead);
+            this.Controls.Add(this.lblClientIDReadOnly);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.txbEmail);
             this.Controls.Add(this.txbPhone);
@@ -399,7 +399,7 @@
         private System.Windows.Forms.Label lblForename;
         private System.Windows.Forms.Label lblCustomerID;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Label lblClientIDRead;
+        private System.Windows.Forms.Label lblClientIDReadOnly;
         private System.Windows.Forms.TextBox txbSurname;
         private System.Windows.Forms.Label lblSurname;
     }
